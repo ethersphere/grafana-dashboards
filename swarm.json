@@ -2,7 +2,6 @@
   "annotations": {
     "list": [
       {
-        "$$hashKey": "object:275",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -16,8 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 5,
-  "iteration": 1543416701530,
+  "iteration": 1543951334974,
   "links": [],
   "panels": [
     {
@@ -1346,7 +1344,7 @@
       }
     },
     {
-      "collapsed": true,
+      "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1354,134 +1352,137 @@
         "y": 47
       },
       "id": 32,
-      "panels": [
+      "panels": [],
+      "title": "Uptime",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "metrics",
+      "fill": 1,
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 0,
+        "y": 48
+      },
+      "id": 14,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "metrics",
-          "fill": 1,
-          "gridPos": {
-            "h": 6,
-            "w": 12,
-            "x": 0,
-            "y": 2
-          },
-          "id": 14,
-          "legend": {
-            "alignAsTable": true,
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "rightSide": true,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "null",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
+          "alias": "$tag_host",
+          "groupBy": [
             {
-              "alias": "$tag_host",
-              "groupBy": [
-                {
-                  "params": [
-                    "$myinterval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "host"
-                  ],
-                  "type": "tag"
-                },
-                {
-                  "params": [
-                    "0"
-                  ],
-                  "type": "fill"
-                }
+              "params": [
+                "$myinterval"
               ],
-              "measurement": "swarm.stack.uptime.gauge",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "refId": "A",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "value"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": [
-                {
-                  "key": "host",
-                  "operator": "=~",
-                  "value": "/^$host$/"
-                }
-              ]
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Uptime",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "ns",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
+              "type": "time"
             },
             {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
+              "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "swarm.stack.uptime.gauge",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
             }
           ]
         }
       ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
       "title": "Uptime",
-      "type": "row"
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "ns",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "collapsed": false,
@@ -1489,7 +1490,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 48
+        "y": 54
       },
       "id": 28,
       "panels": [],
@@ -1507,7 +1508,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 49
+        "y": 55
       },
       "id": 2,
       "legend": {
@@ -1674,7 +1675,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 49
+        "y": 55
       },
       "id": 26,
       "legend": {
@@ -1802,7 +1803,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 55
+        "y": 61
       },
       "id": 15,
       "legend": {
@@ -1930,7 +1931,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 55
+        "y": 61
       },
       "id": 8,
       "legend": {
@@ -2053,7 +2054,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 61
+        "y": 67
       },
       "id": 30,
       "panels": [],
@@ -2071,7 +2072,7 @@
         "h": 5,
         "w": 12,
         "x": 0,
-        "y": 62
+        "y": 68
       },
       "id": 16,
       "legend": {
@@ -2200,7 +2201,7 @@
         "h": 5,
         "w": 12,
         "x": 12,
-        "y": 62
+        "y": 68
       },
       "id": 18,
       "legend": {
@@ -2329,7 +2330,7 @@
         "h": 5,
         "w": 12,
         "x": 0,
-        "y": 67
+        "y": 73
       },
       "id": 17,
       "legend": {
@@ -2453,7 +2454,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 72
+        "y": 78
       },
       "id": 25,
       "panels": [],
@@ -2471,7 +2472,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 73
+        "y": 79
       },
       "id": 3,
       "legend": {
@@ -2600,7 +2601,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 73
+        "y": 79
       },
       "id": 13,
       "legend": {
@@ -2728,7 +2729,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 79
+        "y": 85
       },
       "id": 11,
       "legend": {
@@ -2856,7 +2857,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 79
+        "y": 85
       },
       "id": 12,
       "legend": {
@@ -2985,7 +2986,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 85
+        "y": 91
       },
       "id": 9,
       "legend": {
@@ -3113,7 +3114,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 85
+        "y": 91
       },
       "id": 20,
       "legend": {
@@ -3242,7 +3243,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 91
+        "y": 97
       },
       "id": 21,
       "legend": {
@@ -3371,7 +3372,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 91
+        "y": 97
       },
       "id": 22,
       "legend": {
@@ -3500,7 +3501,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 97
+        "y": 103
       },
       "id": 23,
       "legend": {
@@ -3629,7 +3630,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 97
+        "y": 103
       },
       "id": 19,
       "legend": {
@@ -3758,7 +3759,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 103
+        "y": 109
       },
       "id": 48,
       "legend": {
@@ -3887,7 +3888,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 103
+        "y": 109
       },
       "id": 49,
       "legend": {
@@ -3915,7 +3916,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "$tag_host",
+          "alias": "write $tag_host",
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -3937,7 +3938,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm.ldbstore.collectgarbage.count",
+          "measurement": "swarm.system/disk/writebytes.count",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -3952,7 +3953,57 @@
               },
               {
                 "params": [],
-                "type": "sum"
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
+        },
+        {
+          "alias": "read $tag_host",
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "$myinterval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "swarm.system/disk/readbytes.count",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
               }
             ]
           ],
@@ -3968,7 +4019,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "ldbstore.collectgarbage",
+      "title": "Swarm system disk read/write bytes",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -3984,7 +4035,236 @@
       },
       "yaxes": [
         {
-          "format": "none",
+          "format": "decbytes",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "metrics",
+      "fill": 1,
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 12,
+        "y": 115
+      },
+      "id": 50,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "alloc $tag_host",
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "$myinterval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "swarm.system/memory/allocs.meter",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "mean"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
+        },
+        {
+          "alias": "inuse $tag_host",
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "$myinterval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "swarm.system/memory/inuse.meter",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "mean"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
+        },
+        {
+          "alias": "frees $tag_host",
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "$myinterval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "swarm.system/memory/frees.meter",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "mean"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Swarm system memory",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "decbytes",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -4017,8 +4297,8 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "text": "100s",
-          "value": "100s"
+          "text": "10s",
+          "value": "10s"
         },
         "hide": 0,
         "label": "resolution",
@@ -4030,7 +4310,7 @@
             "value": "5s"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "10s",
             "value": "10s"
           },
@@ -4040,7 +4320,7 @@
             "value": "30s"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "100s",
             "value": "100s"
           }
@@ -4052,14 +4332,9 @@
       {
         "allValue": null,
         "current": {
-          "text": "swarm_30400 + swarm_30401 + swarm_30402 + swarm_30403 + swarm_30404",
-          "value": [
-            "swarm_30400",
-            "swarm_30401",
-            "swarm_30402",
-            "swarm_30403",
-            "swarm_30404"
-          ]
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
         },
         "datasource": "metrics",
         "hide": 0,
@@ -4112,5 +4387,5 @@
   "timezone": "",
   "title": "Swarm",
   "uid": "vmEtxxgmz",
-  "version": 15
+  "version": 1
 }
