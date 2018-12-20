@@ -624,7 +624,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm-smoke.upload-and-sync.fetch.clienttrace.connectdone.span",
+          "measurement": "swarm-smoke.upload-and-sync.connectdone.span",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "B",
@@ -757,7 +757,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm-smoke.upload-and-sync.fetch.clienttrace.dnsdone.span",
+          "measurement": "swarm-smoke.upload-and-sync.dnsdone.span",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "B",
@@ -890,7 +890,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm-smoke.upload-and-sync.fetch.clienttrace.gotconn.span",
+          "measurement": "swarm-smoke.upload-and-sync.gotconn.span",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "B",
@@ -1023,7 +1023,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm-smoke.upload-and-sync.fetch.clienttrace.wroterequest.span",
+          "measurement": "swarm-smoke.upload-and-sync.wroterequest.span",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "B",
@@ -1156,7 +1156,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm-smoke.upload-and-sync.fetch.clienttrace.firstbyte.span",
+          "measurement": "swarm-smoke.upload-and-sync.firstbyte.span",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "B",
@@ -1289,7 +1289,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm-smoke.upload-and-sync.fetch.clienttrace.putidle.span",
+          "measurement": "swarm-smoke.upload-and-sync.putidle.span",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "B",
@@ -1435,10 +1435,10 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm-smoke.swarm.api.client.uploadtar.fetch.clienttrace.dnsstart.span",
+          "measurement": "swarm-smoke.api.client.uploadtar.dnsstart.span",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"swarm-smoke.swarm.api.client.uploadtar.fetch.clienttrace.firstbyte.span\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"swarm-smoke.api.client.uploadtar.dnsstart.span\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -1570,10 +1570,10 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm-smoke.swarm.api.client.uploadtar.fetch.clienttrace.dnsdone.span",
+          "measurement": "swarm-smoke.api.client.uploadtar.dnsdone.span",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"swarm-smoke.swarm.api.client.uploadtar.fetch.clienttrace.firstbyte.span\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"swarm-smoke.api.client.uploadtar.dnsdone.span\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -1705,10 +1705,10 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm-smoke.swarm.api.client.uploadtar.fetch.clienttrace.gotconn.span",
+          "measurement": "swarm-smoke.api.client.uploadtar.gotconn.span",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"swarm-smoke.swarm.api.client.uploadtar.fetch.clienttrace.firstbyte.span\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"swarm-smoke.api.client.uploadtar.gotconn.span\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -1840,10 +1840,10 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm-smoke.swarm.api.client.uploadtar.fetch.clienttrace.putidle.span",
+          "measurement": "swarm-smoke.api.client.uploadtar.putidle.span",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"swarm-smoke.swarm.api.client.uploadtar.fetch.clienttrace.firstbyte.span\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"swarm-smoke.api.client.uploadtar.putidle.span\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
