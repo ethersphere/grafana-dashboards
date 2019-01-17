@@ -36,6 +36,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 9,
@@ -170,6 +171,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 9,
@@ -233,6 +235,8 @@
           "measurement": "upload-speed.timeout.count",
           "orderByTime": "ASC",
           "policy": "default",
+          "query": "SELECT sum(\"value\") FROM \"swarm-smoke.upload-speed.timeout.count\" WHERE $timeFilter GROUP BY time($__interval), \"filesize\", \"version\" fill(0)",
+          "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -279,7 +283,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm-smoke.upload-and-sync.fail.count",
+          "measurement": "swarm-smoke.upload-speed.fail.count",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "B",
@@ -347,6 +351,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 9,
@@ -551,7 +556,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 20
+        "y": 19
       },
       "id": 17,
       "panels": [
@@ -1139,5 +1144,5 @@
   "timezone": "",
   "title": "Upload speed",
   "uid": "9Xe-uDQik",
-  "version": 2
+  "version": 1
 }
