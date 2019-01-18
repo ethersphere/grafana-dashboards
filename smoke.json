@@ -50,7 +50,7 @@
         "current": false,
         "max": false,
         "min": false,
-        "rightSide": false,
+        "rightSide": true,
         "show": true,
         "total": true,
         "values": true
@@ -347,7 +347,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
-      "fill": 0,
+      "fill": 1,
       "gridPos": {
         "h": 9,
         "w": 12,
@@ -357,12 +357,12 @@
       "id": 24,
       "legend": {
         "alignAsTable": true,
-        "avg": false,
+        "avg": true,
         "current": false,
         "hideEmpty": false,
         "hideZero": false,
         "max": true,
-        "min": false,
+        "min": true,
         "rightSide": false,
         "show": true,
         "total": false,
@@ -462,7 +462,7 @@
       },
       "yaxes": [
         {
-          "format": "ns",
+          "format": "ms",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -499,12 +499,12 @@
       "id": 23,
       "legend": {
         "alignAsTable": true,
-        "avg": false,
+        "avg": true,
         "current": false,
         "hideEmpty": false,
         "hideZero": false,
         "max": true,
-        "min": false,
+        "min": true,
         "rightSide": false,
         "show": true,
         "total": false,
@@ -635,18 +635,18 @@
       "gridPos": {
         "h": 9,
         "w": 12,
-        "x": 12,
-        "y": 10
+        "x": 0,
+        "y": 19
       },
-      "id": 23,
+      "id": 3,
       "legend": {
         "alignAsTable": true,
-        "avg": false,
+        "avg": true,
         "current": false,
         "hideEmpty": false,
         "hideZero": false,
         "max": true,
-        "min": false,
+        "min": true,
         "rightSide": false,
         "show": true,
         "total": false,
@@ -666,7 +666,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "fetch-time ($tag_host, $tag_filesize, $tag_version)",
+          "alias": "total-time ($tag_host, $tag_filesize, $tag_version)",
           "groupBy": [
             {
               "params": [
@@ -699,7 +699,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm-smoke.upload-and-sync.single.fetch-time.span",
+          "measurement": "swarm-smoke.upload-and-sync.total-time.span",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -730,7 +730,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Download time per `upload and sync` in seconds",
+      "title": "Total time per `upload and sync` in seconds",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -2127,7 +2127,7 @@
       }
     }
   ],
-  "refresh": "30s",
+  "refresh": false,
   "schemaVersion": 16,
   "style": "dark",
   "tags": [],
@@ -2135,8 +2135,8 @@
     "list": []
   },
   "time": {
-    "from": "now-30m",
-    "to": "now"
+    "from": "2019-01-18T19:37:26.327Z",
+    "to": "2019-01-18T20:37:26.327Z"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -2168,5 +2168,3 @@
   "uid": "aWHZ1eYmz",
   "version": 1
 }
-
-
