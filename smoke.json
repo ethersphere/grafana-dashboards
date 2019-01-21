@@ -15,7 +15,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 2,
   "links": [],
   "panels": [
     {
@@ -358,12 +357,12 @@
       "id": 24,
       "legend": {
         "alignAsTable": true,
-        "avg": false,
+        "avg": true,
         "current": false,
         "hideEmpty": false,
         "hideZero": false,
         "max": true,
-        "min": false,
+        "min": true,
         "rightSide": false,
         "show": true,
         "total": false,
@@ -432,6 +431,12 @@
               {
                 "params": [],
                 "type": "max"
+              },
+              {
+                "params": [
+                  " / 1000000"
+                ],
+                "type": "math"
               }
             ]
           ],
@@ -457,7 +462,7 @@
       },
       "yaxes": [
         {
-          "format": "ns",
+          "format": "ms",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -494,12 +499,12 @@
       "id": 23,
       "legend": {
         "alignAsTable": true,
-        "avg": false,
+        "avg": true,
         "current": false,
         "hideEmpty": false,
         "hideZero": false,
         "max": true,
-        "min": false,
+        "min": true,
         "rightSide": false,
         "show": true,
         "total": false,
@@ -568,6 +573,12 @@
               {
                 "params": [],
                 "type": "max"
+              },
+              {
+                "params": [
+                  " / 1000000"
+                ],
+                "type": "math"
               }
             ]
           ],
@@ -593,7 +604,7 @@
       },
       "yaxes": [
         {
-          "format": "ns",
+          "format": "ms",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -630,12 +641,12 @@
       "id": 3,
       "legend": {
         "alignAsTable": true,
-        "avg": false,
+        "avg": true,
         "current": false,
         "hideEmpty": false,
         "hideZero": false,
         "max": true,
-        "min": false,
+        "min": true,
         "rightSide": false,
         "show": true,
         "total": false,
@@ -704,6 +715,12 @@
               {
                 "params": [],
                 "type": "max"
+              },
+              {
+                "params": [
+                  " / 1000000"
+                ],
+                "type": "math"
               }
             ]
           ],
@@ -729,7 +746,7 @@
       },
       "yaxes": [
         {
-          "format": "ns",
+          "format": "ms",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -2110,7 +2127,7 @@
       }
     }
   ],
-  "refresh": "30s",
+  "refresh": false,
   "schemaVersion": 16,
   "style": "dark",
   "tags": [],
@@ -2118,8 +2135,8 @@
     "list": []
   },
   "time": {
-    "from": "now-3h",
-    "to": "now"
+    "from": "2019-01-18T19:37:26.327Z",
+    "to": "2019-01-18T20:37:26.327Z"
   },
   "timepicker": {
     "refresh_intervals": [
