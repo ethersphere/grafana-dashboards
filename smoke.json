@@ -15,6 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
+  "id": 1,
   "links": [],
   "panels": [
     {
@@ -2135,8 +2136,8 @@
     "list": []
   },
   "time": {
-    "from": "2019-01-18T19:37:26.327Z",
-    "to": "2019-01-18T20:37:26.327Z"
+    "from": "now-12h",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
