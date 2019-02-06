@@ -71,7 +71,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "$tag_host",
+          "alias": "[[view_by]]",
           "groupBy": [
             {
               "params": [
@@ -82,6 +82,18 @@
             {
               "params": [
                 "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "bzzkey"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "pubkey"
               ],
               "type": "tag"
             },
@@ -116,6 +128,18 @@
               "key": "host",
               "operator": "=~",
               "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "bzzkey",
+              "operator": "=~",
+              "value": "/^$bzzkey$/"
+            },
+            {
+              "condition": "AND",
+              "key": "pubkey",
+              "operator": "=~",
+              "value": "/^$pubkey$/"
             }
           ]
         }
@@ -199,7 +223,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "$tag_host",
+          "alias": "[[view_by]]",
           "groupBy": [
             {
               "params": [
@@ -210,6 +234,18 @@
             {
               "params": [
                 "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "bzzkey"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "pubkey"
               ],
               "type": "tag"
             },
@@ -244,6 +280,18 @@
               "key": "host",
               "operator": "=~",
               "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "bzzkey",
+              "operator": "=~",
+              "value": "/^$bzzkey$/"
+            },
+            {
+              "condition": "AND",
+              "key": "pubkey",
+              "operator": "=~",
+              "value": "/^$pubkey$/"
             }
           ]
         }
@@ -327,7 +375,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "$tag_host",
+          "alias": "[[view_by]]",
           "groupBy": [
             {
               "params": [
@@ -338,6 +386,18 @@
             {
               "params": [
                 "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "bzzkey"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "pubkey"
               ],
               "type": "tag"
             },
@@ -372,6 +432,18 @@
               "key": "host",
               "operator": "=~",
               "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "bzzkey",
+              "operator": "=~",
+              "value": "/^$bzzkey$/"
+            },
+            {
+              "condition": "AND",
+              "key": "pubkey",
+              "operator": "=~",
+              "value": "/^$pubkey$/"
             }
           ]
         }
@@ -455,7 +527,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "$tag_host",
+          "alias": "[[view_by]]",
           "groupBy": [
             {
               "params": [
@@ -466,6 +538,18 @@
             {
               "params": [
                 "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "bzzkey"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "pubkey"
               ],
               "type": "tag"
             },
@@ -500,6 +584,18 @@
               "key": "host",
               "operator": "=~",
               "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "bzzkey",
+              "operator": "=~",
+              "value": "/^$bzzkey$/"
+            },
+            {
+              "condition": "AND",
+              "key": "pubkey",
+              "operator": "=~",
+              "value": "/^$pubkey$/"
             }
           ]
         }
@@ -545,7 +641,7 @@
       }
     },
     {
-      "collapsed": false,
+      "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -553,1065 +649,1141 @@
         "y": 19
       },
       "id": 34,
-      "panels": [],
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "metrics",
+          "fill": 1,
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 20
+          },
+          "id": 36,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": true,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": true,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "[[view_by]]",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "swarm.peer.send.count",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "sum"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "P2P Send() - messages sent",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "metrics",
+          "fill": 1,
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 20
+          },
+          "id": 37,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "p95([[view_by]])",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "swarm.peer.send_t.span",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "p95"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "P2P Send() timer - 95%ile",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "ns",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "metrics",
+          "fill": 1,
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 29
+          },
+          "id": 38,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": true,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": true,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "1  [[view_by]]",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "swarm.peer.sendpriority.1.count",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "sum"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
+                }
+              ]
+            },
+            {
+              "alias": "2 [[view_by]]",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "swarm.peer.sendpriority.2.count",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "sum"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
+                }
+              ]
+            },
+            {
+              "alias": "3 [[view_by]]",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "swarm.peer.sendpriority.3.count",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "sum"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "P2P SendPriority() - messages sent",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "metrics",
+          "fill": 1,
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 29
+          },
+          "id": 39,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": true,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "1 [[view_by]]",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "swarm.peer.sendpriority_t.1.span",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "p95"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
+                }
+              ]
+            },
+            {
+              "alias": "2 [[view_by]]",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "swarm.peer.sendpriority_t.2.span",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "p95"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "P2P SendPriority() timer - 95%ile",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "ns",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "metrics",
+          "fill": 1,
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 38
+          },
+          "id": 40,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "[[view_by]]",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "swarm.registry.peers.gauge",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Registry Peers",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "metrics",
+          "fill": 1,
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 38
+          },
+          "id": 54,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": true,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "[[view_by]]",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "swarm.ldbstore.collectgarbage.count",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "sum"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Garbage Collection",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
       "title": "P2P",
       "type": "row"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "metrics",
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 0,
-        "y": 20
-      },
-      "id": 36,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": true,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "$tag_host",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "host"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "swarm.peer.send.count",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "P2P Send() - messages sent",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "metrics",
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 12,
-        "y": 20
-      },
-      "id": 37,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "p95($tag_host)",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "host"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "swarm.peer.send_t.span",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "p95"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "P2P Send() timer - 95%ile",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "ns",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "metrics",
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 0,
-        "y": 29
-      },
-      "id": 38,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": true,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "1 $tag_host",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "host"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "swarm.peer.sendpriority.1.count",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            }
-          ]
-        },
-        {
-          "alias": "2 $tag_host",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "host"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "swarm.peer.sendpriority.2.count",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            }
-          ]
-        },
-        {
-          "alias": "3 $tag_host",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "host"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "swarm.peer.sendpriority.3.count",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "C",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "P2P SendPriority() - messages sent",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "metrics",
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 12,
-        "y": 29
-      },
-      "id": 39,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": false,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "1 $tag_host",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "host"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "swarm.peer.sendpriority_t.1.span",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "p95"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            }
-          ]
-        },
-        {
-          "alias": "2 $tag_host",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "host"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "swarm.peer.sendpriority_t.2.span",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "p95"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "P2P SendPriority() timer - 95%ile",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "ns",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "metrics",
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 0,
-        "y": 38
-      },
-      "id": 40,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "$tag_host",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "host"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "swarm.registry.peers.gauge",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Registry Peers",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "metrics",
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 12,
-        "y": 38
-      },
-      "id": 54,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": true,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "$tag_host",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "host"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "swarm.ldbstore.collectgarbage.count",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Garbage Collection",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "collapsed": false,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 47
-      },
-      "id": 32,
-      "panels": [],
-      "title": "Uptime",
-      "type": "row"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "metrics",
-      "fill": 1,
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 0,
-        "y": 48
-      },
-      "id": 14,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "$tag_host",
-          "groupBy": [
-            {
-              "params": [
-                "$myinterval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "host"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "0"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "swarm.stack.uptime.gauge",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Uptime",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "ns",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
     },
     {
       "collapsed": true,
@@ -1619,7 +1791,173 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 54
+        "y": 20
+      },
+      "id": 32,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "metrics",
+          "fill": 1,
+          "gridPos": {
+            "h": 6,
+            "w": 12,
+            "x": 0,
+            "y": 21
+          },
+          "id": 14,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "[[view_by]]",
+              "groupBy": [
+                {
+                  "params": [
+                    "$myinterval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "0"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "swarm.stack.uptime.gauge",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Uptime",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "ns",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
+      "title": "Uptime",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 21
       },
       "id": 28,
       "panels": [
@@ -1634,7 +1972,7 @@
             "h": 6,
             "w": 12,
             "x": 0,
-            "y": 28
+            "y": 22
           },
           "id": 2,
           "legend": {
@@ -1662,7 +2000,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "GET",
+              "alias": "GET [[view_by]]",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -1670,6 +2008,24 @@
                     "$myinterval"
                   ],
                   "type": "time"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "host"
+                  ],
+                  "type": "tag"
                 },
                 {
                   "params": [
@@ -1702,11 +2058,23 @@
                   "key": "host",
                   "operator": "=~",
                   "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
                 }
               ]
             },
             {
-              "alias": "POST",
+              "alias": "POST [[view_by]]",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -1714,6 +2082,24 @@
                     "$myinterval"
                   ],
                   "type": "time"
+                },
+                {
+                  "params": [
+                    "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
+                  ],
+                  "type": "tag"
                 },
                 {
                   "params": [
@@ -1746,6 +2132,18 @@
                   "key": "host",
                   "operator": "=~",
                   "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
                 }
               ]
             }
@@ -1801,7 +2199,7 @@
             "h": 6,
             "w": 12,
             "x": 12,
-            "y": 28
+            "y": 22
           },
           "id": 26,
           "legend": {
@@ -1829,7 +2227,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "$tag_host",
+              "alias": "[[view_by]]",
               "groupBy": [
                 {
                   "params": [
@@ -1840,6 +2238,18 @@
                 {
                   "params": [
                     "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
                   ],
                   "type": "tag"
                 },
@@ -1874,6 +2284,18 @@
                   "key": "host",
                   "operator": "=~",
                   "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
                 }
               ]
             }
@@ -1929,7 +2351,7 @@
             "h": 6,
             "w": 12,
             "x": 0,
-            "y": 34
+            "y": 28
           },
           "id": 15,
           "legend": {
@@ -1957,7 +2379,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "$tag_host",
+              "alias": "[[view_by]]",
               "groupBy": [
                 {
                   "params": [
@@ -1968,6 +2390,18 @@
                 {
                   "params": [
                     "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
                   ],
                   "type": "tag"
                 },
@@ -2002,6 +2436,18 @@
                   "key": "host",
                   "operator": "=~",
                   "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
                 }
               ]
             }
@@ -2057,7 +2503,7 @@
             "h": 6,
             "w": 12,
             "x": 12,
-            "y": 34
+            "y": 28
           },
           "id": 8,
           "legend": {
@@ -2085,7 +2531,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "POST",
+              "alias": "[[view_by]]",
               "groupBy": [
                 {
                   "params": [
@@ -2096,6 +2542,18 @@
                 {
                   "params": [
                     "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
                   ],
                   "type": "tag"
                 },
@@ -2130,6 +2588,18 @@
                   "key": "host",
                   "operator": "=~",
                   "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
                 }
               ]
             }
@@ -2179,533 +2649,630 @@
       "type": "row"
     },
     {
-      "collapsed": false,
+      "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 55
+        "y": 22
       },
       "id": 30,
-      "panels": [],
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "metrics",
+          "fill": 1,
+          "gridPos": {
+            "h": 5,
+            "w": 12,
+            "x": 0,
+            "y": 23
+          },
+          "id": 17,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": true,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": true,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "[[view_by]]",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$myinterval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "0"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "swarm.lazychunkreader.read.bytes.count",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "sum"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "LazyChunkReader bytes read",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "decbytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "metrics",
+          "fill": 1,
+          "gridPos": {
+            "h": 5,
+            "w": 12,
+            "x": 12,
+            "y": 23
+          },
+          "id": 18,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": true,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": true,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "[[view_by]]",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$myinterval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "0"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "swarm.lazychunkreader.read.err.count",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "sum"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "LazyChunkReader read errors",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "metrics",
+          "fill": 1,
+          "gridPos": {
+            "h": 5,
+            "w": 12,
+            "x": 0,
+            "y": 28
+          },
+          "id": 53,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": false,
+            "max": true,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "[[view_by]]",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$myinterval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "0"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "swarm.lcr.getter.get.span",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "p95"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "lcr chunkstore.getter.get timer",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "ns",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "metrics",
+          "fill": 1,
+          "gridPos": {
+            "h": 5,
+            "w": 12,
+            "x": 12,
+            "y": 28
+          },
+          "id": 16,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": true,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": true,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "[[view_by]]",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$myinterval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "0"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "swarm.lazychunkreader.read.count",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "sum"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=~",
+                  "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "LazyChunkReader read() calls",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
       "title": "LazyChunkReader",
       "type": "row"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "metrics",
-      "fill": 1,
-      "gridPos": {
-        "h": 5,
-        "w": 12,
-        "x": 0,
-        "y": 56
-      },
-      "id": 17,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": false,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": true,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "$tag_host",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$myinterval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "host"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "0"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "swarm.lazychunkreader.read.bytes.count",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "LazyChunkReader bytes read",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "decbytes",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "metrics",
-      "fill": 1,
-      "gridPos": {
-        "h": 5,
-        "w": 12,
-        "x": 12,
-        "y": 56
-      },
-      "id": 18,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": false,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": true,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "$tag_host",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$myinterval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "host"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "0"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "swarm.lazychunkreader.read.err.count",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "LazyChunkReader read errors",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "none",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "metrics",
-      "fill": 1,
-      "gridPos": {
-        "h": 5,
-        "w": 12,
-        "x": 0,
-        "y": 61
-      },
-      "id": 53,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": false,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "$tag_host",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$myinterval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "host"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "0"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "swarm.lcr.getter.get.span",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "p95"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "lcr chunkstore.getter.get timer",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "ns",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "metrics",
-      "fill": 1,
-      "gridPos": {
-        "h": 5,
-        "w": 12,
-        "x": 12,
-        "y": 61
-      },
-      "id": 16,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": false,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": true,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "$tag_host",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$myinterval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "host"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "0"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "swarm.lazychunkreader.read.count",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "LazyChunkReader read() calls",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
     },
     {
       "collapsed": true,
@@ -2713,7 +3280,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 66
+        "y": 23
       },
       "id": 52,
       "panels": [
@@ -2728,7 +3295,7 @@
             "h": 6,
             "w": 12,
             "x": 0,
-            "y": 6
+            "y": 24
           },
           "id": 49,
           "legend": {
@@ -2756,7 +3323,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "write $tag_host",
+              "alias": "write [[view_by]]",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -2768,6 +3335,18 @@
                 {
                   "params": [
                     "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
                   ],
                   "type": "tag"
                 },
@@ -2802,11 +3381,23 @@
                   "key": "host",
                   "operator": "=~",
                   "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
                 }
               ]
             },
             {
-              "alias": "read $tag_host",
+              "alias": "read [[view_by]]",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -2818,6 +3409,18 @@
                 {
                   "params": [
                     "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
                   ],
                   "type": "tag"
                 },
@@ -2852,6 +3455,18 @@
                   "key": "host",
                   "operator": "=~",
                   "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
                 }
               ]
             }
@@ -2907,7 +3522,7 @@
             "h": 6,
             "w": 12,
             "x": 12,
-            "y": 6
+            "y": 24
           },
           "id": 50,
           "legend": {
@@ -2935,7 +3550,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "alloc $tag_host",
+              "alias": "alloc [[view_by]]",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -2947,6 +3562,18 @@
                 {
                   "params": [
                     "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
                   ],
                   "type": "tag"
                 },
@@ -2981,11 +3608,23 @@
                   "key": "host",
                   "operator": "=~",
                   "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
                 }
               ]
             },
             {
-              "alias": "inuse $tag_host",
+              "alias": "inuse [[view_by]]",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -2997,6 +3636,18 @@
                 {
                   "params": [
                     "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
                   ],
                   "type": "tag"
                 },
@@ -3031,11 +3682,23 @@
                   "key": "host",
                   "operator": "=~",
                   "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
                 }
               ]
             },
             {
-              "alias": "frees $tag_host",
+              "alias": "frees [[view_by]]",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -3047,6 +3710,18 @@
                 {
                   "params": [
                     "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
                   ],
                   "type": "tag"
                 },
@@ -3081,6 +3756,18 @@
                   "key": "host",
                   "operator": "=~",
                   "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
                 }
               ]
             }
@@ -3135,7 +3822,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 67
+        "y": 24
       },
       "id": 25,
       "panels": [
@@ -3150,7 +3837,7 @@
             "h": 6,
             "w": 12,
             "x": 0,
-            "y": 7
+            "y": 25
           },
           "id": 3,
           "legend": {
@@ -3178,7 +3865,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "$tag_host",
+              "alias": "[[view_by]]",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -3190,6 +3877,18 @@
                 {
                   "params": [
                     "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
                   ],
                   "type": "tag"
                 },
@@ -3224,6 +3923,18 @@
                   "key": "host",
                   "operator": "=~",
                   "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
                 }
               ]
             }
@@ -3279,7 +3990,7 @@
             "h": 6,
             "w": 12,
             "x": 12,
-            "y": 7
+            "y": 25
           },
           "id": 13,
           "legend": {
@@ -3307,7 +4018,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "$tag_host",
+              "alias": "[[view_by]]",
               "groupBy": [
                 {
                   "params": [
@@ -3318,6 +4029,18 @@
                 {
                   "params": [
                     "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
                   ],
                   "type": "tag"
                 },
@@ -3352,6 +4075,18 @@
                   "key": "host",
                   "operator": "=~",
                   "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
                 }
               ]
             }
@@ -3407,7 +4142,7 @@
             "h": 6,
             "w": 12,
             "x": 0,
-            "y": 13
+            "y": 31
           },
           "id": 11,
           "legend": {
@@ -3435,7 +4170,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "$tag_host",
+              "alias": "[[view_by]]",
               "groupBy": [
                 {
                   "params": [
@@ -3446,6 +4181,18 @@
                 {
                   "params": [
                     "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
                   ],
                   "type": "tag"
                 },
@@ -3480,6 +4227,18 @@
                   "key": "host",
                   "operator": "=~",
                   "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
                 }
               ]
             }
@@ -3535,7 +4294,7 @@
             "h": 6,
             "w": 12,
             "x": 12,
-            "y": 13
+            "y": 31
           },
           "id": 12,
           "legend": {
@@ -3563,7 +4322,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "$tag_host",
+              "alias": "[[view_by]]",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -3575,6 +4334,18 @@
                 {
                   "params": [
                     "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
                   ],
                   "type": "tag"
                 },
@@ -3609,6 +4380,18 @@
                   "key": "host",
                   "operator": "=~",
                   "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
                 }
               ]
             }
@@ -3664,7 +4447,7 @@
             "h": 6,
             "w": 12,
             "x": 0,
-            "y": 19
+            "y": 37
           },
           "id": 9,
           "legend": {
@@ -3692,7 +4475,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "$tag_host",
+              "alias": "[[view_by]]",
               "groupBy": [
                 {
                   "params": [
@@ -3703,6 +4486,18 @@
                 {
                   "params": [
                     "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
                   ],
                   "type": "tag"
                 },
@@ -3737,6 +4532,18 @@
                   "key": "host",
                   "operator": "=~",
                   "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
                 }
               ]
             }
@@ -3792,7 +4599,7 @@
             "h": 6,
             "w": 12,
             "x": 12,
-            "y": 19
+            "y": 37
           },
           "id": 20,
           "legend": {
@@ -3820,7 +4627,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "$tag_host",
+              "alias": "[[view_by]]",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -3832,6 +4639,18 @@
                 {
                   "params": [
                     "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
                   ],
                   "type": "tag"
                 },
@@ -3866,6 +4685,18 @@
                   "key": "host",
                   "operator": "=~",
                   "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
                 }
               ]
             }
@@ -3921,7 +4752,7 @@
             "h": 6,
             "w": 12,
             "x": 0,
-            "y": 25
+            "y": 43
           },
           "id": 21,
           "legend": {
@@ -3949,7 +4780,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "$tag_host",
+              "alias": "[[view_by]]",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -3961,6 +4792,18 @@
                 {
                   "params": [
                     "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
                   ],
                   "type": "tag"
                 },
@@ -3995,6 +4838,18 @@
                   "key": "host",
                   "operator": "=~",
                   "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
                 }
               ]
             }
@@ -4050,7 +4905,7 @@
             "h": 6,
             "w": 12,
             "x": 12,
-            "y": 25
+            "y": 43
           },
           "id": 22,
           "legend": {
@@ -4078,7 +4933,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "$tag_host",
+              "alias": "[[view_by]]",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -4090,6 +4945,18 @@
                 {
                   "params": [
                     "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
                   ],
                   "type": "tag"
                 },
@@ -4124,6 +4991,18 @@
                   "key": "host",
                   "operator": "=~",
                   "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
                 }
               ]
             }
@@ -4179,7 +5058,7 @@
             "h": 6,
             "w": 12,
             "x": 0,
-            "y": 31
+            "y": 49
           },
           "id": 23,
           "legend": {
@@ -4207,7 +5086,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "$tag_host",
+              "alias": "[[view_by]]",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -4219,6 +5098,18 @@
                 {
                   "params": [
                     "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
                   ],
                   "type": "tag"
                 },
@@ -4253,6 +5144,18 @@
                   "key": "host",
                   "operator": "=~",
                   "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
                 }
               ]
             }
@@ -4308,7 +5211,7 @@
             "h": 6,
             "w": 12,
             "x": 12,
-            "y": 31
+            "y": 49
           },
           "id": 19,
           "legend": {
@@ -4336,7 +5239,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "$tag_host",
+              "alias": "[[view_by]]",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -4348,6 +5251,18 @@
                 {
                   "params": [
                     "host"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "bzzkey"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "pubkey"
                   ],
                   "type": "tag"
                 },
@@ -4382,6 +5297,18 @@
                   "key": "host",
                   "operator": "=~",
                   "value": "/^$host$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "bzzkey",
+                  "operator": "=~",
+                  "value": "/^$bzzkey$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pubkey",
+                  "operator": "=~",
+                  "value": "/^$pubkey$/"
                 }
               ]
             }
@@ -4438,24 +5365,71 @@
   "templating": {
     "list": [
       {
-        "auto": false,
+        "allValue": null,
+        "current": {
+          "tags": [],
+          "text": "$tag_host:$tag_bzzkey",
+          "value": "$tag_host:$tag_bzzkey"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "View by",
+        "multi": false,
+        "name": "view_by",
+        "options": [
+          {
+            "selected": true,
+            "text": "$tag_host:$tag_bzzkey",
+            "value": "$tag_host:$tag_bzzkey"
+          },
+          {
+            "selected": false,
+            "text": "$tag_host:$tag_pubkey",
+            "value": "$tag_host:$tag_pubkey"
+          },
+          {
+            "selected": false,
+            "text": "$tag_host",
+            "value": "$tag_host"
+          },
+          {
+            "selected": false,
+            "text": "$tag_bzzkey",
+            "value": "$tag_bzzkey"
+          },
+          {
+            "selected": false,
+            "text": "$tag_pubkey",
+            "value": "$tag_pubkey"
+          }
+        ],
+        "query": "$tag_host:$tag_bzzkey, $tag_host:$tag_pubkey, $tag_host, $tag_bzzkey,$tag_pubkey",
+        "type": "custom"
+      },
+      {
+        "auto": true,
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "text": "10s",
-          "value": "10s"
+          "text": "auto",
+          "value": "$__auto_interval_myinterval"
         },
         "hide": 0,
         "label": "resolution",
         "name": "myinterval",
         "options": [
           {
+            "selected": true,
+            "text": "auto",
+            "value": "$__auto_interval_myinterval"
+          },
+          {
             "selected": false,
             "text": "5s",
             "value": "5s"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "10s",
             "value": "10s"
           },
@@ -4494,6 +5468,56 @@
         "tagValuesQuery": "",
         "tags": [],
         "tagsQuery": "swarm.http.request.GET.time.span",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "All",
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": "metrics",
+        "hide": 0,
+        "includeAll": true,
+        "label": null,
+        "multi": true,
+        "name": "bzzkey",
+        "options": [],
+        "query": "SHOW TAG VALUES WITH KEY = \"bzzkey\"",
+        "refresh": 1,
+        "regex": "",
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "All",
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": "metrics",
+        "hide": 0,
+        "includeAll": true,
+        "label": null,
+        "multi": true,
+        "name": "pubkey",
+        "options": [],
+        "query": "SHOW TAG VALUES WITH KEY = \"pubkey\"",
+        "refresh": 1,
+        "regex": "",
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
         "type": "query",
         "useTags": false
       }
