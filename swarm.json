@@ -37,7 +37,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "metrics",
+      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 9,
@@ -189,7 +189,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "metrics",
+      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 9,
@@ -341,7 +341,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "metrics",
+      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 9,
@@ -493,7 +493,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "metrics",
+      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 9,
@@ -655,7 +655,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 9,
@@ -807,7 +807,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 9,
@@ -959,7 +959,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 9,
@@ -1257,7 +1257,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 9,
@@ -1482,7 +1482,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 9,
@@ -1634,7 +1634,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 9,
@@ -1952,7 +1952,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 6,
@@ -2118,7 +2118,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 6,
@@ -2345,7 +2345,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 6,
@@ -2497,7 +2497,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 6,
@@ -2649,7 +2649,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 6,
@@ -2815,7 +2815,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 5,
@@ -2968,7 +2968,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 5,
@@ -3121,7 +3121,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 5,
@@ -3274,7 +3274,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 5,
@@ -3441,7 +3441,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 6,
@@ -3668,7 +3668,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 6,
@@ -3983,7 +3983,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 6,
@@ -4136,7 +4136,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 6,
@@ -4288,7 +4288,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 6,
@@ -4440,7 +4440,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 6,
@@ -4593,7 +4593,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 6,
@@ -4745,7 +4745,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 6,
@@ -4898,7 +4898,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 6,
@@ -5051,7 +5051,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 6,
@@ -5204,7 +5204,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 6,
@@ -5357,7 +5357,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "metrics",
+          "datasource": null,
           "fill": 1,
           "gridPos": {
             "h": 6,
@@ -5606,7 +5606,7 @@
           "text": "All",
           "value": "$__all"
         },
-        "datasource": "metrics",
+        "datasource": null,
         "hide": 0,
         "includeAll": true,
         "label": null,
@@ -5631,7 +5631,7 @@
             "$__all"
           ]
         },
-        "datasource": "metrics",
+        "datasource": null,
         "hide": 0,
         "includeAll": true,
         "label": null,
@@ -5656,7 +5656,7 @@
             "$__all"
           ]
         },
-        "datasource": "metrics",
+        "datasource": null,
         "hide": 0,
         "includeAll": true,
         "label": null,
