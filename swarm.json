@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 2,
-  "iteration": 1553506685831,
+  "id": 1,
+  "iteration": 1553693692852,
   "links": [],
   "panels": [
     {
@@ -4141,7 +4141,7 @@
             "h": 6,
             "w": 12,
             "x": 0,
-            "y": 25
+            "y": 34
           },
           "id": 3,
           "legend": {
@@ -4294,7 +4294,7 @@
             "h": 6,
             "w": 12,
             "x": 12,
-            "y": 25
+            "y": 34
           },
           "id": 13,
           "legend": {
@@ -4446,13 +4446,13 @@
             "h": 6,
             "w": 12,
             "x": 0,
-            "y": 31
+            "y": 40
           },
           "id": 11,
           "legend": {
             "alignAsTable": true,
             "avg": false,
-            "current": false,
+            "current": true,
             "max": true,
             "min": false,
             "rightSide": true,
@@ -4550,7 +4550,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Received chunks",
+          "title": "handle ChunkDeliveryMsg",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -4598,7 +4598,7 @@
             "h": 6,
             "w": 12,
             "x": 12,
-            "y": 31
+            "y": 40
           },
           "id": 12,
           "legend": {
@@ -4751,7 +4751,7 @@
             "h": 6,
             "w": 12,
             "x": 0,
-            "y": 37
+            "y": 46
           },
           "id": 9,
           "legend": {
@@ -4855,7 +4855,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Handle retrieve request msg",
+          "title": "handle RetrieveRequestMsg",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -4903,7 +4903,7 @@
             "h": 6,
             "w": 12,
             "x": 12,
-            "y": 37
+            "y": 46
           },
           "id": 20,
           "legend": {
@@ -5056,7 +5056,7 @@
             "h": 6,
             "w": 12,
             "x": 0,
-            "y": 43
+            "y": 52
           },
           "id": 21,
           "legend": {
@@ -5161,7 +5161,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "peer HandleWantedHashesMsg",
+          "title": "handle WantedHashesMsg",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -5209,7 +5209,7 @@
             "h": 6,
             "w": 12,
             "x": 12,
-            "y": 43
+            "y": 52
           },
           "id": 22,
           "legend": {
@@ -5314,7 +5314,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "peer HandleSubscribeMsg",
+          "title": "handle SubscribeMsg",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -5362,7 +5362,7 @@
             "h": 6,
             "w": 12,
             "x": 0,
-            "y": 49
+            "y": 58
           },
           "id": 23,
           "legend": {
@@ -5467,7 +5467,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "peer HandleWantedHashesMsg actual get",
+          "title": "handle WantedHashesMsg - actual get",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -5515,7 +5515,7 @@
             "h": 6,
             "w": 12,
             "x": 12,
-            "y": 49
+            "y": 58
           },
           "id": 19,
           "legend": {
@@ -5620,7 +5620,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "peer OfferedHashesMsg",
+          "title": "handle OfferedHashesMsg",
           "tooltip": {
             "shared": true,
             "sort": 0,
