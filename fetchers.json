@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 7,
-  "iteration": 1553769617684,
+  "id": 6,
+  "iteration": 1553809337964,
   "links": [],
   "panels": [
     {
@@ -439,12 +439,12 @@
       "legend": {
         "alignAsTable": true,
         "avg": false,
-        "current": false,
-        "max": false,
+        "current": true,
+        "max": true,
         "min": false,
         "rightSide": true,
         "show": true,
-        "total": true,
+        "total": false,
         "values": true
       },
       "lines": true,
@@ -461,7 +461,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "request.request",
+          "alias": "syncer.syncer",
           "groupBy": [
             {
               "params": [
