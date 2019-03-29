@@ -15,7 +15,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 7,
   "links": [],
   "panels": [
     {
@@ -28,7 +27,7 @@
       },
       "id": 6,
       "panels": [],
-      "title": "Global",
+      "title": "Message types",
       "type": "row"
     },
     {
@@ -76,12 +75,6 @@
           "groupBy": [
             {
               "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
                 "msgcount"
               ],
               "type": "tag"
@@ -103,12 +96,6 @@
                 "msgbytes"
               ],
               "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
             }
           ],
           "measurement": "swarm-smoke-pss.pss.raw.total-time.span",
@@ -123,10 +110,6 @@
                   "max"
                 ],
                 "type": "field"
-              },
-              {
-                "params": [],
-                "type": "max"
               },
               {
                 "params": [
@@ -224,12 +207,6 @@
           "groupBy": [
             {
               "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
                 "msgcount"
               ],
               "type": "tag"
@@ -251,12 +228,6 @@
                 "msgbytes"
               ],
               "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
             }
           ],
           "measurement": "swarm-smoke-pss.pss.sym.total-time.span",
@@ -271,10 +242,6 @@
                   "max"
                 ],
                 "type": "field"
-              },
-              {
-                "params": [],
-                "type": "max"
               },
               {
                 "params": [
@@ -372,12 +339,6 @@
           "groupBy": [
             {
               "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
                 "msgcount"
               ],
               "type": "tag"
@@ -399,12 +360,6 @@
                 "msgbytes"
               ],
               "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
             }
           ],
           "measurement": "swarm-smoke-pss.pss.asym.total-time.span",
@@ -419,10 +374,6 @@
                   "max"
                 ],
                 "type": "field"
-              },
-              {
-                "params": [],
-                "type": "max"
               },
               {
                 "params": [
@@ -518,12 +469,6 @@
           "groupBy": [
             {
               "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
                 "msgbytes"
               ],
               "type": "tag"
@@ -539,12 +484,6 @@
                 "msgcount"
               ],
               "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
             }
           ],
           "measurement": "swarm-smoke-pss.pss.raw.msgs.success.count",
@@ -559,10 +498,6 @@
                   "value"
                 ],
                 "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
               }
             ]
           ],
@@ -571,12 +506,6 @@
         {
           "alias": "fail  ($tag_version; $tag_msgcount; $tag_msgbytes)",
           "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
             {
               "params": [
                 "msgbytes"
@@ -594,12 +523,6 @@
                 "msgcount"
               ],
               "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
             }
           ],
           "measurement": "swarm-smoke-pss.pss.raw.msgs.fail.count",
@@ -614,10 +537,6 @@
                   "value"
                 ],
                 "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
               }
             ]
           ],
@@ -707,12 +626,6 @@
           "groupBy": [
             {
               "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
                 "msgbytes"
               ],
               "type": "tag"
@@ -728,12 +641,6 @@
                 "msgcount"
               ],
               "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
             }
           ],
           "measurement": "swarm-smoke-pss.pss.sym.msgs.success.count",
@@ -750,10 +657,6 @@
                   "value"
                 ],
                 "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
               }
             ]
           ],
@@ -762,12 +665,6 @@
         {
           "alias": "fail  ($tag_version; $tag_msgcount; $tag_msgbytes)",
           "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
             {
               "params": [
                 "msgbytes"
@@ -785,12 +682,6 @@
                 "msgcount"
               ],
               "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
             }
           ],
           "measurement": "swarm-smoke-pss.pss.sym.msgs.fail.count",
@@ -805,10 +696,6 @@
                   "value"
                 ],
                 "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
               }
             ]
           ],
@@ -898,12 +785,6 @@
           "groupBy": [
             {
               "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
                 "msgbytes"
               ],
               "type": "tag"
@@ -919,12 +800,6 @@
                 "msgcount"
               ],
               "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
             }
           ],
           "measurement": "swarm-smoke-pss.pss.asym.msgs.success.count",
@@ -939,10 +814,6 @@
                   "value"
                 ],
                 "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
               }
             ]
           ],
@@ -951,12 +822,6 @@
         {
           "alias": "fail  ($tag_version; $tag_msgcount; $tag_msgbytes)",
           "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
             {
               "params": [
                 "msgbytes"
@@ -974,12 +839,6 @@
                 "msgcount"
               ],
               "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
             }
           ],
           "measurement": "swarm-smoke-pss.pss.asym.msgs.fail.count",
@@ -994,10 +853,6 @@
                   "value"
                 ],
                 "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
               }
             ]
           ],
@@ -1053,7 +908,7 @@
     "list": []
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-12h",
     "to": "now"
   },
   "timepicker": {
@@ -1084,5 +939,5 @@
   "timezone": "",
   "title": "Smoke tests: PSS",
   "uid": "aWHZ1eYmaz",
-  "version": 4
+  "version": 1
 }
