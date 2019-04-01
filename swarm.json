@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 7,
-  "iteration": 1554126829059,
+  "id": 5,
+  "iteration": 1554128909330,
   "links": [],
   "panels": [
     {
@@ -5696,7 +5696,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "[[view_by]]",
+              "alias": "clients [[view_by]]",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -5730,7 +5730,7 @@
                   "type": "fill"
                 }
               ],
-              "measurement": "swarm.peer.clientsubscr.gauge",
+              "measurement": "swarm.registry.clientsubscr.gauge",
               "orderByTime": "ASC",
               "policy": "default",
               "refId": "A",
@@ -5770,7 +5770,7 @@
               ]
             },
             {
-              "alias": "[[view_by]]",
+              "alias": "servers [[view_by]]",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -5804,7 +5804,7 @@
                   "type": "fill"
                 }
               ],
-              "measurement": "swarm.peer.serversubscr.gauge",
+              "measurement": "swarm.registry.serversubscr.gauge",
               "orderByTime": "ASC",
               "policy": "default",
               "refId": "B",
