@@ -5768,7 +5768,86 @@
                   "value": "/^$pubkey$/"
                 }
               ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "client subscriptions for all peers",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
             },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "fill": 1,
+          "gridPos": {
+            "h": 6,
+            "w": 12,
+            "x": 12,
+            "y": 64
+          },
+          "id": 58,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": true,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
             {
               "alias": "servers [[view_by]]",
               "dsType": "influxdb",
@@ -5847,7 +5926,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "client/server subscriptions for all peers",
+          "title": "server subscriptions for all peers",
           "tooltip": {
             "shared": true,
             "sort": 0,
