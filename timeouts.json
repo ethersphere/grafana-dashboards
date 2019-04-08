@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 2,
+  "id": 1,
   "links": [],
   "panels": [
     {
@@ -93,7 +93,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm.netstore.fetcher.lifetime.span",
+          "measurement": "swarm.netstore.fetcher.lifetime.syncer.span",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -124,7 +124,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "NetStore Fetcher lifetime - max",
+      "title": "NetStore Fetcher lifetime \"syncer\" - max",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -202,7 +202,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "p95 $tag_host",
+          "alias": "max $tag_host",
           "groupBy": [
             {
               "params": [
@@ -223,7 +223,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm.netstore.fetcher.lifetime.span",
+          "measurement": "swarm.netstore.fetcher.lifetime.request.span",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -232,7 +232,7 @@
             [
               {
                 "params": [
-                  "p95"
+                  "max"
                 ],
                 "type": "field"
               },
@@ -254,7 +254,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "NetStore Fetcher lifetime - p95",
+      "title": "NetStore Fetcher lifetime \"request\" - max",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -674,7 +674,7 @@
     "list": []
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {
