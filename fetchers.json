@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 3,
-  "iteration": 1554147449217,
+  "id": 4,
+  "iteration": 1554745671020,
   "links": [],
   "panels": [
     {
@@ -87,7 +87,7 @@
             },
             {
               "params": [
-                "previous"
+                "0"
               ],
               "type": "fill"
             }
@@ -221,7 +221,7 @@
             },
             {
               "params": [
-                "previous"
+                "0"
               ],
               "type": "fill"
             }
@@ -349,7 +349,7 @@
             },
             {
               "params": [
-                "previous"
+                "0"
               ],
               "type": "fill"
             }
@@ -471,7 +471,7 @@
             },
             {
               "params": [
-                "previous"
+                "0"
               ],
               "type": "fill"
             }
