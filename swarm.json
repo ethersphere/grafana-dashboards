@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 3,
-  "iteration": 1556121047308,
+  "id": 5,
+  "iteration": 1556132562892,
   "links": [],
   "panels": [
     {
@@ -5514,7 +5514,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm.hopcount.histogram",
+          "measurement": "swarm.hopcount.span",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
