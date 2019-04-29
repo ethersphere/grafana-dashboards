@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 5,
-  "iteration": 1556132562892,
+  "id": 4,
+  "iteration": 1556537118637,
   "links": [],
   "panels": [
     {
@@ -4596,7 +4596,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm.syncer.setnextbatch.iterator.count",
+          "measurement": "swarm.peer.deliver.count",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -4639,7 +4639,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "syncer setnextbatch iterator calls",
+      "title": "peer.Deliver calls",
       "tooltip": {
         "shared": true,
         "sort": 0,
