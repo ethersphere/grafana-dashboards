@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 8,
-  "iteration": 1557568969502,
+  "id": 3,
+  "iteration": 1557605217579,
   "links": [],
   "panels": [
     {
@@ -26,6 +26,149 @@
         "w": 24,
         "x": 0,
         "y": 0
+      },
+      "id": 55,
+      "panels": [],
+      "title": "Datadir Usage",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "metrics",
+      "fill": 1,
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 0,
+        "y": 1
+      },
+      "id": 56,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "sort": "max",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_host",
+          "groupBy": [
+            {
+              "params": [
+                "$myinterval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "swarm.datadir.usage.gauge",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "max"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Datadir Usage (du -s)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "deckbytes",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 7
       },
       "id": 49,
       "panels": [],
@@ -43,7 +186,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 1
+        "y": 8
       },
       "id": 50,
       "legend": {
@@ -171,7 +314,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 1
+        "y": 8
       },
       "id": 51,
       "legend": {
@@ -299,7 +442,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 7
+        "y": 14
       },
       "id": 52,
       "legend": {
@@ -427,7 +570,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 7
+        "y": 14
       },
       "id": 53,
       "legend": {
@@ -550,7 +693,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 13
+        "y": 20
       },
       "id": 40,
       "panels": [],
@@ -568,7 +711,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 14
+        "y": 21
       },
       "id": 42,
       "legend": {
@@ -696,7 +839,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 14
+        "y": 21
       },
       "id": 43,
       "legend": {
@@ -824,7 +967,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 20
+        "y": 27
       },
       "id": 44,
       "legend": {
@@ -952,7 +1095,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 20
+        "y": 27
       },
       "id": 47,
       "legend": {
@@ -1075,7 +1218,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 26
+        "y": 33
       },
       "id": 27,
       "panels": [],
@@ -1093,7 +1236,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 27
+        "y": 34
       },
       "id": 29,
       "legend": {
@@ -1221,7 +1364,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 27
+        "y": 34
       },
       "id": 30,
       "legend": {
@@ -1349,7 +1492,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 33
+        "y": 40
       },
       "id": 31,
       "legend": {
@@ -1477,7 +1620,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 33
+        "y": 40
       },
       "id": 32,
       "legend": {
@@ -1641,7 +1784,6 @@
       {
         "allValue": null,
         "current": {
-          "tags": [],
           "text": "All",
           "value": [
             "$__all"
