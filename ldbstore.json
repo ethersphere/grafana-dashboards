@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 3,
-  "iteration": 1557605217579,
+  "id": 8,
+  "iteration": 1557944734158,
   "links": [],
   "panels": [
     {
@@ -141,7 +141,7 @@
       },
       "yaxes": [
         {
-          "format": "deckbytes",
+          "format": "decbytes",
           "label": null,
           "logBase": 1,
           "max": null,
