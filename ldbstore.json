@@ -15,17 +15,156 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 8,
-  "iteration": 1557944734158,
+  "id": 10,
+  "iteration": 1557960333033,
   "links": [],
   "panels": [
+    {
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 58,
+      "title": "Iterators",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "metrics",
+      "fill": 1,
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 0,
+        "y": 1
+      },
+      "id": 59,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_host",
+          "groupBy": [
+            {
+              "params": [
+                "$myinterval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "swarm.localstore.SubscribePull.count",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "SubscribePull",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
     {
       "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 0
+        "y": 7
       },
       "id": 55,
       "panels": [],
@@ -43,7 +182,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 1
+        "y": 8
       },
       "id": 56,
       "legend": {
@@ -168,7 +307,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 7
+        "y": 14
       },
       "id": 49,
       "panels": [],
@@ -186,7 +325,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 8
+        "y": 15
       },
       "id": 50,
       "legend": {
@@ -314,7 +453,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 8
+        "y": 15
       },
       "id": 51,
       "legend": {
@@ -442,7 +581,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 14
+        "y": 21
       },
       "id": 52,
       "legend": {
@@ -570,7 +709,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 14
+        "y": 21
       },
       "id": 53,
       "legend": {
@@ -693,7 +832,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 20
+        "y": 27
       },
       "id": 40,
       "panels": [],
@@ -711,7 +850,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 21
+        "y": 28
       },
       "id": 42,
       "legend": {
@@ -839,7 +978,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 21
+        "y": 28
       },
       "id": 43,
       "legend": {
@@ -967,7 +1106,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 27
+        "y": 34
       },
       "id": 44,
       "legend": {
@@ -1095,7 +1234,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 27
+        "y": 34
       },
       "id": 47,
       "legend": {
@@ -1218,7 +1357,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 40
       },
       "id": 27,
       "panels": [],
@@ -1236,7 +1375,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 34
+        "y": 41
       },
       "id": 29,
       "legend": {
@@ -1364,7 +1503,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 34
+        "y": 41
       },
       "id": 30,
       "legend": {
@@ -1492,7 +1631,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 40
+        "y": 47
       },
       "id": 31,
       "legend": {
@@ -1620,7 +1759,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 40
+        "y": 47
       },
       "id": 32,
       "legend": {
@@ -1738,7 +1877,7 @@
       }
     }
   ],
-  "refresh": "10s",
+  "refresh": "30s",
   "schemaVersion": 16,
   "style": "dark",
   "tags": [],
