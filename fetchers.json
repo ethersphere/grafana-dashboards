@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 1,
-  "iteration": 1556658854684,
+  "id": 5,
+  "iteration": 1560850258795,
   "links": [],
   "panels": [
     {
@@ -48,7 +48,7 @@
       "id": 56,
       "legend": {
         "alignAsTable": true,
-        "avg": true,
+        "avg": false,
         "current": false,
         "max": true,
         "min": false,
@@ -129,7 +129,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "request-request by host",
+      "title": "request-request by host (max)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -179,10 +179,144 @@
         "x": 12,
         "y": 1
       },
+      "id": 68,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_host",
+          "groupBy": [
+            {
+              "params": [
+                "$myinterval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "swarm.fetcher.request.request.span",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "p50"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "max"
+              },
+              {
+                "params": [
+                  " / 1000000"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "request-request by host (p50)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "ms",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "metrics",
+      "fill": 1,
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 0,
+        "y": 7
+      },
       "id": 58,
       "legend": {
         "alignAsTable": true,
-        "avg": true,
+        "avg": false,
         "current": false,
         "max": true,
         "min": false,
@@ -263,7 +397,141 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "syncer-syncer by host",
+      "title": "syncer-syncer by host (max)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "ms",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "metrics",
+      "fill": 1,
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 12,
+        "y": 7
+      },
+      "id": 69,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_host",
+          "groupBy": [
+            {
+              "params": [
+                "$myinterval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "swarm.fetcher.syncer.syncer.span",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "p50"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "max"
+              },
+              {
+                "params": [
+                  " / 1000000"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "syncer-syncer by host (p50)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -311,7 +579,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 7
+        "y": 13
       },
       "id": 57,
       "legend": {
@@ -433,7 +701,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 7
+        "y": 13
       },
       "id": 59,
       "legend": {
@@ -555,7 +823,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 13
+        "y": 19
       },
       "id": 60,
       "legend": {
@@ -677,7 +945,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 13
+        "y": 19
       },
       "id": 61,
       "legend": {
@@ -799,7 +1067,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 19
+        "y": 25
       },
       "id": 62,
       "legend": {
@@ -935,7 +1203,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 19
+        "y": 25
       },
       "id": 63,
       "legend": {
@@ -1071,7 +1339,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 25
+        "y": 31
       },
       "id": 65,
       "legend": {
@@ -1207,7 +1475,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 25
+        "y": 31
       },
       "id": 64,
       "legend": {
@@ -1343,7 +1611,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 31
+        "y": 37
       },
       "id": 67,
       "legend": {
@@ -1473,7 +1741,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 31
+        "y": 37
       },
       "id": 66,
       "legend": {
@@ -1645,7 +1913,6 @@
       {
         "allValue": null,
         "current": {
-          "tags": [],
           "text": "All",
           "value": [
             "$__all"
