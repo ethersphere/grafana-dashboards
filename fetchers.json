@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 5,
-  "iteration": 1560850258795,
+  "id": 6,
+  "iteration": 1560862642779,
   "links": [],
   "panels": [
     {
@@ -584,7 +584,7 @@
       "id": 57,
       "legend": {
         "alignAsTable": true,
-        "avg": true,
+        "avg": false,
         "current": false,
         "max": true,
         "min": false,
@@ -707,7 +707,7 @@
       "legend": {
         "alignAsTable": true,
         "avg": false,
-        "current": true,
+        "current": false,
         "max": true,
         "min": false,
         "rightSide": true,
@@ -829,7 +829,7 @@
       "legend": {
         "alignAsTable": true,
         "avg": false,
-        "current": true,
+        "current": false,
         "max": true,
         "min": false,
         "rightSide": true,
@@ -951,7 +951,7 @@
       "legend": {
         "alignAsTable": true,
         "avg": false,
-        "current": true,
+        "current": false,
         "max": true,
         "min": false,
         "rightSide": true,
@@ -1072,7 +1072,7 @@
       "id": 62,
       "legend": {
         "alignAsTable": true,
-        "avg": true,
+        "avg": false,
         "current": false,
         "max": true,
         "min": false,
