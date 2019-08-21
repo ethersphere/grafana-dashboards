@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1566394991020,
+  "iteration": 1566405441971,
   "links": [],
   "panels": [
     {
@@ -2784,7 +2784,7 @@
     },
     {
       "aliasColors": {},
-      "bars": false,
+      "bars": true,
       "dashLength": 10,
       "dashes": false,
       "fill": 1,
@@ -2806,7 +2806,7 @@
         "total": false,
         "values": true
       },
-      "lines": true,
+      "lines": false,
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
@@ -2848,7 +2848,7 @@
               "type": "tag"
             }
           ],
-          "measurement": "swarm.network.stream.provider_get_time.span",
+          "measurement": "swarm.network.stream.sync_provider.cachehit.count",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2892,7 +2892,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Actual get time",
+      "title": "Cache hit",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -2908,9 +2908,156 @@
       },
       "yaxes": [
         {
-          "format": "ns",
+          "format": "short",
+          "label": null,
+          "logBase": 2,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
           "label": null,
           "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": true,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 82
+      },
+      "id": 99,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": false,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "[[view_by]]",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "bzzkey"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "pubkey"
+              ],
+              "type": "tag"
+            }
+          ],
+          "measurement": "swarm.network.stream.sync_provider.cachemiss.count",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "bzzkey",
+              "operator": "=~",
+              "value": "/^$bzzkey$/"
+            },
+            {
+              "condition": "AND",
+              "key": "pubkey",
+              "operator": "=~",
+              "value": "/^$pubkey$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Cache miss",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 2,
           "max": null,
           "min": "0",
           "show": true
