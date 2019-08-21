@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1566293282862,
+  "iteration": 1566363465472,
   "links": [],
   "panels": [
     {
@@ -806,7 +806,7 @@
         {
           "format": "ns",
           "label": null,
-          "logBase": 1,
+          "logBase": 2,
           "max": null,
           "min": "0",
           "show": true
@@ -959,7 +959,7 @@
         {
           "format": "ns",
           "label": null,
-          "logBase": 1,
+          "logBase": 2,
           "max": null,
           "min": "0",
           "show": true
@@ -1094,7 +1094,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Handle offered - total time",
+      "title": "Handle wanted - total time",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1112,7 +1112,7 @@
         {
           "format": "ns",
           "label": null,
-          "logBase": 1,
+          "logBase": 2,
           "max": null,
           "min": "0",
           "show": true
@@ -1265,7 +1265,7 @@
         {
           "format": "ns",
           "label": null,
-          "logBase": 1,
+          "logBase": 2,
           "max": null,
           "min": "0",
           "show": true
@@ -1295,6 +1295,312 @@
         "w": 12,
         "x": 0,
         "y": 39
+      },
+      "id": 94,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "[[view_by]]",
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "bzzkey"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "pubkey"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "swarm.network.stream.batch_size.gauge",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "bzzkey",
+              "operator": "=~",
+              "value": "/^$bzzkey$/"
+            },
+            {
+              "condition": "AND",
+              "key": "pubkey",
+              "operator": "=~",
+              "value": "/^$pubkey$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Historical stream - batch size",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 39
+      },
+      "id": 95,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "[[view_by]]",
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "bzzkey"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "pubkey"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "swarm.network.stream.batch_size_head.gauge",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "bzzkey",
+              "operator": "=~",
+              "value": "/^$bzzkey$/"
+            },
+            {
+              "condition": "AND",
+              "key": "pubkey",
+              "operator": "=~",
+              "value": "/^$pubkey$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Live stream - batch size",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 2,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 48
       },
       "id": 88,
       "legend": {
@@ -1447,7 +1753,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 39
+        "y": 48
       },
       "id": 90,
       "legend": {
@@ -1600,7 +1906,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 48
+        "y": 57
       },
       "id": 91,
       "legend": {
@@ -1724,7 +2030,7 @@
         {
           "format": "short",
           "label": null,
-          "logBase": 1,
+          "logBase": 2,
           "max": null,
           "min": "0",
           "show": true
@@ -1753,7 +2059,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 48
+        "y": 57
       },
       "id": 89,
       "legend": {
@@ -1906,7 +2212,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 57
+        "y": 66
       },
       "id": 92,
       "legend": {
@@ -2059,7 +2365,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 57
+        "y": 66
       },
       "id": 82,
       "legend": {
@@ -2212,9 +2518,9 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 66
+        "y": 75
       },
-      "id": 83,
+      "id": 96,
       "legend": {
         "alignAsTable": true,
         "avg": false,
@@ -2245,7 +2551,7 @@
           "groupBy": [
             {
               "params": [
-                "$__interval"
+                "$interval"
               ],
               "type": "time"
             },
@@ -2266,15 +2572,9 @@
                 "pubkey"
               ],
               "type": "tag"
-            },
-            {
-              "params": [
-                "0"
-              ],
-              "type": "fill"
             }
           ],
-          "measurement": "swarm.network.stream.server_collect_batch.total-time.span",
+          "measurement": "swarm.network.stream.server_collect_batch_head.total-time.span",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2283,7 +2583,7 @@
             [
               {
                 "params": [
-                  "mean"
+                  "value"
                 ],
                 "type": "field"
               },
@@ -2318,7 +2618,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Collect batch - total time",
+      "title": "Server collect batch time (live streams)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -2334,7 +2634,7 @@
       },
       "yaxes": [
         {
-          "format": "ns",
+          "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -2342,7 +2642,7 @@
           "show": true
         },
         {
-          "format": "ns",
+          "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -2365,9 +2665,9 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 66
+        "y": 75
       },
-      "id": 93,
+      "id": 97,
       "legend": {
         "alignAsTable": true,
         "avg": false,
@@ -2422,12 +2722,12 @@
             },
             {
               "params": [
-                "0"
+                "previous"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "swarm.network.stream.server_collect_batch.total-time.span",
+          "measurement": "swarm.network.stream.server_collect_batch_head.total-time.span",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2436,13 +2736,13 @@
             [
               {
                 "params": [
-                  "p95"
+                  "value"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "mean"
+                "type": "sum"
               }
             ]
           ],
@@ -2471,7 +2771,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Collect batch - total time (p95)",
+      "title": "Server collect batch time (historical)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -2487,7 +2787,7 @@
       },
       "yaxes": [
         {
-          "format": "ns",
+          "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -2495,7 +2795,7 @@
           "show": true
         },
         {
-          "format": "ns",
+          "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -2514,7 +2814,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 75
+        "y": 84
       },
       "id": 77,
       "panels": [],
@@ -2527,7 +2827,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 76
+        "y": 85
       },
       "id": 75,
       "panels": [
@@ -3168,7 +3468,7 @@
     ]
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
