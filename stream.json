@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1566882530087,
+  "iteration": 1566902240429,
   "links": [],
   "panels": [
     {
@@ -2848,7 +2848,7 @@
               "type": "tag"
             }
           ],
-          "measurement": "swarm.network.stream.sync_provider.cachehit.count",
+          "measurement": "swarm.network.stream.sync_provider.get.cachehit.count",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2995,7 +2995,7 @@
               "type": "tag"
             }
           ],
-          "measurement": "swarm.network.stream.sync_provider.cachemiss.count",
+          "measurement": "swarm.network.stream.sync_provider.get.cachemiss.count",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
