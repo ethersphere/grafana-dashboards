@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1566902240429,
+  "iteration": 1567340641284,
   "links": [],
   "panels": [
     {
@@ -28,7 +28,7 @@
       },
       "id": 34,
       "panels": [],
-      "title": "P2P",
+      "title": "Stream stats",
       "type": "row"
     },
     {
@@ -3378,14 +3378,14 @@
         "x": 0,
         "y": 100
       },
-      "id": 75,
+      "id": 104,
       "panels": [],
-      "title": "P2P - Hive",
+      "title": "Provider timings",
       "type": "row"
     },
     {
       "aliasColors": {},
-      "bars": false,
+      "bars": true,
       "dashLength": 10,
       "dashes": false,
       "fill": 1,
@@ -3395,19 +3395,19 @@
         "x": 0,
         "y": 101
       },
-      "id": 64,
+      "id": 103,
       "legend": {
         "alignAsTable": true,
-        "avg": false,
+        "avg": true,
         "current": true,
         "max": true,
         "min": false,
         "rightSide": true,
         "show": true,
-        "total": true,
+        "total": false,
         "values": true
       },
-      "lines": true,
+      "lines": false,
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
@@ -3426,7 +3426,7 @@
           "groupBy": [
             {
               "params": [
-                "$myinterval"
+                "$__interval"
               ],
               "type": "time"
             },
@@ -3447,15 +3447,9 @@
                 "pubkey"
               ],
               "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
             }
           ],
-          "measurement": "swarm.peer.send.*network.HandshakeMsg.count",
+          "measurement": "swarm.network.stream.provider_get.total-time.span",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -3464,13 +3458,13 @@
             [
               {
                 "params": [
-                  "value"
+                  "mean"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "sum"
+                "type": "mean"
               }
             ]
           ],
@@ -3499,7 +3493,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "network.HandshakeMsg",
+      "title": "Provider Get time",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -3515,11 +3509,11 @@
       },
       "yaxes": [
         {
-          "format": "short",
+          "format": "ns",
           "label": null,
-          "logBase": 1,
+          "logBase": 2,
           "max": null,
-          "min": null,
+          "min": "0",
           "show": true
         },
         {
@@ -3538,7 +3532,7 @@
     },
     {
       "aliasColors": {},
-      "bars": false,
+      "bars": true,
       "dashLength": 10,
       "dashes": false,
       "fill": 1,
@@ -3548,19 +3542,19 @@
         "x": 12,
         "y": 101
       },
-      "id": 65,
+      "id": 106,
       "legend": {
         "alignAsTable": true,
-        "avg": false,
+        "avg": true,
         "current": true,
         "max": true,
         "min": false,
         "rightSide": true,
         "show": true,
-        "total": true,
+        "total": false,
         "values": true
       },
-      "lines": true,
+      "lines": false,
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
@@ -3579,7 +3573,7 @@
           "groupBy": [
             {
               "params": [
-                "$myinterval"
+                "$__interval"
               ],
               "type": "time"
             },
@@ -3600,15 +3594,9 @@
                 "pubkey"
               ],
               "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
             }
           ],
-          "measurement": "swarm.peer.send.*network.subPeersMsg.count",
+          "measurement": "swarm.network.stream.provider_set.total-time.span",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -3617,13 +3605,13 @@
             [
               {
                 "params": [
-                  "value"
+                  "mean"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "sum"
+                "type": "mean"
               }
             ]
           ],
@@ -3652,7 +3640,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "network.subPeersMsg",
+      "title": "Provider Set time",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -3668,11 +3656,11 @@
       },
       "yaxes": [
         {
-          "format": "short",
+          "format": "ns",
           "label": null,
-          "logBase": 1,
+          "logBase": 2,
           "max": null,
-          "min": null,
+          "min": "0",
           "show": true
         },
         {
@@ -3691,7 +3679,7 @@
     },
     {
       "aliasColors": {},
-      "bars": false,
+      "bars": true,
       "dashLength": 10,
       "dashes": false,
       "fill": 1,
@@ -3701,19 +3689,19 @@
         "x": 0,
         "y": 110
       },
-      "id": 61,
+      "id": 105,
       "legend": {
         "alignAsTable": true,
-        "avg": false,
+        "avg": true,
         "current": true,
         "max": true,
         "min": false,
         "rightSide": true,
         "show": true,
-        "total": true,
+        "total": false,
         "values": true
       },
-      "lines": true,
+      "lines": false,
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
@@ -3732,7 +3720,7 @@
           "groupBy": [
             {
               "params": [
-                "$myinterval"
+                "$__interval"
               ],
               "type": "time"
             },
@@ -3753,15 +3741,9 @@
                 "pubkey"
               ],
               "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
             }
           ],
-          "measurement": "swarm.peer.send.*network.peersMsg.count",
+          "measurement": "swarm.network.stream.provider_put.total-time.span",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -3770,13 +3752,13 @@
             [
               {
                 "params": [
-                  "value"
+                  "mean"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "sum"
+                "type": "mean"
               }
             ]
           ],
@@ -3805,7 +3787,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "network.peersMsg",
+      "title": "Provider Put time",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -3821,11 +3803,11 @@
       },
       "yaxes": [
         {
-          "format": "short",
+          "format": "ns",
           "label": null,
-          "logBase": 1,
+          "logBase": 2,
           "max": null,
-          "min": null,
+          "min": "0",
           "show": true
         },
         {
@@ -4019,7 +4001,7 @@
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {
