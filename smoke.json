@@ -944,7 +944,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "download-time ($tag_host, $tag_filesize, $tag_version)",
+          "alias": "not-on-nn-pull ($tag_host, $tag_filesize, $tag_version)",
           "groupBy": [
             {
               "params": [
@@ -1114,7 +1114,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm-smoke.upload-and-sync.pull-sync.chunk-not-max-prox.count",
+          "measurement": "swarm-smoke.upload-and-sync.push-sync.chunk-not-max-prox.count",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1140,7 +1140,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Chunks not found max prox host `upload and sync` (pull)",
+      "title": "Chunks not found max prox host `upload and sync` (push)",
       "tooltip": {
         "shared": true,
         "sort": 0,
