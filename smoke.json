@@ -944,7 +944,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "not-on-nn-pull ($tag_host, $tag_filesize, $tag_version)",
+          "alias": "not-on-prox-pull ($tag_host, $tag_filesize, $tag_version)",
           "groupBy": [
             {
               "params": [
@@ -1081,7 +1081,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "download-time ($tag_host, $tag_filesize, $tag_version)",
+          "alias": "not-on-prox-push ($tag_host, $tag_filesize, $tag_version)",
           "groupBy": [
             {
               "params": [
@@ -1608,7 +1608,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "download-time ($tag_host, $tag_filesize, $tag_version)",
+          "alias": "less-than-nn-pull ($tag_host, $tag_filesize, $tag_version)",
           "groupBy": [
             {
               "params": [
