@@ -389,7 +389,7 @@
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "Nodes: ",
-      "prefixFontSize": "50%",
+      "prefixFontSize": "100%",
       "rangeMaps": [
         {
           "from": "null",
@@ -425,15 +425,9 @@
                 "version"
               ],
               "type": "tag"
-            },
-            {
-              "params": [
-                "0"
-              ],
-              "type": "fill"
             }
           ],
-          "measurement": "swarm-smoke.deployment.nodes",
+          "measurement": "swarm-smoke.deployment.nodes.gauge",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -448,7 +442,7 @@
               },
               {
                 "params": [],
-                "type": "sum"
+                "type": "last"
               }
             ]
           ],
@@ -460,7 +454,7 @@
       "timeShift": null,
       "title": "Number of nodes",
       "type": "singlestat",
-      "valueFontSize": "80%",
+      "valueFontSize": "100%",
       "valueMaps": [
         {
           "op": "=",
@@ -468,7 +462,7 @@
           "value": "null"
         }
       ],
-      "valueName": "avg"
+      "valueName": "current"
     },
     {
       "aliasColors": {},
