@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 9,
-  "iteration": 1563367774300,
+  "id": 6,
+  "iteration": 1569246293164,
   "links": [],
   "panels": [
     {
@@ -37,7 +37,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -63,6 +62,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -149,6 +149,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "addFwdCache counter",
       "tooltip": {
@@ -192,7 +193,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -216,6 +216,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -302,6 +303,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "addFwdCache timer",
       "tooltip": {
@@ -345,7 +347,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -371,6 +372,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -531,6 +533,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "PSS send raw timer",
       "tooltip": {
@@ -574,7 +577,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -582,7 +584,7 @@
         "x": 12,
         "y": 7
       },
-      "id": 66,
+      "id": 73,
       "legend": {
         "alignAsTable": true,
         "avg": false,
@@ -591,15 +593,16 @@
         "min": false,
         "rightSide": true,
         "show": true,
-        "sort": "max",
+        "sort": "total",
         "sortDesc": true,
-        "total": false,
+        "total": true,
         "values": true
       },
       "lines": true,
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -610,7 +613,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "95% - [[view_by]]",
+          "alias": "[[view_by]]",
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -644,7 +647,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm.pss.enqueue.span",
+          "measurement": "swarm.pss.send.raw.span",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -653,87 +656,13 @@
             [
               {
                 "params": [
-                  "p95"
+                  "count"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "max"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            },
-            {
-              "condition": "AND",
-              "key": "bzzkey",
-              "operator": "=~",
-              "value": "/^$bzzkey$/"
-            },
-            {
-              "condition": "AND",
-              "key": "pubkey",
-              "operator": "=~",
-              "value": "/^$pubkey$/"
-            }
-          ]
-        },
-        {
-          "alias": "mean - [[view_by]]",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$myinterval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "host"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "bzzkey"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "pubkey"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "0"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "swarm.pss.enqueue.span",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "mean"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "max"
+                "type": "sum"
               }
             ]
           ],
@@ -760,8 +689,9 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
-      "title": "PSS enqueue timer",
+      "title": "PSS send raw count",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -777,7 +707,7 @@
       },
       "yaxes": [
         {
-          "format": "ns",
+          "format": "none",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -803,7 +733,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -829,6 +758,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -989,6 +919,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "PSS executeHandlers timer",
       "tooltip": {
@@ -1032,7 +963,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -1040,7 +970,7 @@
         "x": 12,
         "y": 13
       },
-      "id": 67,
+      "id": 66,
       "legend": {
         "alignAsTable": true,
         "avg": false,
@@ -1058,6 +988,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1102,7 +1033,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm.pss.process.span",
+          "measurement": "swarm.pss.enqueue.span",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1176,7 +1107,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm.pss.process.span",
+          "measurement": "swarm.pss.enqueue.span",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "B",
@@ -1218,8 +1149,9 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
-      "title": "PSS process timer",
+      "title": "PSS enqueue timer",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1261,7 +1193,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -1287,6 +1218,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1373,6 +1305,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "PSS len(outbox)",
       "tooltip": {
@@ -1416,7 +1349,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -1424,7 +1356,7 @@
         "x": 12,
         "y": 19
       },
-      "id": 71,
+      "id": 67,
       "legend": {
         "alignAsTable": true,
         "avg": false,
@@ -1435,13 +1367,14 @@
         "show": true,
         "sort": "max",
         "sortDesc": true,
-        "total": true,
+        "total": false,
         "values": true
       },
       "lines": true,
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1452,7 +1385,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "[[view_by]]",
+          "alias": "95% - [[view_by]]",
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -1486,7 +1419,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm.pss.handle.outbox.span",
+          "measurement": "swarm.pss.process.span",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1495,7 +1428,81 @@
             [
               {
                 "params": [
-                  "count"
+                  "p95"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "max"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "bzzkey",
+              "operator": "=~",
+              "value": "/^$bzzkey$/"
+            },
+            {
+              "condition": "AND",
+              "key": "pubkey",
+              "operator": "=~",
+              "value": "/^$pubkey$/"
+            }
+          ]
+        },
+        {
+          "alias": "mean - [[view_by]]",
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "$myinterval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "bzzkey"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "pubkey"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "swarm.pss.process.span",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "mean"
                 ],
                 "type": "field"
               },
@@ -1528,8 +1535,9 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
-      "title": "PSS handle outbox count",
+      "title": "PSS process timer",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1545,7 +1553,7 @@
       },
       "yaxes": [
         {
-          "format": "none",
+          "format": "ns",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -1571,7 +1579,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -1597,6 +1604,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1683,6 +1691,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "PSS handle outbox timer - 95%ile",
       "tooltip": {
@@ -1726,13 +1735,168 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 6,
         "w": 12,
         "x": 12,
         "y": 25
+      },
+      "id": 71,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "sort": "max",
+        "sortDesc": true,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "[[view_by]]",
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "$myinterval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "bzzkey"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "pubkey"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "swarm.pss.handle.outbox.span",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "count"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "max"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "bzzkey",
+              "operator": "=~",
+              "value": "/^$bzzkey$/"
+            },
+            {
+              "condition": "AND",
+              "key": "pubkey",
+              "operator": "=~",
+              "value": "/^$pubkey$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "PSS handle outbox count",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 12,
+        "y": 31
       },
       "id": 70,
       "legend": {
@@ -1752,6 +1916,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1838,6 +2003,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "PSS handle outbox timer - mean 50%ile",
       "tooltip": {
@@ -1877,8 +2043,8 @@
       }
     }
   ],
-  "refresh": "30s",
-  "schemaVersion": 16,
+  "refresh": false,
+  "schemaVersion": 18,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -1923,6 +2089,7 @@
           }
         ],
         "query": "$tag_host:$tag_bzzkey, $tag_host:$tag_pubkey, $tag_host, $tag_bzzkey,$tag_pubkey",
+        "skipUrlSync": false,
         "type": "custom"
       },
       {
@@ -1965,6 +2132,7 @@
         ],
         "query": "5s,10s,30s,100s",
         "refresh": 2,
+        "skipUrlSync": false,
         "type": "interval"
       },
       {
@@ -1974,6 +2142,7 @@
           "value": "$__all"
         },
         "datasource": null,
+        "definition": "",
         "hide": 0,
         "includeAll": true,
         "label": null,
@@ -1983,6 +2152,7 @@
         "query": "SHOW TAG VALUES WITH KEY = \"host\"",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 1,
         "tagValuesQuery": "",
         "tags": [],
@@ -1999,6 +2169,7 @@
           ]
         },
         "datasource": null,
+        "definition": "",
         "hide": 0,
         "includeAll": true,
         "label": null,
@@ -2008,6 +2179,7 @@
         "query": "SHOW TAG VALUES WITH KEY = \"bzzkey\"",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 1,
         "tagValuesQuery": "",
         "tags": [],
@@ -2024,6 +2196,7 @@
           ]
         },
         "datasource": null,
+        "definition": "",
         "hide": 0,
         "includeAll": true,
         "label": null,
@@ -2033,6 +2206,7 @@
         "query": "SHOW TAG VALUES WITH KEY = \"pubkey\"",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 1,
         "tagValuesQuery": "",
         "tags": [],
@@ -2043,7 +2217,7 @@
     ]
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
