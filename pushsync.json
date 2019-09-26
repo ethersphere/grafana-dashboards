@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 7,
-  "iteration": 1568728711846,
+  "id": 9,
+  "iteration": 1569500042515,
   "links": [],
   "panels": [
     {
@@ -37,7 +37,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -61,6 +60,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -104,7 +104,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "swarm.pusher.subscribe-push.count",
+          "measurement": "swarm.pusher.mark-and-sweep.span",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -113,7 +113,7 @@
             [
               {
                 "params": [
-                  "value"
+                  "count"
                 ],
                 "type": "field"
               },
@@ -146,6 +146,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Subscribe Push",
       "tooltip": {
@@ -189,13 +190,167 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "fill": 1,
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 7
+      },
+      "id": 70,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "sort": "max",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "[[view_by]]",
+          "groupBy": [
+            {
+              "params": [
+                "$myinterval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "bzzkey"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "pubkey"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "swarm.pusher.mark-and-sweep.span",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "p95"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "max"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "bzzkey",
+              "operator": "=~",
+              "value": "/^$bzzkey$/"
+            },
+            {
+              "condition": "AND",
+              "key": "pubkey",
+              "operator": "=~",
+              "value": "/^$pubkey$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Mark and sweep - timer",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "ns",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
       "fill": 1,
       "gridPos": {
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 7
+        "y": 13
       },
       "id": 63,
       "legend": {
@@ -213,6 +368,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -298,6 +454,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Receipts - not found",
       "tooltip": {
@@ -341,13 +498,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 7
+        "y": 13
       },
       "id": 69,
       "legend": {
@@ -365,6 +521,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -450,6 +607,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Receipts - all",
       "tooltip": {
@@ -493,13 +651,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 13
+        "y": 19
       },
       "id": 62,
       "legend": {
@@ -517,6 +674,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -602,6 +760,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Receipts - already synced",
       "tooltip": {
@@ -645,13 +804,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 13
+        "y": 19
       },
       "id": 64,
       "legend": {
@@ -669,6 +827,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -754,6 +913,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Receipts - synced",
       "tooltip": {
@@ -798,7 +958,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 19
+        "y": 25
       },
       "id": 25,
       "panels": [],
@@ -810,13 +970,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 20
+        "y": 26
       },
       "id": 3,
       "legend": {
@@ -834,6 +993,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -920,6 +1080,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Pusher send chunk - all",
       "tooltip": {
@@ -963,13 +1124,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 20
+        "y": 26
       },
       "id": 22,
       "legend": {
@@ -987,6 +1147,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1073,6 +1234,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Pusher send chunk - send to sync",
       "tooltip": {
@@ -1116,13 +1278,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 26
+        "y": 32
       },
       "id": 65,
       "legend": {
@@ -1140,6 +1301,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1300,6 +1462,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Push Sync - chunk roundtrip - timer",
       "tooltip": {
@@ -1343,13 +1506,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 26
+        "y": 32
       },
       "id": 66,
       "legend": {
@@ -1367,6 +1529,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1527,6 +1690,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Push Sync - send chunk - PSS timer",
       "tooltip": {
@@ -1570,13 +1734,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 32
+        "y": 38
       },
       "id": 68,
       "legend": {
@@ -1594,6 +1757,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1723,13 +1887,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 32
+        "y": 38
       },
       "id": 67,
       "legend": {
@@ -1747,6 +1910,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1947,7 +2111,7 @@
     }
   ],
   "refresh": "30s",
-  "schemaVersion": 16,
+  "schemaVersion": 18,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -1992,6 +2156,7 @@
           }
         ],
         "query": "$tag_host:$tag_bzzkey, $tag_host:$tag_pubkey, $tag_host, $tag_bzzkey,$tag_pubkey",
+        "skipUrlSync": false,
         "type": "custom"
       },
       {
@@ -2034,6 +2199,7 @@
         ],
         "query": "5s,10s,30s,100s",
         "refresh": 2,
+        "skipUrlSync": false,
         "type": "interval"
       },
       {
@@ -2043,6 +2209,7 @@
           "value": "$__all"
         },
         "datasource": null,
+        "definition": "",
         "hide": 0,
         "includeAll": true,
         "label": null,
@@ -2052,6 +2219,7 @@
         "query": "SHOW TAG VALUES WITH KEY = \"host\"",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 1,
         "tagValuesQuery": "",
         "tags": [],
@@ -2068,6 +2236,7 @@
           ]
         },
         "datasource": null,
+        "definition": "",
         "hide": 0,
         "includeAll": true,
         "label": null,
@@ -2077,6 +2246,7 @@
         "query": "SHOW TAG VALUES WITH KEY = \"bzzkey\"",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 1,
         "tagValuesQuery": "",
         "tags": [],
@@ -2093,6 +2263,7 @@
           ]
         },
         "datasource": null,
+        "definition": "",
         "hide": 0,
         "includeAll": true,
         "label": null,
@@ -2102,6 +2273,7 @@
         "query": "SHOW TAG VALUES WITH KEY = \"pubkey\"",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 1,
         "tagValuesQuery": "",
         "tags": [],
