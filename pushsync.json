@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 9,
-  "iteration": 1569500042515,
+  "id": 1,
+  "iteration": 1569938498526,
   "links": [],
   "panels": [
     {
@@ -1750,7 +1750,7 @@
         "min": false,
         "rightSide": true,
         "show": true,
-        "total": false,
+        "total": true,
         "values": true
       },
       "lines": true,
@@ -1844,6 +1844,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Push Sync - chunk roundtrip - count",
       "tooltip": {
@@ -1861,7 +1862,7 @@
       },
       "yaxes": [
         {
-          "format": "ns",
+          "format": "none",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -2071,6 +2072,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Push Sync - send chunk - RLP ser timer",
       "tooltip": {
