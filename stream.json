@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1567340641284,
+  "iteration": 1574591723098,
   "links": [],
   "panels": [
     {
@@ -192,7 +192,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "fill": 1,
+      "fill": 0,
       "gridPos": {
         "h": 9,
         "w": 12,
@@ -214,7 +214,7 @@
       "lines": true,
       "linewidth": 1,
       "links": [],
-      "nullPointMode": "null",
+      "nullPointMode": "null as zero",
       "options": {},
       "percentage": false,
       "pointradius": 5,
@@ -306,7 +306,7 @@
       "title": "Stream! peers",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -780,7 +780,7 @@
         {
           "format": "ns",
           "label": null,
-          "logBase": 2,
+          "logBase": 1,
           "max": null,
           "min": "0",
           "show": true
@@ -933,7 +933,7 @@
         {
           "format": "ns",
           "label": null,
-          "logBase": 2,
+          "logBase": 1,
           "max": null,
           "min": "0",
           "show": true
@@ -1086,7 +1086,7 @@
         {
           "format": "ns",
           "label": null,
-          "logBase": 2,
+          "logBase": 1,
           "max": null,
           "min": "0",
           "show": true
@@ -1239,7 +1239,7 @@
         {
           "format": "ns",
           "label": null,
-          "logBase": 2,
+          "logBase": 1,
           "max": null,
           "min": "0",
           "show": true
@@ -1269,6 +1269,312 @@
         "w": 12,
         "x": 0,
         "y": 37
+      },
+      "id": 107,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "[[view_by]]",
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "bzzkey"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "pubkey"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "swarm.network.stream.handle_wanted_hashes.total-time.span",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "count"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "bzzkey",
+              "operator": "=~",
+              "value": "/^$bzzkey$/"
+            },
+            {
+              "condition": "AND",
+              "key": "pubkey",
+              "operator": "=~",
+              "value": "/^$pubkey$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Handle wanted - total messages",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 37
+      },
+      "id": 108,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "[[view_by]]",
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "bzzkey"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "pubkey"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "swarm.network.stream.handle_offered_hashes.total-time.span",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "count"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "bzzkey",
+              "operator": "=~",
+              "value": "/^$bzzkey$/"
+            },
+            {
+              "condition": "AND",
+              "key": "pubkey",
+              "operator": "=~",
+              "value": "/^$pubkey$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Handle offered - total messages",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 46
       },
       "id": 94,
       "legend": {
@@ -1421,7 +1727,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 37
+        "y": 46
       },
       "id": 95,
       "legend": {
@@ -1545,7 +1851,7 @@
         {
           "format": "short",
           "label": null,
-          "logBase": 2,
+          "logBase": 1,
           "max": null,
           "min": "0",
           "show": true
@@ -1574,7 +1880,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 46
+        "y": 55
       },
       "id": 88,
       "legend": {
@@ -1727,7 +2033,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 46
+        "y": 55
       },
       "id": 90,
       "legend": {
@@ -1880,7 +2186,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 55
+        "y": 64
       },
       "id": 91,
       "legend": {
@@ -2004,7 +2310,7 @@
         {
           "format": "short",
           "label": null,
-          "logBase": 2,
+          "logBase": 1,
           "max": null,
           "min": "0",
           "show": true
@@ -2033,7 +2339,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 55
+        "y": 64
       },
       "id": 89,
       "legend": {
@@ -2186,7 +2492,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 64
+        "y": 73
       },
       "id": 92,
       "legend": {
@@ -2339,7 +2645,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 64
+        "y": 73
       },
       "id": 82,
       "legend": {
@@ -2492,7 +2798,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 73
+        "y": 82
       },
       "id": 96,
       "legend": {
@@ -2639,7 +2945,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 73
+        "y": 82
       },
       "id": 97,
       "legend": {
@@ -2792,7 +3098,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 82
+        "y": 91
       },
       "id": 100,
       "legend": {
@@ -2939,7 +3245,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 82
+        "y": 91
       },
       "id": 99,
       "legend": {
@@ -3086,7 +3392,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 91
+        "y": 100
       },
       "id": 98,
       "legend": {
@@ -3233,7 +3539,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 91
+        "y": 100
       },
       "id": 101,
       "legend": {
@@ -3376,7 +3682,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 100
+        "y": 109
       },
       "id": 104,
       "panels": [],
@@ -3393,7 +3699,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 101
+        "y": 110
       },
       "id": 103,
       "legend": {
@@ -3540,7 +3846,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 101
+        "y": 110
       },
       "id": 106,
       "legend": {
@@ -3687,7 +3993,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 110
+        "y": 119
       },
       "id": 105,
       "legend": {
