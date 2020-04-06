@@ -62,49 +62,49 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "go_memstats_mspan_inuse_bytes{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "expr": "go_memstats_mspan_inuse_bytes{namespace=\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "memstats_mspan_inuse_bytes",
           "refId": "A"
         },
         {
-          "expr": "go_memstats_mspan_sys_bytes{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "expr": "go_memstats_mspan_sys_bytes{namespace=\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "memstats_mspan_sys_bytes",
           "refId": "B"
         },
         {
-          "expr": "go_memstats_mcache_inuse_bytes{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "expr": "go_memstats_mcache_inuse_bytes{namespace=\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "memstats_mcache_inuse_bytes",
           "refId": "C"
         },
         {
-          "expr": "go_memstats_mcache_sys_bytes{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "expr": "go_memstats_mcache_sys_bytes{namespace=\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "memstats_mcache_sys_bytes",
           "refId": "D"
         },
         {
-          "expr": "go_memstats_buck_hash_sys_bytes{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "expr": "go_memstats_buck_hash_sys_bytes{namespace=\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "memstats_buck_hash_sys_bytes",
           "refId": "E"
         },
         {
-          "expr": "go_memstats_gc_sys_bytes{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "expr": "go_memstats_gc_sys_bytes{namespace=\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "memstats_gc_sys_bytes",
           "refId": "F"
         },
         {
-          "expr": "go_memstats_next_gc_bytes{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "expr": "go_memstats_next_gc_bytes{namespace=\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "memstats_next_gc_bytes",
@@ -194,35 +194,35 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "go_memstats_heap_alloc_bytes{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "expr": "go_memstats_heap_alloc_bytes{namespace=\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "memstats_heap_alloc_bytes",
           "refId": "B"
         },
         {
-          "expr": "go_memstats_heap_sys_bytes{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "expr": "go_memstats_heap_sys_bytes{namespace=\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "memstats_heap_sys_bytes",
           "refId": "A"
         },
         {
-          "expr": "go_memstats_heap_idle_bytes{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "expr": "go_memstats_heap_idle_bytes{namespace=\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "memstats_heap_idle_bytes",
           "refId": "C"
         },
         {
-          "expr": "go_memstats_heap_inuse_bytes{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "expr": "go_memstats_heap_inuse_bytes{namespace=\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "memstats_heap_inuse_bytes",
           "refId": "D"
         },
         {
-          "expr": "go_memstats_heap_released_bytes{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "expr": "go_memstats_heap_released_bytes{namespace=\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "memstats_heap_released_bytes",
@@ -312,14 +312,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "go_memstats_stack_inuse_bytes{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "expr": "go_memstats_stack_inuse_bytes{namespace=\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "memstats_stack_inuse_bytes",
           "refId": "A"
         },
         {
-          "expr": "go_memstats_stack_sys_bytes{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "expr": "go_memstats_stack_sys_bytes{namespace=\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "memstats_stack_sys_bytes",
@@ -409,7 +409,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "go_memstats_sys_bytes{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "expr": "go_memstats_sys_bytes{namespace=\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "memstats_sys_bytes",
@@ -501,7 +501,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "go_memstats_mallocs_total{namespace=\"$namespace\", pod=~\"$pod\"} - go_memstats_frees_total{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "expr": "go_memstats_mallocs_total{namespace=\"$namespace\", instance=~\"$instance\"} - go_memstats_frees_total{namespace=\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "memstats_inuse_total",
@@ -592,7 +592,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(go_memstats_mallocs_total{namespace=\"$namespace\", pod=~\"$pod\"}[1m])",
+          "expr": "rate(go_memstats_mallocs_total{namespace=\"$namespace\", instance=~\"$instance\"}[1m])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "rate_memstats_mallocs",
@@ -683,7 +683,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "go_threads{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "expr": "go_threads{namespace=\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "threads",
@@ -773,7 +773,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "go_goroutines{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "expr": "go_goroutines{namespace=\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "goroutines",
@@ -863,7 +863,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(go_memstats_alloc_bytes_total{namespace=\"$namespace\", pod=~\"$pod\"}[1m])",
+          "expr": "rate(go_memstats_alloc_bytes_total{namespace=\"$namespace\", instance=~\"$instance\"}[1m])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "rate_memstats_alloc_bytes",
@@ -954,7 +954,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "go_gc_duration_seconds{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "expr": "go_gc_duration_seconds{namespace=\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "gc_duration_s_q{{quantile}}",
@@ -1046,14 +1046,14 @@
           "value": "bee-0"
         },
         "datasource": "Prometheus",
-        "definition": "label_values(go_goroutines{namespace=\"$namespace\"}, pod)",
+        "definition": "label_values(go_goroutines{namespace=\"$namespace\"}, instance)",
         "hide": 0,
         "includeAll": false,
-        "label": "pod",
+        "label": "instance",
         "multi": false,
-        "name": "pod",
+        "name": "instance",
         "options": [],
-        "query": "label_values(go_goroutines{namespace=\"$namespace\"}, pod)",
+        "query": "label_values(go_goroutines{namespace=\"$namespace\"}, instance)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
