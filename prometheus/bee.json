@@ -29,8 +29,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 33,
-  "iteration": 1586421255401,
+  "iteration": 1586786715618,
   "links": [],
   "panels": [
     {
@@ -1171,20 +1170,9 @@
         "label": "namespace",
         "multi": false,
         "name": "namespace",
-        "options": [
-          {
-            "selected": false,
-            "text": "bee",
-            "value": "bee"
-          },
-          {
-            "selected": true,
-            "text": "vandot",
-            "value": "vandot"
-          }
-        ],
+        "options": [],
         "query": "label_values(bee_info, namespace)",
-        "refresh": 0,
+        "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,
@@ -1207,25 +1195,9 @@
         "label": "instance",
         "multi": false,
         "name": "instance",
-        "options": [
-          {
-            "selected": false,
-            "text": "bee-0",
-            "value": "bee-0"
-          },
-          {
-            "selected": false,
-            "text": "bee-1",
-            "value": "bee-1"
-          },
-          {
-            "selected": true,
-            "text": "bee-bootnode-0",
-            "value": "bee-bootnode-0"
-          }
-        ],
+        "options": [],
         "query": "label_values(bee_info{namespace=\"$namespace\"}, instance)",
-        "refresh": 0,
+        "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,
@@ -1238,7 +1210,7 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
@@ -1258,5 +1230,5 @@
   "timezone": "",
   "title": "Bee",
   "uid": "Z7yow5CZk",
-  "version": 29
+  "version": 1
 }
