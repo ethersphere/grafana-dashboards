@@ -29,7 +29,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1592496983127,
+  "id": 30,
+  "iteration": 1593033994482,
   "links": [],
   "panels": [
     {
@@ -719,10 +720,10 @@
       "reverseYBuckets": false,
       "targets": [
         {
-          "expr": "rate(bee_api_response_duration_seconds_bucket{namespace=\"$namespace\", instance=~\"$instance\"}[10m])",
+          "expr": "increase(bee_api_response_duration_seconds_bucket{namespace=\"$namespace\", instance=~\"$instance\"}[10m])",
           "format": "heatmap",
-          "interval": "1m",
-          "intervalFactor": 10,
+          "interval": "",
+          "intervalFactor": 1,
           "legendFormat": "{{le}}",
           "refId": "A"
         }
@@ -1184,7 +1185,7 @@
       {
         "allValue": ".+",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "All",
           "value": "$__all"
         },
@@ -1229,6 +1230,6 @@
   },
   "timezone": "",
   "title": "Bee",
-  "uid": "Z7yow5CZk",
-  "version": 1
+  "uid": "TjX_sEZMz",
+  "version": 3
 }
