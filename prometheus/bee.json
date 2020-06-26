@@ -831,7 +831,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Persistant Volume",
+      "title": "storage",
       "tooltip": {
         "shared": true,
         "sort": 0,
