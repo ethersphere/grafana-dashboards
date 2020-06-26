@@ -29,8 +29,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 30,
-  "iteration": 1593033994482,
+  "id": 6,
+  "iteration": 1593176873494,
   "links": [],
   "panels": [
     {
@@ -581,7 +581,7 @@
       }
     },
     {
-      "collapsed": false,
+      "collapsed": true,
       "datasource": null,
       "gridPos": {
         "h": 1,
@@ -590,8 +590,183 @@
         "y": 14
       },
       "id": 4,
-      "panels": [],
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 15
+          },
+          "hiddenSeries": false,
+          "id": 2,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "increase(bee_api_ping_request_count{namespace=\"$namespace\", instance=~\"$instance\"}[1m])",
+              "legendFormat": "api_ping_request_rate ({{pod}})",
+              "refId": "A"
+            },
+            {
+              "expr": "increase(bee_api_request_count{namespace=\"$namespace\", instance=~\"$instance\"}[1m])",
+              "legendFormat": "api_request_rate ({{pod}})",
+              "refId": "B"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "api request rates",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "cards": {
+            "cardPadding": null,
+            "cardRound": null
+          },
+          "color": {
+            "cardColor": "#b4ff00",
+            "colorScale": "sqrt",
+            "colorScheme": "interpolateBlues",
+            "exponent": 0.5,
+            "min": null,
+            "mode": "spectrum"
+          },
+          "dataFormat": "tsbuckets",
+          "datasource": null,
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 23
+          },
+          "heatmap": {},
+          "hideZeroBuckets": true,
+          "highlightCards": true,
+          "id": 14,
+          "legend": {
+            "show": false
+          },
+          "options": {},
+          "reverseYBuckets": false,
+          "targets": [
+            {
+              "expr": "increase(bee_api_response_duration_seconds_bucket{namespace=\"$namespace\", instance=~\"$instance\"}[10m])",
+              "format": "heatmap",
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "{{le}}",
+              "refId": "A"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "response duration seconds",
+          "tooltip": {
+            "show": true,
+            "showHistogram": false
+          },
+          "type": "heatmap",
+          "xAxis": {
+            "show": true
+          },
+          "xBucketNumber": null,
+          "xBucketSize": null,
+          "yAxis": {
+            "decimals": null,
+            "format": "short",
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true,
+            "splitFactor": null
+          },
+          "yBucketBound": "auto",
+          "yBucketNumber": null,
+          "yBucketSize": null
+        }
+      ],
       "title": "API",
+      "type": "row"
+    },
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 15
+      },
+      "id": 25,
+      "panels": [],
+      "title": "System",
       "type": "row"
     },
     {
@@ -599,17 +774,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Prometheus",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 15
+        "y": 16
       },
       "hiddenSeries": false,
-      "id": 2,
+      "id": 26,
       "legend": {
         "alignAsTable": false,
         "avg": false,
@@ -625,7 +800,12 @@
       "linewidth": 1,
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "dataLinks": [
+          {
+            "title": "",
+            "url": ""
+          }
+        ]
       },
       "percentage": false,
       "pointradius": 2,
@@ -637,21 +817,21 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "increase(bee_api_ping_request_count{namespace=\"$namespace\", instance=~\"$instance\"}[1m])",
-          "legendFormat": "api_ping_request_rate ({{pod}})",
-          "refId": "A"
+          "expr": "kubelet_volume_stats_used_bytes{namespace=\"$namespace\", persistentvolumeclaim=~\"data-$instance\"}",
+          "legendFormat": "used ({{persistentvolumeclaim}})",
+          "refId": "B"
         },
         {
-          "expr": "increase(bee_api_request_count{namespace=\"$namespace\", instance=~\"$instance\"}[1m])",
-          "legendFormat": "api_request_rate ({{pod}})",
-          "refId": "B"
+          "expr": "kubelet_volume_stats_capacity_bytes{namespace=\"$namespace\", persistentvolumeclaim=~\"data-$instance\"}",
+          "legendFormat": "total ({{persistentvolumeclaim}})",
+          "refId": "A"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "api request rates",
+      "title": "Persistant Volume",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -667,7 +847,7 @@
       },
       "yaxes": [
         {
-          "format": "short",
+          "format": "decbytes",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -680,7 +860,7 @@
           "logBase": 1,
           "max": null,
           "min": null,
-          "show": true
+          "show": false
         }
       ],
       "yaxis": {
@@ -689,79 +869,13 @@
       }
     },
     {
-      "cards": {
-        "cardPadding": null,
-        "cardRound": null
-      },
-      "color": {
-        "cardColor": "#b4ff00",
-        "colorScale": "sqrt",
-        "colorScheme": "interpolateBlues",
-        "exponent": 0.5,
-        "min": null,
-        "mode": "spectrum"
-      },
-      "dataFormat": "tsbuckets",
-      "datasource": null,
-      "gridPos": {
-        "h": 8,
-        "w": 24,
-        "x": 0,
-        "y": 23
-      },
-      "heatmap": {},
-      "hideZeroBuckets": true,
-      "highlightCards": true,
-      "id": 14,
-      "legend": {
-        "show": false
-      },
-      "options": {},
-      "reverseYBuckets": false,
-      "targets": [
-        {
-          "expr": "increase(bee_api_response_duration_seconds_bucket{namespace=\"$namespace\", instance=~\"$instance\"}[10m])",
-          "format": "heatmap",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{le}}",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "response duration seconds",
-      "tooltip": {
-        "show": true,
-        "showHistogram": false
-      },
-      "type": "heatmap",
-      "xAxis": {
-        "show": true
-      },
-      "xBucketNumber": null,
-      "xBucketSize": null,
-      "yAxis": {
-        "decimals": null,
-        "format": "short",
-        "logBase": 1,
-        "max": null,
-        "min": null,
-        "show": true,
-        "splitFactor": null
-      },
-      "yBucketBound": "auto",
-      "yBucketNumber": null,
-      "yBucketSize": null
-    },
-    {
       "collapsed": false,
       "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 31
+        "y": 24
       },
       "id": 19,
       "panels": [],
@@ -780,7 +894,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 32
+        "y": 25
       },
       "hiddenSeries": false,
       "id": 20,
@@ -874,7 +988,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 40
+        "y": 33
       },
       "hiddenSeries": false,
       "id": 21,
@@ -973,7 +1087,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 48
+        "y": 41
       },
       "hiddenSeries": false,
       "id": 22,
@@ -1067,7 +1181,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 56
+        "y": 49
       },
       "hiddenSeries": false,
       "id": 23,
@@ -1185,9 +1299,9 @@
       {
         "allValue": ".+",
         "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "selected": true,
+          "text": "bee-0",
+          "value": "bee-0"
         },
         "datasource": "Prometheus",
         "definition": "label_values(bee_info{namespace=\"$namespace\"}, instance)",
@@ -1231,5 +1345,5 @@
   "timezone": "",
   "title": "Bee",
   "uid": "TjX_sEZMz",
-  "version": 3
+  "version": 1
 }
