@@ -29,8 +29,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 30,
-  "iteration": 1608631812475,
+  "id": 31,
+  "iteration": 1608631777563,
   "links": [],
   "panels": [
     {
@@ -220,7 +220,7 @@
     ]
   },
   "timezone": "",
-  "title": "Bee P2P",
-  "uid": "0U6_PSxGz",
-  "version": 4
+  "title": "Bee Protocols",
+  "uid": "Pu4msSbMk",
+  "version": 1
 }
