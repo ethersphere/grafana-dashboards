@@ -117,7 +117,6 @@
       "targets": [
         {
           "expr": "increase(bee_pullsync_chunks_delivered{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
-          "format": "heatmap",
           "instant": false,
           "interval": "",
           "legendFormat": "delivered({{instance}})",
@@ -251,7 +250,6 @@
       "targets": [
         {
           "expr": "increase(bee_pullsync_db_ops{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
-          "format": "heatmap",
           "instant": false,
           "interval": "",
           "legendFormat": "db ops({{instance}})",
