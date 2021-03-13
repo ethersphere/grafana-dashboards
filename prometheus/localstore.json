@@ -29,11 +29,12 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1615622338809,
+  "iteration": 1615650636980,
   "links": [],
   "panels": [
     {
       "datasource": null,
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -76,7 +77,32 @@
           },
           "unit": "short"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "__systemRef": "hideSeriesFrom",
+            "matcher": {
+              "id": "byNames",
+              "options": {
+                "mode": "exclude",
+                "names": [
+                  "error_count"
+                ],
+                "prefix": "All except:",
+                "readOnly": true
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "graph": true,
+                  "legend": false,
+                  "tooltip": false
+                }
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 6,
@@ -101,13 +127,20 @@
         {
           "expr": "increase(bee_localstore_fc_update_error_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "error_count({{instance}})",
           "refId": "A"
+        },
+        {
+          "expr": "increase(bee_localstore_gc_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "runs_count({{instance}})",
+          "refId": "B"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "gc error count",
+      "title": "gc",
       "type": "timeseries"
     },
     {
@@ -219,7 +252,9 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
+          "color": {},
           "custom": {},
+          "links": [],
           "thresholds": {
             "mode": "absolute",
             "steps": []
@@ -230,13 +265,13 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 6,
+        "h": 7,
         "w": 8,
         "x": 16,
         "y": 0
       },
       "hiddenSeries": false,
-      "id": 12,
+      "id": 15,
       "legend": {
         "avg": false,
         "current": false,
@@ -263,9 +298,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "increase(bee_localstore_gc_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "expr": "bee_localstore_gc_size{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "blocklisted_peers({{instance}})",
           "refId": "A"
         }
       ],
@@ -273,7 +308,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "gc count",
+      "title": "gc size",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -289,7 +324,7 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:253",
+          "$$hashKey": "object:333",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -298,7 +333,7 @@
           "show": true
         },
         {
-          "$$hashKey": "object:254",
+          "$$hashKey": "object:334",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -435,7 +470,8 @@
           "thresholds": {
             "mode": "absolute",
             "steps": []
-          }
+          },
+          "unit": "ns"
         },
         "overrides": []
       },
@@ -503,7 +539,7 @@
       "yaxes": [
         {
           "$$hashKey": "object:91",
-          "format": "short",
+          "format": "ns",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -526,57 +562,108 @@
       }
     },
     {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
       "datasource": null,
+      "description": "",
       "fieldConfig": {
         "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
+          "color": {},
           "custom": {},
-          "links": [],
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": []
-          }
+          },
+          "unit": "none"
         },
         "overrides": []
       },
+      "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 6
+        "y": 7
       },
-      "id": 15,
+      "hiddenSeries": false,
+      "id": 18,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
       "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
+        "alertThreshold": true
       },
+      "percentage": false,
       "pluginVersion": "7.4.2",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
       "targets": [
         {
-          "expr": "bee_localstore_gc_size{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "expr": "bee_localstore_gc_update_count{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
           "legendFormat": "blocklisted_peers({{instance}})",
           "refId": "A"
         }
       ],
+      "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
-      "title": "gc size",
-      "type": "stat"
+      "title": "gc update count",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:848",
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:849",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
@@ -659,7 +746,7 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:90",
+          "$$hashKey": "object:501",
           "format": "ns",
           "label": null,
           "logBase": 1,
@@ -668,7 +755,7 @@
           "show": true
         },
         {
-          "$$hashKey": "object:91",
+          "$$hashKey": "object:502",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -745,34 +832,34 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "color": {},
           "custom": {},
+          "links": [],
           "thresholds": {
             "mode": "absolute",
             "steps": []
-          },
-          "unit": "none"
+          }
         },
         "overrides": []
       },
       "fill": 1,
-      "fillGradient": 0,
+      "fillGradient": 3,
       "gridPos": {
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 13
+        "y": 14
       },
       "hiddenSeries": false,
-      "id": 18,
+      "id": 21,
       "legend": {
-        "avg": false,
-        "current": false,
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
         "max": false,
         "min": false,
         "show": true,
-        "total": false,
-        "values": false
+        "total": true,
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -791,7 +878,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "bee_localstore_gc_update_count{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "expr": "increase(bee_localstore_subscribe_push_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
           "legendFormat": "blocklisted_peers({{instance}})",
           "refId": "A"
@@ -801,7 +888,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "gc update count",
+      "title": "subscribe push count",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -817,8 +904,8 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:848",
-          "format": "none",
+          "$$hashKey": "object:91",
+          "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -826,7 +913,7 @@
           "show": true
         },
         {
-          "$$hashKey": "object:849",
+          "$$hashKey": "object:92",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1045,110 +1132,6 @@
         "align": false,
         "alignLevel": null
       }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "links": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": []
-          }
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 3,
-      "gridPos": {
-        "h": 7,
-        "w": 8,
-        "x": 16,
-        "y": 20
-      },
-      "hiddenSeries": false,
-      "id": 21,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": true,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "7.4.2",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "increase(bee_localstore_subscribe_push_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
-          "interval": "",
-          "legendFormat": "blocklisted_peers({{instance}})",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "subscribe push count",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:91",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:92",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
     }
   ],
   "refresh": false,
@@ -1191,9 +1174,9 @@
       {
         "allValue": ".+",
         "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "selected": true,
+          "text": "bee-0",
+          "value": "bee-0"
         },
         "datasource": "Prometheus",
         "definition": "label_values(bee_info{namespace=\"$namespace\"}, instance)",
