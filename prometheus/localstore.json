@@ -300,7 +300,7 @@
         {
           "expr": "bee_localstore_gc_size{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
-          "legendFormat": "blocklisted_peers({{instance}})",
+          "legendFormat": "gc_size({{instance}})",
           "refId": "A"
         }
       ],
@@ -403,14 +403,14 @@
         {
           "expr": "increase(bee_localstore_gc_exclude_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
-          "legendFormat": "blocklisted_peers({{instance}})",
+          "legendFormat": "runs({{instance}})",
           "refId": "A"
         },
         {
           "expr": "increase(bee_localstore_gc_exclude_fail_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "hide": false,
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "errors({{instance}})",
           "refId": "B"
         }
       ],
@@ -514,7 +514,7 @@
         {
           "expr": "bee_localstore_gc_exclude_index_time{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
-          "legendFormat": "blocklisted_peers({{instance}})",
+          "legendFormat": "time({{instance}})",
           "refId": "A"
         }
       ],
@@ -616,9 +616,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "bee_localstore_gc_update_count{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "expr": "increase(bee_localstore_gc_update_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
-          "legendFormat": "blocklisted_peers({{instance}})",
+          "legendFormat": "update_count({{instance}})",
           "refId": "A"
         }
       ],
@@ -880,7 +880,7 @@
         {
           "expr": "increase(bee_localstore_subscribe_push_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
-          "legendFormat": "blocklisted_peers({{instance}})",
+          "legendFormat": "count({{instance}})",
           "refId": "A"
         }
       ],
@@ -1095,6 +1095,110 @@
       "timeRegions": [],
       "timeShift": null,
       "title": "subscribe pull count",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:91",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:92",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "links": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": []
+          }
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 3,
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 16,
+        "y": 21
+      },
+      "hiddenSeries": false,
+      "id": 23,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.4.2",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "increase(bee_localstore_gc_first_item_time{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "interval": "",
+          "legendFormat": "time_to_first_item({{instance}})",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "subscribe push count",
       "tooltip": {
         "shared": true,
         "sort": 0,
