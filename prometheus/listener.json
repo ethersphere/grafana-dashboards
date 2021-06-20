@@ -29,8 +29,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 32,
-  "iteration": 1624176166145,
+  "id": 34,
+  "iteration": 1624175453563,
   "links": [],
   "panels": [
     {
@@ -77,6 +77,9 @@
       },
       "id": 55,
       "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -84,23 +87,21 @@
           ],
           "fields": "",
           "values": false
-        },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
+        }
       },
       "pluginVersion": "7.0.3",
       "targets": [
         {
-          "expr": "bee_kademlia_current_depth{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "expr": "bee_postage_listener_backend_calls{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
-          "legendFormat": "depth",
+          "legendFormat": "available capacity (chunks)",
           "refId": "A"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Depth",
-      "type": "gauge"
+      "title": "Backend calls",
+      "type": "stat"
     },
     {
       "datasource": null,
@@ -146,6 +147,9 @@
       },
       "id": 56,
       "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -153,29 +157,29 @@
           ],
           "fields": "",
           "values": false
-        },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
+        }
       },
       "pluginVersion": "7.0.3",
       "targets": [
         {
-          "expr": "bee_kademlia_current_radius{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "expr": "bee_postage_listener_backend_errors{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
-          "legendFormat": "depth",
+          "legendFormat": "radius",
           "refId": "A"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Radius",
-      "type": "gauge"
+      "title": "Backend errors",
+      "type": "stat"
     },
     {
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {},
+          "custom": {
+            "align": null
+          },
           "decimals": 0,
           "mappings": [],
           "min": 0,
@@ -208,6 +212,9 @@
       },
       "id": 52,
       "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -215,29 +222,40 @@
           ],
           "fields": "",
           "values": false
-        },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
+        }
       },
       "pluginVersion": "7.0.3",
       "targets": [
         {
-          "expr": "bee_kademlia_currently_connected_peers{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "expr": "increase(bee_postage_listener_created_events{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "hide": false,
           "interval": "",
-          "legendFormat": "connected",
+          "legendFormat": "created",
           "refId": "A"
         },
         {
-          "expr": "bee_kademlia_currently_known_peers{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "expr": "increase(bee_postage_listener_depth_events{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
-          "legendFormat": "known",
+          "legendFormat": "dilution",
           "refId": "B"
+        },
+        {
+          "expr": "increase(bee_postage_listener_price_events{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "interval": "",
+          "legendFormat": "price change",
+          "refId": "C"
+        },
+        {
+          "expr": "increase(bee_postage_listener_topup_events{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "interval": "",
+          "legendFormat": "topup",
+          "refId": "D"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Connect/Known",
-      "type": "gauge"
+      "title": "Events",
+      "type": "stat"
     },
     {
       "aliasColors": {},
@@ -253,20 +271,34 @@
           "decimals": 0,
           "mappings": [],
           "max": 31,
+          "min": 0,
           "thresholds": {
-            "mode": "percentage",
+            "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "red",
                 "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 5
+              },
+              {
+                "color": "green",
+                "value": 10
+              },
+              {
+                "color": "#6ED0E0",
+                "value": 20
               }
             ]
-          }
+          },
+          "unit": "none"
         },
         "overrides": []
       },
       "fill": 1,
-      "fillGradient": 3,
+      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 8,
@@ -274,7 +306,7 @@
         "y": 7
       },
       "hiddenSeries": false,
-      "id": 8,
+      "id": 57,
       "legend": {
         "avg": false,
         "current": false,
@@ -301,9 +333,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "bee_kademlia_current_depth{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "expr": "increase(bee_postage_listener_events_processed{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
-          "legendFormat": "depth",
+          "legendFormat": "events",
           "refId": "A"
         }
       ],
@@ -311,7 +343,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Current Depth",
+      "title": "events processed",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -356,26 +388,40 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {},
+          "custom": {
+            "align": null
+          },
+          "decimals": 0,
           "mappings": [],
+          "max": 31,
+          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "red",
                 "value": null
               },
               {
-                "color": "red",
-                "value": 80
+                "color": "#EAB839",
+                "value": 5
+              },
+              {
+                "color": "green",
+                "value": 10
+              },
+              {
+                "color": "#6ED0E0",
+                "value": 20
               }
             ]
-          }
+          },
+          "unit": "none"
         },
         "overrides": []
       },
       "fill": 1,
-      "fillGradient": 3,
+      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 8,
@@ -383,7 +429,7 @@
         "y": 7
       },
       "hiddenSeries": false,
-      "id": 9,
+      "id": 58,
       "legend": {
         "avg": false,
         "current": false,
@@ -410,9 +456,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "bee_kademlia_current_radius{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "expr": "increase(bee_postage_listener_pages_processed{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])  ",
           "interval": "",
-          "legendFormat": "radius",
+          "legendFormat": "pages",
           "refId": "A"
         }
       ],
@@ -420,7 +466,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Radius",
+      "title": "Pages processed",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -465,26 +511,35 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {},
+          "custom": {
+            "align": null
+          },
+          "decimals": 0,
           "mappings": [],
+          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "red",
                 "value": null
               },
               {
-                "color": "red",
-                "value": 80
+                "color": "yellow",
+                "value": 50
+              },
+              {
+                "color": "green",
+                "value": 70
               }
             ]
-          }
+          },
+          "unit": "none"
         },
         "overrides": []
       },
       "fill": 1,
-      "fillGradient": 5,
+      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 8,
@@ -492,17 +547,15 @@
         "y": 7
       },
       "hiddenSeries": false,
-      "id": 54,
+      "id": 59,
       "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": true,
-        "rightSide": false,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
         "show": true,
         "total": false,
-        "values": true
+        "values": false
       },
       "lines": true,
       "linewidth": 1,
@@ -521,10 +574,11 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "increase(bee_kademlia_total_inbound_disconnections{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "expr": "increase(bee_postage_listener_event_duration{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
+          "hide": false,
           "instant": false,
           "interval": "",
-          "legendFormat": "inbound",
+          "legendFormat": "time",
           "refId": "A"
         }
       ],
@@ -532,7 +586,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Disconnects",
+      "title": "Event processing time",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -548,237 +602,7 @@
       },
       "yaxes": [
         {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 5,
-      "gridPos": {
-        "h": 7,
-        "w": 8,
-        "x": 0,
-        "y": 14
-      },
-      "hiddenSeries": false,
-      "id": 53,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": true,
-        "rightSide": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pluginVersion": "7.0.3",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "increase(bee_kademlia_total_inbound_connections{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "inbound",
-          "refId": "A"
-        },
-        {
-          "expr": "increase(bee_kademlia_total_outbound_connections{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
-          "interval": "",
-          "legendFormat": "outbound",
-          "refId": "B"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Connections",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 5,
-      "gridPos": {
-        "h": 7,
-        "w": 8,
-        "x": 8,
-        "y": 14
-      },
-      "hiddenSeries": false,
-      "id": 57,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": true,
-        "rightSide": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pluginVersion": "7.0.3",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "increase(bee_libp2p_blocklisted_peer_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "blocklist event",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Libp2p blocklisting",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
+          "format": "ns",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -810,8 +634,8 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "bee",
-          "value": "bee"
+          "text": "bee-bootnode",
+          "value": "bee-bootnode"
         },
         "datasource": "Prometheus",
         "definition": "label_values(bee_info, namespace)",
@@ -835,9 +659,9 @@
       {
         "allValue": ".+",
         "current": {
-          "selected": false,
-          "text": "bee-0",
-          "value": "bee-0"
+          "selected": true,
+          "text": "bee-4",
+          "value": "bee-4"
         },
         "datasource": "Prometheus",
         "definition": "label_values(bee_info{namespace=\"$namespace\"}, instance)",
@@ -887,7 +711,7 @@
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {
@@ -904,7 +728,7 @@
     ]
   },
   "timezone": "",
-  "title": "Bee - Kademlia",
-  "uid": "BmxHrER7z",
-  "version": 5
+  "title": "Storage incentives - listener",
+  "uid": "4iE-qER7z",
+  "version": 2
 }
