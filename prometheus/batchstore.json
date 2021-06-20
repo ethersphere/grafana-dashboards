@@ -30,7 +30,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 33,
-  "iteration": 1624174840143,
+  "iteration": 1624176120746,
   "links": [],
   "panels": [
     {
@@ -625,9 +625,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
-          "text": "bee-bootnode",
-          "value": "bee-bootnode"
+          "selected": false,
+          "text": "bee",
+          "value": "bee"
         },
         "datasource": "Prometheus",
         "definition": "label_values(bee_info, namespace)",
@@ -720,7 +720,7 @@
     ]
   },
   "timezone": "",
-  "title": "Batch store",
+  "title": "Storage incentives - batch store",
   "uid": "Iiui3ERnk",
-  "version": 2
+  "version": 3
 }
