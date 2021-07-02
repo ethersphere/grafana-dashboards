@@ -2546,13 +2546,23 @@
   "templating": {
     "list": [
       {
-        "allValue": null,
         "current": {
-          "selected": false,
-          "text": "bee",
-          "value": "bee"
+          "text": "Prometheus",
+          "value": "Prometheus"
         },
-        "datasource": "Prometheus",
+        "hide": 0,
+        "label": null,
+        "name": "datasource",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "$datasource",
         "definition": "label_values(bee_info, namespace)",
         "hide": 0,
         "includeAll": false,
@@ -2573,12 +2583,8 @@
       },
       {
         "allValue": ".+",
-        "current": {
-          "selected": false,
-          "text": "bee-0",
-          "value": "bee-0"
-        },
-        "datasource": "Prometheus",
+        "current": {},
+        "datasource": "$datasource",
         "definition": "label_values(bee_info{namespace=\"$namespace\"}, instance)",
         "hide": 0,
         "includeAll": true,
@@ -2599,12 +2605,8 @@
       },
       {
         "allValue": ".+",
-        "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
-        },
-        "datasource": "Prometheus",
+        "current": {},
+        "datasource": "$datasource",
         "definition": "label_values(po)",
         "hide": 0,
         "includeAll": true,
