@@ -1,20 +1,25 @@
 {
+  "__inputs": [],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "7.4.3"
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    }
+  ],
   "annotations": {
-    "list": [
-      {
-        "builtIn": 1,
-        "datasource": "Prometheus",
-        "enable": true,
-        "hide": true,
-        "iconColor": "rgba(0, 211, 255, 1)",
-        "name": "Annotations & Alerts",
-        "type": "dashboard"
-      }
-    ]
+    "list": []
   },
   "description": "Golang Application Runtime Metrics",
   "editable": true,
-  "gnetId": 10826,
+  "gnetId": 0,
   "graphTooltip": 0,
   "id": 28,
   "iteration": 1586160516998,

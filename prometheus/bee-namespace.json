@@ -1,18 +1,23 @@
 {
+    "__inputs": [],
+    "__requires": [
+      {
+        "type": "grafana",
+        "id": "grafana",
+        "name": "Grafana",
+        "version": "7.4.3"
+      },
+      {
+        "type": "datasource",
+        "id": "prometheus",
+        "name": "Prometheus",
+        "version": "1.0.0"
+      }
+    ],
     "annotations": {
-      "list": [
-        {
-          "builtIn": 1,
-          "datasource": "-- Grafana --",
-          "enable": true,
-          "hide": true,
-          "iconColor": "rgba(0, 211, 255, 1)",
-          "name": "Annotations & Alerts",
-          "type": "dashboard"
-        }
-      ]
+      "list": []
     },
-    "editable": true,
+    "editable": false,
     "gnetId": null,
     "graphTooltip": 0,
     "id": 32,
@@ -34,7 +39,7 @@
         "type": "row"
       },
       {
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "custom": {},
@@ -92,7 +97,7 @@
         "type": "stat"
       },
       {
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "custom": {},
@@ -151,7 +156,7 @@
       },
       {
         "cacheTimeout": null,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -225,7 +230,7 @@
       },
       {
         "cacheTimeout": null,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -299,7 +304,7 @@
       },
       {
         "cacheTimeout": null,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -375,7 +380,7 @@
       },
       {
         "cacheTimeout": null,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -468,7 +473,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "custom": {},
@@ -566,7 +571,7 @@
         }
       },
       {
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -713,7 +718,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "custom": {},
@@ -811,7 +816,7 @@
         }
       },
       {
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -986,7 +991,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "custom": {},
@@ -1084,7 +1089,7 @@
         }
       },
       {
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -1298,7 +1303,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "custom": {},
@@ -1393,7 +1398,7 @@
         }
       },
       {
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -1511,7 +1516,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "Prometheus",
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "custom": {},
@@ -1610,7 +1615,7 @@
         }
       },
       {
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -1746,7 +1751,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "custom": {},
@@ -1853,7 +1858,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "custom": {},
@@ -1955,7 +1960,7 @@
         }
       },
       {
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -2099,7 +2104,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "custom": {},
@@ -2201,7 +2206,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "custom": {},
@@ -2299,7 +2304,7 @@
         }
       },
       {
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -2469,7 +2474,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "custom": {},
@@ -2567,7 +2572,7 @@
         }
       },
       {
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "color": {
