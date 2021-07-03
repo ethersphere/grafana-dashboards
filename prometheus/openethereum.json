@@ -1656,7 +1656,7 @@
           "allValue": null,
           "current": {},
           "datasource": "${datasource}",
-          "definition": "label_values(openethereum_sync_status{}, service)",
+          "definition": "label_values(openethereum_sync_status, service)",
           "description": null,
           "error": null,
           "hide": 0,
@@ -1666,7 +1666,7 @@
           "name": "service",
           "options": [],
           "query": {
-            "query": "label_values(openethereum_sync_status{}, service)"
+            "query": "label_values(openethereum_sync_status, service)"
           },
           "refresh": 0,
           "regex": "",
