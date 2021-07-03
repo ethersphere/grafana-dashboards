@@ -17,7 +17,7 @@
   "annotations": {
     "list": [
       {
-        "datasource": "Prometheus",
+        "datasource": "$datasource",
         "enable": true,
         "expr": "changes(bee_process_start_time_seconds{namespace=\"$namespace\",instance=\"$instance\"}[1m:10s]) > 0",
         "hide": true,
@@ -40,7 +40,7 @@
   "links": [],
   "panels": [
     {
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -94,7 +94,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -156,7 +156,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": null,
+      "datasource": "$datasource",
       "decimals": 2,
       "fieldConfig": {
         "defaults": {
@@ -247,7 +247,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -336,7 +336,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -425,7 +425,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -510,7 +510,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -637,7 +637,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -740,7 +740,7 @@
             "mode": "spectrum"
           },
           "dataFormat": "tsbuckets",
-          "datasource": null,
+          "datasource": "$datasource",
           "gridPos": {
             "h": 8,
             "w": 24,
@@ -812,7 +812,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "Prometheus",
+          "datasource": "$datasource",
           "fieldConfig": {
             "defaults": {
               "custom": {}
@@ -932,7 +932,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "fieldConfig": {
             "defaults": {
               "custom": {}
@@ -1032,7 +1032,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "fieldConfig": {
             "defaults": {
               "custom": {}
@@ -1137,7 +1137,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "fieldConfig": {
             "defaults": {
               "custom": {}
@@ -1237,7 +1237,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "fieldConfig": {
             "defaults": {
               "custom": {}
@@ -1352,7 +1352,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "fieldConfig": {
             "defaults": {
               "custom": {
@@ -1463,7 +1463,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "fieldConfig": {
             "defaults": {
               "custom": {}
@@ -1570,7 +1570,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "fieldConfig": {
             "defaults": {
               "custom": {}
@@ -1677,7 +1677,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "fieldConfig": {
             "defaults": {
               "custom": {}
@@ -1799,7 +1799,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -1909,7 +1909,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "decimals": 0,
           "description": "",
           "fieldConfig": {
@@ -2022,7 +2022,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -2142,7 +2142,7 @@
             "mode": "spectrum"
           },
           "dataFormat": "tsbuckets",
-          "datasource": null,
+          "datasource": "$datasource",
           "fieldConfig": {
             "defaults": {
               "custom": {},
@@ -2229,7 +2229,7 @@
             "mode": "spectrum"
           },
           "dataFormat": "tsbuckets",
-          "datasource": null,
+          "datasource": "$datasource",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -2313,7 +2313,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -2429,7 +2429,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "description": "",
           "fieldConfig": {
             "defaults": {

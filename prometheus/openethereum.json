@@ -26,7 +26,7 @@
     "panels": [
       {
         "cacheTimeout": null,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "mappings": [],
@@ -93,7 +93,7 @@
         "type": "stat"
       },
       {
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "mappings": [],
@@ -164,7 +164,7 @@
       },
       {
         "cacheTimeout": null,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -291,7 +291,7 @@
         "cacheTimeout": null,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "links": [],
@@ -391,7 +391,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "links": []
@@ -487,7 +487,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "links": []
@@ -583,7 +583,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "links": []
@@ -681,7 +681,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "links": []
@@ -786,7 +786,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "links": []
@@ -892,7 +892,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "links": []
@@ -1006,7 +1006,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "links": []
@@ -1115,7 +1115,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "links": []
@@ -1215,7 +1215,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "links": []
@@ -1313,7 +1313,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "links": []
@@ -1414,7 +1414,7 @@
         "cacheTimeout": null,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "links": []
@@ -1537,7 +1537,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "links": []

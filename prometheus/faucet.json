@@ -30,7 +30,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "Prometheus",
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "custom": {}
@@ -131,7 +131,7 @@
           "rgba(237, 129, 40, 0.89)",
           "#d44a3a"
         ],
-        "datasource": "Prometheus",
+        "datasource": "$datasource",
         "decimals": 3,
         "fieldConfig": {
           "defaults": {
@@ -219,7 +219,7 @@
           "#fce2de",
           "#d44a3a"
         ],
-        "datasource": "Prometheus",
+        "datasource": "$datasource",
         "decimals": 3,
         "fieldConfig": {
           "defaults": {
@@ -309,7 +309,7 @@
           "#fce2de",
           "#d44a3a"
         ],
-        "datasource": "Prometheus",
+        "datasource": "$datasource",
         "decimals": 2,
         "fieldConfig": {
           "defaults": {
@@ -397,7 +397,7 @@
           "#fce2de",
           "#d44a3a"
         ],
-        "datasource": "Prometheus",
+        "datasource": "$datasource",
         "decimals": 2,
         "fieldConfig": {
           "defaults": {
@@ -481,7 +481,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "Prometheus",
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "custom": {}
@@ -582,7 +582,7 @@
           "rgba(237, 129, 40, 0.89)",
           "#d44a3a"
         ],
-        "datasource": "Prometheus",
+        "datasource": "$datasource",
         "decimals": null,
         "fieldConfig": {
           "defaults": {
@@ -672,7 +672,7 @@
           "#fce2de",
           "#d44a3a"
         ],
-        "datasource": "Prometheus",
+        "datasource": "$datasource",
         "decimals": 3,
         "fieldConfig": {
           "defaults": {
@@ -762,7 +762,7 @@
           "#fce2de",
           "#d44a3a"
         ],
-        "datasource": "Prometheus",
+        "datasource": "$datasource",
         "decimals": 2,
         "fieldConfig": {
           "defaults": {
@@ -852,7 +852,7 @@
           "#fce2de",
           "#d44a3a"
         ],
-        "datasource": "Prometheus",
+        "datasource": "$datasource",
         "decimals": 2,
         "fieldConfig": {
           "defaults": {
