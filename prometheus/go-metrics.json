@@ -1,20 +1,25 @@
 {
+  "__inputs": [],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "7.4.3"
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    }
+  ],
   "annotations": {
-    "list": [
-      {
-        "builtIn": 1,
-        "datasource": "Prometheus",
-        "enable": true,
-        "hide": true,
-        "iconColor": "rgba(0, 211, 255, 1)",
-        "name": "Annotations & Alerts",
-        "type": "dashboard"
-      }
-    ]
+    "list": []
   },
   "description": "Golang Application Runtime Metrics",
   "editable": true,
-  "gnetId": 10826,
+  "gnetId": 0,
   "graphTooltip": 0,
   "id": 28,
   "iteration": 1586160516998,
@@ -25,7 +30,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "$datasource",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -157,7 +162,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "$datasource",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -275,7 +280,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "$datasource",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -372,7 +377,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "$datasource",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -462,7 +467,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "$datasource",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -554,7 +559,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "$datasource",
       "description": "",
       "fill": 1,
       "fillGradient": 0,
@@ -645,7 +650,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "$datasource",
       "description": "",
       "fill": 1,
       "fillGradient": 0,
@@ -736,7 +741,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "$datasource",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -826,7 +831,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "$datasource",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -916,7 +921,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "$datasource",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1013,13 +1018,23 @@
   "templating": {
     "list": [
       {
-        "allValue": null,
         "current": {
-          "selected": true,
-          "text": "bee",
-          "value": "bee"
+          "text": "Prometheus",
+          "value": "Prometheus"
         },
-        "datasource": "Prometheus",
+        "hide": 0,
+        "label": null,
+        "name": "datasource",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "$datasource",
         "definition": "label_values(go_goroutines, namespace)",
         "hide": 0,
         "includeAll": false,
@@ -1040,12 +1055,8 @@
       },
       {
         "allValue": null,
-        "current": {
-          "selected": true,
-          "text": "bee-0",
-          "value": "bee-0"
-        },
-        "datasource": "Prometheus",
+        "current": {},
+        "datasource": "$datasource",
         "definition": "label_values(go_goroutines{namespace=\"$namespace\"}, instance)",
         "hide": 0,
         "includeAll": false,
@@ -1067,7 +1078,7 @@
     ]
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {

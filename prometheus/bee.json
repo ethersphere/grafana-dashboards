@@ -1,17 +1,23 @@
 {
+  "__inputs": [],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "7.4.3"
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    }
+  ],
   "annotations": {
     "list": [
       {
-        "builtIn": 1,
-        "datasource": "-- Grafana --",
-        "enable": true,
-        "hide": true,
-        "iconColor": "rgba(0, 211, 255, 1)",
-        "name": "Annotations & Alerts",
-        "type": "dashboard"
-      },
-      {
-        "datasource": "Prometheus",
+        "datasource": "$datasource",
         "enable": true,
         "expr": "changes(bee_process_start_time_seconds{namespace=\"$namespace\",instance=\"$instance\"}[1m:10s]) > 0",
         "hide": true,
@@ -34,7 +40,7 @@
   "links": [],
   "panels": [
     {
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -88,7 +94,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -150,7 +156,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": null,
+      "datasource": "$datasource",
       "decimals": 2,
       "fieldConfig": {
         "defaults": {
@@ -208,7 +214,6 @@
         "ymax": null,
         "ymin": null
       },
-      "tableColumn": "{container=\"bee\", endpoint=\"debug\", instance=\"bee-0\", job=\"bee/bee\", namespace=\"bee\", pod=\"bee-0\"}",
       "targets": [
         {
           "expr": "time() - bee_process_start_time_seconds{namespace=\"$namespace\",instance=~\"$instance\"}",
@@ -241,7 +246,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -298,7 +303,6 @@
         "ymax": null,
         "ymin": null
       },
-      "tableColumn": "kube_pod_container_status_restarts_total{container=\"bee\", endpoint=\"http\", instance=\"10.1.17.43:8080\", job=\"kube-state-metrics\", namespace=\"bee\", pod=\"bee-0\", service=\"prometheus-operator-kube-state-metrics\"}",
       "targets": [
         {
           "expr": "kube_pod_container_status_restarts_total{job=\"kube-state-metrics\", cluster=\"\", namespace=\"$namespace\", pod=~\"$instance\", container=~\"bee\"}",
@@ -330,7 +334,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -387,7 +391,6 @@
         "ymax": null,
         "ymin": null
       },
-      "tableColumn": "0.4.3-7aa2db9",
       "targets": [
         {
           "expr": "bee_info{namespace=\"$namespace\",instance=~\"$instance\"}",
@@ -419,7 +422,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -476,7 +479,6 @@
         "ymax": null,
         "ymin": null
       },
-      "tableColumn": "go1.14.14",
       "targets": [
         {
           "expr": "go_info{namespace=\"$namespace\",instance=~\"$instance\"}",
@@ -504,7 +506,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -631,7 +633,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -734,7 +736,7 @@
             "mode": "spectrum"
           },
           "dataFormat": "tsbuckets",
-          "datasource": null,
+          "datasource": "$datasource",
           "gridPos": {
             "h": 8,
             "w": 24,
@@ -806,7 +808,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "Prometheus",
+          "datasource": "$datasource",
           "fieldConfig": {
             "defaults": {
               "custom": {}
@@ -926,7 +928,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "fieldConfig": {
             "defaults": {
               "custom": {}
@@ -1026,7 +1028,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "fieldConfig": {
             "defaults": {
               "custom": {}
@@ -1131,7 +1133,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "fieldConfig": {
             "defaults": {
               "custom": {}
@@ -1231,7 +1233,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "fieldConfig": {
             "defaults": {
               "custom": {}
@@ -1346,7 +1348,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "fieldConfig": {
             "defaults": {
               "custom": {
@@ -1457,7 +1459,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "fieldConfig": {
             "defaults": {
               "custom": {}
@@ -1564,7 +1566,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "fieldConfig": {
             "defaults": {
               "custom": {}
@@ -1671,7 +1673,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "fieldConfig": {
             "defaults": {
               "custom": {}
@@ -1793,7 +1795,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -1903,7 +1905,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "decimals": 0,
           "description": "",
           "fieldConfig": {
@@ -2016,7 +2018,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -2136,7 +2138,7 @@
             "mode": "spectrum"
           },
           "dataFormat": "tsbuckets",
-          "datasource": null,
+          "datasource": "$datasource",
           "fieldConfig": {
             "defaults": {
               "custom": {},
@@ -2223,7 +2225,7 @@
             "mode": "spectrum"
           },
           "dataFormat": "tsbuckets",
-          "datasource": null,
+          "datasource": "$datasource",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -2307,7 +2309,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -2423,7 +2425,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "$datasource",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -2546,13 +2548,23 @@
   "templating": {
     "list": [
       {
-        "allValue": null,
         "current": {
-          "selected": false,
-          "text": "bee",
-          "value": "bee"
+          "text": "Prometheus",
+          "value": "Prometheus"
         },
-        "datasource": "Prometheus",
+        "hide": 0,
+        "label": null,
+        "name": "datasource",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "$datasource",
         "definition": "label_values(bee_info, namespace)",
         "hide": 0,
         "includeAll": false,
@@ -2573,12 +2585,8 @@
       },
       {
         "allValue": ".+",
-        "current": {
-          "selected": false,
-          "text": "bee-0",
-          "value": "bee-0"
-        },
-        "datasource": "Prometheus",
+        "current": {},
+        "datasource": "$datasource",
         "definition": "label_values(bee_info{namespace=\"$namespace\"}, instance)",
         "hide": 0,
         "includeAll": true,
@@ -2599,12 +2607,8 @@
       },
       {
         "allValue": ".+",
-        "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
-        },
-        "datasource": "Prometheus",
+        "current": {},
+        "datasource": "$datasource",
         "definition": "label_values(po)",
         "hide": 0,
         "includeAll": true,

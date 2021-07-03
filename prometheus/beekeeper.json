@@ -1,16 +1,21 @@
 {
+  "__inputs": [],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "7.4.3"
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    }
+  ],
   "annotations": {
-    "list": [
-      {
-        "builtIn": 1,
-        "datasource": "-- Grafana --",
-        "enable": true,
-        "hide": true,
-        "iconColor": "rgba(0, 211, 255, 1)",
-        "name": "Annotations & Alerts",
-        "type": "dashboard"
-      }
-    ]
+    "list": []
   },
   "editable": true,
   "gnetId": null,
@@ -1917,12 +1922,23 @@
   "templating": {
     "list": [
       {
-        "allValue": null,
         "current": {
-          "text": "vandot",
-          "value": "vandot"
+          "text": "Prometheus",
+          "value": "Prometheus"
         },
-        "datasource": "Prometheus",
+        "hide": 0,
+        "label": null,
+        "name": "datasource",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "$datasource",
         "definition": "label_values(push_time_seconds, job)",
         "hide": 0,
         "includeAll": false,

@@ -1,17 +1,23 @@
 {
+  "__inputs": [],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "7.4.3"
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    }
+  ],
   "annotations": {
     "list": [
       {
-        "builtIn": 1,
-        "datasource": "-- Grafana --",
-        "enable": true,
-        "hide": true,
-        "iconColor": "rgba(0, 211, 255, 1)",
-        "name": "Annotations & Alerts",
-        "type": "dashboard"
-      },
-      {
-        "datasource": "Prometheus",
+        "datasource": "$datasource",
         "enable": true,
         "expr": "changes(bee_process_start_time_seconds{namespace=\"$namespace\",instance=\"$instance\"}[1m:10s]) > 0",
         "hide": true,
@@ -34,7 +40,7 @@
   "links": [],
   "panels": [
     {
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {
@@ -103,7 +109,7 @@
       "type": "gauge"
     },
     {
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {
@@ -172,7 +178,7 @@
       "type": "gauge"
     },
     {
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -244,7 +250,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {
@@ -353,7 +359,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -462,7 +468,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -574,7 +580,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -692,7 +698,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -807,13 +813,23 @@
   "templating": {
     "list": [
       {
-        "allValue": null,
         "current": {
-          "selected": false,
-          "text": "bee",
-          "value": "bee"
+          "text": "Prometheus",
+          "value": "Prometheus"
         },
-        "datasource": "Prometheus",
+        "hide": 0,
+        "label": null,
+        "name": "datasource",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "$datasource",
         "definition": "label_values(bee_info, namespace)",
         "hide": 0,
         "includeAll": false,
@@ -834,12 +850,8 @@
       },
       {
         "allValue": ".+",
-        "current": {
-          "selected": false,
-          "text": "bee-0",
-          "value": "bee-0"
-        },
-        "datasource": "Prometheus",
+        "current": {},
+        "datasource": "$datasource",
         "definition": "label_values(bee_info{namespace=\"$namespace\"}, instance)",
         "hide": 0,
         "includeAll": true,
@@ -860,12 +872,8 @@
       },
       {
         "allValue": ".+",
-        "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
-        },
-        "datasource": "Prometheus",
+        "current": {},
+        "datasource": "$datasource",
         "definition": "label_values(po)",
         "hide": 0,
         "includeAll": true,
