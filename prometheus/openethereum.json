@@ -1668,7 +1668,7 @@
           "query": {
             "query": "label_values(openethereum_sync_status, service)"
           },
-          "refresh": 0,
+          "refresh": 1,
           "regex": "",
           "skipUrlSync": false,
           "sort": 0,
