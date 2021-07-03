@@ -32,7 +32,7 @@
       }
     ]
   },
-  "editable": false,
+  "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
   "id": 6,
@@ -214,7 +214,6 @@
         "ymax": null,
         "ymin": null
       },
-      "tableColumn": "{container=\"bee\", endpoint=\"debug\", instance=\"bee-0\", job=\"bee/bee\", namespace=\"bee\", pod=\"bee-0\"}",
       "targets": [
         {
           "expr": "time() - bee_process_start_time_seconds{namespace=\"$namespace\",instance=~\"$instance\"}",
@@ -304,7 +303,6 @@
         "ymax": null,
         "ymin": null
       },
-      "tableColumn": "kube_pod_container_status_restarts_total{container=\"bee\", endpoint=\"http\", instance=\"10.1.17.43:8080\", job=\"kube-state-metrics\", namespace=\"bee\", pod=\"bee-0\", service=\"prometheus-operator-kube-state-metrics\"}",
       "targets": [
         {
           "expr": "kube_pod_container_status_restarts_total{job=\"kube-state-metrics\", cluster=\"\", namespace=\"$namespace\", pod=~\"$instance\", container=~\"bee\"}",
@@ -393,7 +391,6 @@
         "ymax": null,
         "ymin": null
       },
-      "tableColumn": "0.4.3-7aa2db9",
       "targets": [
         {
           "expr": "bee_info{namespace=\"$namespace\",instance=~\"$instance\"}",
@@ -482,7 +479,6 @@
         "ymax": null,
         "ymin": null
       },
-      "tableColumn": "go1.14.14",
       "targets": [
         {
           "expr": "go_info{namespace=\"$namespace\",instance=~\"$instance\"}",
