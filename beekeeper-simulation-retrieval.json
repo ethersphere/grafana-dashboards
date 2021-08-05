@@ -15,8 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 33,
-  "iteration": 1623410895938,
+  "iteration": 1628086458862,
   "links": [],
   "panels": [
     {
@@ -60,7 +59,7 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 4,
+        "w": 3,
         "x": 0,
         "y": 1
       },
@@ -84,7 +83,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_uploaded_count{cluster=~\"$cluster\"}[$__range]))",
+          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_uploaded_count{run=~\"$run\"}[$__range]))",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -132,8 +131,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 4,
+        "w": 3,
+        "x": 3,
         "y": 1
       },
       "id": 47,
@@ -156,7 +155,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_not_uploaded_count{cluster=~\"$cluster\"}[$__range]))",
+          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_not_uploaded_count{run=~\"$run\"}[$__range]))",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -167,6 +166,142 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "not uploaded chunks",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "description": "Total synced chunks",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "min": 0,
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 3,
+        "x": 6,
+        "y": 1
+      },
+      "id": 55,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(increase(beekeeper_simulation_retrieval_tags_synced_count{run=~\"$run\"}[$__range]))",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "synced chunks",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "description": "Total not synced chunks",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "min": 0,
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 3,
+        "x": 9,
+        "y": 1
+      },
+      "id": 56,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(increase(beekeeper_simulation_retrieval_tags_not_synced_count{run=~\"$run\"}[$__range]))",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "not synced chunks",
       "type": "stat"
     },
     {
@@ -196,8 +331,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 8,
+        "w": 3,
+        "x": 12,
         "y": 1
       },
       "id": 27,
@@ -220,7 +355,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_downloaded_count{cluster=~\"$cluster\"}[$__range]))",
+          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_downloaded_count{run=~\"$run\"}[$__range]))",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -268,8 +403,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 12,
+        "w": 3,
+        "x": 15,
         "y": 1
       },
       "id": 46,
@@ -292,7 +427,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_not_downloaded_count{cluster=~\"$cluster\"}[$__range]))",
+          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_not_downloaded_count{run=~\"$run\"}[$__range]))",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -332,8 +467,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 16,
+        "w": 3,
+        "x": 18,
         "y": 1
       },
       "id": 28,
@@ -356,7 +491,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_retrieved_count{cluster=~\"$cluster\"}[$__range]))",
+          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_retrieved_count{run=~\"$run\"}[$__range]))",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -404,8 +539,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 20,
+        "w": 3,
+        "x": 21,
         "y": 1
       },
       "id": 35,
@@ -428,7 +563,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_not_retrieved_count{cluster=~\"$cluster\"}[$__range]))",
+          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_not_retrieved_count{run=~\"$run\"}[$__range]))",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -456,7 +591,7 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 4,
+        "w": 3,
         "x": 0,
         "y": 9
       },
@@ -491,7 +626,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "increase(beekeeper_simulation_retrieval_chunks_uploaded_count{cluster=~\"$cluster\"}[$resolution])",
+          "expr": "increase(beekeeper_simulation_retrieval_chunks_uploaded_count{run=~\"$run\"}[$resolution])",
           "interval": "$resolution",
           "legendFormat": "{{node}}",
           "refId": "A"
@@ -556,8 +691,8 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 4,
+        "w": 3,
+        "x": 3,
         "y": 9
       },
       "hiddenSeries": false,
@@ -591,7 +726,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "increase(beekeeper_simulation_retrieval_chunks_not_uploaded_count{cluster=~\"$cluster\"}[$resolution])",
+          "expr": "increase(beekeeper_simulation_retrieval_chunks_not_uploaded_count{run=~\"$run\"}[$resolution])",
           "interval": "$resolution",
           "legendFormat": "{{node}}",
           "refId": "A"
@@ -646,6 +781,205 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "description": "Chunk sync rate per node",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 3,
+        "x": 6,
+        "y": 9
+      },
+      "hiddenSeries": false,
+      "id": 57,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
+        "show": true,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "increase(beekeeper_simulation_retrieval_tags_synced_count{run=~\"$run\"}[$resolution])",
+          "interval": "$resolution",
+          "legendFormat": "{{node}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "sync rate",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:2249",
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:2250",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "description": "Chunk failed sync rate per node",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 3,
+        "x": 9,
+        "y": 9
+      },
+      "hiddenSeries": false,
+      "id": 58,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
+        "show": true,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "increase(beekeeper_simulation_retrieval_tags_not_synced_count{run=~\"$run\"}[$resolution])",
+          "interval": "$resolution",
+          "legendFormat": "{{node}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "failed sync rate",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:2249",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:2250",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
       "description": "Chunk download rate per node",
       "fieldConfig": {
         "defaults": {},
@@ -655,8 +989,8 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 8,
+        "w": 3,
+        "x": 12,
         "y": 9
       },
       "hiddenSeries": false,
@@ -690,7 +1024,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "increase(beekeeper_simulation_retrieval_chunks_downloaded_count{cluster=~\"$cluster\"}[$resolution])",
+          "expr": "increase(beekeeper_simulation_retrieval_chunks_downloaded_count{run=~\"$run\"}[$resolution])",
           "interval": "$resolution",
           "legendFormat": "{{node}}",
           "refId": "A"
@@ -754,8 +1088,8 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 12,
+        "w": 3,
+        "x": 15,
         "y": 9
       },
       "hiddenSeries": false,
@@ -789,7 +1123,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "increase(beekeeper_simulation_retrieval_chunks_not_downloaded_count{cluster=~\"$cluster\"}[$resolution])",
+          "expr": "increase(beekeeper_simulation_retrieval_chunks_not_downloaded_count{run=~\"$run\"}[$resolution])",
           "interval": "$resolution",
           "legendFormat": "{{node}}",
           "refId": "A"
@@ -853,8 +1187,8 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 16,
+        "w": 3,
+        "x": 18,
         "y": 9
       },
       "hiddenSeries": false,
@@ -888,7 +1222,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "increase(beekeeper_simulation_retrieval_chunks_retrieved_count{cluster=~\"$cluster\"}[$resolution])",
+          "expr": "increase(beekeeper_simulation_retrieval_chunks_retrieved_count{run=~\"$run\"}[$resolution])",
           "interval": "$resolution",
           "legendFormat": "{{node}}",
           "refId": "A"
@@ -954,8 +1288,8 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 20,
+        "w": 3,
+        "x": 21,
         "y": 9
       },
       "hiddenSeries": false,
@@ -989,7 +1323,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "increase(beekeeper_simulation_retrieval_chunks_not_retrieved_count{cluster=~\"$cluster\"}[$resolution])",
+          "expr": "increase(beekeeper_simulation_retrieval_chunks_not_retrieved_count{run=~\"$run\"}[$resolution])",
           "interval": "$resolution",
           "legendFormat": "{{node}}",
           "refId": "A"
@@ -1016,7 +1350,7 @@
       "yaxes": [
         {
           "$$hashKey": "object:2249",
-          "format": "short",
+          "format": "none",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -1060,7 +1394,7 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 12,
+        "w": 8,
         "x": 0,
         "y": 17
       },
@@ -1076,7 +1410,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "increase(beekeeper_simulation_retrieval_chunk_upload_seconds_bucket{cluster=~\"$cluster\"}[$resolution])",
+          "expr": "increase(beekeeper_simulation_retrieval_chunk_upload_seconds_bucket{run=~\"$run\"}[$resolution])",
           "format": "heatmap",
           "interval": "$resolution",
           "intervalFactor": 1,
@@ -1125,6 +1459,78 @@
       },
       "dataFormat": "tsbuckets",
       "datasource": null,
+      "description": "Sync speed",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 17
+      },
+      "heatmap": {},
+      "hideZeroBuckets": false,
+      "highlightCards": true,
+      "id": 59,
+      "legend": {
+        "show": false
+      },
+      "pluginVersion": "7.5.5",
+      "reverseYBuckets": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "increase(beekeeper_simulation_retrieval_tags_sync_seconds_bucket{run=~\"$run\"}[$resolution])",
+          "format": "heatmap",
+          "interval": "$resolution",
+          "intervalFactor": 1,
+          "legendFormat": "{{ le }}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "sync speed",
+      "tooltip": {
+        "show": true,
+        "showHistogram": false
+      },
+      "type": "heatmap",
+      "xAxis": {
+        "show": true
+      },
+      "xBucketNumber": null,
+      "xBucketSize": null,
+      "yAxis": {
+        "decimals": null,
+        "format": "dtdurations",
+        "logBase": 1,
+        "max": null,
+        "min": null,
+        "show": true,
+        "splitFactor": null
+      },
+      "yBucketBound": "auto",
+      "yBucketNumber": null,
+      "yBucketSize": null
+    },
+    {
+      "cards": {
+        "cardPadding": null,
+        "cardRound": null
+      },
+      "color": {
+        "cardColor": "#b4ff00",
+        "colorScale": "sqrt",
+        "colorScheme": "interpolateOranges",
+        "exponent": 0.5,
+        "min": null,
+        "mode": "opacity"
+      },
+      "dataFormat": "tsbuckets",
+      "datasource": null,
       "description": "Download speed",
       "fieldConfig": {
         "defaults": {},
@@ -1132,8 +1538,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 12,
-        "x": 12,
+        "w": 8,
+        "x": 16,
         "y": 17
       },
       "heatmap": {},
@@ -1148,7 +1554,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "increase(beekeeper_simulation_retrieval_chunk_download_seconds_bucket{cluster=~\"$cluster\"}[$resolution])",
+          "expr": "increase(beekeeper_simulation_retrieval_chunk_download_seconds_bucket{run=~\"$run\"}[$resolution])",
           "format": "heatmap",
           "interval": "$resolution",
           "intervalFactor": 1,
@@ -1223,7 +1629,7 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 4,
+        "w": 3,
         "x": 0,
         "y": 26
       },
@@ -1247,7 +1653,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_uploaded_count{cluster=~\"$cluster\", node=~\"$node\"}[$__range]))",
+          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_uploaded_count{run=~\"$run\", node=~\"$node\"}[$__range]))",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -1295,8 +1701,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 4,
+        "w": 3,
+        "x": 3,
         "y": 26
       },
       "id": 51,
@@ -1319,7 +1725,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_not_uploaded_count{cluster=~\"$cluster\", node=~\"$node\"}[$__range]))",
+          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_not_uploaded_count{run=~\"$run\", node=~\"$node\"}[$__range]))",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -1330,6 +1736,142 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "not uploaded chunks",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "description": "Total synced chunks",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "min": 0,
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 3,
+        "x": 6,
+        "y": 26
+      },
+      "id": 61,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(increase(beekeeper_simulation_retrieval_tags_synced_count{run=~\"$run\", node=~\"$node\"}[$__range]))",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "synced chunks",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "description": "Total not synced chunks",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "min": 0,
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 3,
+        "x": 9,
+        "y": 26
+      },
+      "id": 60,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(increase(beekeeper_simulation_retrieval_tags_not_synced_count{run=~\"$run\", node=~\"$node\"}[$__range]))",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "not synced chunks",
       "type": "stat"
     },
     {
@@ -1359,8 +1901,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 8,
+        "w": 3,
+        "x": 12,
         "y": 26
       },
       "id": 39,
@@ -1383,7 +1925,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_downloaded_count{cluster=~\"$cluster\", node=~\"$node\"}[$__range]))",
+          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_downloaded_count{run=~\"$run\", node=~\"$node\"}[$__range]))",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -1431,8 +1973,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 12,
+        "w": 3,
+        "x": 15,
         "y": 26
       },
       "id": 50,
@@ -1455,7 +1997,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_not_downloaded_count{cluster=~\"$cluster\", node=~\"$node\"}[$__range]))",
+          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_not_downloaded_count{run=~\"$run\", node=~\"$node\"}[$__range]))",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -1495,8 +2037,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 16,
+        "w": 3,
+        "x": 18,
         "y": 26
       },
       "id": 40,
@@ -1519,7 +2061,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_retrieved_count{cluster=~\"$cluster\", node=~\"$node\"}[$__range]))",
+          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_retrieved_count{run=~\"$run\", node=~\"$node\"}[$__range]))",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -1567,8 +2109,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 20,
+        "w": 3,
+        "x": 21,
         "y": 26
       },
       "id": 41,
@@ -1591,7 +2133,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_not_retrieved_count{cluster=~\"$cluster\", node=~\"$node\"}[$__range]))",
+          "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_not_retrieved_count{run=~\"$run\", node=~\"$node\"}[$__range]))",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -1619,7 +2161,7 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 4,
+        "w": 3,
         "x": 0,
         "y": 34
       },
@@ -1654,7 +2196,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "increase(beekeeper_simulation_retrieval_chunks_uploaded_count{cluster=~\"$cluster\", node=~\"$node\"}[$resolution])",
+          "expr": "increase(beekeeper_simulation_retrieval_chunks_uploaded_count{run=~\"$run\", node=~\"$node\"}[$resolution])",
           "interval": "$resolution",
           "legendFormat": "{{node}}",
           "refId": "A"
@@ -1718,8 +2260,8 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 4,
+        "w": 3,
+        "x": 3,
         "y": 34
       },
       "hiddenSeries": false,
@@ -1753,7 +2295,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "increase(beekeeper_simulation_retrieval_chunks_not_uploaded_count{cluster=~\"$cluster\", node=~\"$node\"}[$resolution])",
+          "expr": "increase(beekeeper_simulation_retrieval_chunks_not_uploaded_count{run=~\"$run\", node=~\"$node\"}[$resolution])",
           "interval": "$resolution",
           "legendFormat": "{{node}}",
           "refId": "A"
@@ -1808,6 +2350,204 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "description": "Chunk sync rate",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 3,
+        "x": 6,
+        "y": 34
+      },
+      "hiddenSeries": false,
+      "id": 63,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
+        "show": true,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "increase(beekeeper_simulation_retrieval_tags_synced_count{run=~\"$run\", node=~\"$node\"}[$resolution])",
+          "interval": "$resolution",
+          "legendFormat": "{{node}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "sync rate",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:2249",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:2250",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "description": "Chunk failed sync rate",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 3,
+        "x": 9,
+        "y": 34
+      },
+      "hiddenSeries": false,
+      "id": 62,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
+        "show": true,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "increase(beekeeper_simulation_retrieval_tags_not_synced_count{run=~\"$run\", node=~\"$node\"}[$resolution])",
+          "interval": "$resolution",
+          "legendFormat": "{{node}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "failed sync rate",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:2249",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:2250",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
       "description": "Chunk download rate",
       "fieldConfig": {
         "defaults": {},
@@ -1817,8 +2557,8 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 8,
+        "w": 3,
+        "x": 12,
         "y": 34
       },
       "hiddenSeries": false,
@@ -1852,7 +2592,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "increase(beekeeper_simulation_retrieval_chunks_downloaded_count{cluster=~\"$cluster\", node=~\"$node\"}[$resolution])",
+          "expr": "increase(beekeeper_simulation_retrieval_chunks_downloaded_count{run=~\"$run\", node=~\"$node\"}[$resolution])",
           "interval": "$resolution",
           "legendFormat": "{{node}}",
           "refId": "A"
@@ -1916,8 +2656,8 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 12,
+        "w": 3,
+        "x": 15,
         "y": 34
       },
       "hiddenSeries": false,
@@ -1951,7 +2691,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "increase(beekeeper_simulation_retrieval_chunks_not_downloaded_count{cluster=~\"$cluster\", node=~\"$node\"}[$resolution])",
+          "expr": "increase(beekeeper_simulation_retrieval_chunks_not_downloaded_count{run=~\"$run\", node=~\"$node\"}[$resolution])",
           "interval": "$resolution",
           "legendFormat": "{{node}}",
           "refId": "A"
@@ -2015,8 +2755,8 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 16,
+        "w": 3,
+        "x": 18,
         "y": 34
       },
       "hiddenSeries": false,
@@ -2050,7 +2790,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "increase(beekeeper_simulation_retrieval_chunks_retrieved_count{cluster=~\"$cluster\", node=~\"$node\"}[$resolution])",
+          "expr": "increase(beekeeper_simulation_retrieval_chunks_retrieved_count{run=~\"$run\", node=~\"$node\"}[$resolution])",
           "interval": "$resolution",
           "legendFormat": "{{node}}",
           "refId": "A"
@@ -2114,8 +2854,8 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 20,
+        "w": 3,
+        "x": 21,
         "y": 34
       },
       "hiddenSeries": false,
@@ -2151,7 +2891,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "increase(beekeeper_simulation_retrieval_chunks_not_retrieved_count{cluster=~\"$cluster\", node=~\"$node\"}[$resolution])",
+          "expr": "increase(beekeeper_simulation_retrieval_chunks_not_retrieved_count{run=~\"$run\", node=~\"$node\"}[$resolution])",
           "interval": "$resolution",
           "legendFormat": "{{node}}",
           "refId": "A"
@@ -2212,7 +2952,7 @@
     "list": [
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "Prometheus",
           "value": "Prometheus"
         },
@@ -2234,22 +2974,22 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
-          "text": "pro-6d2b270",
-          "value": "pro-6d2b270"
+          "selected": true,
+          "text": "bee-2021-08-05-08-55-54-000000000",
+          "value": "bee-2021-08-05-08-55-54-000000000"
         },
         "datasource": "${datasource}",
-        "definition": "label_values(beekeeper_simulation_retrieval_chunks_uploaded_count, cluster)",
+        "definition": "label_values(beekeeper_simulation_retrieval_chunks_uploaded_count, run)",
         "description": null,
         "error": null,
         "hide": 0,
         "includeAll": false,
         "label": null,
         "multi": false,
-        "name": "cluster",
+        "name": "run",
         "options": [],
         "query": {
-          "query": "label_values(beekeeper_simulation_retrieval_chunks_uploaded_count, cluster)",
+          "query": "label_values(beekeeper_simulation_retrieval_chunks_uploaded_count, run)",
           "refId": "StandardVariableQuery"
         },
         "refresh": 1,
@@ -2266,11 +3006,11 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "216b26c5e4cf5b5e7d166658760aa549b3d7e630866ee1809765b68201bd6564",
-          "value": "216b26c5e4cf5b5e7d166658760aa549b3d7e630866ee1809765b68201bd6564"
+          "text": "286faf732c6515a7ae1170d045492e7749a6e184805acce4768a3e7896c114d5",
+          "value": "286faf732c6515a7ae1170d045492e7749a6e184805acce4768a3e7896c114d5"
         },
         "datasource": "${datasource}",
-        "definition": "label_values(beekeeper_simulation_retrieval_chunks_downloaded_count{cluster=~\"$cluster\"}, node)",
+        "definition": "label_values(beekeeper_simulation_retrieval_chunks_downloaded_count{run =~\"$run\"}, node)",
         "description": null,
         "error": null,
         "hide": 0,
@@ -2280,7 +3020,7 @@
         "name": "node",
         "options": [],
         "query": {
-          "query": "label_values(beekeeper_simulation_retrieval_chunks_downloaded_count{cluster=~\"$cluster\"}, node)",
+          "query": "label_values(beekeeper_simulation_retrieval_chunks_downloaded_count{run =~\"$run\"}, node)",
           "refId": "StandardVariableQuery"
         },
         "refresh": 1,
@@ -2378,12 +3118,12 @@
     ]
   },
   "time": {
-    "from": "2021-06-10T15:20:00.000Z",
-    "to": "2021-06-10T17:25:00.000Z"
+    "from": "now-15m",
+    "to": "now"
   },
   "timepicker": {},
   "timezone": "utc",
   "title": "Beekeeper Simulation - Retrieval",
   "uid": "ZmFDOX6Gz",
-  "version": 40
+  "version": 1
 }
