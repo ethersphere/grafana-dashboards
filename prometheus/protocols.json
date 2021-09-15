@@ -29,7 +29,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1631118874380,
+  "id": 10,
+  "iteration": 1631639543210,
   "links": [],
   "panels": [
     {
@@ -40,6 +41,320 @@
         "w": 24,
         "x": 0,
         "y": 0
+      },
+      "id": 34,
+      "panels": [],
+      "title": "Chain Sync",
+      "type": "row"
+    },
+    {
+      "datasource": null,
+      "description": "The total number of synced peers. Duplicate increments are expected for the same peer.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 1
+      },
+      "id": 38,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "increase(bee_chainsyncer_synced_peers_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "interval": "",
+          "legendFormat": "synced_peers_count({{instance}})",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Synced Peers",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "description": "The total number of peers marked as unsynced.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-red",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 6,
+        "y": 1
+      },
+      "id": 42,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "increase(bee_chainsyncer_unsynced_peers_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "interval": "",
+          "legendFormat": "unsynced_peers_count({{instance}})",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Unsynced Peers",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "description": "The total number of invalid proofs we've received. duplicate increments are expected.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-red",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 12,
+        "y": 1
+      },
+      "id": 32,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "increase(bee_chainsyncer_invalid_proof_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "interval": "",
+          "legendFormat": "invalid_proof_count({{instance}})",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Invalid Proof",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "description": "The total number of errors we've received when asking for a proof from a peer. Duplicates increments are expected.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-red",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 1
+      },
+      "id": 36,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "increase(bee_chainsyncer_peer_error_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "interval": "",
+          "legendFormat": "peer_error_count({{instance}})",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Peer Errors",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "description": "The total time spent waiting for proofs (not per-peer but rather per cycle).",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1000
+              }
+            ]
+          },
+          "unit": "dtdurationms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 9
+      },
+      "id": 40,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "increase(bee_chainsyncer_total_time_waiting{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])/1000000",
+          "interval": "",
+          "legendFormat": "total_time_waiting({{instance}})",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Total Waiting",
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 17
       },
       "id": 22,
       "panels": [],
@@ -64,7 +379,7 @@
         "h": 11,
         "w": 12,
         "x": 0,
-        "y": 1
+        "y": 18
       },
       "hiddenSeries": false,
       "id": 24,
@@ -91,16 +406,15 @@
       "points": false,
       "renderer": "flot",
       "seriesOverrides": [
-        {
-          "$$hashKey": "object:298"
-        }
+        {}
       ],
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
-          "expr": "increase(bee_pullsync_chunks_delivered{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "exemplar": true,
+          "expr": "increase(bee_pullsync_chunks_delivered{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
           "instant": false,
           "interval": "",
           "legendFormat": "delivered({{instance}})",
@@ -140,7 +454,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:309",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -149,7 +462,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:310",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -181,7 +493,7 @@
         "h": 11,
         "w": 12,
         "x": 12,
-        "y": 1
+        "y": 18
       },
       "hiddenSeries": false,
       "id": 25,
@@ -208,15 +520,14 @@
       "points": false,
       "renderer": "flot",
       "seriesOverrides": [
-        {
-          "$$hashKey": "object:298"
-        }
+        {}
       ],
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
+          "exemplar": true,
           "expr": "increase(bee_pullsync_db_ops{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "instant": false,
           "interval": "",
@@ -244,7 +555,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:309",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -253,7 +563,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:310",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -274,7 +583,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 12
+        "y": 29
       },
       "id": 12,
       "panels": [],
@@ -299,7 +608,7 @@
         "h": 13,
         "w": 9,
         "x": 0,
-        "y": 13
+        "y": 30
       },
       "hiddenSeries": false,
       "id": 8,
@@ -325,9 +634,7 @@
       "points": false,
       "renderer": "flot",
       "seriesOverrides": [
-        {
-          "$$hashKey": "object:298"
-        }
+        {}
       ],
       "spaceLength": 10,
       "stack": false,
@@ -372,7 +679,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:309",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -381,7 +687,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:310",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -414,7 +719,7 @@
         "h": 13,
         "w": 9,
         "x": 9,
-        "y": 13
+        "y": 30
       },
       "hiddenSeries": false,
       "id": 26,
@@ -440,9 +745,7 @@
       "points": false,
       "renderer": "flot",
       "seriesOverrides": [
-        {
-          "$$hashKey": "object:298"
-        }
+        {}
       ],
       "spaceLength": 10,
       "stack": false,
@@ -483,7 +786,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:309",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -492,7 +794,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:310",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -537,7 +838,7 @@
         "h": 13,
         "w": 6,
         "x": 18,
-        "y": 13
+        "y": 30
       },
       "id": 27,
       "options": {
@@ -577,7 +878,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 26
+        "y": 43
       },
       "id": 14,
       "panels": [],
@@ -602,7 +903,7 @@
         "h": 11,
         "w": 12,
         "x": 0,
-        "y": 27
+        "y": 44
       },
       "hiddenSeries": false,
       "id": 15,
@@ -628,9 +929,7 @@
       "points": false,
       "renderer": "flot",
       "seriesOverrides": [
-        {
-          "$$hashKey": "object:298"
-        }
+        {}
       ],
       "spaceLength": 10,
       "stack": false,
@@ -677,7 +976,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:309",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -686,7 +984,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:310",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -730,7 +1027,7 @@
         "h": 11,
         "w": 12,
         "x": 12,
-        "y": 27
+        "y": 44
       },
       "id": 28,
       "options": {
@@ -786,7 +1083,7 @@
         "h": 10,
         "w": 12,
         "x": 0,
-        "y": 38
+        "y": 55
       },
       "heatmap": {},
       "hideZeroBuckets": true,
@@ -854,7 +1151,7 @@
         "h": 10,
         "w": 12,
         "x": 12,
-        "y": 38
+        "y": 55
       },
       "heatmap": {},
       "hideZeroBuckets": true,
@@ -867,6 +1164,7 @@
       "reverseYBuckets": false,
       "targets": [
         {
+          "exemplar": true,
           "expr": "sum(rate(bee_pusher_error_time_bucket{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])) by (le)",
           "format": "heatmap",
           "interval": "",
@@ -922,7 +1220,7 @@
         "h": 10,
         "w": 12,
         "x": 0,
-        "y": 48
+        "y": 65
       },
       "heatmap": {},
       "hideZeroBuckets": true,
@@ -1059,5 +1357,5 @@
   "timezone": "",
   "title": "Bee Protocols",
   "uid": "Pu4msSbMk",
-  "version": 1
+  "version": 3
 }
