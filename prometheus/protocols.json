@@ -30,7 +30,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 10,
-  "iteration": 1632147811991,
+  "iteration": 1632148420199,
   "links": [],
   "panels": [
     {
@@ -377,19 +377,15 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "thresholds"
+            "mode": "continuous-RdYlGr"
           },
           "mappings": [],
           "thresholds": {
-            "mode": "absolute",
+            "mode": "percentage",
             "steps": [
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -1951,7 +1947,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "staging",
           "value": "staging"
         },
@@ -1983,8 +1979,8 @@
         "allValue": ".+",
         "current": {
           "selected": false,
-          "text": "bee-1-0",
-          "value": "bee-1-0"
+          "text": "All",
+          "value": "$__all"
         },
         "datasource": "Prometheus",
         "definition": "label_values(bee_info{namespace=\"$namespace\"}, instance)",
@@ -2013,7 +2009,7 @@
     ]
   },
   "time": {
-    "from": "now-7d",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {
@@ -2032,5 +2028,5 @@
   "timezone": "",
   "title": "Bee Protocols",
   "uid": "Pu4msSbMk",
-  "version": 16
+  "version": 17
 }
