@@ -30,7 +30,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 10,
-  "iteration": 1632131211448,
+  "iteration": 1632147811991,
   "links": [],
   "panels": [
     {
@@ -130,7 +130,7 @@
     },
     {
       "datasource": null,
-      "description": "Number of peers that are reachable",
+      "description": "Number of unreachable peers reported by Hive",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -182,7 +182,7 @@
         "x": 12,
         "y": 1
       },
-      "id": 52,
+      "id": 59,
       "options": {
         "graph": {},
         "legend": {
@@ -198,7 +198,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "bee_hive_reachable_peers_count{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "expr": "bee_hive_unreachable_peers_count{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
           "legendFormat": "{{instance}}",
           "refId": "A"
@@ -206,7 +206,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Reachable peers count",
+      "title": "Unreachable Peers count",
       "type": "timeseries"
     },
     {
@@ -292,7 +292,7 @@
     },
     {
       "datasource": null,
-      "description": "Number of peers that could not be stored",
+      "description": "Number of peers that are reachable",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -344,6 +344,146 @@
         "x": 12,
         "y": 9
       },
+      "id": 52,
+      "options": {
+        "graph": {},
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltipOptions": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "bee_hive_reachable_peers_count{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "interval": "",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Reachable peers count",
+      "type": "timeseries"
+    },
+    {
+      "datasource": null,
+      "description": "Shows success rate of connection attempts from Hive",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 17
+      },
+      "id": 61,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "1-(bee_hive_peer_attempt_count{namespace=~\"$namespace\", instance=~\"$instance\"}-bee_hive_reachable_peers_count{namespace=~\"$namespace\", instance=~\"$instance\"})/bee_hive_peer_attempt_count{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "interval": "",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Connectivity success rate",
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "description": "Number of peers that could not be stored",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "graph": false,
+              "legend": false,
+              "tooltip": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true
+          },
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 17
+      },
       "id": 56,
       "options": {
         "graph": {},
@@ -372,204 +512,203 @@
       "type": "timeseries"
     },
     {
-      "collapsed": true,
+      "collapsed": false,
       "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 17
+        "y": 25
       },
       "id": 50,
-      "panels": [
-        {
-          "datasource": null,
-          "description": "",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 0.1
-                  }
-                ]
-              },
-              "unit": "percentunit"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 6,
-            "x": 6,
-            "y": 26
-          },
-          "id": 58,
-          "options": {
-            "colorMode": "value",
-            "graphMode": "area",
-            "justifyMode": "auto",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "text": {},
-            "textMode": "auto"
-          },
-          "pluginVersion": "7.5.5",
-          "targets": [
-            {
-              "exemplar": true,
-              "expr": "1-(bee_handshake_ack_rx{namespace=~\"$namespace\", instance=~\"$instance\"}-bee_handshake_ack_rx_failed{namespace=~\"$namespace\", instance=~\"$instance\"})/bee_handshake_ack_rx{namespace=~\"$namespace\", instance=~\"$instance\"}",
-              "interval": "",
-              "legendFormat": "{{instance}}",
-              "refId": "A"
-            }
-          ],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "ACK RX Fail Rate",
-          "type": "stat"
-        },
-        {
-          "datasource": null,
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 0.1
-                  }
-                ]
-              },
-              "unit": "percentunit"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 6,
-            "x": 12,
-            "y": 26
-          },
-          "id": 48,
-          "options": {
-            "colorMode": "value",
-            "graphMode": "area",
-            "justifyMode": "auto",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "text": {},
-            "textMode": "auto"
-          },
-          "pluginVersion": "7.5.5",
-          "targets": [
-            {
-              "exemplar": true,
-              "expr": "1-(bee_handshake_syn_rx{namespace=~\"$namespace\", instance=~\"$instance\"}-bee_handshake_syn_rx_failed{namespace=~\"$namespace\", instance=~\"$instance\"})/bee_handshake_syn_rx{namespace=~\"$namespace\", instance=~\"$instance\"}",
-              "interval": "",
-              "legendFormat": "",
-              "refId": "A"
-            }
-          ],
-          "title": "SYN RX Fail Rate",
-          "type": "stat"
-        },
-        {
-          "datasource": null,
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 0.1
-                  }
-                ]
-              },
-              "unit": "percentunit"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 6,
-            "x": 6,
-            "y": 34
-          },
-          "id": 46,
-          "options": {
-            "colorMode": "value",
-            "graphMode": "area",
-            "justifyMode": "auto",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "text": {},
-            "textMode": "auto"
-          },
-          "pluginVersion": "7.5.5",
-          "targets": [
-            {
-              "exemplar": true,
-              "expr": "1-(bee_handshake_syn_ack_tx{namespace=~\"$namespace\", instance=~\"$instance\"}-bee_handshake_syn_ack_tx_failed{namespace=~\"$namespace\", instance=~\"$instance\"})/bee_handshake_syn_ack_tx{namespace=~\"$namespace\", instance=~\"$instance\"}",
-              "interval": "",
-              "legendFormat": "{{instance}}",
-              "refId": "A"
-            }
-          ],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "SYN-ACK TX Fail Rate",
-          "type": "stat"
-        }
-      ],
+      "panels": [],
       "title": "Handshake",
       "type": "row"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0.1
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 6,
+        "y": 26
+      },
+      "id": 58,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "1-(bee_handshake_ack_rx{namespace=~\"$namespace\", instance=~\"$instance\"}-bee_handshake_ack_rx_failed{namespace=~\"$namespace\", instance=~\"$instance\"})/bee_handshake_ack_rx{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "interval": "",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "ACK RX Fail Rate",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0.1
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 12,
+        "y": 26
+      },
+      "id": 48,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "1-(bee_handshake_syn_rx{namespace=~\"$namespace\", instance=~\"$instance\"}-bee_handshake_syn_rx_failed{namespace=~\"$namespace\", instance=~\"$instance\"})/bee_handshake_syn_rx{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "SYN RX Fail Rate",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0.1
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 6,
+        "y": 34
+      },
+      "id": 46,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "1-(bee_handshake_syn_ack_tx{namespace=~\"$namespace\", instance=~\"$instance\"}-bee_handshake_syn_ack_tx_failed{namespace=~\"$namespace\", instance=~\"$instance\"})/bee_handshake_syn_ack_tx{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "interval": "",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "SYN-ACK TX Fail Rate",
+      "type": "stat"
     },
     {
       "collapsed": true,
@@ -578,7 +717,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 18
+        "y": 42
       },
       "id": 34,
       "panels": [
@@ -887,7 +1026,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 19
+        "y": 43
       },
       "id": 22,
       "panels": [
@@ -1117,7 +1256,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 20
+        "y": 44
       },
       "id": 12,
       "panels": [
@@ -1413,7 +1552,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 45
       },
       "id": 14,
       "panels": [
@@ -1812,7 +1951,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "staging",
           "value": "staging"
         },
@@ -1843,9 +1982,9 @@
       {
         "allValue": ".+",
         "current": {
-          "selected": true,
-          "text": "bee-2-0",
-          "value": "bee-2-0"
+          "selected": false,
+          "text": "bee-1-0",
+          "value": "bee-1-0"
         },
         "datasource": "Prometheus",
         "definition": "label_values(bee_info{namespace=\"$namespace\"}, instance)",
@@ -1893,5 +2032,5 @@
   "timezone": "",
   "title": "Bee Protocols",
   "uid": "Pu4msSbMk",
-  "version": 8
+  "version": 16
 }
