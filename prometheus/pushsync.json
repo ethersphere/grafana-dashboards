@@ -30,7 +30,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 40,
-  "iteration": 1632154254341,
+  "iteration": 1632211607882,
   "links": [],
   "panels": [
     {
@@ -464,7 +464,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "send attempts, skipper,  errors",
+      "title": "send attempts, skipped,  errors",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -882,7 +882,7 @@
               },
               {
                 "color": "red",
-                "value": 0.2
+                "value": 80
               }
             ]
           },
@@ -938,7 +938,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "esad",
           "value": "esad"
         },
@@ -956,7 +956,7 @@
           "query": "label_values(bee_info, namespace)",
           "refId": "Prometheus-namespace-Variable-Query"
         },
-        "refresh": 1,
+        "refresh": 2,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,
@@ -969,7 +969,7 @@
       {
         "allValue": ".+",
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "bee-0",
           "value": "bee-0"
         },
@@ -1000,7 +1000,7 @@
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-2d",
     "to": "now"
   },
   "timepicker": {
@@ -1019,5 +1019,5 @@
   "timezone": "",
   "title": "Bee Pushsync",
   "uid": "RzKb6ZNnz",
-  "version": 34
+  "version": 37
 }
