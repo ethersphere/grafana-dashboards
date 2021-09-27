@@ -29,7 +29,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1631116285797,
+  "id": 12,
+  "iteration": 1632731005475,
   "links": [],
   "panels": [
     {
@@ -1212,7 +1213,12 @@
           "datasource": "Prometheus",
           "fieldConfig": {
             "defaults": {
-              "custom": {}
+              "links": [
+                {
+                  "title": "",
+                  "url": ""
+                }
+              ]
             },
             "overrides": []
           },
@@ -1241,14 +1247,10 @@
           "linewidth": 1,
           "nullPointMode": "null",
           "options": {
-            "dataLinks": [
-              {
-                "title": "",
-                "url": ""
-              }
-            ]
+            "alertThreshold": true
           },
           "percentage": false,
+          "pluginVersion": "7.5.5",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1258,14 +1260,34 @@
           "steppedLine": false,
           "targets": [
             {
+              "exemplar": true,
               "expr": "kubelet_volume_stats_used_bytes{namespace=\"$namespace\", persistentvolumeclaim=~\"data-$instance\"}",
-              "legendFormat": "used ({{persistentvolumeclaim}})",
+              "interval": "",
+              "legendFormat": "used statestore ({{persistentvolumeclaim}})",
               "refId": "B"
             },
             {
+              "exemplar": true,
               "expr": "kubelet_volume_stats_capacity_bytes{namespace=\"$namespace\", persistentvolumeclaim=~\"data-$instance\"}",
-              "legendFormat": "total ({{persistentvolumeclaim}})",
+              "interval": "",
+              "legendFormat": "total statestore ({{persistentvolumeclaim}})",
               "refId": "A"
+            },
+            {
+              "exemplar": true,
+              "expr": "kubelet_volume_stats_used_bytes{namespace=\"$namespace\", persistentvolumeclaim=~\"localstore-$instance\"}",
+              "hide": false,
+              "interval": "",
+              "legendFormat": "used localstore ({{persistentvolumeclaim}})",
+              "refId": "C"
+            },
+            {
+              "exemplar": true,
+              "expr": "kubelet_volume_stats_capacity_bytes{namespace=\"$namespace\", persistentvolumeclaim=~\"localstore-$instance\"}",
+              "hide": false,
+              "interval": "",
+              "legendFormat": "total localstore ({{persistentvolumeclaim}})",
+              "refId": "D"
             }
           ],
           "thresholds": [],
@@ -2950,11 +2972,7 @@
     "list": [
       {
         "allValue": null,
-        "current": {
-          "selected": true,
-          "text": "bee-bootnode",
-          "value": "bee-bootnode"
-        },
+        "current": {},
         "datasource": "Prometheus",
         "definition": "label_values(bee_info, namespace)",
         "description": null,
@@ -2981,11 +2999,7 @@
       },
       {
         "allValue": ".+",
-        "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
-        },
+        "current": {},
         "datasource": "Prometheus",
         "definition": "label_values(bee_info{namespace=\"$namespace\"}, instance)",
         "description": null,
@@ -3012,11 +3026,7 @@
       },
       {
         "allValue": ".+",
-        "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
-        },
+        "current": {},
         "datasource": "Prometheus",
         "definition": "label_values(po)",
         "description": null,
@@ -3063,5 +3073,5 @@
   "timezone": "",
   "title": "Bee",
   "uid": "TjX_sEZMz",
-  "version": 1
+  "version": 2
 }
