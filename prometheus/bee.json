@@ -29,8 +29,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 12,
-  "iteration": 1632731005475,
+  "id": 14,
+  "iteration": 1634574650611,
   "links": [],
   "panels": [
     {
@@ -56,7 +56,7 @@
       },
       "gridPos": {
         "h": 6,
-        "w": 8,
+        "w": 6,
         "x": 0,
         "y": 0
       },
@@ -111,8 +111,8 @@
       },
       "gridPos": {
         "h": 6,
-        "w": 8,
-        "x": 8,
+        "w": 6,
+        "x": 6,
         "y": 0
       },
       "id": 9,
@@ -169,7 +169,7 @@
       "gridPos": {
         "h": 6,
         "w": 3,
-        "x": 16,
+        "x": 12,
         "y": 0
       },
       "id": 6,
@@ -257,7 +257,7 @@
       "gridPos": {
         "h": 6,
         "w": 2,
-        "x": 19,
+        "x": 15,
         "y": 0
       },
       "id": 11,
@@ -342,9 +342,9 @@
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 3,
-        "w": 3,
-        "x": 21,
+        "h": 6,
+        "w": 4,
+        "x": 17,
         "y": 0
       },
       "id": 10,
@@ -432,7 +432,7 @@
         "h": 3,
         "w": 3,
         "x": 21,
-        "y": 3
+        "y": 0
       },
       "id": 12,
       "interval": null,
@@ -482,6 +482,95 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "go version",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "",
+          "value": ""
+        }
+      ],
+      "valueName": "name"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 21,
+        "y": 3
+      },
+      "id": 56,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "bee_kademlia_reachability_status{namespace=\"$namespace\",instance=~\"$instance\"}",
+          "interval": "",
+          "legendFormat": "{{reachability_status}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "reachability",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -867,7 +956,6 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:309",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -876,7 +964,6 @@
               "show": true
             },
             {
-              "$$hashKey": "object:310",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -968,7 +1055,6 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:365",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -977,7 +1063,6 @@
               "show": true
             },
             {
-              "$$hashKey": "object:366",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -1068,7 +1153,6 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:421",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -1077,7 +1161,6 @@
               "show": true
             },
             {
-              "$$hashKey": "object:422",
               "format": "short",
               "label": null,
               "logBase": 1,
