@@ -215,9 +215,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
-          "text": "peter",
-          "value": "peter"
+          "selected": true,
+          "text": "All",
+          "value": "$__all"
         },
         "datasource": null,
         "definition": "label_values(bee_info, namespace)",
@@ -261,12 +261,12 @@
         "name": "instance",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "All",
             "value": "$__all"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "bee-0-0",
             "value": "bee-0-0"
           },

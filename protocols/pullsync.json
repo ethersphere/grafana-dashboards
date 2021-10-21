@@ -254,8 +254,8 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "peter",
-          "value": "peter"
+          "text": "All",
+          "value": "$__all"
         },
         "datasource": null,
         "definition": "label_values(bee_info, namespace)",

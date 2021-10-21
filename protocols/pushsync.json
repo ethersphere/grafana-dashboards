@@ -1087,8 +1087,8 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "aleksandar",
-          "value": "aleksandar"
+          "text": "All",
+          "value": "$__all"
         },
         "datasource": "Prometheus",
         "definition": "label_values(bee_info, namespace)",
