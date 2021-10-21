@@ -29,8 +29,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 4,
-  "iteration": 1633335177214,
+  "id": 16,
+  "iteration": 1634802382338,
   "links": [],
   "panels": [
     {
@@ -1078,15 +1078,17 @@
   "refresh": false,
   "schemaVersion": 27,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "protocols"
+  ],
   "templating": {
     "list": [
       {
         "allValue": null,
         "current": {
-          "selected": true,
-          "text": "bee-gateway",
-          "value": "bee-gateway"
+          "selected": false,
+          "text": "aleksandar",
+          "value": "aleksandar"
         },
         "datasource": "Prometheus",
         "definition": "label_values(bee_info, namespace)",
@@ -1115,9 +1117,9 @@
       {
         "allValue": ".+",
         "current": {
-          "selected": true,
-          "text": "bee-1-0",
-          "value": "bee-1-0"
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
         },
         "datasource": "Prometheus",
         "definition": "label_values(bee_info{namespace=\"$namespace\"}, instance)",
@@ -1163,7 +1165,7 @@
     ]
   },
   "timezone": "",
-  "title": "Bee Pushsync",
+  "title": "PushSync",
   "uid": "RzKb6ZNnz",
-  "version": 23
+  "version": 2
 }

@@ -12,74 +12,31 @@
       }
     ]
   },
+  "description": "ChainSync protocol dashboard",
   "editable": true,
   "gnetId": null,
-  "graphTooltip": 1,
-  "id": 38,
-  "iteration": 1632386307170,
+  "graphTooltip": 0,
+  "id": 43,
+  "iteration": 1634802401917,
   "links": [],
   "panels": [
     {
-      "datasource": "Prometheus",
-      "description": "Times the check ran.",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
+      "collapsed": false,
+      "datasource": null,
       "gridPos": {
-        "h": 8,
-        "w": 8,
+        "h": 1,
+        "w": 24,
         "x": 0,
         "y": 0
       },
-      "id": 40,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "last"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "7.5.5",
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "beekeeper_check_pushsync_check_run{job=\"$job\"}",
-          "interval": "",
-          "legendFormat": "{{node}}",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Check Run",
-      "type": "stat"
+      "id": 34,
+      "panels": [],
+      "title": "Chain Sync",
+      "type": "row"
     },
     {
-      "datasource": "Prometheus",
-      "description": "Times the check succeeded.",
+      "datasource": null,
+      "description": "The total number of synced peers. Duplicate increments are expected for the same peer.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -94,89 +51,25 @@
                 "value": null
               }
             ]
-          }
+          },
+          "unit": "none"
         },
         "overrides": []
       },
       "gridPos": {
         "h": 8,
-        "w": 8,
-        "x": 8,
-        "y": 0
+        "w": 6,
+        "x": 0,
+        "y": 1
       },
-      "id": 53,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "last"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "7.5.5",
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "beekeeper_check_pushsync_check_success{job=\"$job\"}",
-          "interval": "",
-          "legendFormat": "{{node}}",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Check Success",
-      "type": "stat"
-    },
-    {
-      "datasource": "Prometheus",
-      "description": "Times the check failed.",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 1
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 16,
-        "y": 0
-      },
-      "id": 54,
+      "id": 38,
       "options": {
         "colorMode": "value",
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": [
-            "last"
-          ],
+          "calcs": [],
           "fields": "",
           "values": false
         },
@@ -187,20 +80,20 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "beekeeper_check_pushsync_check_fail{job=\"$job\"}",
+          "expr": "bee_chainsyncer_synced_peers_count{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
-          "legendFormat": "{{node}}",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Check Failed",
+      "title": "Synced Peers",
       "type": "stat"
     },
     {
-      "datasource": "Prometheus",
-      "description": "Time to availability of chunk on Nth node.",
+      "datasource": null,
+      "description": "The total number of peers marked as unsynced.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -210,252 +103,9 @@
           "thresholds": {
             "mode": "absolute",
             "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 10000000000
-              }
-            ]
-          },
-          "unit": "ns"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 16,
-        "x": 0,
-        "y": 8
-      },
-      "id": 55,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "last"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "7.5.5",
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "beekeeper_check_pushsync_node_sync_time{job=\"$job\"}",
-          "format": "time_series",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "{{node}}",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Node Sync Time",
-      "type": "stat"
-    },
-    {
-      "datasource": "Prometheus",
-      "description": "Successful uploads.",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 16,
-        "y": 8
-      },
-      "id": 59,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "last"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "7.5.5",
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "beekeeper_check_pushsync_upload_success{job=\"$job\"}",
-          "interval": "",
-          "legendFormat": "{{node}}",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Successful Uploads.",
-      "type": "stat"
-    },
-    {
-      "datasource": "Prometheus",
-      "description": "Retrieval attempts.",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 0,
-        "y": 16
-      },
-      "id": 56,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "last"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "7.5.5",
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "beekeeper_check_pushsync_retrieve_attempt{job=\"$job\"}",
-          "interval": "",
-          "legendFormat": "{{node}}",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Retrieval Attempts",
-      "type": "stat"
-    },
-    {
-      "datasource": "Prometheus",
-      "description": "Retrieval success.",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 8,
-        "y": 16
-      },
-      "id": 58,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "last"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "7.5.5",
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "beekeeper_check_pushsync_retrieve_success{job=\"$job\"}",
-          "interval": "",
-          "legendFormat": "{{node}}",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Retrieval Success",
-      "type": "stat"
-    },
-    {
-      "datasource": "Prometheus",
-      "description": "Retrieval failures.",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
               {
                 "color": "semi-dark-red",
-                "value": 1
+                "value": null
               }
             ]
           }
@@ -464,19 +114,19 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 8,
-        "x": 16,
-        "y": 16
+        "w": 6,
+        "x": 6,
+        "y": 1
       },
-      "id": 57,
+      "id": 42,
       "options": {
         "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "center",
+        "graphMode": "area",
+        "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "last"
+            "lastNotNull"
           ],
           "fields": "",
           "values": false
@@ -488,44 +138,412 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "beekeeper_check_pushsync_retrieve_fail{job=\"$job\"}",
+          "expr": "bee_chainsyncer_unsynced_peers_count{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
-          "legendFormat": "{{node}}",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Retrieval Failures",
+      "title": "Unsynced Peers",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "description": "The total number of invalid proofs we've received. duplicate increments are expected.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-red",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 12,
+        "y": 1
+      },
+      "id": 32,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "bee_chainsyncer_invalid_proof_count{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "interval": "",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Invalid Proof",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "description": "The total number of errors we've received when asking for a proof from a peer. Duplicates increments are expected.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-red",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 1
+      },
+      "id": 36,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "bee_chainsyncer_peer_error_count{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "interval": "",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Peer Errors",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 9
+      },
+      "id": 69,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "bee_chainsyncer_positive_proofs{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "interval": "",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Positive proofs",
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 6,
+        "y": 9
+      },
+      "id": 68,
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "bee_chainsyncer_synced_peers_count{namespace=~\"$namespace\", instance=~\"$instance\"}/(bee_chainsyncer_peer_error_count{namespace=~\"$namespace\", instance=~\"$instance\"}+bee_chainsyncer_synced_peers_count{namespace=~\"$namespace\", instance=~\"$instance\"})",
+          "interval": "",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Positive proofs percentage (total)",
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "description": "The total time spent waiting for proofs (not per-peer but rather per cycle).",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1000
+              }
+            ]
+          },
+          "unit": "dtdurationms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 9
+      },
+      "id": 67,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "increase(bee_chainsyncer_total_time_waiting{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])/1000000",
+          "interval": "",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Total Waiting",
       "type": "stat"
     }
   ],
-  "refresh": "10s",
   "schemaVersion": 27,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "protocols"
+  ],
   "templating": {
     "list": [
       {
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "bee-gateway",
-          "value": "bee-gateway"
+          "text": "aleksandar",
+          "value": "aleksandar"
         },
-        "datasource": "Prometheus",
-        "definition": "label_values(push_time_seconds, job)",
+        "datasource": null,
+        "definition": "label_values(bee_info, namespace)",
         "description": null,
         "error": null,
         "hide": 0,
         "includeAll": false,
-        "label": "Namespace",
+        "label": "namespace",
         "multi": false,
-        "name": "job",
+        "name": "namespace",
+        "options": [
+          {
+            "selected": true,
+            "text": "aleksandar",
+            "value": "aleksandar"
+          },
+          {
+            "selected": false,
+            "text": "anatol",
+            "value": "anatol"
+          },
+          {
+            "selected": false,
+            "text": "peter",
+            "value": "peter"
+          },
+          {
+            "selected": false,
+            "text": "staging",
+            "value": "staging"
+          },
+          {
+            "selected": false,
+            "text": "testnet-bootnode",
+            "value": "testnet-bootnode"
+          },
+          {
+            "selected": false,
+            "text": "testnet-gateway",
+            "value": "testnet-gateway"
+          },
+          {
+            "selected": false,
+            "text": "testnet-storage",
+            "value": "testnet-storage"
+          }
+        ],
+        "query": {
+          "query": "label_values(bee_info, namespace)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": ".+",
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": null,
+        "definition": "label_values(bee_info{namespace=\"$namespace\"}, instance)",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": true,
+        "label": "instance",
+        "multi": false,
+        "name": "instance",
         "options": [],
         "query": {
-          "query": "label_values(push_time_seconds, job)",
-          "refId": "Prometheus-job-Variable-Query"
+          "query": "label_values(bee_info{namespace=\"$namespace\"}, instance)",
+          "refId": "StandardVariableQuery"
         },
         "refresh": 1,
         "regex": "",
@@ -540,24 +558,12 @@
     ]
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-6h",
     "to": "now"
   },
-  "timepicker": {
-    "refresh_intervals": [
-      "10s",
-      "30s",
-      "1m",
-      "5m",
-      "15m",
-      "30m",
-      "1h",
-      "2h",
-      "1d"
-    ]
-  },
+  "timepicker": {},
   "timezone": "",
-  "title": "Beekeeper Smoke Test",
-  "uid": "R6nXBFH7k",
-  "version": 3
+  "title": "ChainSync",
+  "uid": "LN6My1O7k",
+  "version": 4
 }
