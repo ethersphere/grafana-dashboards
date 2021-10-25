@@ -7,15 +7,22 @@
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
+        "limit": 100,
         "name": "Annotations & Alerts",
-        "type": "dashboard"
+        "showIn": 0,
+        "tags": [
+          "protocols",
+          "components",
+          "storage-incentives"
+        ],
+        "type": "tags"
       }
     ]
   },
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 42,
+  "id": 2,
   "links": [],
   "panels": [
     {
@@ -25,26 +32,28 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 15,
+        "h": 13,
         "w": 4,
-        "x": 0,
+        "x": 2,
         "y": 0
       },
       "id": 9,
       "options": {
-        "folderId": 6,
+        "folderId": null,
         "maxItems": 15,
         "query": "",
         "showHeadings": false,
         "showRecentlyViewed": false,
         "showSearch": true,
         "showStarred": false,
-        "tags": []
+        "tags": [
+          "protocols"
+        ]
       },
       "pluginVersion": "7.5.5",
       "timeFrom": null,
       "timeShift": null,
-      "title": "Bee dashboards",
+      "title": "Bee protocols",
       "type": "dashlist"
     },
     {
@@ -54,21 +63,85 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 6,
+        "h": 13,
         "w": 4,
-        "x": 0,
-        "y": 15
+        "x": 7,
+        "y": 0
+      },
+      "id": 10,
+      "options": {
+        "folderId": null,
+        "maxItems": 15,
+        "query": "",
+        "showHeadings": false,
+        "showRecentlyViewed": false,
+        "showSearch": true,
+        "showStarred": false,
+        "tags": [
+          "components"
+        ]
+      },
+      "pluginVersion": "7.5.5",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Bee components",
+      "type": "dashlist"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 13,
+        "w": 4,
+        "x": 12,
+        "y": 0
+      },
+      "id": 11,
+      "options": {
+        "folderId": null,
+        "maxItems": 15,
+        "query": "",
+        "showHeadings": false,
+        "showRecentlyViewed": false,
+        "showSearch": true,
+        "showStarred": false,
+        "tags": [
+          "storage-incentives"
+        ]
+      },
+      "pluginVersion": "7.5.5",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Storage incentives",
+      "type": "dashlist"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 13,
+        "w": 4,
+        "x": 17,
+        "y": 0
       },
       "id": 7,
       "options": {
-        "folderId": 17,
+        "folderId": null,
         "maxItems": 10,
         "query": "",
         "showHeadings": false,
         "showRecentlyViewed": false,
         "showSearch": true,
         "showStarred": false,
-        "tags": []
+        "tags": [
+          "beekeeper"
+        ]
       },
       "pluginVersion": "7.5.5",
       "timeFrom": null,
@@ -117,5 +190,5 @@
   "timezone": "browser",
   "title": "Home",
   "uid": "L0-oG6v7k",
-  "version": 3
+  "version": 7
 }

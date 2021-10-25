@@ -15,7 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1628086458862,
+  "id": 20,
+  "iteration": 1634802663883,
   "links": [],
   "panels": [
     {
@@ -2952,7 +2953,7 @@
     "list": [
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "Prometheus",
           "value": "Prometheus"
         },
@@ -2974,9 +2975,10 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
-          "text": "bee-2021-08-05-08-55-54-000000000",
-          "value": "bee-2021-08-05-08-55-54-000000000"
+          "isNone": true,
+          "selected": false,
+          "text": "None",
+          "value": ""
         },
         "datasource": "${datasource}",
         "definition": "label_values(beekeeper_simulation_retrieval_chunks_uploaded_count, run)",
@@ -3005,9 +3007,10 @@
       {
         "allValue": null,
         "current": {
+          "isNone": true,
           "selected": false,
-          "text": "286faf732c6515a7ae1170d045492e7749a6e184805acce4768a3e7896c114d5",
-          "value": "286faf732c6515a7ae1170d045492e7749a6e184805acce4768a3e7896c114d5"
+          "text": "None",
+          "value": ""
         },
         "datasource": "${datasource}",
         "definition": "label_values(beekeeper_simulation_retrieval_chunks_downloaded_count{run =~\"$run\"}, node)",

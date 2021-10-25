@@ -29,8 +29,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 15,
-  "iteration": 1634573671016,
+  "id": 12,
+  "iteration": 1634802179259,
   "links": [],
   "panels": [
     {
@@ -1168,13 +1168,15 @@
   "refresh": false,
   "schemaVersion": 27,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "components"
+  ],
   "templating": {
     "list": [
       {
         "allValue": null,
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "staging",
           "value": "staging"
         },
@@ -1205,7 +1207,7 @@
       {
         "allValue": ".+",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "All",
           "value": "$__all"
         },
@@ -1284,7 +1286,7 @@
     ]
   },
   "timezone": "",
-  "title": "Bee - Kademlia",
+  "title": "Kademlia",
   "uid": "BmxHrER7z",
-  "version": 4
+  "version": 2
 }

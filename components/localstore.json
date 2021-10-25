@@ -29,8 +29,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 9,
-  "iteration": 1634051858074,
+  "id": 14,
+  "iteration": 1634802115546,
   "links": [],
   "panels": [
     {
@@ -1921,15 +1921,17 @@
   "refresh": false,
   "schemaVersion": 27,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "components"
+  ],
   "templating": {
     "list": [
       {
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "bee-gateway",
-          "value": "bee-gateway"
+          "text": "All",
+          "value": "$__all"
         },
         "datasource": "Prometheus",
         "definition": "label_values(bee_info, namespace)",
@@ -2006,7 +2008,7 @@
     ]
   },
   "timezone": "",
-  "title": "Bee - Localstore",
+  "title": "Localstore",
   "uid": "Szc9zJUGk",
-  "version": 3
+  "version": 2
 }

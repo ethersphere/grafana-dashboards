@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 29,
-  "iteration": 1593029380424,
+  "id": 19,
+  "iteration": 1634802617075,
   "links": [],
   "panels": [
     {
@@ -38,7 +38,6 @@
       "description": "Ping round-trip time duration Gauge.",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "decimals": 2,
           "mappings": [],
           "min": 0,
@@ -51,7 +50,7 @@
               },
               {
                 "color": "red",
-                "value": 0.01
+                "value": 80
               }
             ]
           },
@@ -68,40 +67,18 @@
       "id": 6,
       "options": {
         "displayMode": "gradient",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [],
-          "values": false
-        },
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "beekeeper_check_pingpong_rtt_duration_seconds{job=\"$job\"}",
@@ -134,9 +111,7 @@
       "datasource": "Prometheus",
       "description": "Ping round-trip time duration Histogram.",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "gridPos": {
@@ -152,7 +127,6 @@
       "legend": {
         "show": true
       },
-      "options": {},
       "reverseYBuckets": false,
       "targets": [
         {
@@ -196,7 +170,6 @@
       "description": "Ping round-trip time duration Histogram.",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "mappings": [],
           "min": 0,
           "thresholds": {
@@ -224,41 +197,20 @@
       "id": 2,
       "options": {
         "colorMode": "value",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [],
-          "values": false
-        },
         "graphMode": "none",
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "beekeeper_check_pingpong_rtt_seconds_count{job=\"$job\"}",
@@ -277,7 +229,6 @@
       "description": "Ping round-trip time duration Histogram.",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -304,41 +255,20 @@
       "id": 19,
       "options": {
         "colorMode": "value",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [],
-          "values": false
-        },
         "graphMode": "none",
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "beekeeper_check_pingpong_rtt_seconds_sum{job=\"$job\"}",
@@ -371,7 +301,6 @@
       "description": "Number of uploaded chunks.",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "mappings": [],
           "min": 0,
           "thresholds": {
@@ -380,6 +309,10 @@
               {
                 "color": "green",
                 "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
               }
             ]
           }
@@ -395,41 +328,20 @@
       "id": 12,
       "options": {
         "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [],
-          "values": false
-        },
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "beekeeper_check_pushsync_chunks_uploaded_count{job=\"$job\"}",
@@ -450,7 +362,6 @@
       "description": "Number of chunks that has been synced with the closest node.",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "mappings": [],
           "min": 0,
           "thresholds": {
@@ -459,6 +370,10 @@
               {
                 "color": "green",
                 "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
               }
             ]
           }
@@ -474,41 +389,20 @@
       "id": 37,
       "options": {
         "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [],
-          "values": false
-        },
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "beekeeper_check_pushsync_chunks_synced_count{job=\"$job\"}",
@@ -529,7 +423,6 @@
       "description": "Number of chunks that has not been synced with the closest node.",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "mappings": [],
           "min": 0,
           "thresholds": {
@@ -540,8 +433,8 @@
                 "value": null
               },
               {
-                "color": "dark-red",
-                "value": 1
+                "color": "red",
+                "value": 80
               }
             ]
           }
@@ -557,41 +450,20 @@
       "id": 38,
       "options": {
         "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [],
-          "values": false
-        },
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "beekeeper_check_pushsync_chunks_not_synced_count{job=\"$job\"}",
@@ -612,9 +484,6 @@
       "description": "Chunk upload duration Gauge.",
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "align": null
-          },
           "mappings": [],
           "min": 0,
           "thresholds": {
@@ -625,12 +494,8 @@
                 "value": null
               },
               {
-                "color": "yellow",
-                "value": 0.2
-              },
-              {
                 "color": "red",
-                "value": 0.25
+                "value": 80
               }
             ]
           },
@@ -647,40 +512,18 @@
       "id": 21,
       "options": {
         "displayMode": "gradient",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [],
-          "values": false
-        },
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "beekeeper_check_pushsync_chunk_upload_duration_seconds{job=\"$job\"}",
@@ -713,9 +556,7 @@
       "datasource": "Prometheus",
       "description": "Chunk upload duration Histogram.",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "gridPos": {
@@ -731,7 +572,6 @@
       "legend": {
         "show": true
       },
-      "options": {},
       "reverseYBuckets": false,
       "targets": [
         {
@@ -775,7 +615,6 @@
       "description": "Chunk upload duration Histogram.",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "mappings": [],
           "min": 0,
           "thresholds": {
@@ -803,41 +642,20 @@
       "id": 39,
       "options": {
         "colorMode": "value",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [],
-          "values": false
-        },
         "graphMode": "none",
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "beekeeper_check_pushsync_chunk_upload_seconds_count{job=\"$job\"}",
@@ -856,7 +674,6 @@
       "description": "Chunk upload duration Histogram.",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -883,41 +700,20 @@
       "id": 40,
       "options": {
         "colorMode": "value",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [],
-          "values": false
-        },
         "graphMode": "none",
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "beekeeper_check_pushsync_chunk_upload_seconds_sum{job=\"$job\"}",
@@ -950,7 +746,6 @@
       "description": "Number of uploaded chunks.",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "mappings": [],
           "min": 0,
           "thresholds": {
@@ -959,6 +754,10 @@
               {
                 "color": "green",
                 "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
               }
             ]
           }
@@ -974,41 +773,20 @@
       "id": 41,
       "options": {
         "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [],
-          "values": false
-        },
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "beekeeper_check_retrieval_chunks_uploaded_count{job=\"$job\"}",
@@ -1029,7 +807,6 @@
       "description": "Number of downloaded chunks.",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "mappings": [],
           "min": 0,
           "thresholds": {
@@ -1038,6 +815,10 @@
               {
                 "color": "green",
                 "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
               }
             ]
           }
@@ -1053,41 +834,20 @@
       "id": 42,
       "options": {
         "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [],
-          "values": false
-        },
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "beekeeper_check_retrieval_chunks_downloaded_count{job=\"$job\"}",
@@ -1108,7 +868,6 @@
       "description": "Number of chunks that has been retrieved.",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "mappings": [],
           "min": 0,
           "thresholds": {
@@ -1117,6 +876,10 @@
               {
                 "color": "green",
                 "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
               }
             ]
           }
@@ -1132,41 +895,20 @@
       "id": 43,
       "options": {
         "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [],
-          "values": false
-        },
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "beekeeper_check_retrieval_chunks_retrieved_count{job=\"$job\"}",
@@ -1187,7 +929,6 @@
       "description": "Number of chunks that has not been retrieved.",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "mappings": [],
           "min": 0,
           "thresholds": {
@@ -1196,6 +937,10 @@
               {
                 "color": "green",
                 "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
               }
             ]
           }
@@ -1211,41 +956,20 @@
       "id": 44,
       "options": {
         "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [],
-          "values": false
-        },
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "beekeeper_check_retrieval_chunks_not_retrieved_count{job=\"$job\"}",
@@ -1266,9 +990,6 @@
       "description": "Chunk upload duration Gauge.",
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "align": null
-          },
           "mappings": [],
           "min": 0,
           "thresholds": {
@@ -1279,12 +1000,8 @@
                 "value": null
               },
               {
-                "color": "yellow",
-                "value": 0.2
-              },
-              {
                 "color": "red",
-                "value": 0.25
+                "value": 80
               }
             ]
           },
@@ -1301,40 +1018,18 @@
       "id": 48,
       "options": {
         "displayMode": "gradient",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [],
-          "values": false
-        },
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "beekeeper_check_retrieval_chunk_upload_duration_seconds{job=\"$job\"}",
@@ -1367,9 +1062,7 @@
       "datasource": "Prometheus",
       "description": "Chunk upload duration Histogram.",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "gridPos": {
@@ -1385,7 +1078,6 @@
       "legend": {
         "show": true
       },
-      "options": {},
       "reverseYBuckets": false,
       "targets": [
         {
@@ -1429,7 +1121,6 @@
       "description": "Chunk upload duration Histogram.",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "mappings": [],
           "min": 0,
           "thresholds": {
@@ -1457,41 +1148,20 @@
       "id": 46,
       "options": {
         "colorMode": "value",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [],
-          "values": false
-        },
         "graphMode": "none",
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "beekeeper_check_retrieval_chunk_upload_seconds_count{job=\"$job\"}",
@@ -1510,7 +1180,6 @@
       "description": "Chunk upload duration Histogram.",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -1537,41 +1206,20 @@
       "id": 47,
       "options": {
         "colorMode": "value",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [],
-          "values": false
-        },
         "graphMode": "none",
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "beekeeper_check_retrieval_chunk_upload_seconds_sum{job=\"$job\"}",
@@ -1590,9 +1238,6 @@
       "description": "Chunk download duration Gauge.",
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "align": null
-          },
           "mappings": [],
           "min": 0,
           "thresholds": {
@@ -1603,12 +1248,8 @@
                 "value": null
               },
               {
-                "color": "yellow",
-                "value": 0.2
-              },
-              {
                 "color": "red",
-                "value": 0.25
+                "value": 80
               }
             ]
           },
@@ -1625,40 +1266,18 @@
       "id": 49,
       "options": {
         "displayMode": "gradient",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [],
-          "values": false
-        },
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "beekeeper_check_retrieval_chunk_download_duration_seconds{job=\"$job\"}",
@@ -1691,9 +1310,7 @@
       "datasource": "Prometheus",
       "description": "Chunk download duration Histogram.",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "gridPos": {
@@ -1709,7 +1326,6 @@
       "legend": {
         "show": true
       },
-      "options": {},
       "reverseYBuckets": false,
       "targets": [
         {
@@ -1753,7 +1369,6 @@
       "description": "Chunk download duration Histogram.",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "mappings": [],
           "min": 0,
           "thresholds": {
@@ -1781,41 +1396,20 @@
       "id": 50,
       "options": {
         "colorMode": "value",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [],
-          "values": false
-        },
         "graphMode": "none",
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "beekeeper_check_retrieval_chunk_download_seconds_count{job=\"$job\"}",
@@ -1834,7 +1428,6 @@
       "description": "Chunk download duration Histogram.",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -1861,41 +1454,20 @@
       "id": 51,
       "options": {
         "colorMode": "value",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [],
-          "values": false
-        },
         "graphMode": "none",
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "beekeeper_check_retrieval_chunk_download_seconds_sum{job=\"$job\"}",
@@ -1911,26 +1483,34 @@
     }
   ],
   "refresh": "10s",
-  "schemaVersion": 22,
+  "schemaVersion": 27,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "beekeeper"
+  ],
   "templating": {
     "list": [
       {
         "allValue": null,
         "current": {
-          "text": "vandot",
-          "value": "vandot"
+          "selected": false,
+          "text": "anatol",
+          "value": "anatol"
         },
         "datasource": "Prometheus",
         "definition": "label_values(push_time_seconds, job)",
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "Namespace",
         "multi": false,
         "name": "job",
         "options": [],
-        "query": "label_values(push_time_seconds, job)",
+        "query": {
+          "query": "label_values(push_time_seconds, job)",
+          "refId": "Prometheus-job-Variable-Query"
+        },
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1963,5 +1543,5 @@
   "timezone": "",
   "title": "Beekeeper dashboard",
   "uid": "-W7na5iMk",
-  "version": 10
+  "version": 2
 }

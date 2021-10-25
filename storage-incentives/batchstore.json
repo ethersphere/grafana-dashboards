@@ -26,20 +26,18 @@
       }
     ]
   },
+  "description": "",
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 33,
-  "iteration": 1624176120746,
+  "id": 10,
+  "iteration": 1634802552076,
   "links": [],
   "panels": [
     {
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "align": null
-          },
           "decimals": 0,
           "mappings": [],
           "max": 31,
@@ -87,9 +85,11 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "bee_batchstore_available_capacity{namespace=~\"$namespace\", instance=~\"$instance\"}",
@@ -107,9 +107,6 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "align": null
-          },
           "decimals": 0,
           "mappings": [],
           "max": 31,
@@ -156,9 +153,10 @@
           "values": false
         },
         "showThresholdLabels": false,
-        "showThresholdMarkers": true
+        "showThresholdMarkers": true,
+        "text": {}
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "bee_batchstore_radius{namespace=~\"$namespace\", instance=~\"$instance\"}",
@@ -176,9 +174,6 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "align": null
-          },
           "decimals": 0,
           "mappings": [],
           "min": 0,
@@ -221,9 +216,11 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.5",
       "targets": [
         {
           "expr": "bee_batchstore_inner{namespace=~\"$namespace\", instance=~\"$instance\"}",
@@ -252,34 +249,7 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "align": null
-          },
-          "decimals": 0,
-          "mappings": [],
-          "max": 31,
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "red",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 5
-              },
-              {
-                "color": "green",
-                "value": 10
-              },
-              {
-                "color": "#6ED0E0",
-                "value": 20
-              }
-            ]
-          },
+          "links": [],
           "unit": "none"
         },
         "overrides": []
@@ -307,10 +277,10 @@
       "linewidth": 1,
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.5",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -346,7 +316,7 @@
       },
       "yaxes": [
         {
-          "format": "short",
+          "format": "none",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -375,34 +345,7 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "align": null
-          },
-          "decimals": 0,
-          "mappings": [],
-          "max": 31,
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "red",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 5
-              },
-              {
-                "color": "green",
-                "value": 10
-              },
-              {
-                "color": "#6ED0E0",
-                "value": 20
-              }
-            ]
-          },
+          "links": [],
           "unit": "none"
         },
         "overrides": []
@@ -430,10 +373,10 @@
       "linewidth": 1,
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.5",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -469,7 +412,7 @@
       },
       "yaxes": [
         {
-          "format": "short",
+          "format": "none",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -498,29 +441,7 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "align": null
-          },
-          "decimals": 0,
-          "mappings": [],
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "red",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 50
-              },
-              {
-                "color": "green",
-                "value": 70
-              }
-            ]
-          },
+          "links": [],
           "unit": "none"
         },
         "overrides": []
@@ -548,10 +469,10 @@
       "linewidth": 1,
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.5",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -594,7 +515,7 @@
       },
       "yaxes": [
         {
-          "format": "short",
+          "format": "none",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -617,27 +538,34 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 25,
+  "schemaVersion": 27,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "storage-incentives"
+  ],
   "templating": {
     "list": [
       {
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "bee",
-          "value": "bee"
+          "text": "All",
+          "value": "$__all"
         },
         "datasource": "Prometheus",
         "definition": "label_values(bee_info, namespace)",
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "namespace",
         "multi": false,
         "name": "namespace",
         "options": [],
-        "query": "label_values(bee_info, namespace)",
+        "query": {
+          "query": "label_values(bee_info, namespace)",
+          "refId": "Prometheus-namespace-Variable-Query"
+        },
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -652,18 +580,23 @@
         "allValue": ".+",
         "current": {
           "selected": false,
-          "text": "bee-0",
-          "value": "bee-0"
+          "text": "All",
+          "value": "$__all"
         },
         "datasource": "Prometheus",
         "definition": "label_values(bee_info{namespace=\"$namespace\"}, instance)",
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": true,
         "label": "instance",
         "multi": false,
         "name": "instance",
         "options": [],
-        "query": "label_values(bee_info{namespace=\"$namespace\"}, instance)",
+        "query": {
+          "query": "label_values(bee_info{namespace=\"$namespace\"}, instance)",
+          "refId": "Prometheus-instance-Variable-Query"
+        },
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -683,13 +616,18 @@
         },
         "datasource": "Prometheus",
         "definition": "label_values(po)",
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": true,
         "label": "po",
         "multi": false,
         "name": "po",
         "options": [],
-        "query": "label_values(po)",
+        "query": {
+          "query": "label_values(po)",
+          "refId": "Prometheus-po-Variable-Query"
+        },
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -722,5 +660,5 @@
   "timezone": "",
   "title": "Storage incentives - batch store",
   "uid": "Iiui3ERnk",
-  "version": 3
+  "version": 2
 }
