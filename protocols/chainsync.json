@@ -16,8 +16,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 43,
-  "iteration": 1634802401917,
+  "id": 19,
+  "iteration": 1635343339303,
   "links": [],
   "panels": [
     {
@@ -461,8 +461,8 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "aleksandar",
-          "value": "aleksandar"
+          "text": "bee-bootnode",
+          "value": "bee-bootnode"
         },
         "datasource": null,
         "definition": "label_values(bee_info, namespace)",
@@ -473,48 +473,12 @@
         "label": "namespace",
         "multi": false,
         "name": "namespace",
-        "options": [
-          {
-            "selected": true,
-            "text": "aleksandar",
-            "value": "aleksandar"
-          },
-          {
-            "selected": false,
-            "text": "anatol",
-            "value": "anatol"
-          },
-          {
-            "selected": false,
-            "text": "peter",
-            "value": "peter"
-          },
-          {
-            "selected": false,
-            "text": "staging",
-            "value": "staging"
-          },
-          {
-            "selected": false,
-            "text": "testnet-bootnode",
-            "value": "testnet-bootnode"
-          },
-          {
-            "selected": false,
-            "text": "testnet-gateway",
-            "value": "testnet-gateway"
-          },
-          {
-            "selected": false,
-            "text": "testnet-storage",
-            "value": "testnet-storage"
-          }
-        ],
+        "options": [],
         "query": {
           "query": "label_values(bee_info, namespace)",
           "refId": "StandardVariableQuery"
         },
-        "refresh": 0,
+        "refresh": 2,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,
@@ -565,5 +529,5 @@
   "timezone": "",
   "title": "ChainSync",
   "uid": "LN6My1O7k",
-  "version": 4
+  "version": 2
 }
