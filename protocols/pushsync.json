@@ -30,7 +30,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 23,
-  "iteration": 1635337608719,
+  "iteration": 1635412208515,
   "links": [],
   "panels": [
     {
@@ -655,14 +655,14 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "increase(bee_pushsync_total_received{namespace=~\"$namespace\", instance=~\"$instance\"}[1h])",
+          "expr": "increase(bee_pushsync_total_received{namespace=~\"$namespace\", instance=~\"$instance\"}[30s])",
           "interval": "",
           "legendFormat": "received {{instance}}",
           "refId": "A"
         },
         {
           "exemplar": true,
-          "expr": "increase(bee_pushsync_total_handler_errors{namespace=~\"$namespace\", instance=~\"$instance\"}[1h])",
+          "expr": "increase(bee_pushsync_total_handler_errors{namespace=~\"$namespace\", instance=~\"$instance\"}[30s])",
           "interval": "",
           "legendFormat": "error {{instance}}",
           "refId": "B"
@@ -1300,7 +1300,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "bee-bootnode",
           "value": "bee-bootnode"
         },
@@ -1381,5 +1381,5 @@
   "timezone": "",
   "title": "PushSync",
   "uid": "RzKb6ZNnz",
-  "version": 4
+  "version": 2
 }

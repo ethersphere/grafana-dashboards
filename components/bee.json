@@ -30,7 +30,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 14,
-  "iteration": 1635410954470,
+  "iteration": 1635411911319,
   "links": [],
   "panels": [
     {
@@ -1499,7 +1499,12 @@
           "datasource": null,
           "fieldConfig": {
             "defaults": {
-              "custom": {}
+              "links": [
+                {
+                  "title": "",
+                  "url": ""
+                }
+              ]
             },
             "overrides": []
           },
@@ -1509,7 +1514,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 25
+            "y": 53
           },
           "hiddenSeries": false,
           "id": 20,
@@ -1528,14 +1533,10 @@
           "linewidth": 1,
           "nullPointMode": "null",
           "options": {
-            "dataLinks": [
-              {
-                "title": "",
-                "url": ""
-              }
-            ]
+            "alertThreshold": true
           },
           "percentage": false,
+          "pluginVersion": "7.5.5",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1599,7 +1600,12 @@
           "datasource": null,
           "fieldConfig": {
             "defaults": {
-              "custom": {}
+              "links": [
+                {
+                  "title": "",
+                  "url": ""
+                }
+              ]
             },
             "overrides": []
           },
@@ -1609,7 +1615,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 33
+            "y": 61
           },
           "hiddenSeries": false,
           "id": 21,
@@ -1628,14 +1634,10 @@
           "linewidth": 1,
           "nullPointMode": "null",
           "options": {
-            "dataLinks": [
-              {
-                "title": "",
-                "url": ""
-              }
-            ]
+            "alertThreshold": true
           },
           "percentage": false,
+          "pluginVersion": "7.5.5",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1704,17 +1706,22 @@
           "datasource": null,
           "fieldConfig": {
             "defaults": {
-              "custom": {}
+              "links": [
+                {
+                  "title": "",
+                  "url": ""
+                }
+              ]
             },
             "overrides": []
           },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
-            "h": 8,
-            "w": 24,
+            "h": 9,
+            "w": 12,
             "x": 0,
-            "y": 41
+            "y": 69
           },
           "hiddenSeries": false,
           "id": 22,
@@ -1733,14 +1740,10 @@
           "linewidth": 1,
           "nullPointMode": "null",
           "options": {
-            "dataLinks": [
-              {
-                "title": "",
-                "url": ""
-              }
-            ]
+            "alertThreshold": true
           },
           "percentage": false,
+          "pluginVersion": "7.5.5",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1804,17 +1807,22 @@
           "datasource": null,
           "fieldConfig": {
             "defaults": {
-              "custom": {}
+              "links": [
+                {
+                  "title": "",
+                  "url": ""
+                }
+              ]
             },
             "overrides": []
           },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
-            "h": 8,
-            "w": 24,
-            "x": 0,
-            "y": 49
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 69
           },
           "hiddenSeries": false,
           "id": 23,
@@ -1833,14 +1841,10 @@
           "linewidth": 1,
           "nullPointMode": "null",
           "options": {
-            "dataLinks": [
-              {
-                "title": "",
-                "url": ""
-              }
-            ]
+            "alertThreshold": true
           },
           "percentage": false,
+          "pluginVersion": "7.5.5",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1913,8 +1917,8 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "text": "bee-bootnode",
-          "value": "bee-bootnode"
+          "text": "bee-gateway",
+          "value": "bee-gateway"
         },
         "datasource": "Prometheus",
         "definition": "label_values(bee_info, namespace)",
@@ -1943,7 +1947,7 @@
       {
         "allValue": ".+",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "All",
           "value": "$__all"
         },
@@ -1974,7 +1978,7 @@
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-12h",
     "to": "now"
   },
   "timepicker": {
@@ -1993,5 +1997,5 @@
   "timezone": "",
   "title": "Bee",
   "uid": "TjX_sEZMz",
-  "version": 5
+  "version": 8
 }
