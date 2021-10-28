@@ -30,7 +30,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 14,
-  "iteration": 1635410560048,
+  "iteration": 1635411911319,
   "links": [],
   "panels": [
     {
@@ -342,7 +342,7 @@
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 6,
+        "h": 3,
         "w": 4,
         "x": 17,
         "y": 0
@@ -492,6 +492,69 @@
         }
       ],
       "valueName": "name"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": "Loki",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 17,
+        "y": 3
+      },
+      "id": 57,
+      "interval": null,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "expr": "sum (count_over_time({namespace=\"$namespace\",pod=~\"$instance\"}|=\"panic\"[24h])) by (pod) ",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "panics (last 24h)",
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
@@ -1436,7 +1499,12 @@
           "datasource": null,
           "fieldConfig": {
             "defaults": {
-              "custom": {}
+              "links": [
+                {
+                  "title": "",
+                  "url": ""
+                }
+              ]
             },
             "overrides": []
           },
@@ -1446,7 +1514,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 25
+            "y": 53
           },
           "hiddenSeries": false,
           "id": 20,
@@ -1465,14 +1533,10 @@
           "linewidth": 1,
           "nullPointMode": "null",
           "options": {
-            "dataLinks": [
-              {
-                "title": "",
-                "url": ""
-              }
-            ]
+            "alertThreshold": true
           },
           "percentage": false,
+          "pluginVersion": "7.5.5",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1536,7 +1600,12 @@
           "datasource": null,
           "fieldConfig": {
             "defaults": {
-              "custom": {}
+              "links": [
+                {
+                  "title": "",
+                  "url": ""
+                }
+              ]
             },
             "overrides": []
           },
@@ -1546,7 +1615,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 33
+            "y": 61
           },
           "hiddenSeries": false,
           "id": 21,
@@ -1565,14 +1634,10 @@
           "linewidth": 1,
           "nullPointMode": "null",
           "options": {
-            "dataLinks": [
-              {
-                "title": "",
-                "url": ""
-              }
-            ]
+            "alertThreshold": true
           },
           "percentage": false,
+          "pluginVersion": "7.5.5",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1641,17 +1706,22 @@
           "datasource": null,
           "fieldConfig": {
             "defaults": {
-              "custom": {}
+              "links": [
+                {
+                  "title": "",
+                  "url": ""
+                }
+              ]
             },
             "overrides": []
           },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
-            "h": 8,
-            "w": 24,
+            "h": 9,
+            "w": 12,
             "x": 0,
-            "y": 41
+            "y": 69
           },
           "hiddenSeries": false,
           "id": 22,
@@ -1670,14 +1740,10 @@
           "linewidth": 1,
           "nullPointMode": "null",
           "options": {
-            "dataLinks": [
-              {
-                "title": "",
-                "url": ""
-              }
-            ]
+            "alertThreshold": true
           },
           "percentage": false,
+          "pluginVersion": "7.5.5",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1741,17 +1807,22 @@
           "datasource": null,
           "fieldConfig": {
             "defaults": {
-              "custom": {}
+              "links": [
+                {
+                  "title": "",
+                  "url": ""
+                }
+              ]
             },
             "overrides": []
           },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
-            "h": 8,
-            "w": 24,
-            "x": 0,
-            "y": 49
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 69
           },
           "hiddenSeries": false,
           "id": 23,
@@ -1770,14 +1841,10 @@
           "linewidth": 1,
           "nullPointMode": "null",
           "options": {
-            "dataLinks": [
-              {
-                "title": "",
-                "url": ""
-              }
-            ]
+            "alertThreshold": true
           },
           "percentage": false,
+          "pluginVersion": "7.5.5",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1849,9 +1916,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
-          "text": "bee-bootnode",
-          "value": "bee-bootnode"
+          "selected": true,
+          "text": "bee-gateway",
+          "value": "bee-gateway"
         },
         "datasource": "Prometheus",
         "definition": "label_values(bee_info, namespace)",
@@ -1911,7 +1978,7 @@
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-12h",
     "to": "now"
   },
   "timepicker": {
@@ -1930,5 +1997,5 @@
   "timezone": "",
   "title": "Bee",
   "uid": "TjX_sEZMz",
-  "version": 2
+  "version": 8
 }
