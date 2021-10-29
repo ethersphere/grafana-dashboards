@@ -29,8 +29,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 16,
-  "iteration": 1635337419161,
+  "id": 11,
+  "iteration": 1635518680450,
   "links": [],
   "panels": [
     {
@@ -44,7 +44,7 @@
       },
       "id": 37,
       "panels": [],
-      "title": "Reserve and cache",
+      "title": "Reserve",
       "type": "row"
     },
     {
@@ -74,8 +74,8 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
-        "w": 11,
+        "h": 13,
+        "w": 9,
         "x": 0,
         "y": 1
       },
@@ -104,8 +104,67 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "reserve size",
+      "title": "reserve size (chunks)",
       "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 13,
+        "w": 15,
+        "x": 9,
+        "y": 1
+      },
+      "id": 43,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "increase(bee_localstore_reserve_size{namespace=~\"$namespace\", instance=~\"$instance\"}[1d])*4096",
+          "interval": "",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "reserve size growth (last 24h)",
+      "type": "stat"
     },
     {
       "aliasColors": {},
@@ -123,10 +182,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 10,
-        "w": 13,
-        "x": 11,
-        "y": 1
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 14
       },
       "hiddenSeries": false,
       "id": 39,
@@ -208,6 +267,18 @@
     },
     {
       "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 23
+      },
+      "id": 42,
+      "title": "Cache",
+      "type": "row"
+    },
+    {
+      "datasource": null,
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -221,6 +292,10 @@
               {
                 "color": "green",
                 "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
               }
             ]
           },
@@ -229,14 +304,13 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 9,
-        "w": 11,
+        "h": 13,
+        "w": 9,
         "x": 0,
-        "y": 11
+        "y": 24
       },
-      "id": 38,
+      "id": 46,
       "options": {
-        "orientation": "auto",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -260,8 +334,67 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "gc size",
+      "title": "cache size (chunks)",
       "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 13,
+        "w": 15,
+        "x": 9,
+        "y": 24
+      },
+      "id": 45,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "increase(bee_localstore_gc_size{namespace=~\"$namespace\", instance=~\"$instance\"}[1d])*4096",
+          "interval": "",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "cache size growth (last 24h)",
+      "type": "stat"
     },
     {
       "aliasColors": {},
@@ -279,10 +412,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 9,
-        "w": 13,
-        "x": 11,
-        "y": 11
+        "h": 10,
+        "w": 24,
+        "x": 0,
+        "y": 37
       },
       "hiddenSeries": false,
       "id": 40,
@@ -341,10 +474,10 @@
         {
           "$$hashKey": "object:69",
           "format": "Bps",
-          "label": null,
+          "label": "",
           "logBase": 1,
           "max": null,
-          "min": null,
+          "min": "0",
           "show": true
         },
         {
@@ -369,7 +502,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 20
+        "y": 47
       },
       "id": 29,
       "panels": [],
@@ -424,7 +557,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 21
+        "y": 48
       },
       "id": 31,
       "options": {
@@ -501,7 +634,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 21
+        "y": 48
       },
       "id": 33,
       "options": {
@@ -578,7 +711,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 29
+        "y": 56
       },
       "id": 34,
       "options": {
@@ -655,7 +788,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 29
+        "y": 56
       },
       "id": 32,
       "options": {
@@ -691,7 +824,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 37
+        "y": 64
       },
       "id": 27,
       "panels": [
@@ -903,7 +1036,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 38
+        "y": 65
       },
       "id": 25,
       "panels": [],
@@ -929,7 +1062,7 @@
         "h": 6,
         "w": 8,
         "x": 0,
-        "y": 39
+        "y": 66
       },
       "hiddenSeries": false,
       "id": 8,
@@ -1032,7 +1165,7 @@
         "h": 6,
         "w": 8,
         "x": 8,
-        "y": 39
+        "y": 66
       },
       "hiddenSeries": false,
       "id": 9,
@@ -1129,7 +1262,7 @@
         "h": 6,
         "w": 8,
         "x": 16,
-        "y": 39
+        "y": 66
       },
       "hiddenSeries": false,
       "id": 15,
@@ -1226,7 +1359,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 45
+        "y": 72
       },
       "hiddenSeries": false,
       "id": 10,
@@ -1332,7 +1465,7 @@
         "h": 7,
         "w": 8,
         "x": 8,
-        "y": 45
+        "y": 72
       },
       "hiddenSeries": false,
       "id": 14,
@@ -1431,7 +1564,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 45
+        "y": 72
       },
       "hiddenSeries": false,
       "id": 18,
@@ -1529,7 +1662,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 52
+        "y": 79
       },
       "hiddenSeries": false,
       "id": 16,
@@ -1648,7 +1781,7 @@
         "h": 7,
         "w": 8,
         "x": 8,
-        "y": 52
+        "y": 79
       },
       "id": 17,
       "options": {
@@ -1700,7 +1833,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 52
+        "y": 79
       },
       "hiddenSeries": false,
       "id": 23,
@@ -1798,7 +1931,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 59
+        "y": 86
       },
       "hiddenSeries": false,
       "id": 19,
@@ -1891,8 +2024,8 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "bee-bootnode",
-          "value": "bee-bootnode"
+          "text": "bee-storage",
+          "value": "bee-storage"
         },
         "datasource": "Prometheus",
         "definition": "label_values(bee_info, namespace)",
@@ -1971,5 +2104,5 @@
   "timezone": "",
   "title": "Localstore",
   "uid": "Szc9zJUGk",
-  "version": 4
+  "version": 2
 }
