@@ -8,6 +8,12 @@
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
         "type": "dashboard"
       },
       {
@@ -27,11 +33,13 @@
     ]
   },
   "editable": true,
+  "fiscalYearStartMonth": 0,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 15,
-  "iteration": 1635337530325,
+  "id": 14,
+  "iteration": 1637610686037,
   "links": [],
+  "liveNow": false,
   "panels": [
     {
       "datasource": null,
@@ -67,8 +75,8 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
-        "w": 8,
+        "h": 13,
+        "w": 7,
         "x": 0,
         "y": 0
       },
@@ -86,13 +94,13 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "targets": [
         {
           "exemplar": true,
           "expr": "bee_kademlia_current_depth{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
-          "legendFormat": "depth({{instance}})",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
@@ -135,9 +143,9 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
-        "w": 8,
-        "x": 8,
+        "h": 13,
+        "w": 5,
+        "x": 7,
         "y": 0
       },
       "id": 56,
@@ -154,19 +162,80 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "targets": [
         {
           "exemplar": true,
           "expr": "bee_kademlia_current_radius{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
-          "legendFormat": "depth({{instance}})",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
       "title": "Radius",
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 13,
+        "w": 4,
+        "x": 12,
+        "y": 0
+      },
+      "id": 71,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "8.2.1",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "bee_lightnode_currently_connected_peers{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "format": "time_series",
+          "interval": "",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Light nodes",
       "type": "gauge"
     },
     {
@@ -201,7 +270,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 13,
         "w": 8,
         "x": 16,
         "y": 0
@@ -220,7 +289,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "targets": [
         {
           "exemplar": true,
@@ -261,7 +330,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 7
+        "y": 13
       },
       "hiddenSeries": false,
       "id": 8,
@@ -281,7 +350,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -359,7 +428,7 @@
         "h": 7,
         "w": 8,
         "x": 8,
-        "y": 7
+        "y": 13
       },
       "hiddenSeries": false,
       "id": 9,
@@ -379,7 +448,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -455,7 +524,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 7
+        "y": 13
       },
       "hiddenSeries": false,
       "id": 54,
@@ -477,7 +546,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -564,7 +633,7 @@
         "h": 8,
         "w": 8,
         "x": 0,
-        "y": 14
+        "y": 20
       },
       "id": 61,
       "options": {
@@ -582,7 +651,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "targets": [
         {
           "exemplar": true,
@@ -615,7 +684,7 @@
         "h": 8,
         "w": 8,
         "x": 8,
-        "y": 14
+        "y": 20
       },
       "hiddenSeries": false,
       "id": 57,
@@ -637,7 +706,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -710,15 +779,11 @@
       },
       "dataFormat": "timeseries",
       "datasource": null,
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "gridPos": {
         "h": 8,
         "w": 8,
         "x": 16,
-        "y": 14
+        "y": 20
       },
       "heatmap": {},
       "hideZeroBuckets": false,
@@ -789,7 +854,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 22
+        "y": 28
       },
       "id": 67,
       "options": {
@@ -807,7 +872,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "targets": [
         {
           "exemplar": true,
@@ -850,7 +915,7 @@
         "h": 7,
         "w": 8,
         "x": 8,
-        "y": 22
+        "y": 28
       },
       "id": 63,
       "options": {
@@ -866,7 +931,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "targets": [
         {
           "exemplar": true,
@@ -903,15 +968,11 @@
       },
       "dataFormat": "timeseries",
       "datasource": null,
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "gridPos": {
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 22
+        "y": 28
       },
       "heatmap": {},
       "hideZeroBuckets": false,
@@ -982,7 +1043,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 29
+        "y": 35
       },
       "id": 69,
       "options": {
@@ -1000,7 +1061,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "targets": [
         {
           "exemplar": true,
@@ -1040,7 +1101,7 @@
         "h": 7,
         "w": 8,
         "x": 8,
-        "y": 29
+        "y": 35
       },
       "id": 53,
       "options": {
@@ -1058,7 +1119,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "targets": [
         {
           "exemplar": true,
@@ -1134,7 +1195,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 29
+        "y": 35
       },
       "id": 70,
       "options": {
@@ -1150,7 +1211,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "targets": [
         {
           "exemplar": true,
@@ -1168,7 +1229,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 27,
+  "schemaVersion": 31,
   "style": "dark",
   "tags": [
     "components"
@@ -1178,7 +1239,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "bee-bootnode",
           "value": "bee-bootnode"
         },
@@ -1201,7 +1262,6 @@
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
-        "tags": [],
         "tagsQuery": "",
         "type": "query",
         "useTags": false
@@ -1232,7 +1292,6 @@
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
-        "tags": [],
         "tagsQuery": "",
         "type": "query",
         "useTags": false
@@ -1259,5 +1318,5 @@
   "timezone": "",
   "title": "Kademlia",
   "uid": "BmxHrER7z",
-  "version": 3
+  "version": 2
 }
