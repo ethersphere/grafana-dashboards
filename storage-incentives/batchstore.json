@@ -8,6 +8,12 @@
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
         "type": "dashboard"
       },
       {
@@ -28,14 +34,16 @@
   },
   "description": "",
   "editable": true,
+  "fiscalYearStartMonth": 0,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 10,
-  "iteration": 1634802552076,
+  "id": 28,
+  "iteration": 1637841017196,
   "links": [],
+  "liveNow": false,
   "panels": [
     {
-      "datasource": null,
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "decimals": 0,
@@ -89,12 +97,13 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "targets": [
         {
+          "exemplar": true,
           "expr": "bee_batchstore_available_capacity{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
-          "legendFormat": "available capacity (chunks)",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
@@ -104,7 +113,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "decimals": 0,
@@ -156,12 +165,13 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "targets": [
         {
+          "exemplar": true,
           "expr": "bee_batchstore_radius{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
-          "legendFormat": "radius",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
@@ -171,7 +181,7 @@
       "type": "gauge"
     },
     {
-      "datasource": null,
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "decimals": 0,
@@ -220,7 +230,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "targets": [
         {
           "expr": "bee_batchstore_inner{namespace=~\"$namespace\", instance=~\"$instance\"}",
@@ -242,107 +252,97 @@
       "type": "stat"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
           "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
           "unit": "none"
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 8,
         "x": 0,
         "y": 7
       },
-      "hiddenSeries": false,
       "id": 57,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "7.5.5",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "8.2.1",
       "targets": [
         {
+          "exemplar": true,
           "expr": "bee_batchstore_available_capacity{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
-          "legendFormat": "available capacity (chunks)",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
-      "thresholds": [],
       "timeFrom": null,
-      "timeRegions": [],
       "timeShift": null,
       "title": "Available capacity",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "none",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      "type": "timeseries"
     },
     {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "links": [],
@@ -376,7 +376,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -386,9 +386,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "exemplar": true,
           "expr": "bee_batchstore_radius{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
-          "legendFormat": "radius",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
@@ -412,6 +413,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:332",
           "format": "none",
           "label": null,
           "logBase": 1,
@@ -420,6 +422,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:333",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -438,7 +441,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "links": [],
@@ -472,7 +475,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -482,16 +485,18 @@
       "steppedLine": false,
       "targets": [
         {
+          "exemplar": true,
           "expr": "bee_batchstore_inner{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "hide": false,
           "interval": "",
-          "legendFormat": "inner",
+          "legendFormat": "inner ({{instance}})",
           "refId": "A"
         },
         {
+          "exemplar": true,
           "expr": "bee_batchstore_outer{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
-          "legendFormat": "outer",
+          "legendFormat": "outer ({{instance}})",
           "refId": "B"
         }
       ],
@@ -515,6 +520,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:385",
           "format": "none",
           "label": null,
           "logBase": 1,
@@ -523,6 +529,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:386",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -538,7 +545,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 27,
+  "schemaVersion": 31,
   "style": "dark",
   "tags": [
     "storage-incentives"
@@ -548,9 +555,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "selected": true,
+          "text": "bee-bootnode",
+          "value": "bee-bootnode"
         },
         "datasource": "Prometheus",
         "definition": "label_values(bee_info, namespace)",
@@ -571,7 +578,6 @@
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
-        "tags": [],
         "tagsQuery": "",
         "type": "query",
         "useTags": false
@@ -602,38 +608,6 @@
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
-        "tags": [],
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      },
-      {
-        "allValue": ".+",
-        "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
-        },
-        "datasource": "Prometheus",
-        "definition": "label_values(po)",
-        "description": null,
-        "error": null,
-        "hide": 0,
-        "includeAll": true,
-        "label": "po",
-        "multi": false,
-        "name": "po",
-        "options": [],
-        "query": {
-          "query": "label_values(po)",
-          "refId": "Prometheus-po-Variable-Query"
-        },
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 3,
-        "tagValuesQuery": "",
-        "tags": [],
         "tagsQuery": "",
         "type": "query",
         "useTags": false
@@ -658,7 +632,7 @@
     ]
   },
   "timezone": "",
-  "title": "Storage incentives - batch store",
+  "title": "Batch store",
   "uid": "Iiui3ERnk",
-  "version": 2
+  "version": 6
 }

@@ -8,6 +8,12 @@
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
         "type": "dashboard"
       },
       {
@@ -26,15 +32,18 @@
       }
     ]
   },
+  "description": "metrics from the postage listener",
   "editable": true,
+  "fiscalYearStartMonth": 0,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 13,
-  "iteration": 1634802570467,
+  "id": 29,
+  "iteration": 1637840476564,
   "links": [],
+  "liveNow": false,
   "panels": [
     {
-      "datasource": null,
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "decimals": 0,
@@ -88,12 +97,13 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "targets": [
         {
+          "exemplar": true,
           "expr": "bee_postage_listener_backend_calls{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
-          "legendFormat": "available capacity (chunks)",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
@@ -103,7 +113,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "decimals": 0,
@@ -157,12 +167,13 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "targets": [
         {
+          "exemplar": true,
           "expr": "bee_postage_listener_backend_errors{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
-          "legendFormat": "radius",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
@@ -172,7 +183,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "decimals": 0,
@@ -184,14 +195,6 @@
               {
                 "color": "red",
                 "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 50
-              },
-              {
-                "color": "green",
-                "value": 70
               }
             ]
           },
@@ -213,7 +216,7 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "mean"
+            "lastNotNull"
           ],
           "fields": "",
           "values": false
@@ -221,31 +224,35 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "targets": [
         {
+          "exemplar": true,
           "expr": "increase(bee_postage_listener_created_events{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "hide": false,
           "interval": "",
-          "legendFormat": "created",
+          "legendFormat": "created ({{instance}})",
           "refId": "A"
         },
         {
+          "exemplar": true,
           "expr": "increase(bee_postage_listener_depth_events{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
-          "legendFormat": "dilution",
+          "legendFormat": "dilution ({{instance}})",
           "refId": "B"
         },
         {
+          "exemplar": true,
           "expr": "increase(bee_postage_listener_price_events{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
-          "legendFormat": "price change",
+          "legendFormat": "price change ({{instance}})",
           "refId": "C"
         },
         {
+          "exemplar": true,
           "expr": "increase(bee_postage_listener_topup_events{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
-          "legendFormat": "topup",
+          "legendFormat": "topup ({{instance}})",
           "refId": "D"
         }
       ],
@@ -259,7 +266,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "links": [],
@@ -293,7 +300,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -303,9 +310,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "exemplar": true,
           "expr": "increase(bee_postage_listener_events_processed{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
-          "legendFormat": "events",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
@@ -355,7 +363,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "links": [],
@@ -389,7 +397,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -399,9 +407,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "exemplar": true,
           "expr": "increase(bee_postage_listener_pages_processed{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])  ",
           "interval": "",
-          "legendFormat": "pages",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
@@ -451,11 +460,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
-          "links": [],
-          "unit": "none"
+          "links": []
         },
         "overrides": []
       },
@@ -485,7 +493,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.5",
+      "pluginVersion": "8.2.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -495,11 +503,12 @@
       "steppedLine": false,
       "targets": [
         {
+          "exemplar": true,
           "expr": "increase(bee_postage_listener_event_duration{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
           "hide": false,
           "instant": false,
           "interval": "",
-          "legendFormat": "time",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
@@ -523,7 +532,8 @@
       },
       "yaxes": [
         {
-          "format": "none",
+          "$$hashKey": "object:133",
+          "format": "ns",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -531,6 +541,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:134",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -546,7 +557,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 27,
+  "schemaVersion": 31,
   "style": "dark",
   "tags": [
     "storage-incentives"
@@ -557,8 +568,8 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "text": "bee-bootnode",
+          "value": "bee-bootnode"
         },
         "datasource": "Prometheus",
         "definition": "label_values(bee_info, namespace)",
@@ -579,7 +590,6 @@
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
-        "tags": [],
         "tagsQuery": "",
         "type": "query",
         "useTags": false
@@ -610,38 +620,6 @@
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
-        "tags": [],
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      },
-      {
-        "allValue": ".+",
-        "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
-        },
-        "datasource": "Prometheus",
-        "definition": "label_values(po)",
-        "description": null,
-        "error": null,
-        "hide": 0,
-        "includeAll": true,
-        "label": "po",
-        "multi": false,
-        "name": "po",
-        "options": [],
-        "query": {
-          "query": "label_values(po)",
-          "refId": "Prometheus-po-Variable-Query"
-        },
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 3,
-        "tagValuesQuery": "",
-        "tags": [],
         "tagsQuery": "",
         "type": "query",
         "useTags": false
@@ -666,7 +644,7 @@
     ]
   },
   "timezone": "",
-  "title": "Storage incentives - listener",
+  "title": "Listener",
   "uid": "4iE-qER7z",
-  "version": 2
+  "version": 3
 }
