@@ -37,7 +37,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 26,
-  "iteration": 1637847217004,
+  "iteration": 1638177094622,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -200,7 +200,7 @@
         "max": true,
         "min": true,
         "show": true,
-        "sort": "avg",
+        "sort": "max",
         "sortDesc": true,
         "total": false,
         "values": true
@@ -304,6 +304,8 @@
         "max": true,
         "min": true,
         "show": true,
+        "sort": "max",
+        "sortDesc": true,
         "total": false,
         "values": true
       },
@@ -410,6 +412,8 @@
         "min": true,
         "rightSide": false,
         "show": true,
+        "sort": "max",
+        "sortDesc": true,
         "total": false,
         "values": true
       },
@@ -706,7 +710,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "bee_pushsync_total_outgoing_errors{namespace=~\"$namespace\", instance=~\"$instance\"} / bee_pushsync_total_outgoing{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "expr": "bee_pushsync_total_outgoing_errors{namespace=~\"$namespace\", instance=~\"$instance\"}\n/\nbee_pushsync_total_outgoing{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
           "legendFormat": "{{instance}}",
           "refId": "A"
@@ -770,7 +774,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "bee_pushsync_total_failed_send_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}/bee_pushsync_total_send_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "expr": "bee_pushsync_total_failed_send_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}\n/\nbee_pushsync_total_send_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -1178,7 +1182,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "(bee_pushsync_handler_replication_errors{namespace=~\"$namespace\", instance=~\"$instance\"}) / (bee_pushsync_handler_replication{namespace=~\"$namespace\", instance=~\"$instance\"}) ",
+          "expr": "bee_pushsync_handler_replication_errors{namespace=~\"$namespace\", instance=~\"$instance\"}\n/\nbee_pushsync_handler_replication{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
           "legendFormat": "{{instance}}",
           "refId": "A"
@@ -1240,7 +1244,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "(bee_pushsync_invalid_stamps{namespace=~\"$namespace\", instance=~\"$instance\"}) / (bee_pushsync_handler_replication{namespace=~\"$namespace\", instance=~\"$instance\"} + bee_pushsync_storer{namespace=~\"$namespace\", instance=~\"$instance\"} + bee_pushsync_forwarder{namespace=~\"$namespace\", instance=~\"$instance\"}) ",
+          "expr": "bee_pushsync_invalid_stamps{namespace=~\"$namespace\", instance=~\"$instance\"}\n/\nbee_pushsync_total_received{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
           "legendFormat": "{{instance}}",
           "refId": "A"
@@ -1415,7 +1419,7 @@
       {
         "allValue": ".+",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "All",
           "value": "$__all"
         },
@@ -1445,7 +1449,7 @@
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {
@@ -1464,5 +1468,5 @@
   "timezone": "",
   "title": "PushSync",
   "uid": "RzKb6ZNnz",
-  "version": 29
+  "version": 38
 }
