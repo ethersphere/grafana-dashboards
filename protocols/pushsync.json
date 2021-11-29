@@ -37,7 +37,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 26,
-  "iteration": 1638177094622,
+  "iteration": 1638181698687,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -304,7 +304,7 @@
         "max": true,
         "min": true,
         "show": true,
-        "sort": "max",
+        "sort": "avg",
         "sortDesc": true,
         "total": false,
         "values": true
@@ -439,7 +439,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "bee_pushsync_total_failed_send_attempts{namespace=~\"$namespace\", instance=~\"$instance\"} / bee_pushsync_total_send_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "expr": "bee_pushsync_total_failed_send_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}\n/\nbee_pushsync_total_send_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
           "legendFormat": "sent {{instance}}",
           "refId": "A"
@@ -624,14 +624,14 @@
       },
       "gridPos": {
         "h": 10,
-        "w": 5,
+        "w": 6,
         "x": 0,
         "y": 33
       },
       "id": 71,
       "options": {
         "colorMode": "value",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
@@ -642,7 +642,7 @@
           "values": false
         },
         "text": {},
-        "textMode": "value"
+        "textMode": "value_and_name"
       },
       "pluginVersion": "8.2.1",
       "targets": [
@@ -687,13 +687,13 @@
       "gridPos": {
         "h": 10,
         "w": 6,
-        "x": 5,
+        "x": 6,
         "y": 33
       },
       "id": 70,
       "options": {
         "colorMode": "value",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
@@ -704,7 +704,7 @@
           "values": false
         },
         "text": {},
-        "textMode": "value"
+        "textMode": "value_and_name"
       },
       "pluginVersion": "8.2.1",
       "targets": [
@@ -751,7 +751,7 @@
       "gridPos": {
         "h": 10,
         "w": 6,
-        "x": 11,
+        "x": 12,
         "y": 33
       },
       "id": 66,
@@ -768,7 +768,7 @@
           "values": false
         },
         "text": {},
-        "textMode": "value"
+        "textMode": "value_and_name"
       },
       "pluginVersion": "8.2.1",
       "targets": [
@@ -778,7 +778,7 @@
           "format": "time_series",
           "instant": true,
           "interval": "",
-          "legendFormat": "total_errors({{instance}})",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
@@ -943,6 +943,8 @@
         "min": true,
         "rightSide": false,
         "show": true,
+        "sort": "max",
+        "sortDesc": true,
         "total": false,
         "values": true
       },
@@ -1157,7 +1159,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
+        "h": 11,
         "w": 6,
         "x": 12,
         "y": 55
@@ -1219,7 +1221,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
+        "h": 11,
         "w": 6,
         "x": 18,
         "y": 55
@@ -1390,8 +1392,8 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "bee-bootnode",
-          "value": "bee-bootnode"
+          "text": "bee-gateway",
+          "value": "bee-gateway"
         },
         "datasource": "Prometheus",
         "definition": "label_values(bee_info, namespace)",
@@ -1468,5 +1470,5 @@
   "timezone": "",
   "title": "PushSync",
   "uid": "RzKb6ZNnz",
-  "version": 38
+  "version": 45
 }
