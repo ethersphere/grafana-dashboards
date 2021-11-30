@@ -37,7 +37,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 26,
-  "iteration": 1638184148579,
+  "iteration": 1638187699420,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -716,7 +716,7 @@
           "refId": "A"
         }
       ],
-      "title": "Pusher - Outgoing Errors %",
+      "title": "Outgoing Errors %",
       "type": "stat"
     },
     {
@@ -1459,7 +1459,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "bee-gateway",
           "value": "bee-gateway"
         },
@@ -1538,5 +1538,5 @@
   "timezone": "",
   "title": "PushSync",
   "uid": "RzKb6ZNnz",
-  "version": 50
+  "version": 52
 }
