@@ -22,13 +22,13 @@
   "fiscalYearStartMonth": 0,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 7,
-  "iteration": 1638287997239,
+  "id": 6,
+  "iteration": 1638436316777,
   "links": [],
   "liveNow": false,
   "panels": [
     {
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -40,7 +40,7 @@
       "type": "row"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -126,7 +126,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -212,7 +212,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -275,7 +275,7 @@
       "type": "stat"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -335,7 +335,7 @@
       "type": "stat"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -396,7 +396,7 @@
       "type": "gauge"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -456,7 +456,7 @@
       "type": "stat"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -526,7 +526,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "5e6/(bee_check_smoke_data_upload_duration_sum{job=\"$job\"}/bee_check_smoke_data_upload_duration_count{job=\"$job\"})",
+          "expr": "5e6/(increase(bee_check_smoke_data_upload_duration_sum{job=\"$job\"}[5m])/increase(bee_check_smoke_data_upload_duration_count{job=\"$job\"}[5m]))",
           "format": "time_series",
           "interval": "",
           "legendFormat": "{{job}}",
@@ -539,7 +539,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -594,6 +594,172 @@
         "x": 12,
         "y": 9
       },
+      "id": 72,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.2.1",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "5e6/(increase(bee_check_smoke_data_download_duration_sum{job=\"$job\"}[5m])/increase(bee_check_smoke_data_download_duration_count{job=\"$job\"}[5m]))",
+          "format": "time_series",
+          "interval": "",
+          "legendFormat": "{{job}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Average Download Speed",
+      "type": "timeseries"
+    },
+    {
+      "datasource": "Prometheus-bee",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "binBps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 0,
+        "y": 19
+      },
+      "id": 73,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.2.1",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "5e6/(bee_check_smoke_data_upload_duration_sum{job=\"$job\"}/bee_check_smoke_data_upload_duration_count{job=\"$job\"})",
+          "format": "time_series",
+          "interval": "",
+          "legendFormat": "{{job}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Average Upload Speed (alltime average)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": "Prometheus-bee",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "binBps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 12,
+        "y": 19
+      },
       "id": 69,
       "options": {
         "legend": {
@@ -618,7 +784,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Average Download Speed",
+      "title": "Average Download Speed (alltime average)",
       "type": "timeseries"
     }
   ],
@@ -633,11 +799,11 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "beekeeper",
           "value": "beekeeper"
         },
-        "datasource": "Prometheus",
+        "datasource": "Prometheus-bee",
         "definition": "label_values(push_time_seconds, job)",
         "description": null,
         "error": null,
@@ -663,7 +829,7 @@
     ]
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
@@ -682,5 +848,5 @@
   "timezone": "",
   "title": "Milestone Smoke Test",
   "uid": "R6nXBFH7k",
-  "version": 3
+  "version": 2
 }
