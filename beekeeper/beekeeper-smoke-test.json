@@ -23,7 +23,7 @@
   "gnetId": null,
   "graphTooltip": 1,
   "id": 6,
-  "iteration": 1638436316777,
+  "iteration": 1638448724880,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -412,7 +412,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "bee_check_smoke_upload_errors_count{job=\"$job\"}",
+          "expr": "bee_check_smoke_download_errors_count{job=\"$job\"}",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -420,7 +420,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Upload Errors",
+      "title": "Download Errors",
       "type": "stat"
     },
     {
@@ -1113,5 +1113,5 @@
   "timezone": "",
   "title": "Milestone Smoke Test",
   "uid": "R6nXBFH7k",
-  "version": 5
+  "version": 6
 }
