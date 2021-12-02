@@ -95,7 +95,7 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 8,
+        "w": 4,
         "x": 0,
         "y": 1
       },
@@ -181,8 +181,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 8,
-        "x": 8,
+        "w": 4,
+        "x": 4,
         "y": 1
       },
       "id": 67,
@@ -217,6 +217,92 @@
       "fieldConfig": {
         "defaults": {
           "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "semi-dark-red",
+                "value": 0.1
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 8,
+        "y": 1
+      },
+      "id": 77,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.2.1",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "bee_check_smoke_data_upload_duration_count{job=\"$job\"}*5e6",
+          "interval": "",
+          "legendFormat": "{{job}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Uploaded data (this run)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": "Prometheus-bee",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
             "mode": "thresholds"
           },
           "mappings": [],
@@ -239,11 +325,74 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 4,
-        "x": 16,
+        "w": 2,
+        "x": 12,
         "y": 1
       },
       "id": 60,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.2.1",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "bee_check_smoke_upload_errors_count{job=\"$job\"}",
+          "interval": "",
+          "legendFormat": "{{job}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Upload Errors",
+      "type": "stat"
+    },
+    {
+      "datasource": "Prometheus-bee",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "semi-dark-red",
+                "value": 0.1
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 14,
+        "y": 1
+      },
+      "id": 76,
       "options": {
         "colorMode": "value",
         "graphMode": "area",
@@ -299,10 +448,70 @@
       "gridPos": {
         "h": 4,
         "w": 4,
-        "x": 20,
+        "x": 16,
         "y": 1
       },
       "id": 68,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.2.1",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "5e6/(increase(bee_check_smoke_data_upload_duration_sum{job=\"$job\"}[5m])/increase(bee_check_smoke_data_upload_duration_count{job=\"$job\"}[5m]))",
+          "format": "time_series",
+          "interval": "",
+          "legendFormat": "{{job}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Average Upload Speed (momentary 1m)",
+      "type": "stat"
+    },
+    {
+      "datasource": "Prometheus-bee",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "binBps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 1
+      },
+      "id": 74,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
@@ -336,7 +545,7 @@
     },
     {
       "datasource": "Prometheus-bee",
-      "description": "",
+      "description": "This will reset every time the smoke test respawns (12h)",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -349,21 +558,17 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "semi-dark-red",
-                "value": 0.1
               }
             ]
           },
-          "unit": "none"
+          "unit": "bytes"
         },
         "overrides": []
       },
       "gridPos": {
         "h": 4,
         "w": 4,
-        "x": 16,
+        "x": 12,
         "y": 5
       },
       "id": 65,
@@ -384,7 +589,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "bee_check_smoke_download_errors_count{job=\"$job\"}",
+          "expr": "bee_check_smoke_data_upload_duration_count{job=\"$job\"}*5e6",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -392,8 +597,68 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Download Errors",
+      "title": "Uploaded data (this smoke test run only!)",
       "type": "gauge"
+    },
+    {
+      "datasource": "Prometheus-bee",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "binBps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 16,
+        "y": 5
+      },
+      "id": 75,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.2.1",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "5e6/(increase(bee_check_smoke_data_download_duration_sum{job=\"$job\"}[5m])/increase(bee_check_smoke_data_download_duration_count{job=\"$job\"}[5m]))",
+          "format": "time_series",
+          "interval": "",
+          "legendFormat": "{{job}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Average Download Speed (momentary 1m)",
+      "type": "stat"
     },
     {
       "datasource": "Prometheus-bee",
@@ -848,5 +1113,5 @@
   "timezone": "",
   "title": "Milestone Smoke Test",
   "uid": "R6nXBFH7k",
-  "version": 2
+  "version": 5
 }
