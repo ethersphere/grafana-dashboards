@@ -35,538 +35,11 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 19,
-  "iteration": 1642595772784,
+  "id": 16,
+  "iteration": 1644948434192,
   "links": [],
   "liveNow": false,
   "panels": [
-    {
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 0
-      },
-      "id": 54,
-      "title": "Sharky",
-      "type": "row"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          },
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 0,
-        "y": 1
-      },
-      "id": 49,
-      "options": {
-        "colorMode": "none",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "8.3.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "bee_sharky_total_write_calls{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Total Write Calls",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "dark-red",
-                "value": 1
-              }
-            ]
-          },
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 12,
-        "y": 1
-      },
-      "id": 52,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "8.3.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "bee_sharky_total_write_calls_err{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Total Write Calls Errors",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          },
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 0,
-        "y": 7
-      },
-      "id": 50,
-      "options": {
-        "colorMode": "none",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "8.3.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "bee_sharky_total_read_calls{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Total Read Calls",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "dark-red",
-                "value": 1
-              }
-            ]
-          },
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 12,
-        "y": 7
-      },
-      "id": 55,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "8.3.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "bee_sharky_total_read_calls_err{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Total Read Calls Errors",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          },
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 0,
-        "y": 13
-      },
-      "id": 56,
-      "options": {
-        "colorMode": "none",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "8.3.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "bee_sharky_total_release_calls{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Total Release Calls",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "dark-red",
-                "value": 1
-              }
-            ]
-          },
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 12,
-        "y": 13
-      },
-      "id": 57,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "8.3.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "bee_sharky_total_release_calls_err{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Total Release Calls Errors",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          },
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 24,
-        "x": 0,
-        "y": 19
-      },
-      "id": 48,
-      "options": {
-        "colorMode": "none",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "8.3.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "bee_sharky_shard_count{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Shard Count",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          },
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 24,
-        "x": 0,
-        "y": 23
-      },
-      "id": 58,
-      "options": {
-        "colorMode": "none",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "8.3.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "bee_sharky_current_shard_size{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "{{instance}}: shard index {{current_shard_size}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Shard Current Size in Chunks",
-      "type": "stat"
-    },
     {
       "collapsed": false,
       "datasource": {
@@ -577,7 +50,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 0
       },
       "id": 37,
       "panels": [],
@@ -617,7 +90,7 @@
         "h": 13,
         "w": 9,
         "x": 0,
-        "y": 28
+        "y": 1
       },
       "id": 35,
       "options": {
@@ -675,7 +148,7 @@
         "h": 13,
         "w": 15,
         "x": 9,
-        "y": 28
+        "y": 1
       },
       "id": 43,
       "options": {
@@ -739,7 +212,7 @@
         "h": 13,
         "w": 9,
         "x": 0,
-        "y": 41
+        "y": 14
       },
       "id": 47,
       "options": {
@@ -790,7 +263,7 @@
         "h": 13,
         "w": 15,
         "x": 9,
-        "y": 41
+        "y": 14
       },
       "hiddenSeries": false,
       "id": 39,
@@ -860,6 +333,7 @@
       }
     },
     {
+      "collapsed": false,
       "datasource": {
         "type": "prometheus",
         "uid": "PEB8F6B0BE743FB7E"
@@ -868,9 +342,10 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 54
+        "y": 27
       },
       "id": 42,
+      "panels": [],
       "title": "Cache",
       "type": "row"
     },
@@ -907,7 +382,7 @@
         "h": 13,
         "w": 9,
         "x": 0,
-        "y": 55
+        "y": 28
       },
       "id": 46,
       "options": {
@@ -965,7 +440,7 @@
         "h": 13,
         "w": 15,
         "x": 9,
-        "y": 55
+        "y": 28
       },
       "id": 45,
       "options": {
@@ -1018,7 +493,7 @@
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 68
+        "y": 41
       },
       "hiddenSeries": false,
       "id": 40,
@@ -1099,7 +574,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 78
+        "y": 51
       },
       "id": 29,
       "panels": [],
@@ -1165,7 +640,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 79
+        "y": 52
       },
       "id": 31,
       "options": {
@@ -1251,7 +726,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 79
+        "y": 52
       },
       "id": 33,
       "options": {
@@ -1337,7 +812,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 87
+        "y": 60
       },
       "id": 34,
       "options": {
@@ -1423,7 +898,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 87
+        "y": 60
       },
       "id": 32,
       "options": {
@@ -1460,7 +935,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 95
+        "y": 68
       },
       "id": 27,
       "panels": [
@@ -1485,7 +960,7 @@
             "h": 7,
             "w": 8,
             "x": 0,
-            "y": 1
+            "y": 96
           },
           "hiddenSeries": false,
           "id": 22,
@@ -1506,7 +981,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.3.1",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1576,7 +1051,7 @@
             "h": 7,
             "w": 8,
             "x": 8,
-            "y": 1
+            "y": 96
           },
           "hiddenSeries": false,
           "id": 21,
@@ -1597,7 +1072,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.3.1",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1659,10 +1134,302 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 96
+        "y": 69
       },
       "id": 25,
       "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "links": [],
+              "unit": "ns"
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 3,
+          "gridPos": {
+            "h": 7,
+            "w": 8,
+            "x": 0,
+            "y": 6
+          },
+          "hiddenSeries": false,
+          "id": 60,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": true,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "8.3.1",
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PEB8F6B0BE743FB7E"
+              },
+              "exemplar": true,
+              "expr": "bee_localstore_evict_reserve_total_time{namespace=~\"$namespace\", instance=~\"$instance\"}",
+              "interval": "",
+              "legendFormat": "time_to_first_item({{instance}})",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeRegions": [],
+          "title": "reserve eviction time to first item",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:91",
+              "format": "ns",
+              "logBase": 1,
+              "min": "0",
+              "show": true
+            },
+            {
+              "$$hashKey": "object:92",
+              "format": "short",
+              "logBase": 1,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 3,
+          "gridPos": {
+            "h": 7,
+            "w": 8,
+            "x": 8,
+            "y": 6
+          },
+          "hiddenSeries": false,
+          "id": 61,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": true,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "8.3.1",
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PEB8F6B0BE743FB7E"
+              },
+              "exemplar": true,
+              "expr": "increase(bee_localstore_evict_reserve_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+              "interval": "",
+              "legendFormat": "{{instance}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeRegions": [],
+          "title": "reserve eviction runs",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:91",
+              "format": "short",
+              "logBase": 1,
+              "min": "0",
+              "show": true
+            },
+            {
+              "$$hashKey": "object:92",
+              "format": "short",
+              "logBase": 1,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 3,
+          "gridPos": {
+            "h": 7,
+            "w": 8,
+            "x": 16,
+            "y": 6
+          },
+          "hiddenSeries": false,
+          "id": 63,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": true,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "8.3.1",
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PEB8F6B0BE743FB7E"
+              },
+              "exemplar": true,
+              "expr": "increase(bee_localstore_evict_reserve_err_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+              "interval": "",
+              "legendFormat": "{{instance}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeRegions": [],
+          "title": "reserve eviction failed runs",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:91",
+              "format": "short",
+              "logBase": 1,
+              "min": "0",
+              "show": true
+            },
+            {
+              "$$hashKey": "object:92",
+              "format": "short",
+              "logBase": 1,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false
+          }
+        },
         {
           "aliasColors": {},
           "bars": false,
@@ -1685,7 +1452,7 @@
             "h": 6,
             "w": 8,
             "x": 0,
-            "y": 70
+            "y": 13
           },
           "hiddenSeries": false,
           "id": 8,
@@ -1777,7 +1544,7 @@
             "h": 6,
             "w": 8,
             "x": 8,
-            "y": 70
+            "y": 13
           },
           "hiddenSeries": false,
           "id": 9,
@@ -1855,6 +1622,7 @@
             "type": "prometheus",
             "uid": "PEB8F6B0BE743FB7E"
           },
+          "description": "",
           "fieldConfig": {
             "defaults": {
               "links": []
@@ -1862,23 +1630,24 @@
             "overrides": []
           },
           "fill": 1,
-          "fillGradient": 0,
+          "fillGradient": 3,
           "gridPos": {
-            "h": 6,
+            "h": 7,
             "w": 8,
             "x": 16,
-            "y": 70
+            "y": 13
           },
           "hiddenSeries": false,
-          "id": 15,
+          "id": 62,
           "legend": {
-            "avg": false,
-            "current": false,
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
             "max": false,
             "min": false,
             "show": true,
-            "total": false,
-            "values": false
+            "total": true,
+            "values": true
           },
           "lines": true,
           "linewidth": 1,
@@ -1897,15 +1666,20 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "bee_localstore_gc_size{namespace=~\"$namespace\", instance=~\"$instance\"}",
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PEB8F6B0BE743FB7E"
+              },
+              "exemplar": true,
+              "expr": "bee_localstore_reserve_size{namespace=~\"$namespace\", instance=~\"$instance\"}",
               "interval": "",
-              "legendFormat": "gc_size({{instance}})",
+              "legendFormat": "{{instance}}",
               "refId": "A"
             }
           ],
           "thresholds": [],
           "timeRegions": [],
-          "title": "gc size",
+          "title": "reserve size",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -1919,14 +1693,14 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:333",
+              "$$hashKey": "object:91",
               "format": "short",
               "logBase": 1,
               "min": "0",
               "show": true
             },
             {
-              "$$hashKey": "object:334",
+              "$$hashKey": "object:92",
               "format": "short",
               "logBase": 1,
               "show": true
@@ -1957,7 +1731,7 @@
             "h": 7,
             "w": 8,
             "x": 0,
-            "y": 76
+            "y": 19
           },
           "hiddenSeries": false,
           "id": 10,
@@ -2056,7 +1830,7 @@
             "h": 7,
             "w": 8,
             "x": 8,
-            "y": 76
+            "y": 19
           },
           "hiddenSeries": false,
           "id": 14,
@@ -2135,23 +1909,22 @@
             "type": "prometheus",
             "uid": "PEB8F6B0BE743FB7E"
           },
-          "description": "",
           "fieldConfig": {
             "defaults": {
-              "unit": "none"
+              "links": []
             },
             "overrides": []
           },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
-            "h": 7,
+            "h": 6,
             "w": 8,
             "x": 16,
-            "y": 76
+            "y": 20
           },
           "hiddenSeries": false,
-          "id": 18,
+          "id": 15,
           "legend": {
             "avg": false,
             "current": false,
@@ -2178,15 +1951,15 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "increase(bee_localstore_gc_update_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+              "expr": "bee_localstore_gc_size{namespace=~\"$namespace\", instance=~\"$instance\"}",
               "interval": "",
-              "legendFormat": "update_count({{instance}})",
+              "legendFormat": "gc_size({{instance}})",
               "refId": "A"
             }
           ],
           "thresholds": [],
           "timeRegions": [],
-          "title": "gc update count",
+          "title": "gc size",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -2200,14 +1973,14 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:848",
-              "format": "none",
+              "$$hashKey": "object:333",
+              "format": "short",
               "logBase": 1,
               "min": "0",
               "show": true
             },
             {
-              "$$hashKey": "object:849",
+              "$$hashKey": "object:334",
               "format": "short",
               "logBase": 1,
               "show": true
@@ -2239,7 +2012,7 @@
             "h": 7,
             "w": 8,
             "x": 0,
-            "y": 83
+            "y": 26
           },
           "hiddenSeries": false,
           "id": 16,
@@ -2338,7 +2111,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               },
@@ -2350,7 +2124,7 @@
             "h": 7,
             "w": 8,
             "x": 8,
-            "y": 83
+            "y": 26
           },
           "id": 17,
           "options": {
@@ -2393,29 +2167,28 @@
           "description": "",
           "fieldConfig": {
             "defaults": {
-              "links": []
+              "unit": "none"
             },
             "overrides": []
           },
           "fill": 1,
-          "fillGradient": 3,
+          "fillGradient": 0,
           "gridPos": {
             "h": 7,
             "w": 8,
             "x": 16,
-            "y": 83
+            "y": 26
           },
           "hiddenSeries": false,
-          "id": 23,
+          "id": 18,
           "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
+            "avg": false,
+            "current": false,
             "max": false,
             "min": false,
             "show": true,
-            "total": true,
-            "values": true
+            "total": false,
+            "values": false
           },
           "lines": true,
           "linewidth": 1,
@@ -2434,15 +2207,15 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "increase(bee_localstore_gc_first_item_time{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+              "expr": "increase(bee_localstore_gc_update_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
               "interval": "",
-              "legendFormat": "time_to_first_item({{instance}})",
+              "legendFormat": "update_count({{instance}})",
               "refId": "A"
             }
           ],
           "thresholds": [],
           "timeRegions": [],
-          "title": "gc time to first item",
+          "title": "gc update count",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -2456,14 +2229,14 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:91",
-              "format": "short",
+              "$$hashKey": "object:848",
+              "format": "none",
               "logBase": 1,
               "min": "0",
               "show": true
             },
             {
-              "$$hashKey": "object:92",
+              "$$hashKey": "object:849",
               "format": "short",
               "logBase": 1,
               "show": true
@@ -2494,7 +2267,7 @@
             "h": 7,
             "w": 8,
             "x": 0,
-            "y": 90
+            "y": 33
           },
           "hiddenSeries": false,
           "id": 19,
@@ -2563,9 +2336,642 @@
           "yaxis": {
             "align": false
           }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 3,
+          "gridPos": {
+            "h": 7,
+            "w": 8,
+            "x": 16,
+            "y": 33
+          },
+          "hiddenSeries": false,
+          "id": 23,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": true,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "8.3.1",
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "increase(bee_localstore_gc_first_item_time{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+              "interval": "",
+              "legendFormat": "time_to_first_item({{instance}})",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeRegions": [],
+          "title": "gc time to first item",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:91",
+              "format": "short",
+              "logBase": 1,
+              "min": "0",
+              "show": true
+            },
+            {
+              "$$hashKey": "object:92",
+              "format": "short",
+              "logBase": 1,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false
+          }
         }
       ],
       "title": "GC",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 70
+      },
+      "id": 54,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              },
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 6,
+            "w": 12,
+            "x": 0,
+            "y": 1
+          },
+          "id": 49,
+          "options": {
+            "colorMode": "none",
+            "graphMode": "none",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.3.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PEB8F6B0BE743FB7E"
+              },
+              "exemplar": true,
+              "expr": "bee_sharky_total_write_calls{namespace=~\"$namespace\", instance=~\"$instance\"}",
+              "interval": "",
+              "legendFormat": "{{instance}}",
+              "refId": "A"
+            }
+          ],
+          "title": "Total Write Calls",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "dark-red",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 6,
+            "w": 12,
+            "x": 12,
+            "y": 1
+          },
+          "id": 52,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.3.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PEB8F6B0BE743FB7E"
+              },
+              "exemplar": true,
+              "expr": "bee_sharky_total_write_calls_err{namespace=~\"$namespace\", instance=~\"$instance\"}",
+              "interval": "",
+              "legendFormat": "{{instance}}",
+              "refId": "A"
+            }
+          ],
+          "title": "Total Write Calls Errors",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              },
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 6,
+            "w": 12,
+            "x": 0,
+            "y": 7
+          },
+          "id": 50,
+          "options": {
+            "colorMode": "none",
+            "graphMode": "none",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.3.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PEB8F6B0BE743FB7E"
+              },
+              "exemplar": true,
+              "expr": "bee_sharky_total_read_calls{namespace=~\"$namespace\", instance=~\"$instance\"}",
+              "interval": "",
+              "legendFormat": "{{instance}}",
+              "refId": "A"
+            }
+          ],
+          "title": "Total Read Calls",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "dark-red",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 6,
+            "w": 12,
+            "x": 12,
+            "y": 7
+          },
+          "id": 55,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.3.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PEB8F6B0BE743FB7E"
+              },
+              "exemplar": true,
+              "expr": "bee_sharky_total_read_calls_err{namespace=~\"$namespace\", instance=~\"$instance\"}",
+              "interval": "",
+              "legendFormat": "{{instance}}",
+              "refId": "A"
+            }
+          ],
+          "title": "Total Read Calls Errors",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              },
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 6,
+            "w": 12,
+            "x": 0,
+            "y": 13
+          },
+          "id": 56,
+          "options": {
+            "colorMode": "none",
+            "graphMode": "none",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.3.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PEB8F6B0BE743FB7E"
+              },
+              "exemplar": true,
+              "expr": "bee_sharky_total_release_calls{namespace=~\"$namespace\", instance=~\"$instance\"}",
+              "interval": "",
+              "legendFormat": "{{instance}}",
+              "refId": "A"
+            }
+          ],
+          "title": "Total Release Calls",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "dark-red",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 6,
+            "w": 12,
+            "x": 12,
+            "y": 13
+          },
+          "id": 57,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.3.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PEB8F6B0BE743FB7E"
+              },
+              "exemplar": true,
+              "expr": "bee_sharky_total_release_calls_err{namespace=~\"$namespace\", instance=~\"$instance\"}",
+              "interval": "",
+              "legendFormat": "{{instance}}",
+              "refId": "A"
+            }
+          ],
+          "title": "Total Release Calls Errors",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              },
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 24,
+            "x": 0,
+            "y": 19
+          },
+          "id": 48,
+          "options": {
+            "colorMode": "none",
+            "graphMode": "none",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.3.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PEB8F6B0BE743FB7E"
+              },
+              "exemplar": true,
+              "expr": "bee_sharky_shard_count{namespace=~\"$namespace\", instance=~\"$instance\"}",
+              "interval": "",
+              "legendFormat": "{{instance}}",
+              "refId": "A"
+            }
+          ],
+          "title": "Shard Count",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              },
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 24,
+            "x": 0,
+            "y": 23
+          },
+          "id": 58,
+          "options": {
+            "colorMode": "none",
+            "graphMode": "none",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.3.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PEB8F6B0BE743FB7E"
+              },
+              "exemplar": true,
+              "expr": "bee_sharky_current_shard_size{namespace=~\"$namespace\", instance=~\"$instance\"}",
+              "interval": "",
+              "legendFormat": "{{instance}}: shard index {{current_shard_size}}",
+              "refId": "A"
+            }
+          ],
+          "title": "Shard Current Size in Chunks",
+          "type": "stat"
+        },
+        {
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 27
+          },
+          "id": 59,
+          "title": "Panel Title",
+          "type": "add-panel"
+        }
+      ],
+      "title": "Sharky",
       "type": "row"
     }
   ],
@@ -2579,9 +2985,9 @@
     "list": [
       {
         "current": {
-          "selected": false,
-          "text": "bee-bootnode",
-          "value": "bee-bootnode"
+          "selected": true,
+          "text": "bee-storage",
+          "value": "bee-storage"
         },
         "datasource": {
           "type": "prometheus",
@@ -2611,8 +3017,8 @@
         "allValue": ".+",
         "current": {
           "selected": false,
-          "text": "bee-9-0",
-          "value": "bee-9-0"
+          "text": "All",
+          "value": "$__all"
         },
         "datasource": {
           "type": "prometheus",
@@ -2641,7 +3047,7 @@
     ]
   },
   "time": {
-    "from": "now-2d",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {
@@ -2660,6 +3066,6 @@
   "timezone": "",
   "title": "Localstore",
   "uid": "Szc9zJUGk",
-  "version": 6,
+  "version": 2,
   "weekStart": ""
 }
