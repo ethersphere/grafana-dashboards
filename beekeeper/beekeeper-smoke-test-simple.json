@@ -373,9 +373,12 @@
 							"tooltip": false,
 							"viz": false
 						},
-						"lineInterpolation": "linear",
+						"lineInterpolation": "stepBefore",
+						"lineStyle": {
+							"fill": "solid"
+						},
 						"lineWidth": 1,
-						"pointSize": 5,
+						"pointSize": 1,
 						"scaleDistribution": {
 							"type": "linear"
 						},
@@ -390,6 +393,7 @@
 						}
 					},
 					"mappings": [],
+					"min": 0,
 					"thresholds": {
 						"mode": "absolute",
 						"steps": [
@@ -478,6 +482,7 @@
 						}
 					},
 					"mappings": [],
+					"min": 0,
 					"thresholds": {
 						"mode": "absolute",
 						"steps": [
