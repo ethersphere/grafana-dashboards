@@ -34,15 +34,14 @@
   },
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "gnetId": null,
   "graphTooltip": 0,
-  "id": 13,
-  "iteration": 1637828156574,
+  "id": 11,
+  "iteration": 1645562534463,
   "links": [],
   "liveNow": false,
   "panels": [
     {
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -84,20 +83,18 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.3.1",
       "targets": [
         {
           "expr": "bee_libp2p_created_connection_count{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "refId": "A"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "libp2p created connection",
       "type": "stat"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -139,21 +136,18 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.3.1",
       "targets": [
         {
           "expr": "bee_libp2p_handled_connection_count{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "refId": "A"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "libp2p handled connection",
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -194,7 +188,6 @@
         "y": 0
       },
       "id": 6,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -212,7 +205,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.3.1",
       "targets": [
         {
           "expr": "time() - bee_process_start_time_seconds{namespace=\"$namespace\",instance=~\"$instance\"}",
@@ -221,13 +214,10 @@
           "refId": "A"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "uptime",
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
       "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
@@ -268,7 +258,6 @@
         "y": 0
       },
       "id": 11,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -286,7 +275,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.3.1",
       "targets": [
         {
           "expr": "kube_pod_container_status_restarts_total{job=\"kube-state-metrics\", cluster=\"\", namespace=\"$namespace\", pod=~\"$instance\", container=~\"bee\"}",
@@ -294,14 +283,11 @@
           "refId": "A"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "restarts",
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -341,7 +327,6 @@
         "y": 0
       },
       "id": 10,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -359,7 +344,7 @@
         "text": {},
         "textMode": "name"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.3.1",
       "targets": [
         {
           "expr": "bee_info{namespace=\"$namespace\",instance=~\"$instance\"}",
@@ -367,14 +352,11 @@
           "refId": "A"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "bee version",
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -414,7 +396,6 @@
         "y": 0
       },
       "id": 12,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -432,7 +413,7 @@
         "text": {},
         "textMode": "name"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.3.1",
       "targets": [
         {
           "expr": "go_info{namespace=\"$namespace\",instance=~\"$instance\"}",
@@ -440,13 +421,10 @@
           "refId": "A"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "go version",
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
       "datasource": "Prometheus",
       "description": "",
       "fieldConfig": {
@@ -478,7 +456,6 @@
         "y": 3
       },
       "id": 57,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -496,21 +473,18 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.3.1",
       "targets": [
         {
           "expr": "sum (count_over_time({namespace=\"$namespace\",pod=~\"$instance\"}|=\"panic\"[24h])) by (pod) ",
           "refId": "A"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "panics (last 24h)",
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -550,7 +524,6 @@
         "y": 3
       },
       "id": 56,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -568,7 +541,7 @@
         "text": {},
         "textMode": "name"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.3.1",
       "targets": [
         {
           "exemplar": true,
@@ -578,8 +551,6 @@
           "refId": "A"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "reachability",
       "type": "stat"
     },
@@ -588,7 +559,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "fieldConfig": {
         "defaults": {
           "links": []
@@ -623,7 +594,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.3.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -660,9 +631,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "log messages",
       "tooltip": {
         "shared": true,
@@ -671,33 +640,24 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -744,7 +704,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.3.1",
       "targets": [
         {
           "exemplar": true,
@@ -762,8 +722,6 @@
           "refId": "D"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Storage space capacity",
       "type": "stat"
     },
@@ -839,7 +797,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.3.1",
       "targets": [
         {
           "exemplar": true,
@@ -857,14 +815,12 @@
           "refId": "D"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Storage space in use",
       "type": "gauge"
     },
     {
       "collapsed": false,
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -881,13 +837,14 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "fieldConfig": {
         "defaults": {
           "links": [
             {
-              "title": "",
-              "url": ""
+              "targetBlank": true,
+              "title": "pprof",
+              "url": "http://${__field.labels.pod}-debug.${domain}/debug/pprof"
             }
           ]
         },
@@ -921,7 +878,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.3.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -937,9 +894,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "goroutines",
       "tooltip": {
         "shared": true,
@@ -948,33 +903,24 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": false
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -982,7 +928,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "fieldConfig": {
         "defaults": {
           "links": [
@@ -1022,7 +968,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.3.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1043,9 +989,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "memory usage",
       "tooltip": {
         "shared": true,
@@ -1054,33 +998,24 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "decbytes",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": false
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -1088,7 +1023,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "fieldConfig": {
         "defaults": {
           "links": [
@@ -1128,7 +1063,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.3.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1144,9 +1079,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "gc cpu fraction",
       "tooltip": {
         "shared": true,
@@ -1155,33 +1088,24 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "percentunit",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": false
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -1189,7 +1113,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "Prometheus-bee",
       "fieldConfig": {
         "defaults": {
           "links": [
@@ -1229,7 +1153,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.3.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1245,9 +1169,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "gc rate",
       "tooltip": {
         "shared": true,
@@ -1256,38 +1178,29 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "percentunit",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": false
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     }
   ],
-  "refresh": false,
-  "schemaVersion": 31,
+  "refresh": "",
+  "schemaVersion": 33,
   "style": "dark",
   "tags": [
     "components"
@@ -1295,16 +1208,13 @@
   "templating": {
     "list": [
       {
-        "allValue": null,
         "current": {
           "selected": true,
           "text": "bee-bootnode",
           "value": "bee-bootnode"
         },
-        "datasource": "Prometheus",
+        "datasource": "Prometheus-bee",
         "definition": "label_values(bee_info, namespace)",
-        "description": null,
-        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "namespace",
@@ -1331,10 +1241,8 @@
           "text": "All",
           "value": "$__all"
         },
-        "datasource": "Prometheus",
+        "datasource": "Prometheus-bee",
         "definition": "label_values(bee_info{namespace=\"$namespace\"}, instance)",
-        "description": null,
-        "error": null,
         "hide": 0,
         "includeAll": true,
         "label": "instance",
@@ -1353,6 +1261,30 @@
         "tagsQuery": "",
         "type": "query",
         "useTags": false
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "testnet-storage.testnet.internal",
+          "value": "testnet-storage.testnet.internal"
+        },
+        "datasource": "Prometheus",
+        "definition": "label_values(kube_ingress_path{service_name=~\"$instance-debug\", namespace=\"$namespace\"}, host)",
+        "hide": 2,
+        "includeAll": false,
+        "label": "domain",
+        "multi": false,
+        "name": "domain",
+        "options": [],
+        "query": {
+          "query": "label_values(kube_ingress_path{service_name=~\"$instance-debug\", namespace=\"$namespace\"}, host)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "/.[!\\.]*\\.(.*)/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
       }
     ]
   },
@@ -1376,5 +1308,6 @@
   "timezone": "",
   "title": "Bee",
   "uid": "TjX_sEZMz",
-  "version": 2
+  "version": 5,
+  "weekStart": ""
 }
