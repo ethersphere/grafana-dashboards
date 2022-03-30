@@ -2957,7 +2957,7 @@
               "orientation": "auto",
               "reduceOptions": {
                 "calcs": [
-                  "sum"
+                  "last"
                 ],
                 "fields": "",
                 "values": false
