@@ -1677,7 +1677,7 @@
    "steppedLine": false,
    "targets": [
     {
-     "expr": "sum(rate(tempo_request_duration_seconds_count{route=~\".*api_traces_traceid\", namespace=\"$namespace\", job=\"$namespace/cortex-gw\"}[$__rate_interval])) by (status_code)",
+     "expr": "sum(rate(tempo_request_duration_seconds_count{route=~\".*api_traces_traceid\", namespace=\"$namespace\", job=\"tempo-tempo-distributed-cortex-gw\"}[$__rate_interval])) by (status_code)",
      "hide": false,
      "interval": "",
      "legendFormat": "{{status_code}}",
@@ -1777,19 +1777,19 @@
    "steppedLine": false,
    "targets": [
     {
-     "expr": "histogram_quantile(.99, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/cortex-gw\", route=~\".*api_traces_traceid\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.99, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-cortex-gw\", route=~\".*api_traces_traceid\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".99",
      "refId": "A"
     },
     {
-     "expr": "histogram_quantile(.9, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/cortex-gw\", route=~\".*api_traces_traceid\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.9, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-cortex-gw\", route=~\".*api_traces_traceid\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".9",
      "refId": "B"
     },
     {
-     "expr": "histogram_quantile(.5, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/cortex-gw\", route=~\".*api_traces_traceid\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.5, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-cortex-gw\", route=~\".*api_traces_traceid\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".5",
      "refId": "C"
@@ -1889,7 +1889,7 @@
    "targets": [
     {
      "exemplar": true,
-     "expr": "sum(rate(tempo_request_duration_seconds_count{route=~\".*api_search.*\", namespace=\"$namespace\", job=\"$namespace/cortex-gw\"}[$__rate_interval])) by (status_code)",
+     "expr": "sum(rate(tempo_request_duration_seconds_count{route=~\".*api_search.*\", namespace=\"$namespace\", job=\"tempo-tempo-distributed-cortex-gw\"}[$__rate_interval])) by (status_code)",
      "hide": false,
      "interval": "",
      "legendFormat": "{{status_code}}",
@@ -1991,7 +1991,7 @@
    "targets": [
     {
      "exemplar": true,
-     "expr": "histogram_quantile(.99, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/cortex-gw\", route=~\".*api_search.*\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.99, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-cortex-gw\", route=~\".*api_search.*\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".99",
      "refId": "A",
@@ -1999,7 +1999,7 @@
     },
     {
      "exemplar": true,
-     "expr": "histogram_quantile(.9, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/cortex-gw\", route=~\".*api_search.*\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.9, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-cortex-gw\", route=~\".*api_search.*\"}[$__rate_interval])) by (le))",
      "hide": false,
      "interval": "",
      "legendFormat": ".9",
@@ -2008,7 +2008,7 @@
     },
     {
      "exemplar": true,
-     "expr": "histogram_quantile(.5, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/cortex-gw\", route=~\".*api_search.*\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.5, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-cortex-gw\", route=~\".*api_search.*\"}[$__rate_interval])) by (le))",
      "hide": false,
      "interval": "",
      "legendFormat": ".5",
@@ -2109,7 +2109,7 @@
    "steppedLine": false,
    "targets": [
     {
-     "expr": "sum(rate(tempo_request_duration_seconds_count{namespace=\"$namespace\", route=~\".*api_traces_traceid\", job=\"$namespace/query-frontend\"}[$__rate_interval])) by (status_code)",
+     "expr": "sum(rate(tempo_request_duration_seconds_count{namespace=\"$namespace\", route=~\".*api_traces_traceid\", job=\"tempo-tempo-distributed-query-frontend\"}[$__rate_interval])) by (status_code)",
      "hide": false,
      "interval": "",
      "legendFormat": "{{status_code}}",
@@ -2209,19 +2209,19 @@
    "steppedLine": false,
    "targets": [
     {
-     "expr": "histogram_quantile(.99, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/query-frontend\", route=~\".*api_traces_traceid\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.99, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-query-frontend\", route=~\".*api_traces_traceid\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".99",
      "refId": "A"
     },
     {
-     "expr": "histogram_quantile(.9, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/query-frontend\", route=~\".*api_traces_traceid\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.9, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-query-frontend\", route=~\".*api_traces_traceid\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".9",
      "refId": "B"
     },
     {
-     "expr": "histogram_quantile(.5, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/query-frontend\", route=~\".*api_traces_traceid\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.5, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-query-frontend\", route=~\".*api_traces_traceid\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".5",
      "refId": "C"
@@ -2321,7 +2321,7 @@
    "targets": [
     {
      "exemplar": true,
-     "expr": "sum(rate(tempo_request_duration_seconds_count{namespace=\"$namespace\", route=~\".*api_search.*\", job=\"$namespace/query-frontend\"}[$__rate_interval])) by (status_code)",
+     "expr": "sum(rate(tempo_request_duration_seconds_count{namespace=\"$namespace\", route=~\".*api_search.*\", job=\"tempo-tempo-distributed-query-frontend\"}[$__rate_interval])) by (status_code)",
      "hide": false,
      "interval": "",
      "legendFormat": "{{status_code}}",
@@ -2423,7 +2423,7 @@
    "targets": [
     {
      "exemplar": true,
-     "expr": "histogram_quantile(.99, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/query-frontend\", route=~\".*api_search.*\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.99, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-query-frontend\", route=~\".*api_search.*\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".99",
      "refId": "A",
@@ -2431,7 +2431,7 @@
     },
     {
      "exemplar": true,
-     "expr": "histogram_quantile(.9, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/query-frontend\", route=~\".*api_search.*\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.9, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-query-frontend\", route=~\".*api_search.*\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".9",
      "refId": "B",
@@ -2439,7 +2439,7 @@
     },
     {
      "exemplar": true,
-     "expr": "histogram_quantile(.5, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/query-frontend\", route=~\".*api_search.*\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.5, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-query-frontend\", route=~\".*api_search.*\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".5",
      "refId": "C",
@@ -2539,7 +2539,7 @@
    "steppedLine": false,
    "targets": [
     {
-     "expr": "sum(rate(tempo_request_duration_seconds_count{route=~\"querier_.*api_traces_traceid\", namespace=\"$namespace\", job=\"$namespace/querier\"}[$__rate_interval])) by (status_code)",
+     "expr": "sum(rate(tempo_request_duration_seconds_count{route=~\"querier_.*api_traces_traceid\", namespace=\"$namespace\", job=\"tempo-tempo-distributed-querier\"}[$__rate_interval])) by (status_code)",
      "hide": false,
      "interval": "",
      "legendFormat": "{{status_code}}",
@@ -2639,19 +2639,19 @@
    "steppedLine": false,
    "targets": [
     {
-     "expr": "histogram_quantile(.99, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/querier\", route=~\"querier_.*api_traces_traceid\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.99, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-querier\", route=~\"querier_.*api_traces_traceid\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".99",
      "refId": "A"
     },
     {
-     "expr": "histogram_quantile(.9, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/querier\", route=~\"querier_.*api_traces_traceid\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.9, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-querier\", route=~\"querier_.*api_traces_traceid\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".9",
      "refId": "B"
     },
     {
-     "expr": "histogram_quantile(.5, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/querier\", route=~\"querier_.*api_traces_traceid\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.5, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-querier\", route=~\"querier_.*api_traces_traceid\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".5",
      "refId": "C"
@@ -2751,7 +2751,7 @@
    "targets": [
     {
      "exemplar": true,
-     "expr": "sum(rate(tempo_request_duration_seconds_count{route=~\"querier_.*api_search.*\", namespace=\"$namespace\", job=\"$namespace/querier\"}[$__rate_interval])) by (status_code)",
+     "expr": "sum(rate(tempo_request_duration_seconds_count{route=~\"querier_.*api_search.*\", namespace=\"$namespace\", job=\"tempo-tempo-distributed-querier\"}[$__rate_interval])) by (status_code)",
      "hide": false,
      "interval": "",
      "legendFormat": "{{status_code}}",
@@ -2853,7 +2853,7 @@
    "targets": [
     {
      "exemplar": true,
-     "expr": "histogram_quantile(.99, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/querier\", route=~\"querier_.*api_search.*\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.99, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-querier\", route=~\"querier_.*api_search.*\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".99",
      "refId": "A",
@@ -2861,7 +2861,7 @@
     },
     {
      "exemplar": true,
-     "expr": "histogram_quantile(.9, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/querier\", route=~\"querier_.*api_search.*\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.9, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-querier\", route=~\"querier_.*api_search.*\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".9",
      "refId": "B",
@@ -2869,7 +2869,7 @@
     },
     {
      "exemplar": true,
-     "expr": "histogram_quantile(.5, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/querier\", route=~\"querier_.*api_search.*\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.5, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-querier\", route=~\"querier_.*api_search.*\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".5",
      "refId": "C",
@@ -2969,7 +2969,7 @@
    "steppedLine": false,
    "targets": [
     {
-     "expr": "sum(rate(tempo_request_duration_seconds_count{route=\"/tempopb.Querier/FindTraceByID\", namespace=\"$namespace\", job=\"$namespace/ingester\"}[$__rate_interval])) by (status_code)",
+     "expr": "sum(rate(tempo_request_duration_seconds_count{route=\"/tempopb.Querier/FindTraceByID\", namespace=\"$namespace\", job=\"tempo-tempo-distributed-ingester\"}[$__rate_interval])) by (status_code)",
      "hide": false,
      "interval": "",
      "legendFormat": "{{status_code}}",
@@ -3069,19 +3069,19 @@
    "steppedLine": false,
    "targets": [
     {
-     "expr": "histogram_quantile(.99, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/ingester\", route=\"/tempopb.Querier/FindTraceByID\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.99, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-ingester\", route=\"/tempopb.Querier/FindTraceByID\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".99",
      "refId": "A"
     },
     {
-     "expr": "histogram_quantile(.9, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/ingester\", route=\"/tempopb.Querier/FindTraceByID\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.9, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-ingester\", route=\"/tempopb.Querier/FindTraceByID\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".9",
      "refId": "B"
     },
     {
-     "expr": "histogram_quantile(.5, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/ingester\", route=\"/tempopb.Querier/FindTraceByID\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.5, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-ingester\", route=\"/tempopb.Querier/FindTraceByID\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".5",
      "refId": "C"
@@ -3181,7 +3181,7 @@
    "targets": [
     {
      "exemplar": true,
-     "expr": "sum(rate(tempo_request_duration_seconds_count{route=~\"/tempopb.Querier/Search.*\", namespace=\"$namespace\", job=\"$namespace/ingester\"}[$__rate_interval])) by (status_code)",
+     "expr": "sum(rate(tempo_request_duration_seconds_count{route=~\"/tempopb.Querier/Search.*\", namespace=\"$namespace\", job=\"tempo-tempo-distributed-ingester\"}[$__rate_interval])) by (status_code)",
      "hide": false,
      "interval": "",
      "legendFormat": "{{status_code}}",
@@ -3283,7 +3283,7 @@
    "targets": [
     {
      "exemplar": true,
-     "expr": "histogram_quantile(.99, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/ingester\", route=~\"/tempopb.Querier/Search.*\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.99, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-ingester\", route=~\"/tempopb.Querier/Search.*\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".99",
      "refId": "A",
@@ -3291,7 +3291,7 @@
     },
     {
      "exemplar": true,
-     "expr": "histogram_quantile(.9, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/ingester\", route=~\"/tempopb.Querier/Search.*\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.9, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-ingester\", route=~\"/tempopb.Querier/Search.*\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".9",
      "refId": "B",
@@ -3299,7 +3299,7 @@
     },
     {
      "exemplar": true,
-     "expr": "histogram_quantile(.5, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/ingester\", route=~\"/tempopb.Querier/Search.*\"}[$__rate_interval])) by (le))",
+     "expr": "histogram_quantile(.5, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-ingester\", route=~\"/tempopb.Querier/Search.*\"}[$__rate_interval])) by (le))",
      "interval": "",
      "legendFormat": ".5",
      "refId": "C",
@@ -3608,7 +3608,7 @@
      "steppedLine": false,
      "targets": [
       {
-       "expr": "sum(increase(tempo_ingester_blocks_flushed_total{namespace=\"$namespace\", job=\"$namespace/ingester\"}[1h]))",
+       "expr": "sum(increase(tempo_ingester_blocks_flushed_total{namespace=\"$namespace\", job=\"tempo-tempo-distributed-ingester\"}[1h]))",
        "interval": "",
        "legendFormat": "{{pod}}",
        "refId": "A"
@@ -4016,7 +4016,7 @@
      "steppedLine": false,
      "targets": [
       {
-       "expr": "sum(rate(tempo_request_duration_seconds_count{namespace=\"$namespace\", job=\"$namespace/cortex-gw\", route=\"opentelemetry_proto_collector_trace_v1_traceservice_export\"}[$__rate_interval])) by (status_code)",
+       "expr": "sum(rate(tempo_request_duration_seconds_count{namespace=\"$namespace\", job=\"tempo-tempo-distributed-cortex-gw\", route=\"opentelemetry_proto_collector_trace_v1_traceservice_export\"}[$__rate_interval])) by (status_code)",
        "interval": "",
        "legendFormat": "{{status_code}}",
        "refId": "A"
@@ -4220,19 +4220,19 @@
      "steppedLine": false,
      "targets": [
       {
-       "expr": "histogram_quantile(.99, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/cortex-gw\", route=\"opentelemetry_proto_collector_trace_v1_traceservice_export\"}[$__rate_interval])) by (le))",
+       "expr": "histogram_quantile(.99, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-cortex-gw\", route=\"opentelemetry_proto_collector_trace_v1_traceservice_export\"}[$__rate_interval])) by (le))",
        "interval": "",
        "legendFormat": ".99",
        "refId": "A"
       },
       {
-       "expr": "histogram_quantile(.9, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/cortex-gw\", route=\"opentelemetry_proto_collector_trace_v1_traceservice_export\"}[$__rate_interval])) by (le))",
+       "expr": "histogram_quantile(.9, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-cortex-gw\", route=\"opentelemetry_proto_collector_trace_v1_traceservice_export\"}[$__rate_interval])) by (le))",
        "interval": "",
        "legendFormat": ".9",
        "refId": "B"
       },
       {
-       "expr": "histogram_quantile(.5, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/cortex-gw\", route=\"opentelemetry_proto_collector_trace_v1_traceservice_export\"}[$__rate_interval])) by (le))",
+       "expr": "histogram_quantile(.5, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-cortex-gw\", route=\"opentelemetry_proto_collector_trace_v1_traceservice_export\"}[$__rate_interval])) by (le))",
        "interval": "",
        "legendFormat": ".5",
        "refId": "C"
@@ -4331,19 +4331,19 @@
      "steppedLine": false,
      "targets": [
       {
-       "expr": "histogram_quantile(.99, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/ingester\", route=~\"/tempopb.Pusher/Push.*\"}[$__rate_interval])) by (le))",
+       "expr": "histogram_quantile(.99, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-ingester\", route=~\"/tempopb.Pusher/Push.*\"}[$__rate_interval])) by (le))",
        "interval": "",
        "legendFormat": ".99",
        "refId": "A"
       },
       {
-       "expr": "histogram_quantile(.9, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/ingester\", route=~\"/tempopb.Pusher/Push.*\"}[$__rate_interval])) by (le))",
+       "expr": "histogram_quantile(.9, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-ingester\", route=~\"/tempopb.Pusher/Push.*\"}[$__rate_interval])) by (le))",
        "interval": "",
        "legendFormat": ".9",
        "refId": "B"
       },
       {
-       "expr": "histogram_quantile(.5, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"$namespace/ingester\", route=~\"/tempopb.Pusher/Push.*\"}[$__rate_interval])) by (le))",
+       "expr": "histogram_quantile(.5, sum(rate(tempo_request_duration_seconds_bucket{namespace=\"$namespace\", job=\"tempo-tempo-distributed-ingester\", route=~\"/tempopb.Pusher/Push.*\"}[$__rate_interval])) by (le))",
        "interval": "",
        "legendFormat": ".5",
        "refId": "C"
@@ -5691,7 +5691,7 @@
      "steppedLine": false,
      "targets": [
       {
-       "expr": "sum(rate(tempodb_compaction_objects_written_total{namespace=\"$namespace\", job=\"$namespace/compactor\"}[$__rate_interval])) by (level)",
+       "expr": "sum(rate(tempodb_compaction_objects_written_total{namespace=\"$namespace\", job=\"tempo-tempo-distributed-compactor\"}[$__rate_interval])) by (level)",
        "interval": "",
        "legendFormat": "",
        "refId": "A"
@@ -5790,7 +5790,7 @@
      "steppedLine": false,
      "targets": [
       {
-       "expr": "sum(rate(tempodb_compaction_bytes_written_total{namespace=\"$namespace\", job=\"$namespace/compactor\"}[$__rate_interval])) by (level)",
+       "expr": "sum(rate(tempodb_compaction_bytes_written_total{namespace=\"$namespace\", job=\"tempo-tempo-distributed-compactor\"}[$__rate_interval])) by (level)",
        "interval": "",
        "legendFormat": "",
        "refId": "A"
@@ -5889,7 +5889,7 @@
      "steppedLine": false,
      "targets": [
       {
-       "expr": "sum(increase(tempodb_compaction_blocks_total{namespace=\"$namespace\", job=\"$namespace/compactor\"}[5m])) by (level)",
+       "expr": "sum(increase(tempodb_compaction_blocks_total{namespace=\"$namespace\", job=\"tempo-tempo-distributed-compactor\"}[5m])) by (level)",
        "interval": "",
        "legendFormat": "",
        "refId": "A"
