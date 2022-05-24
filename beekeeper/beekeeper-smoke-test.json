@@ -21,8 +21,8 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
-  "id": 10,
-  "iteration": 1652955261084,
+  "id": 8,
+  "iteration": 1653413974304,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -421,7 +421,7 @@
               },
               {
                 "color": "semi-dark-red",
-                "value": 0.55
+                "value": 0.25
               }
             ]
           },
@@ -528,7 +528,9 @@
           },
           "exemplar": true,
           "expr": "bee_check_smoke_download_mismatch{job=\"$job\"} ",
+          "format": "time_series",
           "interval": "",
+          "intervalFactor": 1,
           "legendFormat": "{{job}}",
           "refId": "A"
         }
@@ -682,7 +684,7 @@
               },
               {
                 "color": "semi-dark-red",
-                "value": 0.55
+                "value": 0.25
               }
             ]
           },
@@ -1109,7 +1111,7 @@
     "list": [
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "dev-bee-gateway",
           "value": "dev-bee-gateway"
         },
@@ -1159,6 +1161,6 @@
   "timezone": "",
   "title": "Milestone Smoke Test",
   "uid": "R6nXBFH7k",
-  "version": 16,
+  "version": 4,
   "weekStart": ""
 }

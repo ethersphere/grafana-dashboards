@@ -36,8 +36,8 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 28,
-  "iteration": 1639500296420,
+  "id": 34,
+  "iteration": 1653413877332,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -79,79 +79,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 6,
+        "w": 13,
         "x": 0,
-        "y": 0
-      },
-      "id": 55,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "8.3.1",
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "bee_batchstore_available_capacity{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Available capacity",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "decimals": 0,
-          "mappings": [],
-          "max": 31,
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "red",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 5
-              },
-              {
-                "color": "green",
-                "value": 10
-              },
-              {
-                "color": "#6ED0E0",
-                "value": 20
-              }
-            ]
-          },
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 9,
-        "w": 6,
-        "x": 6,
         "y": 0
       },
       "id": 56,
@@ -168,7 +97,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.4.2",
       "targets": [
         {
           "exemplar": true,
@@ -219,8 +148,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 6,
-        "x": 12,
+        "w": 11,
+        "x": 13,
         "y": 0
       },
       "id": 60,
@@ -237,7 +166,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.4.2",
       "targets": [
         {
           "datasource": {
@@ -253,165 +182,6 @@
       ],
       "title": "Storage radius",
       "type": "gauge"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "decimals": 0,
-          "mappings": [],
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "red",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 50
-              },
-              {
-                "color": "green",
-                "value": 70
-              }
-            ]
-          },
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 9,
-        "w": 6,
-        "x": 18,
-        "y": 0
-      },
-      "id": 52,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "8.3.1",
-      "targets": [
-        {
-          "expr": "bee_batchstore_inner{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "inner",
-          "refId": "A"
-        },
-        {
-          "expr": "bee_batchstore_outer{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "outer",
-          "refId": "B"
-        }
-      ],
-      "title": "Inner/Outer",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "links": [],
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 7,
-        "w": 6,
-        "x": 0,
-        "y": 9
-      },
-      "id": 57,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom"
-        },
-        "tooltip": {
-          "mode": "single"
-        }
-      },
-      "pluginVersion": "8.2.1",
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "bee_batchstore_available_capacity{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Available capacity",
-      "type": "timeseries"
     },
     {
       "aliasColors": {},
@@ -432,9 +202,9 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 7,
-        "w": 6,
-        "x": 6,
+        "h": 9,
+        "w": 13,
+        "x": 0,
         "y": 9
       },
       "hiddenSeries": false,
@@ -455,7 +225,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -572,9 +342,9 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
-        "w": 6,
-        "x": 12,
+        "h": 9,
+        "w": 11,
+        "x": 13,
         "y": 9
       },
       "id": 61,
@@ -585,7 +355,8 @@
           "placement": "bottom"
         },
         "tooltip": {
-          "mode": "single"
+          "mode": "single",
+          "sort": "none"
         }
       },
       "pluginVersion": "8.3.1",
@@ -604,109 +375,10 @@
       ],
       "title": "Storage radius",
       "type": "timeseries"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "links": [],
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 7,
-        "w": 6,
-        "x": 18,
-        "y": 9
-      },
-      "hiddenSeries": false,
-      "id": 59,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.3.1",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "bee_batchstore_inner{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "inner ({{instance}})",
-          "refId": "A"
-        },
-        {
-          "exemplar": true,
-          "expr": "bee_batchstore_outer{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "outer ({{instance}})",
-          "refId": "B"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Inner/Outer",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:385",
-          "format": "none",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:386",
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
     }
   ],
   "refresh": false,
-  "schemaVersion": 33,
+  "schemaVersion": 35,
   "style": "dark",
   "tags": [
     "storage-incentives"
@@ -715,7 +387,7 @@
     "list": [
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "bee-bootnode",
           "value": "bee-bootnode"
         },
@@ -796,6 +468,6 @@
   "timezone": "",
   "title": "Batch store",
   "uid": "Iiui3ERnk",
-  "version": 2,
+  "version": 4,
   "weekStart": ""
 }

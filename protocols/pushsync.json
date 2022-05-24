@@ -17,7 +17,7 @@
         "type": "dashboard"
       },
       {
-        "datasource": "Prometheus",
+        "datasource": "Prometheus-bee",
         "enable": true,
         "expr": "changes(bee_process_start_time_seconds{namespace=\"$namespace\",instance=\"$instance\"}[1m:10s]) > 0",
         "hide": true,
@@ -34,16 +34,18 @@
   },
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "gnetId": null,
   "graphTooltip": 0,
-  "id": 26,
-  "iteration": 1638187699420,
+  "id": 31,
+  "iteration": 1653413861123,
   "links": [],
   "liveNow": false,
   "panels": [
     {
       "collapsed": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -56,7 +58,10 @@
       "type": "row"
     },
     {
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -100,7 +105,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.4.2",
       "targets": [
         {
           "exemplar": true,
@@ -114,7 +119,10 @@
       "type": "gauge"
     },
     {
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -158,7 +166,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.4.2",
       "targets": [
         {
           "exemplar": true,
@@ -176,7 +184,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "unit": "short"
@@ -212,7 +223,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -233,9 +244,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Send chunk seconds - success",
       "tooltip": {
         "shared": true,
@@ -244,9 +253,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -256,8 +263,6 @@
           "format": "short",
           "label": "Sec",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
@@ -265,14 +270,11 @@
           "format": "short",
           "label": "",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -280,7 +282,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "unit": "short"
@@ -316,7 +321,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -337,9 +342,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Send chunk seconds - failure",
       "tooltip": {
         "shared": true,
@@ -348,9 +351,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -360,8 +361,6 @@
           "format": "short",
           "label": "Sec",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
@@ -369,14 +368,11 @@
           "format": "short",
           "label": "",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -386,7 +382,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -424,7 +423,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -446,9 +445,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "send error %",
       "tooltip": {
         "shared": true,
@@ -457,9 +454,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -467,25 +462,18 @@
         {
           "$$hashKey": "object:309",
           "format": "percentunit",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "$$hashKey": "object:310",
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -495,7 +483,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -531,7 +522,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -553,9 +544,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "sends (chunks/min)",
       "tooltip": {
         "shared": true,
@@ -564,9 +553,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -574,29 +561,25 @@
         {
           "$$hashKey": "object:309",
           "format": "none",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "$$hashKey": "object:310",
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -644,7 +627,7 @@
         "text": {},
         "textMode": "value_and_name"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.4.2",
       "targets": [
         {
           "exemplar": true,
@@ -658,7 +641,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -698,7 +684,7 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "last"
           ],
           "fields": "",
           "values": false
@@ -706,7 +692,7 @@
         "text": {},
         "textMode": "value_and_name"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.4.2",
       "targets": [
         {
           "exemplar": true,
@@ -720,7 +706,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -762,7 +751,7 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "last"
           ],
           "fields": "",
           "values": false
@@ -770,10 +759,14 @@
         "text": {},
         "textMode": "value_and_name"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.4.2",
       "targets": [
         {
-          "exemplar": true,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "exemplar": false,
           "expr": "bee_pushsync_total_failed_send_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}\n/\nbee_pushsync_total_send_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
           "instant": true,
@@ -782,13 +775,14 @@
           "refId": "A"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "send error rate %",
       "type": "stat"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -830,7 +824,7 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "mean"
+            "last"
           ],
           "fields": "",
           "values": false
@@ -838,10 +832,14 @@
         "text": {},
         "textMode": "value_and_name"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.4.2",
       "targets": [
         {
-          "exemplar": true,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "exemplar": false,
           "expr": "sum by (instance) (bee_pusher_shallow_receipt_depth{namespace=~\"$namespace\", instance=~\"$instance\"})\n/\nsum by (instance) (bee_pusher_total_to_push{namespace=~\"$namespace\", instance=~\"$instance\"})",
           "format": "time_series",
           "instant": true,
@@ -850,14 +848,15 @@
           "refId": "A"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "shallow receipt %",
       "type": "stat"
     },
     {
       "collapsed": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -876,7 +875,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -914,7 +916,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -936,9 +938,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "incoming deliveries (chunks/min)",
       "tooltip": {
         "shared": true,
@@ -947,9 +947,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -957,25 +955,18 @@
         {
           "$$hashKey": "object:309",
           "format": "none",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "$$hashKey": "object:310",
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -985,7 +976,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1023,7 +1017,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1045,9 +1039,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "handler error %",
       "tooltip": {
         "shared": true,
@@ -1056,9 +1048,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -1066,25 +1056,18 @@
         {
           "$$hashKey": "object:309",
           "format": "percentunit",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "$$hashKey": "object:310",
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -1092,7 +1075,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "unit": "short"
@@ -1128,7 +1114,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1157,9 +1143,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Handler Time Seconds",
       "tooltip": {
         "shared": true,
@@ -1168,9 +1152,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -1180,8 +1162,6 @@
           "format": "short",
           "label": "Sec",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
@@ -1189,18 +1169,18 @@
           "format": "short",
           "label": "",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1248,7 +1228,7 @@
         "text": {},
         "textMode": "value"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.4.2",
       "targets": [
         {
           "exemplar": true,
@@ -1262,7 +1242,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1310,7 +1293,7 @@
         "text": {},
         "textMode": "value"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.4.2",
       "targets": [
         {
           "exemplar": true,
@@ -1324,7 +1307,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1372,7 +1358,7 @@
         "text": {},
         "textMode": "value"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.4.2",
       "targets": [
         {
           "exemplar": true,
@@ -1386,7 +1372,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1418,6 +1407,75 @@
         "x": 6,
         "y": 66
       },
+      "id": 90,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "8.4.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "exemplar": true,
+          "expr": "bee_pushsync_handler_replication{namespace=~\"$namespace\", instance=~\"$instance\"} / bee_pushsync_total_received{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Replication %",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 1,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 12,
+        "y": 66
+      },
       "id": 74,
       "options": {
         "colorMode": "value",
@@ -1434,7 +1492,7 @@
         "text": {},
         "textMode": "value"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "8.4.2",
       "targets": [
         {
           "exemplar": true,
@@ -1449,7 +1507,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 31,
+  "schemaVersion": 35,
   "style": "dark",
   "tags": [
     "protocols"
@@ -1457,16 +1515,16 @@
   "templating": {
     "list": [
       {
-        "allValue": null,
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "bee-gateway",
           "value": "bee-gateway"
         },
-        "datasource": "Prometheus",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PEB8F6B0BE743FB7E"
+        },
         "definition": "label_values(bee_info, namespace)",
-        "description": null,
-        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "namespace",
@@ -1493,10 +1551,11 @@
           "text": "All",
           "value": "$__all"
         },
-        "datasource": "Prometheus",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PEB8F6B0BE743FB7E"
+        },
         "definition": "label_values(bee_info{namespace=\"$namespace\"}, instance)",
-        "description": null,
-        "error": null,
         "hide": 0,
         "includeAll": true,
         "label": "instance",
@@ -1538,5 +1597,6 @@
   "timezone": "",
   "title": "PushSync",
   "uid": "RzKb6ZNnz",
-  "version": 52
+  "version": 4,
+  "weekStart": ""
 }
