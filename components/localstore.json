@@ -3,7 +3,10 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -17,7 +20,10 @@
         "type": "dashboard"
       },
       {
-        "datasource": "Prometheus-bee",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PEB8F6B0BE743FB7E"
+        },
         "enable": true,
         "expr": "changes(bee_process_start_time_seconds{namespace=\"$namespace\",instance=\"$instance\"}[1m:10s]) > 0",
         "hide": true,
@@ -35,8 +41,8 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 19,
-  "iteration": 1653414133380,
+  "id": 20,
+  "iteration": 1658759074960,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -54,6 +60,15 @@
       },
       "id": 37,
       "panels": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Reserve",
       "type": "row"
     },
@@ -102,9 +117,13 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_localstore_reserve_size{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
@@ -160,9 +179,13 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_localstore_reserve_size{namespace=~\"$namespace\", instance=~\"$instance\"} * 4096",
           "interval": "",
@@ -174,94 +197,6 @@
       "type": "gauge"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "Bps"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 24,
-        "x": 0,
-        "y": 13
-      },
-      "id": 39,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom"
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "8.4.2",
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "rate(bee_localstore_reserve_size{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])*4096",
-          "interval": "",
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "title": "reserve size growth",
-      "type": "timeseries"
-    },
-    {
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
@@ -271,10 +206,19 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 13
       },
       "id": 42,
       "panels": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Cache",
       "type": "row"
     },
@@ -311,7 +255,7 @@
         "h": 13,
         "w": 9,
         "x": 0,
-        "y": 22
+        "y": 14
       },
       "id": 46,
       "options": {
@@ -327,9 +271,13 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_localstore_gc_size{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
@@ -341,159 +289,6 @@
       "type": "gauge"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          },
-          "unit": "decbytes"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 13,
-        "w": 15,
-        "x": 9,
-        "y": 22
-      },
-      "id": 45,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "8.4.2",
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "increase(bee_localstore_gc_size{namespace=~\"$namespace\", instance=~\"$instance\"}[1d])*4096",
-          "interval": "",
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "title": "cache size growth (last 24h)",
-      "type": "stat"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "unit": "Bps"
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 10,
-        "w": 24,
-        "x": 0,
-        "y": 35
-      },
-      "hiddenSeries": false,
-      "id": 40,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.4.2",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "rate(bee_localstore_gc_size{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])*4096",
-          "interval": "",
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "gc size growth",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:69",
-          "format": "Bps",
-          "label": "",
-          "logBase": 1,
-          "min": "0",
-          "show": true
-        },
-        {
-          "$$hashKey": "object:70",
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
@@ -503,10 +298,19 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 45
+        "y": 27
       },
       "id": 29,
       "panels": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Timings",
       "type": "row"
     },
@@ -569,7 +373,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 46
+        "y": 28
       },
       "id": 31,
       "options": {
@@ -587,6 +391,10 @@
       "pluginVersion": "7.5.5",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "increase(bee_localstore_get_chunk_time{instance=~\"$instance\",namespace=~\"$namespace\"}[1m])/increase(bee_localstore_mode_get_count{instance=~\"$instance\",namespace=~\"$namespace\"}[1m])",
           "interval": "",
@@ -656,7 +464,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 46
+        "y": 28
       },
       "id": 33,
       "options": {
@@ -674,6 +482,10 @@
       "pluginVersion": "7.5.5",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "increase(bee_localstore_has_time{instance=~\"$instance\",namespace=~\"$namespace\"}[1m])/increase(bee_localstore_mode_has_count{instance=~\"$instance\",namespace=~\"$namespace\"}[1m])",
           "interval": "",
@@ -743,7 +555,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 54
+        "y": 36
       },
       "id": 34,
       "options": {
@@ -761,6 +573,10 @@
       "pluginVersion": "7.5.5",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "increase(bee_localstore_set_time{instance=~\"$instance\",namespace=~\"$namespace\"}[1m])/increase(bee_localstore_mode_set_count{instance=~\"$instance\",namespace=~\"$namespace\"}[1m])",
           "interval": "",
@@ -830,7 +646,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 54
+        "y": 36
       },
       "id": 32,
       "options": {
@@ -848,6 +664,10 @@
       "pluginVersion": "7.5.5",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "increase(bee_localstore_put_time{instance=~\"$instance\",namespace=~\"$namespace\"}[1m])/increase(bee_localstore_mode_put_count{instance=~\"$instance\",namespace=~\"$namespace\"}[1m])",
           "interval": "",
@@ -868,10 +688,19 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 62
+        "y": 44
       },
       "id": 27,
       "panels": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Subscriptions",
       "type": "row"
     },
@@ -896,7 +725,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 63
+        "y": 45
       },
       "hiddenSeries": false,
       "id": 22,
@@ -917,7 +746,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -927,6 +756,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "expr": "increase(bee_localstore_subscribe_pull_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
           "legendFormat": "blocklisted_peers({{instance}})",
@@ -987,7 +820,7 @@
         "h": 7,
         "w": 8,
         "x": 8,
-        "y": 63
+        "y": 45
       },
       "hiddenSeries": false,
       "id": 21,
@@ -1008,7 +841,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1018,6 +851,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "expr": "increase(bee_localstore_subscribe_push_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
           "legendFormat": "count({{instance}})",
@@ -1066,10 +903,19 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 70
+        "y": 52
       },
       "id": 25,
       "panels": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "GC",
       "type": "row"
     },
@@ -1096,7 +942,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 71
+        "y": 53
       },
       "hiddenSeries": false,
       "id": 60,
@@ -1117,7 +963,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1193,7 +1039,7 @@
         "h": 7,
         "w": 8,
         "x": 8,
-        "y": 71
+        "y": 53
       },
       "hiddenSeries": false,
       "id": 61,
@@ -1214,7 +1060,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1290,7 +1136,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 71
+        "y": 53
       },
       "hiddenSeries": false,
       "id": 63,
@@ -1311,7 +1157,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1387,7 +1233,7 @@
         "h": 6,
         "w": 8,
         "x": 0,
-        "y": 78
+        "y": 60
       },
       "hiddenSeries": false,
       "id": 8,
@@ -1407,7 +1253,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1417,6 +1263,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "expr": "increase(bee_localstore_gc_fail_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "instant": false,
           "interval": "",
@@ -1424,6 +1274,10 @@
           "refId": "A"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "expr": "increase(bee_localstore_gc_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "hide": false,
           "interval": "",
@@ -1479,7 +1333,7 @@
         "h": 6,
         "w": 8,
         "x": 8,
-        "y": 78
+        "y": 60
       },
       "hiddenSeries": false,
       "id": 9,
@@ -1499,7 +1353,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1509,6 +1363,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "expr": "increase(bee_localstore_gc_collected_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
           "legendFormat": "collected_count({{instance}})",
@@ -1570,7 +1428,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 78
+        "y": 60
       },
       "hiddenSeries": false,
       "id": 62,
@@ -1591,7 +1449,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1666,7 +1524,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 84
+        "y": 66
       },
       "hiddenSeries": false,
       "id": 10,
@@ -1687,7 +1545,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1697,12 +1555,20 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "expr": "increase(bee_localstore_gc_exclude_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
           "legendFormat": "runs({{instance}})",
           "refId": "A"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "expr": "increase(bee_localstore_gc_exclude_fail_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "hide": false,
           "interval": "",
@@ -1765,7 +1631,7 @@
         "h": 7,
         "w": 8,
         "x": 8,
-        "y": 84
+        "y": 66
       },
       "hiddenSeries": false,
       "id": 14,
@@ -1786,7 +1652,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1796,6 +1662,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "expr": "bee_localstore_gc_exclude_index_time{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
           "legendFormat": "time({{instance}})",
@@ -1856,7 +1726,7 @@
         "h": 6,
         "w": 8,
         "x": 16,
-        "y": 85
+        "y": 67
       },
       "hiddenSeries": false,
       "id": 15,
@@ -1876,7 +1746,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1886,6 +1756,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "expr": "bee_localstore_gc_size{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
           "legendFormat": "gc_size({{instance}})",
@@ -1947,7 +1821,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 91
+        "y": 73
       },
       "hiddenSeries": false,
       "id": 16,
@@ -1967,7 +1841,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1977,12 +1851,20 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "expr": "increase(bee_localstore_gc_time{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
           "legendFormat": "gc_time({{instance}})",
           "refId": "A"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "expr": "increase(bee_localstore_gc_lock_time{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "hide": false,
           "interval": "",
@@ -1990,6 +1872,10 @@
           "refId": "B"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "expr": "increase(bee_localstore_gc_first_item_time{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "hide": false,
           "interval": "",
@@ -2059,7 +1945,7 @@
         "h": 7,
         "w": 8,
         "x": 8,
-        "y": 91
+        "y": 73
       },
       "id": 17,
       "options": {
@@ -2077,9 +1963,13 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_localstore_gc_time_stamp{namespace=~\"$namespace\", instance=~\"$instance\"}/1000000",
           "interval": "",
@@ -2112,7 +2002,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 91
+        "y": 73
       },
       "hiddenSeries": false,
       "id": 18,
@@ -2132,7 +2022,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2142,6 +2032,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "expr": "increase(bee_localstore_gc_update_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
           "legendFormat": "update_count({{instance}})",
@@ -2202,7 +2096,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 98
+        "y": 80
       },
       "hiddenSeries": false,
       "id": 19,
@@ -2223,7 +2117,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2233,6 +2127,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "expr": "increase(bee_localstore_gc_write_batch_error_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
           "legendFormat": "blocklisted_peers({{instance}})",
@@ -2294,7 +2192,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 98
+        "y": 80
       },
       "hiddenSeries": false,
       "id": 23,
@@ -2315,7 +2213,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2325,6 +2223,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "expr": "increase(bee_localstore_gc_first_item_time{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
           "legendFormat": "time_to_first_item({{instance}})",
@@ -2366,14 +2268,27 @@
     },
     {
       "collapsed": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 105
+        "y": 87
       },
       "id": 54,
       "panels": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Sharky",
       "type": "row"
     },
@@ -2406,7 +2321,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 106
+        "y": 88
       },
       "id": 49,
       "options": {
@@ -2423,7 +2338,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -2473,7 +2388,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 106
+        "y": 88
       },
       "id": 52,
       "options": {
@@ -2490,7 +2405,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -2536,7 +2451,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 112
+        "y": 94
       },
       "id": 50,
       "options": {
@@ -2553,7 +2468,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -2603,7 +2518,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 112
+        "y": 94
       },
       "id": 55,
       "options": {
@@ -2620,7 +2535,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -2666,7 +2581,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 118
+        "y": 100
       },
       "id": 56,
       "options": {
@@ -2683,7 +2598,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -2733,7 +2648,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 118
+        "y": 100
       },
       "id": 57,
       "options": {
@@ -2750,7 +2665,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -2796,7 +2711,7 @@
         "h": 4,
         "w": 24,
         "x": 0,
-        "y": 124
+        "y": 106
       },
       "id": 48,
       "options": {
@@ -2813,7 +2728,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -2859,7 +2774,7 @@
         "h": 4,
         "w": 24,
         "x": 0,
-        "y": 128
+        "y": 110
       },
       "id": 58,
       "options": {
@@ -2876,7 +2791,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -2895,7 +2810,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 35,
+  "schemaVersion": 36,
   "style": "dark",
   "tags": [
     "components"
@@ -2966,7 +2881,7 @@
     ]
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-12h",
     "to": "now"
   },
   "timepicker": {
@@ -2985,6 +2900,6 @@
   "timezone": "",
   "title": "Localstore",
   "uid": "Szc9zJUGk",
-  "version": 4,
+  "version": 3,
   "weekStart": ""
 }
