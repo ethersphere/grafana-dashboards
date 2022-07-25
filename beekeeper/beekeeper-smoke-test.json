@@ -120,7 +120,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "bee_check_smoke_data_upload_duration_sum{job=\"$job\"}/bee_check_smoke_data_upload_duration_count{job=\"$job\"}",
+          "expr": "beekeeper_check_smoke_data_upload_duration_sum{job=\"$job\"}/beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"}",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -208,7 +208,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "bee_check_smoke_data_download_duration_sum{job=\"$job\"}/bee_check_smoke_data_download_duration_count{job=\"$job\"}",
+          "expr": "beekeeper_check_smoke_data_download_duration_sum{job=\"$job\"}/beekeeper_check_smoke_data_download_duration_count{job=\"$job\"}",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -266,7 +266,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "bee_check_smoke_data_upload_duration_count{job=\"$job\"}*5e6",
+          "expr": "beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"}*5e6",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -326,7 +326,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "5e6/(bee_check_smoke_data_upload_duration_sum{job=\"$job\"}/bee_check_smoke_data_upload_duration_count{job=\"$job\"})",
+          "expr": "5e6/(beekeeper_check_smoke_data_upload_duration_sum{job=\"$job\"}/beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"})",
           "format": "time_series",
           "interval": "",
           "legendFormat": "{{job}}",
@@ -391,7 +391,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "bee_check_smoke_upload_attempts{job=\"$job\"} ",
+          "expr": "beekeeper_check_smoke_upload_attempts{job=\"$job\"} ",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -459,7 +459,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "bee_check_smoke_upload_errors_count{job=\"$job\"} / bee_check_smoke_upload_attempts{job=\"$job\"} ",
+          "expr": "beekeeper_check_smoke_upload_errors_count{job=\"$job\"} / beekeeper_check_smoke_upload_attempts{job=\"$job\"} ",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -527,7 +527,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "bee_check_smoke_download_mismatch{job=\"$job\"} ",
+          "expr": "beekeeper_check_smoke_download_mismatch{job=\"$job\"} ",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -589,7 +589,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "5e6/(bee_check_smoke_data_download_duration_sum{job=\"$job\"}/bee_check_smoke_data_download_duration_count{job=\"$job\"})",
+          "expr": "5e6/(beekeeper_check_smoke_data_download_duration_sum{job=\"$job\"}/beekeeper_check_smoke_data_download_duration_count{job=\"$job\"})",
           "format": "time_series",
           "interval": "",
           "legendFormat": "{{job}}",
@@ -654,7 +654,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "bee_check_smoke_download_attempts{job=\"$job\"} ",
+          "expr": "beekeeper_check_smoke_download_attempts{job=\"$job\"} ",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -722,7 +722,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "bee_check_smoke_download_errors_count{job=\"$job\"} / bee_check_smoke_download_attempts{job=\"$job\"} ",
+          "expr": "beekeeper_check_smoke_download_errors_count{job=\"$job\"} / beekeeper_check_smoke_download_attempts{job=\"$job\"} ",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -823,7 +823,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "5e6/(increase(bee_check_smoke_data_upload_duration_sum{job=\"$job\"}[5m])/increase(bee_check_smoke_data_upload_duration_count{job=\"$job\"}[5m]))",
+          "expr": "5e6/(increase(beekeeper_check_smoke_data_upload_duration_sum{job=\"$job\"}[5m])/increase(beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"}[5m]))",
           "format": "time_series",
           "interval": "",
           "legendFormat": "{{job}}",
@@ -912,7 +912,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "5e6/(bee_check_smoke_data_upload_duration_sum{job=\"$job\"}/bee_check_smoke_data_upload_duration_count{job=\"$job\"})",
+          "expr": "5e6/(beekeeper_check_smoke_data_upload_duration_sum{job=\"$job\"}/beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"})",
           "format": "time_series",
           "interval": "",
           "legendFormat": "{{job}}",
@@ -1001,7 +1001,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "5e6/(increase(bee_check_smoke_data_download_duration_sum{job=\"$job\"}[5m])/increase(bee_check_smoke_data_download_duration_count{job=\"$job\"}[5m]))",
+          "expr": "5e6/(increase(beekeeper_check_smoke_data_download_duration_sum{job=\"$job\"}[5m])/increase(beekeeper_check_smoke_data_download_duration_count{job=\"$job\"}[5m]))",
           "format": "time_series",
           "interval": "",
           "legendFormat": "{{job}}",
@@ -1090,7 +1090,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "5e6/(bee_check_smoke_data_download_duration_sum{job=\"$job\"}/bee_check_smoke_data_download_duration_count{job=\"$job\"})",
+          "expr": "5e6/(beekeeper_check_smoke_data_download_duration_sum{job=\"$job\"}/beekeeper_check_smoke_data_download_duration_count{job=\"$job\"})",
           "format": "time_series",
           "interval": "",
           "legendFormat": "{{job}}",
