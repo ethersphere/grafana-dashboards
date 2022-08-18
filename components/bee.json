@@ -3,7 +3,10 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -17,7 +20,10 @@
         "type": "dashboard"
       },
       {
-        "datasource": "Prometheus",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
         "enable": true,
         "expr": "changes(bee_process_start_time_seconds{namespace=\"$namespace\",instance=\"$instance\"}[1m:10s]) > 0",
         "hide": true,
@@ -35,15 +41,21 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 18,
-  "iteration": 1653413781528,
+  "id": 12,
+  "iteration": 1660822660107,
   "links": [],
   "liveNow": false,
   "panels": [
     {
-      "datasource": "Prometheus-bee",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -63,7 +75,7 @@
       },
       "gridPos": {
         "h": 6,
-        "w": 6,
+        "w": 12,
         "x": 0,
         "y": 0
       },
@@ -75,7 +87,7 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "last"
+            "lastNotNull"
           ],
           "fields": "",
           "values": false
@@ -83,10 +95,29 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s",
+            "10": "-",
+            "11": "b",
+            "12": "e",
+            "13": "e"
+          },
+          "editorMode": "code",
           "expr": "bee_libp2p_created_connection_count{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "legendFormat": "{{instance}}",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -94,7 +125,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Prometheus-bee",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -104,10 +138,6 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           }
@@ -116,8 +146,8 @@
       },
       "gridPos": {
         "h": 6,
-        "w": 6,
-        "x": 6,
+        "w": 12,
+        "x": 12,
         "y": 0
       },
       "id": 9,
@@ -136,10 +166,29 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s",
+            "10": "-",
+            "11": "b",
+            "12": "e",
+            "13": "e"
+          },
+          "editorMode": "code",
           "expr": "bee_libp2p_handled_connection_count{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "legendFormat": "{{instance}}",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -147,7 +196,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Prometheus-bee",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -183,9 +235,9 @@
       },
       "gridPos": {
         "h": 6,
-        "w": 3,
-        "x": 12,
-        "y": 0
+        "w": 4,
+        "x": 0,
+        "y": 6
       },
       "id": 6,
       "links": [],
@@ -205,12 +257,29 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s",
+            "10": "-",
+            "11": "b",
+            "12": "e",
+            "13": "e"
+          },
+          "editorMode": "code",
           "expr": "time() - bee_process_start_time_seconds{namespace=\"$namespace\",instance=~\"$instance\"}",
           "instant": false,
-          "legendFormat": "",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
@@ -218,7 +287,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -253,9 +325,9 @@
       },
       "gridPos": {
         "h": 6,
-        "w": 2,
-        "x": 15,
-        "y": 0
+        "w": 4,
+        "x": 4,
+        "y": 6
       },
       "id": 11,
       "links": [],
@@ -275,11 +347,25 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s"
+          },
+          "editorMode": "code",
           "expr": "kube_pod_container_status_restarts_total{job=\"kube-state-metrics\", cluster=\"\", namespace=\"$namespace\", pod=~\"$instance\", container=~\"bee\"}",
-          "legendFormat": "",
+          "legendFormat": "{{pod}}",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -321,10 +407,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 3,
+        "h": 6,
         "w": 4,
-        "x": 17,
-        "y": 0
+        "x": 8,
+        "y": 6
       },
       "id": 10,
       "links": [],
@@ -344,15 +430,123 @@
         "text": {},
         "textMode": "name"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s",
+            "10": "-",
+            "11": "b",
+            "12": "e",
+            "13": "e"
+          },
           "expr": "bee_info{namespace=\"$namespace\",instance=~\"$instance\"}",
           "legendFormat": "{{version}}",
           "refId": "A"
         }
       ],
       "title": "bee version",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "": {
+                  "text": ""
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "string"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 12,
+        "y": 6
+      },
+      "id": 56,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "name"
+      },
+      "pluginVersion": "9.0.1",
+      "targets": [
+        {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s",
+            "10": "-",
+            "11": "b",
+            "12": "e",
+            "13": "e"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "bee_kademlia_reachability_status{namespace=\"$namespace\",instance=~\"$instance\"}",
+          "interval": "",
+          "legendFormat": "{{instance}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "reachability",
       "type": "stat"
     },
     {
@@ -390,10 +584,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 3,
+        "h": 6,
         "w": 3,
-        "x": 21,
-        "y": 0
+        "x": 16,
+        "y": 6
       },
       "id": 12,
       "links": [],
@@ -413,9 +607,25 @@
         "text": {},
         "textMode": "name"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s",
+            "10": "-",
+            "11": "b",
+            "12": "e",
+            "13": "e"
+          },
           "expr": "go_info{namespace=\"$namespace\",instance=~\"$instance\"}",
           "legendFormat": "{{version}}",
           "refId": "A"
@@ -450,10 +660,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 3,
-        "w": 4,
-        "x": 17,
-        "y": 3
+        "h": 6,
+        "w": 5,
+        "x": 19,
+        "y": 6
       },
       "id": 57,
       "links": [],
@@ -473,85 +683,26 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s"
+          },
           "expr": "sum (count_over_time({namespace=\"$namespace\",pod=~\"$instance\"}|=\"panic\"[24h])) by (pod) ",
           "refId": "A"
         }
       ],
       "title": "panics (last 24h)",
-      "type": "stat"
-    },
-    {
-      "datasource": "Prometheus-bee",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [
-            {
-              "options": {
-                "": {
-                  "text": ""
-                }
-              },
-              "type": "value"
-            }
-          ],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 3,
-        "x": 21,
-        "y": 3
-      },
-      "id": 56,
-      "links": [],
-      "maxDataPoints": 100,
-      "options": {
-        "colorMode": "none",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "name"
-      },
-      "pluginVersion": "8.4.2",
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "bee_kademlia_reachability_status{namespace=\"$namespace\",instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "{{reachability_status}}",
-          "refId": "A"
-        }
-      ],
-      "title": "reachability",
       "type": "stat"
     },
     {
@@ -612,7 +763,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 6
+        "y": 12
       },
       "id": 15,
       "options": {
@@ -629,27 +780,107 @@
       "pluginVersion": "8.4.2",
       "targets": [
         {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s",
+            "10": "-",
+            "11": "b",
+            "12": "e",
+            "13": "e"
+          },
           "expr": "increase(bee_log_log_trace_count{namespace=\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
           "legendFormat": "traces ({{pod}})",
           "refId": "A"
         },
         {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s",
+            "10": "-",
+            "11": "b",
+            "12": "e",
+            "13": "e"
+          },
           "expr": "increase(bee_log_debug_count{namespace=\"$namespace\", instance=~\"$instance\"}[1m])",
           "legendFormat": "debug ({{pod}})",
           "refId": "B"
         },
         {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s",
+            "10": "-",
+            "11": "b",
+            "12": "e",
+            "13": "e"
+          },
           "expr": "increase(bee_log_info_count{namespace=\"$namespace\", instance=~\"$instance\"}[1m])",
           "legendFormat": "info ({{pod}})",
           "refId": "C"
         },
         {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s",
+            "10": "-",
+            "11": "b",
+            "12": "e",
+            "13": "e"
+          },
           "expr": "increase(bee_log_warn_count{namespace=\"$namespace\", instance=\"$instance\"}[1m])",
           "legendFormat": "warn ({{pod}})",
           "refId": "D"
         },
         {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s",
+            "10": "-",
+            "11": "b",
+            "12": "e",
+            "13": "e"
+          },
           "expr": "increase(bee_log_error_count{namespace=\"$namespace\", instance=~\"$instance\"}[1m])",
           "legendFormat": "error ({{pod}})",
           "refId": "E"
@@ -659,7 +890,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -684,7 +918,7 @@
         "h": 6,
         "w": 24,
         "x": 0,
-        "y": 14
+        "y": 20
       },
       "id": 58,
       "options": {
@@ -702,9 +936,21 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s"
+          },
           "exemplar": true,
           "expr": "kubelet_volume_stats_capacity_bytes{namespace=\"$namespace\", persistentvolumeclaim=~\"data-$instance\"}",
           "interval": "",
@@ -712,6 +958,18 @@
           "refId": "A"
         },
         {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s"
+          },
           "exemplar": true,
           "expr": "kubelet_volume_stats_capacity_bytes{namespace=\"$namespace\", persistentvolumeclaim=~\"localstore-$instance\"}",
           "hide": false,
@@ -730,15 +988,35 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 20
+        "y": 26
       },
       "id": 25,
       "panels": [],
+      "targets": [
+        {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "System",
       "type": "row"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -779,7 +1057,7 @@
         "h": 15,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 27
       },
       "id": 59,
       "options": {
@@ -795,9 +1073,21 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s"
+          },
           "exemplar": true,
           "expr": "kubelet_volume_stats_used_bytes{namespace=\"$namespace\", persistentvolumeclaim=~\"data-$instance\"}/kubelet_volume_stats_capacity_bytes{namespace=\"$namespace\", persistentvolumeclaim=~\"data-$instance\"}",
           "interval": "",
@@ -805,6 +1095,18 @@
           "refId": "A"
         },
         {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s"
+          },
           "exemplar": true,
           "expr": "kubelet_volume_stats_used_bytes{namespace=\"$namespace\", persistentvolumeclaim=~\"localstore-$instance\"}/kubelet_volume_stats_capacity_bytes{namespace=\"$namespace\", persistentvolumeclaim=~\"localstore-$instance\"}",
           "hide": false,
@@ -823,10 +1125,31 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 36
+        "y": 42
       },
       "id": 19,
       "panels": [],
+      "targets": [
+        {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s",
+            "10": "-",
+            "11": "b",
+            "12": "e",
+            "13": "e"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Runtime",
       "type": "row"
     },
@@ -898,7 +1221,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 37
+        "y": 43
       },
       "id": 20,
       "options": {
@@ -952,7 +1275,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 45
+        "y": 51
       },
       "hiddenSeries": false,
       "id": 21,
@@ -974,7 +1297,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -984,11 +1307,43 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s",
+            "10": "-",
+            "11": "b",
+            "12": "e",
+            "13": "e"
+          },
           "expr": "go_memstats_sys_bytes{namespace=\"$namespace\", instance=~\"$instance\"}",
           "legendFormat": "used ({{pod}})",
           "refId": "A"
         },
         {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s",
+            "10": "-",
+            "11": "b",
+            "12": "e",
+            "13": "e"
+          },
           "expr": "go_memstats_alloc_bytes{namespace=\"$namespace\", instance=~\"$instance\"}",
           "legendFormat": "allocated ({{pod}})",
           "refId": "B"
@@ -1047,7 +1402,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 53
+        "y": 59
       },
       "hiddenSeries": false,
       "id": 22,
@@ -1069,7 +1424,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1079,6 +1434,22 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s",
+            "10": "-",
+            "11": "b",
+            "12": "e",
+            "13": "e"
+          },
           "expr": "go_memstats_gc_cpu_fraction{namespace=\"$namespace\", instance=~\"$instance\"}",
           "legendFormat": "({{pod}})",
           "refId": "A"
@@ -1115,98 +1486,111 @@
       }
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus-bee",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
           "links": [
             {
               "title": "",
               "url": ""
             }
-          ]
+          ],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "none"
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 53
+        "y": 59
       },
-      "hiddenSeries": false,
       "id": 23,
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "rightSide": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": [],
+          "displayMode": "hidden",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.4.2",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "0": "P",
+            "1": "r",
+            "2": "o",
+            "3": "m",
+            "4": "e",
+            "5": "t",
+            "6": "h",
+            "7": "e",
+            "8": "u",
+            "9": "s",
+            "10": "-",
+            "11": "b",
+            "12": "e",
+            "13": "e"
+          },
           "expr": "increase(go_gc_duration_seconds_count{namespace=\"$namespace\", instance=~\"$instance\"}[1m])",
           "legendFormat": "({{pod}})",
           "refId": "A"
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "gc rate",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "percentunit",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "title": "gc rate (1m)",
+      "type": "timeseries"
     }
   ],
   "refresh": "",
-  "schemaVersion": 35,
+  "schemaVersion": 36,
   "style": "dark",
   "tags": [
     "components"
@@ -1323,6 +1707,6 @@
   "timezone": "",
   "title": "Bee",
   "uid": "TjX_sEZMz",
-  "version": 4,
+  "version": 8,
   "weekStart": ""
 }
