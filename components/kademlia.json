@@ -3,7 +3,10 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -17,7 +20,10 @@
         "type": "dashboard"
       },
       {
-        "datasource": "Prometheus",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PEB8F6B0BE743FB7E"
+        },
         "enable": true,
         "expr": "changes(bee_process_start_time_seconds{namespace=\"$namespace\",instance=\"$instance\"}[1m:10s]) > 0",
         "hide": true,
@@ -34,15 +40,17 @@
   },
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "gnetId": null,
   "graphTooltip": 0,
-  "id": 14,
-  "iteration": 1637610686037,
+  "id": 27,
+  "iteration": 1663246737391,
   "links": [],
   "liveNow": false,
   "panels": [
     {
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "decimals": 0,
@@ -94,9 +102,13 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_kademlia_current_depth{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
@@ -104,13 +116,14 @@
           "refId": "A"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Depth",
       "type": "gauge"
     },
     {
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "decimals": 0,
@@ -162,23 +175,28 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
-          "expr": "bee_kademlia_current_radius{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "expr": "bee_kademlia_current_storage_depth{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
           "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Radius",
       "type": "gauge"
     },
     {
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -222,9 +240,13 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_lightnode_currently_connected_peers{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
@@ -233,13 +255,14 @@
           "refId": "A"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Light nodes",
       "type": "gauge"
     },
     {
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -289,9 +312,13 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_kademlia_currently_connected_peers{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
@@ -299,6 +326,10 @@
           "refId": "A"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_kademlia_currently_known_peers{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
@@ -306,8 +337,6 @@
           "refId": "B"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Connect/Known",
       "transformations": [],
       "type": "gauge"
@@ -317,7 +346,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "links": []
@@ -350,7 +382,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -360,6 +392,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_kademlia_current_depth{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
@@ -368,9 +404,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Current Depth",
       "tooltip": {
         "shared": true,
@@ -379,9 +413,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -389,25 +421,18 @@
         {
           "$$hashKey": "object:215",
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "$$hashKey": "object:216",
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -415,7 +440,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "links": []
@@ -448,7 +476,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -458,6 +486,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_kademlia_current_radius{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
@@ -466,9 +498,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Radius",
       "tooltip": {
         "shared": true,
@@ -477,33 +507,25 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -511,7 +533,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "links": []
@@ -546,7 +571,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -556,6 +581,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "increase(bee_kademlia_total_inbound_disconnections{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "instant": false,
@@ -565,9 +594,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Disconnects",
       "tooltip": {
         "shared": true,
@@ -576,37 +603,32 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -651,9 +673,13 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_kademlia_internal_metrics_flush_total_errors{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
@@ -661,8 +687,6 @@
           "refId": "A"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Metrics Flush Errors",
       "type": "stat"
     },
@@ -671,7 +695,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "links": []
@@ -706,7 +733,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "9.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -716,6 +743,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "increase(bee_libp2p_blocklisted_peer_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "instant": false,
@@ -725,9 +756,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Libp2p blocklisting",
       "tooltip": {
         "shared": true,
@@ -736,40 +765,29 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
-      "cards": {
-        "cardPadding": null,
-        "cardRound": null
-      },
+      "cards": {},
       "color": {
         "cardColor": "#b4ff00",
         "colorScale": "sqrt",
@@ -778,7 +796,10 @@
         "mode": "spectrum"
       },
       "dataFormat": "timeseries",
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "gridPos": {
         "h": 8,
         "w": 8,
@@ -796,6 +817,10 @@
       "reverseYBuckets": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "sum(rate(bee_kademlia_internal_metrics_flush_time_bucket{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])) by (le)",
           "format": "heatmap",
@@ -804,8 +829,6 @@
           "refId": "A"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Metrics Flush Time",
       "tooltip": {
         "show": true,
@@ -815,23 +838,18 @@
       "xAxis": {
         "show": true
       },
-      "xBucketNumber": null,
-      "xBucketSize": null,
       "yAxis": {
-        "decimals": null,
         "format": "s",
         "logBase": 1,
-        "max": null,
-        "min": null,
-        "show": true,
-        "splitFactor": null
+        "show": true
       },
-      "yBucketBound": "auto",
-      "yBucketNumber": null,
-      "yBucketSize": null
+      "yBucketBound": "auto"
     },
     {
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -872,9 +890,13 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_kademlia_total_before_expire_waits{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
@@ -882,13 +904,14 @@
           "refId": "A"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Before Expire Waits",
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -931,9 +954,13 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_kademlia_pick_calls{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
@@ -941,6 +968,10 @@
           "refId": "A"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_kademlia_pick_calls_false{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "hide": false,
@@ -949,16 +980,11 @@
           "refId": "B"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Pick Calls",
       "type": "stat"
     },
     {
-      "cards": {
-        "cardPadding": null,
-        "cardRound": null
-      },
+      "cards": {},
       "color": {
         "cardColor": "#b4ff00",
         "colorScale": "sqrt",
@@ -967,7 +993,10 @@
         "mode": "spectrum"
       },
       "dataFormat": "timeseries",
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "gridPos": {
         "h": 7,
         "w": 8,
@@ -985,6 +1014,10 @@
       "reverseYBuckets": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "sum(rate(bee_kademlia_start_add_addressbook_overlays_time_bucket{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])) by (le)",
           "format": "heatmap",
@@ -993,8 +1026,6 @@
           "refId": "A"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Add Addressbook Overlays Time",
       "tooltip": {
         "show": true,
@@ -1004,23 +1035,19 @@
       "xAxis": {
         "show": true
       },
-      "xBucketNumber": null,
-      "xBucketSize": null,
       "yAxis": {
-        "decimals": null,
         "format": "s",
         "logBase": 1,
-        "max": null,
         "min": "0",
-        "show": true,
-        "splitFactor": null
+        "show": true
       },
-      "yBucketBound": "auto",
-      "yBucketNumber": null,
-      "yBucketSize": null
+      "yBucketBound": "auto"
     },
     {
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1061,9 +1088,13 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_kademlia_total_bootnodes_connection_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
@@ -1071,13 +1102,14 @@
           "refId": "A"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Connection To Bootnodes Attemps",
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1119,9 +1151,13 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_kademlia_total_inbound_connections{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "instant": false,
@@ -1130,6 +1166,10 @@
           "refId": "A"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_kademlia_total_inbound_disconnections{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "hide": false,
@@ -1139,6 +1179,10 @@
           "refId": "B"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_kademlia_total_outbound_connections{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
@@ -1146,6 +1190,10 @@
           "refId": "C"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_kademlia_total_outbound_connection_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "hide": false,
@@ -1154,6 +1202,10 @@
           "refId": "D"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_kademlia_total_outbound_connection_failed_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "hide": false,
@@ -1162,13 +1214,14 @@
           "refId": "E"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Connections",
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1211,9 +1264,13 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.2.1",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
           "expr": "bee_kademlia_peers_reachability_status{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "format": "time_series",
@@ -1222,14 +1279,12 @@
           "refId": "A"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Connected Peers Reachability",
       "type": "gauge"
     }
   ],
   "refresh": false,
-  "schemaVersion": 31,
+  "schemaVersion": 36,
   "style": "dark",
   "tags": [
     "components"
@@ -1237,16 +1292,16 @@
   "templating": {
     "list": [
       {
-        "allValue": null,
         "current": {
           "selected": true,
-          "text": "bee-bootnode",
-          "value": "bee-bootnode"
+          "text": "dev-bee-storage",
+          "value": "dev-bee-storage"
         },
-        "datasource": "Prometheus",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PEB8F6B0BE743FB7E"
+        },
         "definition": "label_values(bee_info, namespace)",
-        "description": null,
-        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "namespace",
@@ -1273,10 +1328,11 @@
           "text": "All",
           "value": "$__all"
         },
-        "datasource": "Prometheus",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PEB8F6B0BE743FB7E"
+        },
         "definition": "label_values(bee_info{namespace=\"$namespace\"}, instance)",
-        "description": null,
-        "error": null,
         "hide": 0,
         "includeAll": true,
         "label": "instance",
@@ -1318,5 +1374,6 @@
   "timezone": "",
   "title": "Kademlia",
   "uid": "BmxHrER7z",
-  "version": 2
+  "version": 2,
+  "weekStart": ""
 }
