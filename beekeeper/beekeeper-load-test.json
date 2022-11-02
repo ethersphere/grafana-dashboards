@@ -242,7 +242,7 @@
         "type": "prometheus",
         "uid": "PEB8F6B0BE743FB7E"
       },
-      "description": "This will reset every time the smoke test respawns (12h)",
+      "description": "This will reset every time the load test respawns (12h)",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -296,7 +296,7 @@
           "refId": "A"
         }
       ],
-      "title": "Uploaded data (this smoke test run only!)",
+      "title": "Uploaded data (this load test run only!)",
       "type": "gauge"
     },
     {
