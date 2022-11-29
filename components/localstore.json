@@ -3124,7 +3124,7 @@
     }
   ],
   "refresh": "1m",
-  "schemaVersion": 36,
+  "schemaVersion": 37,
   "style": "dark",
   "tags": [
     "components"
