@@ -3918,7 +3918,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "increase(bee_sharky_current_shard_size{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "expr": "bee_sharky_current_shard_size{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
           "legendFormat": "{{instance}}: shard index {{current_shard_size}}",
           "range": true,
@@ -4206,6 +4206,6 @@
   "timezone": "",
   "title": "Localstore",
   "uid": "Szc9zJUGk",
-  "version": 8,
+  "version": 9,
   "weekStart": ""
 }
