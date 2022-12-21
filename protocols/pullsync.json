@@ -337,7 +337,6 @@
             "type": "prometheus",
             "uid": "PEB8F6B0BE743FB7E"
           },
-          "editorMode": "code",
           "exemplar": true,
           "expr": "rate(bee_pullsync_db_ops{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "instant": false,
@@ -669,11 +668,11 @@
           "refId": "A"
         }
       ],
-      "title": "Panel Title",
+      "title": "Last timestamp of synced bin",
       "type": "timeseries"
     }
   ],
-  "refresh": "",
+  "refresh": "1m",
   "schemaVersion": 37,
   "style": "dark",
   "tags": [
@@ -683,7 +682,7 @@
     "list": [
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "private-testnet",
           "value": "private-testnet"
         },
@@ -714,7 +713,7 @@
       {
         "allValue": ".+",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "All",
           "value": "$__all"
         },
@@ -745,13 +744,13 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "PullSync",
   "uid": "Yccsbadnz",
-  "version": 3,
+  "version": 4,
   "weekStart": ""
 }
