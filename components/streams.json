@@ -41,8 +41,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 70,
-  "iteration": 1667220452861,
+  "id": 23,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -92,7 +91,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.1",
+      "pluginVersion": "9.2.4",
       "targets": [
         {
           "datasource": {
@@ -150,7 +149,7 @@
         "x": 8,
         "y": 0
       },
-      "id": 21,
+      "id": 17,
       "options": {
         "colorMode": "value",
         "graphMode": "area",
@@ -166,7 +165,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.1",
+      "pluginVersion": "9.2.4",
       "targets": [
         {
           "datasource": {
@@ -185,13 +184,13 @@
             "12": "e",
             "13": "e"
           },
-          "expr": "increase(bee_libp2p_library_reported_created_stream_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "expr": "increase(bee_libp2p_closed_stream_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
         }
       ],
-      "title": "libp2p library reported created streams",
+      "title": "libp2p closed stream count",
       "type": "stat"
     },
     {
@@ -241,7 +240,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.1",
+      "pluginVersion": "9.2.4",
       "targets": [
         {
           "datasource": {
@@ -260,9 +259,11 @@
             "12": "e",
             "13": "e"
           },
-          "expr": "increase(bee_stream_reset_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "editorMode": "code",
+          "expr": "increase(bee_libp2p_stream_reset_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
           "legendFormat": "",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -299,154 +300,6 @@
         "x": 0,
         "y": 6
       },
-      "id": 17,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "last"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "9.0.1",
-      "targets": [
-        {
-          "datasource": {
-            "0": "P",
-            "1": "r",
-            "2": "o",
-            "3": "m",
-            "4": "e",
-            "5": "t",
-            "6": "h",
-            "7": "e",
-            "8": "u",
-            "9": "s",
-            "10": "-",
-            "11": "b",
-            "12": "e",
-            "13": "e"
-          },
-          "expr": "increase(bee_libp2p_closed_stream_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "title": "libp2p closed stream count",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 8,
-        "x": 8,
-        "y": 6
-      },
-      "id": 22,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "last"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "9.0.1",
-      "targets": [
-        {
-          "datasource": {
-            "0": "P",
-            "1": "r",
-            "2": "o",
-            "3": "m",
-            "4": "e",
-            "5": "t",
-            "6": "h",
-            "7": "e",
-            "8": "u",
-            "9": "s",
-            "10": "-",
-            "11": "b",
-            "12": "e",
-            "13": "e"
-          },
-          "expr": "increase(bee_libp2p_library_reported_closed_stream_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "title": "libp2p library reported closed stream count",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 8,
-        "x": 0,
-        "y": 12
-      },
       "id": 18,
       "options": {
         "colorMode": "value",
@@ -463,7 +316,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.1",
+      "pluginVersion": "9.2.4",
       "targets": [
         {
           "datasource": {
@@ -508,7 +361,7 @@
         "h": 6,
         "w": 8,
         "x": 8,
-        "y": 12
+        "y": 6
       },
       "id": 12,
       "options": {
@@ -526,7 +379,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.1",
+      "pluginVersion": "9.2.4",
       "targets": [
         {
           "datasource": {
@@ -564,7 +417,7 @@
         "h": 14,
         "w": 12,
         "x": 0,
-        "y": 18
+        "y": 12
       },
       "hiddenSeries": false,
       "id": 13,
@@ -585,7 +438,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.0.1",
+      "pluginVersion": "9.2.4",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -707,7 +560,7 @@
         "h": 14,
         "w": 12,
         "x": 12,
-        "y": 18
+        "y": 12
       },
       "id": 16,
       "options": {
@@ -722,7 +575,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.0.1",
+      "pluginVersion": "9.2.4",
       "targets": [
         {
           "datasource": {
@@ -757,7 +610,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 32
+        "y": 26
       },
       "id": 15,
       "title": "Row title",
@@ -784,7 +637,7 @@
         "h": 14,
         "w": 12,
         "x": 0,
-        "y": 33
+        "y": 27
       },
       "hiddenSeries": false,
       "id": 10,
@@ -805,7 +658,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.0.1",
+      "pluginVersion": "9.2.4",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -917,7 +770,7 @@
         "h": 14,
         "w": 12,
         "x": 12,
-        "y": 33
+        "y": 27
       },
       "hiddenSeries": false,
       "id": 11,
@@ -938,7 +791,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.0.1",
+      "pluginVersion": "9.2.4",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1026,7 +879,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 36,
+  "schemaVersion": 37,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -1034,8 +887,8 @@
       {
         "current": {
           "selected": true,
-          "text": "anatol",
-          "value": "anatol"
+          "text": "private-testnet",
+          "value": "private-testnet"
         },
         "datasource": {
           "type": "prometheus",
@@ -1095,8 +948,8 @@
     ]
   },
   "time": {
-    "from": "now-6h",
-    "to": "now"
+    "from": "2023-01-17T11:52:41.125Z",
+    "to": "2023-01-17T12:24:51.113Z"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -1114,6 +967,6 @@
   "timezone": "",
   "title": "Streams",
   "uid": "Y3YbQwHVk",
-  "version": 3,
+  "version": 2,
   "weekStart": ""
 }
