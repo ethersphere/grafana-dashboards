@@ -41,7 +41,8 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 21,
+  "id": 22,
+  "iteration": 1680653683500,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -52,10 +53,39 @@
       },
       "fieldConfig": {
         "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
           "decimals": 0,
           "mappings": [],
-          "max": 31,
-          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -89,19 +119,17 @@
       },
       "id": 55,
       "options": {
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "fields": "",
-          "values": false
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
         },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true,
-        "text": {}
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
       },
-      "pluginVersion": "9.2.4",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -116,7 +144,7 @@
         }
       ],
       "title": "Depth",
-      "type": "gauge"
+      "type": "timeseries"
     },
     {
       "datasource": {
@@ -125,10 +153,39 @@
       },
       "fieldConfig": {
         "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
           "decimals": 0,
           "mappings": [],
-          "max": 31,
-          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -162,19 +219,17 @@
       },
       "id": 56,
       "options": {
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "fields": "",
-          "values": false
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
         },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true,
-        "text": {}
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
       },
-      "pluginVersion": "9.2.4",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -189,112 +244,45 @@
         }
       ],
       "title": "Radius",
-      "type": "gauge"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 1,
-      "gridPos": {
-        "h": 7,
-        "w": 8,
-        "x": 0,
-        "y": 13
-      },
-      "hiddenSeries": false,
-      "id": 8,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "9.2.4",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "bee_kademlia_current_depth{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "depth({{instance}})",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Current Depth",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:215",
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:216",
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
+        "uid": "prometheus"
       },
-      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "thresholds"
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
           },
           "mappings": [],
           "thresholds": {
@@ -314,10 +302,353 @@
         "overrides": []
       },
       "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 13
+      },
+      "id": 73,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "increase(bee_kademlia_flag{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "legendFormat": "{{instance}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Flagged for blocking per minute",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 13
+      },
+      "id": 54,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.0.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "increase(bee_kademlia_blocklist{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Blocklist due to flagging per minute",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 13
+      },
+      "id": 57,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.0.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "rate(bee_libp2p_blocklisted_peer_count{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "({{instance}})",
+          "refId": "A"
+        }
+      ],
+      "title": "Libp2p blocklisting rate",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 21
+      },
+      "id": 74,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.0.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "rate(bee_kademlia_total_inbound_disconnections{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "({{instance}})",
+          "refId": "A"
+        }
+      ],
+      "title": "Disconnects rate",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
         "h": 13,
         "w": 6,
         "x": 8,
-        "y": 13
+        "y": 21
       },
       "id": 71,
       "options": {
@@ -333,7 +664,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "9.2.4",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -368,8 +699,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red",
-                "value": null
+                "color": "red"
               },
               {
                 "color": "yellow",
@@ -389,23 +719,22 @@
         "h": 13,
         "w": 10,
         "x": 14,
-        "y": 13
+        "y": 21
       },
       "id": 52,
       "options": {
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "mean"
+            "lastNotNull"
           ],
           "fields": "",
           "values": false
         },
         "showThresholdLabels": false,
-        "showThresholdMarkers": true,
-        "text": {}
+        "showThresholdMarkers": true
       },
-      "pluginVersion": "9.2.4",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -449,263 +778,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 1
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 0,
-        "y": 20
-      },
-      "id": 61,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "9.2.4",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "bee_kademlia_internal_metrics_flush_total_errors{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "metrics_flush_total_errors({{instance}})",
-          "refId": "A"
-        }
-      ],
-      "title": "Metrics Flush Errors",
-      "type": "stat"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 3,
-      "gridPos": {
-        "h": 7,
-        "w": 8,
-        "x": 8,
-        "y": 26
-      },
-      "hiddenSeries": false,
-      "id": 9,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "9.2.4",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "bee_kademlia_current_radius{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "radius({{instance}})",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Radius",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "logBase": 1,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 5,
-      "gridPos": {
-        "h": 7,
-        "w": 8,
-        "x": 16,
-        "y": 26
-      },
-      "hiddenSeries": false,
-      "id": 54,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": true,
-        "rightSide": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "9.2.4",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "increase(bee_kademlia_total_inbound_disconnections{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "inbound({{instance}})",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Disconnects",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "logBase": 1,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -716,7 +789,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 28
+        "y": 29
       },
       "id": 67,
       "options": {
@@ -734,7 +807,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.2.4",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -752,56 +825,52 @@
       "type": "stat"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": {
         "type": "prometheus",
         "uid": "PEB8F6B0BE743FB7E"
       },
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 5,
       "gridPos": {
-        "h": 8,
+        "h": 7,
         "w": 8,
         "x": 8,
-        "y": 33
+        "y": 34
       },
-      "hiddenSeries": false,
-      "id": 57,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": true,
-        "rightSide": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
+      "id": 63,
       "options": {
-        "alertThreshold": true
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "percentage": false,
-      "pluginVersion": "9.2.4",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -809,43 +878,26 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "increase(bee_libp2p_blocklisted_peer_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
-          "instant": false,
+          "expr": "bee_kademlia_pick_calls{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
-          "legendFormat": "blocklist_event({{instance}})",
+          "legendFormat": "pick_calls({{instance}})",
           "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Libp2p blocklisting",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": true
         },
         {
-          "format": "short",
-          "logBase": 1,
-          "min": "0",
-          "show": true
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "exemplar": true,
+          "expr": "bee_kademlia_pick_calls_false{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "pick_calls_false({{instance}})",
+          "refId": "B"
         }
       ],
-      "yaxis": {
-        "align": false
-      }
+      "title": "Pick Calls",
+      "type": "stat"
     },
     {
       "cards": {},
@@ -861,26 +913,11 @@
         "type": "prometheus",
         "uid": "PEB8F6B0BE743FB7E"
       },
-      "fieldConfig": {
-        "defaults": {
-          "custom": {
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "scaleDistribution": {
-              "type": "linear"
-            }
-          }
-        },
-        "overrides": []
-      },
       "gridPos": {
         "h": 8,
         "w": 8,
         "x": 16,
-        "y": 33
+        "y": 34
       },
       "heatmap": {},
       "hideZeroBuckets": false,
@@ -973,8 +1010,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -985,7 +1021,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 35
+        "y": 36
       },
       "id": 69,
       "options": {
@@ -1003,7 +1039,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.2.4",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -1030,17 +1066,13 @@
           "color": {
             "mode": "thresholds"
           },
+          "links": [],
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
+                "color": "green"
               }
             ]
           }
@@ -1053,21 +1085,23 @@
         "x": 8,
         "y": 41
       },
-      "id": 63,
+      "id": 53,
       "options": {
         "colorMode": "value",
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": [],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.2.4",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -1075,9 +1109,10 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "bee_kademlia_pick_calls{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "expr": "bee_kademlia_total_inbound_connections{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "instant": false,
           "interval": "",
-          "legendFormat": "pick_calls({{instance}})",
+          "legendFormat": "inbound({{instance}})",
           "refId": "A"
         },
         {
@@ -1086,14 +1121,50 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "bee_kademlia_pick_calls_false{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "expr": "bee_kademlia_total_inbound_disconnections{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "inbound_disconnections({{instance}})",
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "exemplar": true,
+          "expr": "bee_kademlia_total_outbound_connections{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "interval": "",
+          "legendFormat": "outbound({{instance}})",
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "exemplar": true,
+          "expr": "bee_kademlia_total_outbound_connection_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "hide": false,
           "interval": "",
-          "legendFormat": "pick_calls_false({{instance}})",
-          "refId": "B"
+          "legendFormat": "outbound_attempts({{instance}})",
+          "refId": "D"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "exemplar": true,
+          "expr": "bee_kademlia_total_outbound_connection_failed_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "outbound_failed_attempts({{instance}})",
+          "refId": "E"
         }
       ],
-      "title": "Pick Calls",
+      "title": "Connections",
       "type": "stat"
     },
     {
@@ -1110,26 +1181,11 @@
         "type": "prometheus",
         "uid": "PEB8F6B0BE743FB7E"
       },
-      "fieldConfig": {
-        "defaults": {
-          "custom": {
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "scaleDistribution": {
-              "type": "linear"
-            }
-          }
-        },
-        "overrides": []
-      },
       "gridPos": {
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 41
+        "y": 42
       },
       "heatmap": {},
       "hideZeroBuckets": false,
@@ -1219,14 +1275,16 @@
           "color": {
             "mode": "thresholds"
           },
-          "links": [],
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 1
               }
             ]
           }
@@ -1234,12 +1292,12 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 8,
         "w": 8,
-        "x": 8,
-        "y": 48
+        "x": 0,
+        "y": 43
       },
-      "id": 53,
+      "id": 61,
       "options": {
         "colorMode": "value",
         "graphMode": "area",
@@ -1255,7 +1313,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.2.4",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -1263,62 +1321,13 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "bee_kademlia_total_inbound_connections{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "instant": false,
+          "expr": "bee_kademlia_internal_metrics_flush_total_errors{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
-          "legendFormat": "inbound({{instance}})",
+          "legendFormat": "metrics_flush_total_errors({{instance}})",
           "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "bee_kademlia_total_inbound_disconnections{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "hide": false,
-          "instant": false,
-          "interval": "",
-          "legendFormat": "inbound_disconnections({{instance}})",
-          "refId": "B"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "bee_kademlia_total_outbound_connections{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "outbound({{instance}})",
-          "refId": "C"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "bee_kademlia_total_outbound_connection_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "outbound_attempts({{instance}})",
-          "refId": "D"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "bee_kademlia_total_outbound_connection_failed_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "outbound_failed_attempts({{instance}})",
-          "refId": "E"
         }
       ],
-      "title": "Connections",
+      "title": "Metrics Flush Errors",
       "type": "stat"
     },
     {
@@ -1336,8 +1345,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1352,7 +1360,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 48
+        "y": 49
       },
       "id": 70,
       "options": {
@@ -1368,7 +1376,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "9.2.4",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -1388,7 +1396,7 @@
     }
   ],
   "refresh": "",
-  "schemaVersion": 37,
+  "schemaVersion": 36,
   "style": "dark",
   "tags": [
     "components"
@@ -1397,9 +1405,9 @@
     "list": [
       {
         "current": {
-          "selected": false,
-          "text": "testnet-storage",
-          "value": "testnet-storage"
+          "selected": true,
+          "text": "bee-storage",
+          "value": "bee-storage"
         },
         "datasource": {
           "type": "prometheus",
@@ -1478,6 +1486,6 @@
   "timezone": "",
   "title": "Kademlia",
   "uid": "BmxHrER7z",
-  "version": 2,
+  "version": 13,
   "weekStart": ""
 }
