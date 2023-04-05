@@ -42,7 +42,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 40,
-  "iteration": 1679430006628,
+  "iteration": 1680653660807,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -129,8 +129,8 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 11,
-        "w": 12,
+        "h": 9,
+        "w": 9,
         "x": 0,
         "y": 1
       },
@@ -154,7 +154,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "histogram_quantile(0.99, sum(rate(bee_pushsync_push_peer_time_bucket{namespace=~\"$namespace\",instance=~\"$instance\"}[1h])) by (le, instance))",
+          "expr": "histogram_quantile(0.99, sum(rate(bee_pushsync_push_peer_time_bucket{namespace=~\"$namespace\",instance=~\"$instance\"}[5m])) by (le, instance))",
           "interval": "",
           "legendFormat": "{{instance}}",
           "refId": "A"
@@ -216,9 +216,9 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 11,
-        "w": 12,
-        "x": 12,
+        "h": 9,
+        "w": 8,
+        "x": 9,
         "y": 1
       },
       "id": 88,
@@ -250,7 +250,7 @@
           "refId": "A"
         }
       ],
-      "title": "send chunk (s) - failure",
+      "title": "send time - failure",
       "type": "timeseries"
     },
     {
@@ -311,9 +311,9 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 12,
-        "x": 0,
-        "y": 12
+        "w": 7,
+        "x": 17,
+        "y": 1
       },
       "id": 87,
       "options": {
@@ -335,7 +335,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "increase(bee_pushsync_push_peer_time_sum{namespace=~\"$namespace\", instance=~\"$instance\", status=\"success\"}[1h])\r\n/\r\nincrease(bee_pushsync_push_peer_time_count{namespace=~\"$namespace\", instance=~\"$instance\", status=\"success\"}[1h])",
+          "expr": "increase(bee_pushsync_push_peer_time_sum{namespace=~\"$namespace\", instance=~\"$instance\", status=\"success\"}[5m])\r\n/\r\nincrease(bee_pushsync_push_peer_time_count{namespace=~\"$namespace\", instance=~\"$instance\", status=\"success\"}[5m])",
           "format": "time_series",
           "hide": false,
           "instant": false,
@@ -344,7 +344,7 @@
           "refId": "A"
         }
       ],
-      "title": "send chunk (s) - success",
+      "title": "send time - success",
       "type": "timeseries"
     },
     {
@@ -352,7 +352,6 @@
         "type": "prometheus",
         "uid": "PEB8F6B0BE743FB7E"
       },
-      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -364,7 +363,7 @@
             "barAlignment": 0,
             "drawStyle": "line",
             "fillOpacity": 10,
-            "gradientMode": "opacity",
+            "gradientMode": "none",
             "hideFrom": {
               "legend": false,
               "tooltip": false,
@@ -376,7 +375,7 @@
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "never",
+            "showPoints": "auto",
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -393,20 +392,24 @@
               {
                 "color": "green",
                 "value": null
+              },
+              {
+                "color": "red",
+                "value": 0.05
               }
             ]
           },
-          "unit": "none"
+          "unit": "percentunit"
         },
         "overrides": []
       },
       "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 12,
-        "y": 12
+        "h": 8,
+        "w": 9,
+        "x": 0,
+        "y": 10
       },
-      "id": 80,
+      "id": 70,
       "options": {
         "legend": {
           "calcs": [],
@@ -425,16 +428,14 @@
             "type": "prometheus",
             "uid": "PEB8F6B0BE743FB7E"
           },
-          "editorMode": "code",
           "exemplar": true,
-          "expr": "increase(bee_pushsync_total_send_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}[1h])",
+          "expr": "increase(bee_pushsync_total_outgoing_errors{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])\n/\nincrease(bee_pushsync_total_outgoing{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
           "interval": "",
           "legendFormat": "{{instance}}",
-          "range": true,
           "refId": "A"
         }
       ],
-      "title": "sends (chunks/h)",
+      "title": "Originator Error %",
       "type": "timeseries"
     },
     {
@@ -511,10 +512,10 @@
         ]
       },
       "gridPos": {
-        "h": 10,
-        "w": 12,
-        "x": 0,
-        "y": 21
+        "h": 8,
+        "w": 8,
+        "x": 9,
+        "y": 10
       },
       "id": 68,
       "options": {
@@ -537,14 +538,104 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "increase(bee_pushsync_total_outgoing_errors{namespace=~\"$namespace\", instance=~\"$instance\"}[1h])\n/\nincrease(bee_pushsync_total_outgoing{namespace=~\"$namespace\", instance=~\"$instance\"}[1h])",
+          "expr": "increase(bee_pushsync_total_failed_send_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])\n/\nincrease(bee_pushsync_total_send_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
           "interval": "",
           "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
         }
       ],
-      "title": "send error %",
+      "title": "attempt error %",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 7,
+        "x": 17,
+        "y": 10
+      },
+      "id": 80,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.0.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "rate(bee_pushsync_total_send_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
+          "interval": "",
+          "legendFormat": "{{instance}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "sends per second",
       "type": "timeseries"
     },
     {
@@ -600,10 +691,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
-        "w": 12,
-        "x": 12,
-        "y": 21
+        "h": 7,
+        "w": 9,
+        "x": 0,
+        "y": 18
       },
       "id": 71,
       "options": {
@@ -639,97 +730,6 @@
         "type": "prometheus",
         "uid": "PEB8F6B0BE743FB7E"
       },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 0.05
-              }
-            ]
-          },
-          "unit": "percentunit"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 10,
-        "w": 12,
-        "x": 0,
-        "y": 31
-      },
-      "id": 70,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom"
-        },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "9.0.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "increase(bee_pushsync_total_outgoing_errors{namespace=~\"$namespace\", instance=~\"$instance\"}[1h])\n/\nincrease(bee_pushsync_total_outgoing{namespace=~\"$namespace\", instance=~\"$instance\"}[1h])",
-          "interval": "",
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Originator Error %",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -758,10 +758,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
-        "w": 12,
-        "x": 12,
-        "y": 31
+        "h": 7,
+        "w": 8,
+        "x": 9,
+        "y": 18
       },
       "id": 89,
       "options": {
@@ -808,7 +808,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 41
+        "y": 25
       },
       "id": 76,
       "panels": [],
@@ -868,8 +868,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -878,10 +877,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 11,
+        "h": 8,
         "w": 12,
         "x": 0,
-        "y": 42
+        "y": 26
       },
       "id": 81,
       "options": {
@@ -903,13 +902,13 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "increase(bee_pushsync_total_received{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "expr": "rate(bee_pushsync_total_received{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
           "interval": "",
           "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
-      "title": "incoming deliveries (chunks/min)",
+      "title": "incoming deliveries per second",
       "type": "timeseries"
     },
     {
@@ -956,8 +955,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -966,10 +964,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 11,
+        "h": 8,
         "w": 12,
         "x": 12,
-        "y": 42
+        "y": 26
       },
       "id": 79,
       "options": {
@@ -991,7 +989,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "increase(bee_pushsync_total_handler_errors{namespace=~\"$namespace\", instance=~\"$instance\"}[1h])\r\n/\r\nincrease(bee_pushsync_total_received{namespace=~\"$namespace\", instance=~\"$instance\"}[1h])",
+          "expr": "increase(bee_pushsync_total_handler_errors{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])\r\n/\r\nincrease(bee_pushsync_total_received{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
           "interval": "",
           "legendFormat": "{{instance}}",
           "refId": "A"
@@ -1043,8 +1041,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -1053,10 +1050,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 11,
+        "h": 8,
         "w": 12,
         "x": 0,
-        "y": 53
+        "y": 34
       },
       "id": 53,
       "options": {
@@ -1133,8 +1130,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -1143,10 +1139,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 11,
+        "h": 8,
         "w": 12,
         "x": 12,
-        "y": 53
+        "y": 34
       },
       "id": 91,
       "options": {
@@ -1169,7 +1165,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "increase(bee_pushsync_total_handler_time_sum{namespace=~\"$namespace\", instance=~\"$instance\", status=\"success\"}[1h])\r\n/\r\nincrease(bee_pushsync_total_handler_time_count{namespace=~\"$namespace\", instance=~\"$instance\", status=\"success\"}[1h])",
+          "expr": "increase(bee_pushsync_total_handler_time_sum{namespace=~\"$namespace\", instance=~\"$instance\", status=\"success\"}[5m])\r\n/\r\nincrease(bee_pushsync_total_handler_time_count{namespace=~\"$namespace\", instance=~\"$instance\", status=\"success\"}[5m])",
           "format": "time_series",
           "hide": false,
           "instant": false,
@@ -1224,8 +1220,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -1234,10 +1229,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
+        "h": 7,
         "w": 12,
         "x": 0,
-        "y": 64
+        "y": 42
       },
       "id": 93,
       "options": {
@@ -1258,7 +1253,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.99, sum(rate(bee_pushsync_stamp_validation_time_bucket{namespace=~\"$namespace\",instance=~\"$instance\"}[1h])) by (le, status))",
+          "expr": "histogram_quantile(0.999, sum(rate(bee_pushsync_stamp_validation_time_bucket{namespace=~\"$namespace\",instance=~\"$instance\"}[1m])) by (le, status))",
           "legendFormat": "{{status}}",
           "range": true,
           "refId": "A"
@@ -1310,8 +1305,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1324,10 +1318,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
+        "h": 7,
         "w": 12,
         "x": 12,
-        "y": 64
+        "y": 42
       },
       "id": 63,
       "options": {
@@ -1375,8 +1369,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1392,7 +1385,7 @@
         "h": 10,
         "w": 6,
         "x": 0,
-        "y": 74
+        "y": 49
       },
       "id": 73,
       "options": {
@@ -1444,8 +1437,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1461,7 +1453,7 @@
         "h": 10,
         "w": 6,
         "x": 6,
-        "y": 74
+        "y": 49
       },
       "id": 74,
       "options": {
@@ -1513,77 +1505,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 0.05
-              }
-            ]
-          },
-          "unit": "percentunit"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 10,
-        "w": 6,
-        "x": 12,
-        "y": 74
-      },
-      "id": 64,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "value"
-      },
-      "pluginVersion": "9.0.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "bee_pushsync_handler_replication_errors{namespace=~\"$namespace\", instance=~\"$instance\"}\n/\nbee_pushsync_handler_replication{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Handler Replication Error %",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "max": 1,
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1598,8 +1520,8 @@
       "gridPos": {
         "h": 10,
         "w": 6,
-        "x": 18,
-        "y": 74
+        "x": 12,
+        "y": 49
       },
       "id": 90,
       "options": {
@@ -1633,6 +1555,74 @@
       ],
       "title": "Replication %",
       "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 1,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 0.05
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 18,
+        "y": 49
+      },
+      "id": 64,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "9.0.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "exemplar": true,
+          "expr": "bee_pushsync_handler_replication_errors{namespace=~\"$namespace\", instance=~\"$instance\"}\n/\nbee_pushsync_handler_replication{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "interval": "",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Handler Replication Error %",
+      "type": "stat"
     }
   ],
   "refresh": false,
@@ -1645,9 +1635,9 @@
     "list": [
       {
         "current": {
-          "selected": true,
-          "text": "dev-bee-storage",
-          "value": "dev-bee-storage"
+          "selected": false,
+          "text": "bee-gateway",
+          "value": "bee-gateway"
         },
         "datasource": {
           "type": "prometheus",
@@ -1707,7 +1697,7 @@
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {
@@ -1726,6 +1716,6 @@
   "timezone": "",
   "title": "PushSync",
   "uid": "RzKb6ZNnz",
-  "version": 25,
+  "version": 48,
   "weekStart": ""
 }
