@@ -3,7 +3,10 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -21,8 +24,8 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
-  "id": 8,
-  "iteration": 1653413974304,
+  "id": 17,
+  "iteration": 1683813615351,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -38,6 +41,15 @@
         "y": 0
       },
       "id": 64,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Upload/Download Benchmark",
       "type": "row"
     },
@@ -99,8 +111,8 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 4,
+        "h": 10,
+        "w": 6,
         "x": 0,
         "y": 1
       },
@@ -119,8 +131,12 @@
       "pluginVersion": "8.4.2",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
-          "expr": "beekeeper_check_smoke_data_upload_duration_sum{job=\"$job\"}/beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"}",
+          "expr": "rate(beekeeper_check_smoke_data_upload_duration_sum{job=\"$job\"}[1h])\r\n/\r\nrate(beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"}[1h])",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -187,9 +203,9 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 4,
-        "x": 4,
+        "h": 10,
+        "w": 6,
+        "x": 6,
         "y": 1
       },
       "id": 67,
@@ -207,8 +223,12 @@
       "pluginVersion": "8.4.2",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
-          "expr": "beekeeper_check_smoke_data_download_duration_sum{job=\"$job\"}/beekeeper_check_smoke_data_download_duration_count{job=\"$job\"}",
+          "expr": "rate(beekeeper_check_smoke_data_download_duration_sum{job=\"$job\"}[1h])\r\n/\r\nrate(beekeeper_check_smoke_data_download_duration_count{job=\"$job\"}[1h])",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -216,64 +236,6 @@
       ],
       "title": "Average Download Duration",
       "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "description": "This will reset every time the smoke test respawns (12h)",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          },
-          "unit": "bytes"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 4,
-        "x": 8,
-        "y": 1
-      },
-      "id": 65,
-      "options": {
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "last"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true,
-        "text": {}
-      },
-      "pluginVersion": "8.4.2",
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"}*5e6",
-          "interval": "",
-          "legendFormat": "{{job}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Uploaded data (this smoke test run only!)",
-      "type": "gauge"
     },
     {
       "datasource": {
@@ -301,7 +263,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
+        "h": 5,
         "w": 3,
         "x": 12,
         "y": 1
@@ -319,14 +281,17 @@
           "fields": "",
           "values": false
         },
-        "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
-          "expr": "5e6/(beekeeper_check_smoke_data_upload_duration_sum{job=\"$job\"}/beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"})",
+          "expr": "5e6 /\r\n(\r\n    increase(beekeeper_check_smoke_data_upload_duration_sum{job=\"$job\"}[1d])\r\n    /\r\n    increase(beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"}[1d])\r\n)",
           "format": "time_series",
           "interval": "",
           "legendFormat": "{{job}}",
@@ -362,7 +327,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
+        "h": 5,
         "w": 3,
         "x": 15,
         "y": 1
@@ -375,15 +340,14 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "last"
+            "lastNotNull"
           ],
           "fields": "",
           "values": false
         },
-        "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -391,7 +355,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "beekeeper_check_smoke_upload_attempts{job=\"$job\"} ",
+          "expr": "beekeeper_check_smoke_upload_attempts{job=\"$job\"}",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -430,7 +394,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
+        "h": 5,
         "w": 3,
         "x": 18,
         "y": 1
@@ -451,7 +415,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -489,7 +453,7 @@
               },
               {
                 "color": "red",
-                "value": 0
+                "value": 10
               }
             ]
           },
@@ -498,7 +462,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
+        "h": 5,
         "w": 3,
         "x": 21,
         "y": 1
@@ -516,10 +480,9 @@
           "fields": "",
           "values": false
         },
-        "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -564,10 +527,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
+        "h": 5,
         "w": 3,
         "x": 12,
-        "y": 5
+        "y": 6
       },
       "id": 70,
       "options": {
@@ -585,11 +548,15 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
-          "expr": "5e6/(beekeeper_check_smoke_data_download_duration_sum{job=\"$job\"}/beekeeper_check_smoke_data_download_duration_count{job=\"$job\"})",
+          "expr": "5e6 /\r\n(\r\n    increase(beekeeper_check_smoke_data_download_duration_sum{job=\"$job\"}[1d])\r\n    /\r\n    increase(beekeeper_check_smoke_data_download_duration_count{job=\"$job\"}[1d])\r\n)",
           "format": "time_series",
           "interval": "",
           "legendFormat": "{{job}}",
@@ -625,10 +592,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
+        "h": 5,
         "w": 3,
         "x": 15,
-        "y": 5
+        "y": 6
       },
       "id": 79,
       "options": {
@@ -646,7 +613,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -672,7 +639,35 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "thresholds"
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "right",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "area"
+            }
           },
           "mappings": [],
           "thresholds": {
@@ -683,8 +678,8 @@
                 "value": null
               },
               {
-                "color": "semi-dark-red",
-                "value": 0.25
+                "color": "red",
+                "value": 0.1
               }
             ]
           },
@@ -693,28 +688,24 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
-        "w": 3,
+        "h": 5,
+        "w": 6,
         "x": 18,
-        "y": 5
+        "y": 6
       },
-      "id": 82,
+      "id": 84,
       "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
         },
-        "text": {},
-        "textMode": "auto"
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -722,25 +713,40 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "beekeeper_check_smoke_download_errors_count{job=\"$job\"} / beekeeper_check_smoke_download_attempts{job=\"$job\"} ",
+          "expr": "(\r\n    rate(beekeeper_check_smoke_download_mismatch{job=\"$job\"}[1h])\r\n    +\r\n    rate(beekeeper_check_smoke_download_errors_count{job=\"$job\"}[1h])\r\n)\r\n/\r\nrate(beekeeper_check_smoke_download_attempts{job=\"$job\"}[1h])\r\n",
+          "format": "time_series",
           "interval": "",
+          "intervalFactor": 1,
           "legendFormat": "{{job}}",
           "refId": "A"
         }
       ],
-      "title": "Download Errors %",
-      "type": "stat"
+      "title": "Download Err Rate",
+      "type": "timeseries"
     },
     {
       "collapsed": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 9
+        "y": 11
       },
       "id": 81,
       "panels": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Speed",
       "type": "row"
     },
@@ -805,7 +811,7 @@
         "h": 10,
         "w": 12,
         "x": 0,
-        "y": 10
+        "y": 12
       },
       "id": 71,
       "options": {
@@ -822,8 +828,12 @@
       "pluginVersion": "8.4.2",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
-          "expr": "5e6/(increase(beekeeper_check_smoke_data_upload_duration_sum{job=\"$job\"}[5m])/increase(beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"}[5m]))",
+          "expr": "5e6/(increase(beekeeper_check_smoke_data_upload_duration_sum{job=\"$job\"}[1h])/increase(beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"}[1h]))",
           "format": "time_series",
           "interval": "",
           "legendFormat": "{{job}}",
@@ -894,7 +904,7 @@
         "h": 10,
         "w": 12,
         "x": 12,
-        "y": 10
+        "y": 12
       },
       "id": 73,
       "options": {
@@ -911,15 +921,20 @@
       "pluginVersion": "8.4.2",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
-          "expr": "5e6/(beekeeper_check_smoke_data_upload_duration_sum{job=\"$job\"}/beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"})",
+          "expr": "5e6 / (beekeeper_check_smoke_data_upload_duration_sum{job=\"$job\"} / beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"} )",
           "format": "time_series",
+          "hide": false,
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
         }
       ],
-      "title": "Average Upload Speed (alltime average)",
+      "title": "All Time Upload Avg",
       "type": "timeseries"
     },
     {
@@ -966,8 +981,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -983,7 +997,7 @@
         "h": 10,
         "w": 12,
         "x": 0,
-        "y": 20
+        "y": 22
       },
       "id": 72,
       "options": {
@@ -1000,8 +1014,12 @@
       "pluginVersion": "8.4.2",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
-          "expr": "5e6/(increase(beekeeper_check_smoke_data_download_duration_sum{job=\"$job\"}[5m])/increase(beekeeper_check_smoke_data_download_duration_count{job=\"$job\"}[5m]))",
+          "expr": "5e6/(increase(beekeeper_check_smoke_data_download_duration_sum{job=\"$job\"}[1h])/increase(beekeeper_check_smoke_data_download_duration_count{job=\"$job\"}[1h]))",
           "format": "time_series",
           "interval": "",
           "legendFormat": "{{job}}",
@@ -1055,8 +1073,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1072,7 +1089,7 @@
         "h": 10,
         "w": 12,
         "x": 12,
-        "y": 20
+        "y": 22
       },
       "id": 69,
       "options": {
@@ -1089,20 +1106,24 @@
       "pluginVersion": "8.4.2",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
           "exemplar": true,
-          "expr": "5e6/(beekeeper_check_smoke_data_download_duration_sum{job=\"$job\"}/beekeeper_check_smoke_data_download_duration_count{job=\"$job\"})",
+          "expr": "5e6 / (beekeeper_check_smoke_data_download_duration_sum{job=\"$job\"} / beekeeper_check_smoke_data_download_duration_count{job=\"$job\"} )",
           "format": "time_series",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
         }
       ],
-      "title": "Average Download Speed (alltime average)",
+      "title": "All Time Download Avg",
       "type": "timeseries"
     }
   ],
   "refresh": "30s",
-  "schemaVersion": 35,
+  "schemaVersion": 36,
   "style": "dark",
   "tags": [
     "beekeeper"
@@ -1161,6 +1182,6 @@
   "timezone": "",
   "title": "Milestone Smoke Test",
   "uid": "R6nXBFH7k",
-  "version": 4,
+  "version": 29,
   "weekStart": ""
 }
