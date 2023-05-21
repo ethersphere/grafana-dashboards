@@ -42,7 +42,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 41,
-  "iteration": 1680653669682,
+  "iteration": 1684692767562,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -215,7 +215,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "editorMode": "code",
-          "expr": "rate(bee_retrieval_request_duration_time_sum{namespace=~\"$namespace\",instance=~\"$instance\"}[1m])\r\n/\r\nrate(bee_retrieval_request_duration_time_count{namespace=~\"$namespace\",instance=~\"$instance\"}[1m])",
+          "expr": "increase(bee_retrieval_request_duration_time_sum{namespace=~\"$namespace\",instance=~\"$instance\"}[1m])\r\n/\r\nincrease(bee_retrieval_request_duration_time_count{namespace=~\"$namespace\",instance=~\"$instance\"}[1m])",
           "hide": false,
           "interval": "",
           "legendFormat": "{{instance}}",
@@ -796,6 +796,95 @@
       ],
       "title": "Invalid Chunks Per Day",
       "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 30,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 28
+      },
+      "id": 93,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.0.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "editorMode": "code",
+          "expr": "increase(bee_retrieval_peer_request_count{namespace=~\"$namespace\",instance=~\"$instance\"}[1h])\r\n/\r\nincrease(bee_retrieval_request_count{namespace=~\"$namespace\",instance=~\"$instance\"}[1h])",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{instance}}",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "title": "Avg Attempts per Request",
+      "type": "timeseries"
     }
   ],
   "refresh": false,
@@ -889,6 +978,6 @@
   "timezone": "",
   "title": "Retrieval",
   "uid": "qRpzaWKnz",
-  "version": 49,
+  "version": 53,
   "weekStart": ""
 }

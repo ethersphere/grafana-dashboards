@@ -25,14 +25,14 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 39,
-  "iteration": 1680653649874,
+  "iteration": 1684692912860,
   "links": [],
   "liveNow": false,
   "panels": [
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "PEB8F6B0BE743FB7E"
       },
       "fieldConfig": {
         "defaults": {
@@ -103,7 +103,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "PEB8F6B0BE743FB7E"
           },
           "editorMode": "code",
           "expr": "rate(bee_puller_live_worker_iterations{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
@@ -118,7 +118,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "PEB8F6B0BE743FB7E"
       },
       "description": "",
       "fieldConfig": {
@@ -190,7 +190,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "PEB8F6B0BE743FB7E"
           },
           "editorMode": "code",
           "expr": "rate(bee_puller_live_worker_errors{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])\r\n/\r\nrate(bee_puller_live_worker_iterations{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
@@ -205,7 +205,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "PEB8F6B0BE743FB7E"
       },
       "fieldConfig": {
         "defaults": {
@@ -226,7 +226,7 @@
             },
             "lineInterpolation": "linear",
             "lineWidth": 1,
-            "pointSize": 5,
+            "pointSize": 3,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -275,7 +275,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "PEB8F6B0BE743FB7E"
           },
           "editorMode": "code",
           "expr": "rate(bee_puller_hist_worker_iterations{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
@@ -310,6 +310,9 @@
               "viz": false
             },
             "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
             "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
@@ -357,7 +360,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.2.4",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -365,8 +368,8 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "editorMode": "code",
-          "expr": "avg(bee_pullsync_last_received{namespace=~\"$namespace\", instance=~\"$instance\"}) by (bin)",
-          "legendFormat": "{{bin}}",
+          "expr": "rate(bee_pullsync_last_received{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
+          "legendFormat": "bin {{bin}}",
           "range": true,
           "refId": "A"
         }
@@ -375,512 +378,105 @@
       "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": {
         "type": "prometheus",
         "uid": "PEB8F6B0BE743FB7E"
       },
       "fieldConfig": {
         "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 4,
-      "gridPos": {
-        "h": 11,
-        "w": 12,
-        "x": 0,
-        "y": 20
-      },
-      "hiddenSeries": false,
-      "id": 24,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": true,
-        "rightSide": false,
-        "show": true,
-        "total": true,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "9.0.1",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "$$hashKey": "object:298"
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
+          "color": {
+            "mode": "palette-classic"
           },
-          "exemplar": true,
-          "expr": "increase(bee_pullsync_chunks_delivered{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "delivered({{instance}})",
-          "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
           },
-          "expr": "increase(bee_pullsync_chunks_offered{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "offered({{instance}})",
-          "refId": "B"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "expr": "increase(bee_pullsync_chunks_wanted{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
-          "interval": "",
-          "legendFormat": "wanted({{instance}})",
-          "refId": "C"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "chunks offered/wanted/delivered",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:309",
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:310",
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 4,
-      "gridPos": {
-        "h": 11,
-        "w": 12,
-        "x": 12,
-        "y": 20
-      },
-      "hiddenSeries": false,
-      "id": 26,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": true,
-        "rightSide": false,
-        "show": true,
-        "total": true,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "9.0.1",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "$$hashKey": "object:298"
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "rate(bee_pullsync_chunks_delivered{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "delivered({{instance}})",
-          "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "rate(bee_pullsync_chunks_offered{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "offered({{instance}})",
-          "refId": "B"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "rate(bee_pullsync_chunks_wanted{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
-          "interval": "",
-          "legendFormat": "wanted({{instance}})",
-          "refId": "C"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "chunks offered/wanted/delivered (rate/sec)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:309",
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:310",
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 4,
-      "gridPos": {
-        "h": 11,
-        "w": 12,
-        "x": 0,
-        "y": 31
-      },
-      "hiddenSeries": false,
-      "id": 28,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": true,
-        "rightSide": false,
-        "show": true,
-        "total": true,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "9.0.1",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "$$hashKey": "object:298"
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "rate(bee_pullsync_db_ops{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "db ops({{instance}})",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "db ops(ops/sec)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:309",
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:310",
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
           "links": [],
-          "unit": "Bps"
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 4,
-      "gridPos": {
-        "h": 11,
-        "w": 12,
-        "x": 12,
-        "y": 31
-      },
-      "hiddenSeries": false,
-      "id": 27,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": true,
-        "rightSide": false,
-        "show": true,
-        "total": true,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "9.0.1",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "$$hashKey": "object:298"
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
           },
-          "exemplar": true,
-          "expr": "rate(bee_pullsync_chunks_delivered{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])*4096",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "chunk deliveries (bytes/sec)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:309",
-          "format": "Bps",
-          "logBase": 1,
-          "show": true
+          "unit": "short"
         },
-        {
-          "$$hashKey": "object:310",
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
+        "overrides": [
+          {
+            "__systemRef": "hideSeriesFrom",
+            "matcher": {
+              "id": "byNames",
+              "options": {
+                "mode": "exclude",
+                "names": [
+                  "bee-1-0"
+                ],
+                "prefix": "All except:",
+                "readOnly": true
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": true
+                }
+              }
+            ]
+          }
+        ]
       },
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 4,
       "gridPos": {
         "h": 11,
         "w": 12,
         "x": 0,
-        "y": 42
+        "y": 20
       },
-      "hiddenSeries": false,
-      "id": 25,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": true,
-        "rightSide": false,
-        "show": true,
-        "total": true,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
+      "id": 24,
       "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "9.0.1",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "$$hashKey": "object:298"
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
         }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      },
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -889,47 +485,297 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "increase(bee_pullsync_db_ops{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "expr": "rate(bee_pullsync_chunks_delivered{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
           "instant": false,
           "interval": "",
-          "legendFormat": "db ops({{instance}})",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "db ops",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
+      "title": "received chunks",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
       },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:309",
-          "format": "short",
-          "logBase": 1,
-          "show": true
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 12,
+        "x": 12,
+        "y": 20
+      },
+      "id": 35,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.0.1",
+      "targets": [
         {
-          "$$hashKey": "object:310",
-          "format": "short",
-          "logBase": 1,
-          "show": true
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "editorMode": "code",
+          "expr": "rate(bee_pullsync_chunks_offered{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "range": true,
+          "refId": "B"
         }
       ],
-      "yaxis": {
-        "align": false
-      }
+      "title": "received offers",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 12,
+        "x": 0,
+        "y": 31
+      },
+      "id": 36,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.0.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "editorMode": "code",
+          "expr": "rate(bee_pullsync_chunks_sent{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "title": "sent chunks",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 12,
+        "x": 12,
+        "y": 31
+      },
+      "id": 37,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.0.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "editorMode": "code",
+          "expr": "bee_puller_hist_sync_timeout{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "title": "historical sync timeout blocklisting",
+      "type": "timeseries"
     }
   ],
-  "refresh": "1m",
+  "refresh": "10s",
   "schemaVersion": 36,
   "style": "dark",
   "tags": [
@@ -940,8 +786,8 @@
       {
         "current": {
           "selected": false,
-          "text": "bee-bootnode",
-          "value": "bee-bootnode"
+          "text": "dev-bee-storage",
+          "value": "dev-bee-storage"
         },
         "datasource": {
           "type": "prometheus",
@@ -1008,6 +854,6 @@
   "timezone": "",
   "title": "PullSync",
   "uid": "Yccsbadnz",
-  "version": 6,
+  "version": 26,
   "weekStart": ""
 }

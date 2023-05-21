@@ -42,7 +42,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 22,
-  "iteration": 1680653683500,
+  "iteration": 1684692959528,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -622,6 +622,231 @@
         "type": "prometheus",
         "uid": "PEB8F6B0BE743FB7E"
       },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "points",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 10,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 21
+      },
+      "id": 75,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.0.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "histogram_quantile(0.99, sum(rate(bee_kademlia_peer_latency_ewma_bucket{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])) by (instance, le))",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "({{instance}})",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "expr": "rate(bee_kademlia_peer_latency_ewma_sum{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])\r\n/\r\nrate(bee_kademlia_peer_latency_ewma_count{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "hide": true,
+          "refId": "B"
+        }
+      ],
+      "title": "P99 Ping Duration",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 21
+      },
+      "id": 67,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.0.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "exemplar": true,
+          "expr": "bee_kademlia_total_before_expire_waits{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "interval": "",
+          "legendFormat": "before_expire_waits({{instance}})",
+          "refId": "A"
+        }
+      ],
+      "title": "Before Expire Waits",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 29
+      },
+      "id": 69,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.0.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "exemplar": true,
+          "expr": "bee_kademlia_total_bootnodes_connection_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "interval": "",
+          "legendFormat": "bootnodes_connection_attempts({{instance}})",
+          "refId": "A"
+        }
+      ],
+      "title": "Connection To Bootnodes Attemps",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -648,7 +873,7 @@
         "h": 13,
         "w": 6,
         "x": 8,
-        "y": 21
+        "y": 29
       },
       "id": 71,
       "options": {
@@ -719,7 +944,7 @@
         "h": 13,
         "w": 10,
         "x": 14,
-        "y": 21
+        "y": 29
       },
       "id": 52,
       "options": {
@@ -779,6 +1004,10 @@
             "steps": [
               {
                 "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 1
               }
             ]
           }
@@ -786,12 +1015,12 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 8,
         "w": 8,
         "x": 0,
-        "y": 29
+        "y": 36
       },
-      "id": 67,
+      "id": 61,
       "options": {
         "colorMode": "value",
         "graphMode": "area",
@@ -815,13 +1044,13 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "bee_kademlia_total_before_expire_waits{namespace=~\"$namespace\", instance=~\"$instance\"}",
+          "expr": "bee_kademlia_internal_metrics_flush_total_errors{namespace=~\"$namespace\", instance=~\"$instance\"}",
           "interval": "",
-          "legendFormat": "before_expire_waits({{instance}})",
+          "legendFormat": "metrics_flush_total_errors({{instance}})",
           "refId": "A"
         }
       ],
-      "title": "Before Expire Waits",
+      "title": "Metrics Flush Errors",
       "type": "stat"
     },
     {
@@ -854,7 +1083,7 @@
         "h": 7,
         "w": 8,
         "x": 8,
-        "y": 34
+        "y": 42
       },
       "id": 63,
       "options": {
@@ -917,7 +1146,7 @@
         "h": 8,
         "w": 8,
         "x": 16,
-        "y": 34
+        "y": 42
       },
       "heatmap": {},
       "hideZeroBuckets": false,
@@ -1005,67 +1234,6 @@
           "color": {
             "mode": "thresholds"
           },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 7,
-        "w": 8,
-        "x": 0,
-        "y": 36
-      },
-      "id": 69,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "9.0.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "bee_kademlia_total_bootnodes_connection_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "bootnodes_connection_attempts({{instance}})",
-          "refId": "A"
-        }
-      ],
-      "title": "Connection To Bootnodes Attemps",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
           "links": [],
           "mappings": [],
           "thresholds": {
@@ -1083,7 +1251,7 @@
         "h": 7,
         "w": 8,
         "x": 8,
-        "y": 41
+        "y": 49
       },
       "id": 53,
       "options": {
@@ -1185,7 +1353,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 42
+        "y": 50
       },
       "heatmap": {},
       "hideZeroBuckets": false,
@@ -1284,71 +1452,6 @@
               },
               {
                 "color": "red",
-                "value": 1
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 0,
-        "y": 43
-      },
-      "id": 61,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "9.0.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "bee_kademlia_internal_metrics_flush_total_errors{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "metrics_flush_total_errors({{instance}})",
-          "refId": "A"
-        }
-      ],
-      "title": "Metrics Flush Errors",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              },
-              {
-                "color": "red",
                 "value": 80
               }
             ]
@@ -1360,7 +1463,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 49
+        "y": 57
       },
       "id": 70,
       "options": {
@@ -1405,9 +1508,9 @@
     "list": [
       {
         "current": {
-          "selected": true,
-          "text": "bee-storage",
-          "value": "bee-storage"
+          "selected": false,
+          "text": "bee-bootnode",
+          "value": "bee-bootnode"
         },
         "datasource": {
           "type": "prometheus",
@@ -1486,6 +1589,6 @@
   "timezone": "",
   "title": "Kademlia",
   "uid": "BmxHrER7z",
-  "version": 13,
+  "version": 20,
   "weekStart": ""
 }
