@@ -42,7 +42,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 40,
-  "iteration": 1680653660807,
+  "iteration": 1684692926617,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -643,93 +643,6 @@
         "type": "prometheus",
         "uid": "PEB8F6B0BE743FB7E"
       },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          },
-          "unit": "percentunit"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 7,
-        "w": 9,
-        "x": 0,
-        "y": 18
-      },
-      "id": 71,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom"
-        },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "9.0.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "increase(bee_pushsync_total_replication_error{namespace=~\"$namespace\", instance=~\"$instance\"}[1h])\r\n/\r\nincrease(bee_pushsync_total_replication_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}[1h])",
-          "interval": "",
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Neighborhood Replication Error %",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -759,8 +672,8 @@
       },
       "gridPos": {
         "h": 7,
-        "w": 8,
-        "x": 9,
+        "w": 9,
+        "x": 0,
         "y": 18
       },
       "id": 89,
@@ -1253,8 +1166,8 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.999, sum(rate(bee_pushsync_stamp_validation_time_bucket{namespace=~\"$namespace\",instance=~\"$instance\"}[1m])) by (le, status))",
-          "legendFormat": "{{status}}",
+          "expr": "histogram_quantile(0.99, sum(rate(bee_pushsync_stamp_validation_time_bucket{namespace=~\"$namespace\",instance=~\"$instance\"}[1m])) by (le, status, instance))",
+          "legendFormat": "{{status}} {{instance}}",
           "range": true,
           "refId": "A"
         }
@@ -1487,142 +1400,6 @@
       ],
       "title": "Storer %",
       "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "max": 1,
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "percentunit"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 10,
-        "w": 6,
-        "x": 12,
-        "y": 49
-      },
-      "id": 90,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "value"
-      },
-      "pluginVersion": "9.0.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "bee_pushsync_handler_replication{namespace=~\"$namespace\", instance=~\"$instance\"} / bee_pushsync_total_received{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "title": "Replication %",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "max": 1,
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              },
-              {
-                "color": "red",
-                "value": 0.05
-              }
-            ]
-          },
-          "unit": "percentunit"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 10,
-        "w": 6,
-        "x": 18,
-        "y": 49
-      },
-      "id": 64,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "value"
-      },
-      "pluginVersion": "9.0.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "bee_pushsync_handler_replication_errors{namespace=~\"$namespace\", instance=~\"$instance\"}\n/\nbee_pushsync_handler_replication{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Handler Replication Error %",
-      "type": "stat"
     }
   ],
   "refresh": false,
@@ -1636,8 +1413,8 @@
       {
         "current": {
           "selected": false,
-          "text": "bee-gateway",
-          "value": "bee-gateway"
+          "text": "dev-bee-storage",
+          "value": "dev-bee-storage"
         },
         "datasource": {
           "type": "prometheus",
@@ -1716,6 +1493,6 @@
   "timezone": "",
   "title": "PushSync",
   "uid": "RzKb6ZNnz",
-  "version": 48,
+  "version": 54,
   "weekStart": ""
 }
