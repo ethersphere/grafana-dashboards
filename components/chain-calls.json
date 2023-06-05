@@ -75,7 +75,7 @@
         "x": 0,
         "y": 0
       },
-      "id": 12,
+      "id": 8,
       "options": {
         "colorMode": "value",
         "graphMode": "area",
@@ -116,7 +116,7 @@
           "refId": "A"
         }
       ],
-      "title": "total RPC calls",
+      "title": "Total RPC calls",
       "type": "stat"
     },
     {
@@ -149,7 +149,7 @@
         "x": 8,
         "y": 0
       },
-      "id": 8,
+      "id": 12,
       "options": {
         "colorMode": "value",
         "graphMode": "area",
@@ -190,7 +190,7 @@
           "refId": "A"
         }
       ],
-      "title": "eth_blockNumber calls",
+      "title": "Calls to eth_blockNumber count",
       "type": "stat"
     },
     {
@@ -267,7 +267,91 @@
           "legendFormat": "blocklisted_peers({{instance}})",
           "range": true,
           "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "RPC calls",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:91",
+          "format": "short",
+          "logBase": 1,
+          "show": true
         },
+        {
+          "$$hashKey": "object:92",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 3,
+      "gridPos": {
+        "h": 14,
+        "w": 12,
+        "x": 12,
+        "y": 6
+      },
+      "hiddenSeries": false,
+      "id": 11,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "9.3.1",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
         {
           "datasource": {
             "0": "P",
@@ -286,16 +370,16 @@
             "13": "e"
           },
           "editorMode": "code",
-          "expr": "increase(bee_eth_backend_total_rpc_errors{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
+          "expr": "increase(bee_eth_backend_calls_block_number{namespace=~\"$namespace\", instance=~\"$instance\"}[1m])",
           "interval": "",
-          "legendFormat": "blocklisted_peers_err({{instance}})",
+          "legendFormat": "disconnects({{instance}})",
           "range": true,
-          "refId": "B"
+          "refId": "A"
         }
       ],
       "thresholds": [],
       "timeRegions": [],
-      "title": "RPC calls success/error",
+      "title": "Get Block Number calls",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -396,7 +480,7 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
@@ -415,6 +499,6 @@
   "timezone": "",
   "title": "Chain calls",
   "uid": "ncIbQCwVk",
-  "version": 4,
+  "version": 7,
   "weekStart": ""
 }
