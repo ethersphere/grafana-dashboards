@@ -42,7 +42,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 40,
-  "iteration": 1684692926617,
+  "iteration": 1685373116886,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -628,7 +628,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "rate(bee_pushsync_total_send_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
+          "expr": "rate(bee_pushsync_total_send_attempts{namespace=~\"$namespace\", instance=~\"$instance\"}[1h])",
           "interval": "",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -657,8 +657,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1493,6 +1492,6 @@
   "timezone": "",
   "title": "PushSync",
   "uid": "RzKb6ZNnz",
-  "version": 54,
+  "version": 55,
   "weekStart": ""
 }

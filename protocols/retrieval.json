@@ -42,7 +42,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 41,
-  "iteration": 1684692767562,
+  "iteration": 1685373123718,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -75,7 +75,7 @@
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "never",
+            "showPoints": "auto",
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -215,7 +215,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "editorMode": "code",
-          "expr": "increase(bee_retrieval_request_duration_time_sum{namespace=~\"$namespace\",instance=~\"$instance\"}[1m])\r\n/\r\nincrease(bee_retrieval_request_duration_time_count{namespace=~\"$namespace\",instance=~\"$instance\"}[1m])",
+          "expr": "increase(bee_retrieval_request_duration_time_sum{namespace=~\"$namespace\",instance=~\"$instance\"}[1h])\r\n/\r\nincrease(bee_retrieval_request_duration_time_count{namespace=~\"$namespace\",instance=~\"$instance\"}[1h])",
           "hide": false,
           "interval": "",
           "legendFormat": "{{instance}}",
@@ -307,7 +307,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "rate(bee_retrieval_request_count{namespace=~\"$namespace\",instance=~\"$instance\"}[5m])",
+          "expr": "rate(bee_retrieval_request_count{namespace=~\"$namespace\",instance=~\"$instance\"}[1h])",
           "interval": "",
           "legendFormat": "{{instance}}",
           "refId": "A"
@@ -416,7 +416,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "rate(bee_retrieval_peer_request_count{namespace=~\"$namespace\",instance=~\"$instance\"}[5m])",
+          "expr": "rate(bee_retrieval_peer_request_count{namespace=~\"$namespace\",instance=~\"$instance\"}[1h])",
           "interval": "",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -507,7 +507,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "rate(bee_retrieval_request_failure_count{namespace=~\"$namespace\",instance=~\"$instance\"}[5m])\r\n/\r\nrate(bee_retrieval_request_count{namespace=~\"$namespace\",instance=~\"$instance\"}[5m])",
+          "expr": "rate(bee_retrieval_request_failure_count{namespace=~\"$namespace\",instance=~\"$instance\"}[1h])\r\n/\r\nrate(bee_retrieval_request_count{namespace=~\"$namespace\",instance=~\"$instance\"}[1h])",
           "interval": "",
           "legendFormat": "{{instance}}",
           "refId": "A"
@@ -610,7 +610,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "rate(bee_retrieval_total_retrieved{namespace=~\"$namespace\",instance=~\"$instance\"}[5m])",
+          "expr": "rate(bee_retrieval_total_retrieved{namespace=~\"$namespace\",instance=~\"$instance\"}[1h])",
           "interval": "",
           "legendFormat": "{{instance}}",
           "refId": "A"
@@ -978,6 +978,6 @@
   "timezone": "",
   "title": "Retrieval",
   "uid": "qRpzaWKnz",
-  "version": 53,
+  "version": 57,
   "weekStart": ""
 }
