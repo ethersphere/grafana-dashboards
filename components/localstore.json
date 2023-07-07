@@ -1686,7 +1686,7 @@
             },
             "lineInterpolation": "linear",
             "lineWidth": 1,
-            "pointSize": 3,
+            "pointSize": 4,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -2041,7 +2041,7 @@
             },
             "lineInterpolation": "linear",
             "lineWidth": 2,
-            "pointSize": 2,
+            "pointSize": 4,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -2133,7 +2133,7 @@
             },
             "lineInterpolation": "linear",
             "lineWidth": 2,
-            "pointSize": 2,
+            "pointSize": 4,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -2225,7 +2225,7 @@
             },
             "lineInterpolation": "linear",
             "lineWidth": 2,
-            "pointSize": 2,
+            "pointSize": 4,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -2317,7 +2317,7 @@
             },
             "lineInterpolation": "linear",
             "lineWidth": 2,
-            "pointSize": 2,
+            "pointSize": 4,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -2409,7 +2409,7 @@
             },
             "lineInterpolation": "linear",
             "lineWidth": 2,
-            "pointSize": 2,
+            "pointSize": 4,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -2506,7 +2506,7 @@
             },
             "lineInterpolation": "linear",
             "lineWidth": 2,
-            "pointSize": 2,
+            "pointSize": 4,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -2603,7 +2603,7 @@
             },
             "lineInterpolation": "linear",
             "lineWidth": 2,
-            "pointSize": 2,
+            "pointSize": 4,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -2700,7 +2700,7 @@
             },
             "lineInterpolation": "linear",
             "lineWidth": 2,
-            "pointSize": 2,
+            "pointSize": 4,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -2797,7 +2797,7 @@
             },
             "lineInterpolation": "linear",
             "lineWidth": 2,
-            "pointSize": 2,
+            "pointSize": 4,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -2894,7 +2894,7 @@
             },
             "lineInterpolation": "linear",
             "lineWidth": 2,
-            "pointSize": 2,
+            "pointSize": 4,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -2991,7 +2991,7 @@
             },
             "lineInterpolation": "linear",
             "lineWidth": 2,
-            "pointSize": 2,
+            "pointSize": 4,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -3088,7 +3088,7 @@
             },
             "lineInterpolation": "linear",
             "lineWidth": 2,
-            "pointSize": 2,
+            "pointSize": 4,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -3185,7 +3185,7 @@
             },
             "lineInterpolation": "linear",
             "lineWidth": 2,
-            "pointSize": 2,
+            "pointSize": 4,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -3313,7 +3313,7 @@
             },
             "lineInterpolation": "linear",
             "lineWidth": 2,
-            "pointSize": 2,
+            "pointSize": 4,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -3441,7 +3441,7 @@
             },
             "lineInterpolation": "linear",
             "lineWidth": 2,
-            "pointSize": 2,
+            "pointSize": 4,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -3569,7 +3569,7 @@
             },
             "lineInterpolation": "linear",
             "lineWidth": 2,
-            "pointSize": 2,
+            "pointSize": 4,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -3697,7 +3697,7 @@
             },
             "lineInterpolation": "linear",
             "lineWidth": 2,
-            "pointSize": 2,
+            "pointSize": 4,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -3840,7 +3840,7 @@
       {
         "allValue": ".+",
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "All",
           "value": "$__all"
         },
@@ -3890,6 +3890,6 @@
   "timezone": "",
   "title": "Localstore",
   "uid": "Szc9zJUGk",
-  "version": 28,
+  "version": 29,
   "weekStart": ""
 }
