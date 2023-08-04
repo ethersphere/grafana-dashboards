@@ -24,8 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 39,
-  "iteration": 1685373100339,
+  "id": 40,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -40,6 +39,8 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -92,7 +93,8 @@
         "legend": {
           "calcs": [],
           "displayMode": "list",
-          "placement": "bottom"
+          "placement": "bottom",
+          "showLegend": true
         },
         "tooltip": {
           "mode": "single",
@@ -106,7 +108,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "editorMode": "code",
-          "expr": "rate(bee_puller_live_worker_iterations{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
+          "expr": "rate(bee_puller_worker_iterations{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
           "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
@@ -126,12 +128,14 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
             "fillOpacity": 10,
-            "gradientMode": "none",
+            "gradientMode": "opacity",
             "hideFrom": {
               "legend": false,
               "tooltip": false,
@@ -139,11 +143,11 @@
             },
             "lineInterpolation": "linear",
             "lineWidth": 1,
-            "pointSize": 3,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "auto",
+            "showPoints": "never",
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -153,6 +157,7 @@
               "mode": "off"
             }
           },
+          "links": [],
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -160,30 +165,37 @@
               {
                 "color": "green",
                 "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
               }
             ]
-          }
+          },
+          "unit": "short"
         },
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
+        "h": 11,
         "w": 12,
         "x": 12,
         "y": 0
       },
-      "id": 33,
+      "id": 35,
       "options": {
         "legend": {
           "calcs": [],
           "displayMode": "list",
-          "placement": "bottom"
+          "placement": "bottom",
+          "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -191,13 +203,15 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "editorMode": "code",
-          "expr": "rate(bee_puller_hist_worker_iterations{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
+          "expr": "rate(bee_pullsync_chunks_offered{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
+          "interval": "",
+          "intervalFactor": 1,
           "legendFormat": "{{instance}}",
           "range": true,
-          "refId": "A"
+          "refId": "B"
         }
       ],
-      "title": "HistSync Iterations",
+      "title": "received offers",
       "type": "timeseries"
     },
     {
@@ -212,6 +226,8 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -264,7 +280,8 @@
         "legend": {
           "calcs": [],
           "displayMode": "list",
-          "placement": "bottom"
+          "placement": "bottom",
+          "showLegend": true
         },
         "tooltip": {
           "mode": "single",
@@ -278,7 +295,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "editorMode": "code",
-          "expr": "rate(bee_puller_live_worker_errors{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])\r\n/\r\nrate(bee_puller_live_worker_iterations{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
+          "expr": "rate(bee_puller_worker_errors{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])\r\n/\r\nrate(bee_puller_worker_iterations{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
           "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
@@ -292,18 +309,19 @@
         "type": "prometheus",
         "uid": "PEB8F6B0BE743FB7E"
       },
-      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
             "mode": "palette-classic"
           },
           "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
-            "fillOpacity": 10,
+            "fillOpacity": 0,
             "gradientMode": "none",
             "hideFrom": {
               "legend": false,
@@ -311,6 +329,9 @@
               "viz": false
             },
             "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
             "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
@@ -333,35 +354,57 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 20
               }
             ]
-          },
-          "unit": "percentunit"
+          }
         },
-        "overrides": []
+        "overrides": [
+          {
+            "__systemRef": "hideSeriesFrom",
+            "matcher": {
+              "id": "byNames",
+              "options": {
+                "mode": "exclude",
+                "names": [
+                  "bin 8"
+                ],
+                "prefix": "All except:",
+                "readOnly": true
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": true
+                }
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
-        "h": 10,
+        "h": 11,
         "w": 12,
         "x": 12,
-        "y": 10
+        "y": 11
       },
-      "id": 38,
+      "id": 30,
       "options": {
         "legend": {
           "calcs": [],
           "displayMode": "list",
-          "placement": "bottom"
+          "placement": "bottom",
+          "showLegend": true
         },
         "tooltip": {
           "mode": "single",
           "sort": "none"
         }
       },
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -369,13 +412,13 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "editorMode": "code",
-          "expr": "rate(bee_puller_hist_worker_errors{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])\r\n/\r\nrate(bee_puller_hist_worker_iterations{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
-          "legendFormat": "{{instance}}",
+          "expr": "rate(bee_pullsync_last_received{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
+          "legendFormat": "bin {{bin}}",
           "range": true,
           "refId": "A"
         }
       ],
-      "title": "HistSync Error Rate",
+      "title": "Last timestamp of synced bin",
       "type": "timeseries"
     },
     {
@@ -389,6 +432,8 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -422,7 +467,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -445,7 +491,8 @@
         "legend": {
           "calcs": [],
           "displayMode": "list",
-          "placement": "bottom"
+          "placement": "bottom",
+          "showLegend": true
         },
         "tooltip": {
           "mode": "multi",
@@ -482,99 +529,8 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "opacity",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "links": [],
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 11,
-        "w": 12,
-        "x": 12,
-        "y": 20
-      },
-      "id": 35,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom"
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "9.0.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "editorMode": "code",
-          "expr": "rate(bee_pullsync_chunks_offered{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{instance}}",
-          "range": true,
-          "refId": "B"
-        }
-      ],
-      "title": "received offers",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -631,7 +587,8 @@
         "legend": {
           "calcs": [],
           "displayMode": "list",
-          "placement": "bottom"
+          "placement": "bottom",
+          "showLegend": true
         },
         "tooltip": {
           "mode": "multi",
@@ -656,217 +613,10 @@
       ],
       "title": "sent chunks offers",
       "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineStyle": {
-              "fill": "solid"
-            },
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              }
-            ]
-          }
-        },
-        "overrides": [
-          {
-            "__systemRef": "hideSeriesFrom",
-            "matcher": {
-              "id": "byNames",
-              "options": {
-                "mode": "exclude",
-                "names": [
-                  "bin 8"
-                ],
-                "prefix": "All except:",
-                "readOnly": true
-              }
-            },
-            "properties": [
-              {
-                "id": "custom.hideFrom",
-                "value": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": true
-                }
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 11,
-        "w": 12,
-        "x": 12,
-        "y": 31
-      },
-      "id": 30,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "9.0.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "editorMode": "code",
-          "expr": "rate(bee_pullsync_last_received{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
-          "legendFormat": "bin {{bin}}",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "Last timestamp of synced bin",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "opacity",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "links": [],
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 11,
-        "w": 12,
-        "x": 12,
-        "y": 42
-      },
-      "id": 37,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom"
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "9.0.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "editorMode": "code",
-          "expr": "bee_puller_hist_sync_timeout{namespace=~\"$namespace\", instance=~\"$instance\"}",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{instance}}",
-          "range": true,
-          "refId": "B"
-        }
-      ],
-      "title": "historical sync timeout blocklisting",
-      "type": "timeseries"
     }
   ],
   "refresh": "10s",
-  "schemaVersion": 36,
+  "schemaVersion": 37,
   "style": "dark",
   "tags": [
     "protocols"
@@ -875,9 +625,9 @@
     "list": [
       {
         "current": {
-          "selected": false,
-          "text": "dev-bee-storage",
-          "value": "dev-bee-storage"
+          "selected": true,
+          "text": "private-localstorev2",
+          "value": "private-localstorev2"
         },
         "datasource": {
           "type": "prometheus",
@@ -944,6 +694,6 @@
   "timezone": "",
   "title": "PullSync",
   "uid": "Yccsbadnz",
-  "version": 28,
+  "version": 4,
   "weekStart": ""
 }
