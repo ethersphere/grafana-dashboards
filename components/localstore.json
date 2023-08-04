@@ -3799,7 +3799,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "10s",
+  "refresh": "30s",
   "schemaVersion": 37,
   "style": "dark",
   "tags": [
@@ -3810,8 +3810,8 @@
       {
         "current": {
           "selected": false,
-          "text": "private-localstorev2",
-          "value": "private-localstorev2"
+          "text": "testnet-storage",
+          "value": "testnet-storage"
         },
         "datasource": {
           "type": "prometheus",
@@ -3840,7 +3840,7 @@
       {
         "allValue": ".+",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "All",
           "value": "$__all"
         },
@@ -3890,6 +3890,6 @@
   "timezone": "",
   "title": "Localstore",
   "uid": "Szc9zJUGk",
-  "version": 29,
+  "version": 30,
   "weekStart": ""
 }
