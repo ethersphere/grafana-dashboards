@@ -25,6 +25,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 40,
+  "iteration": 1694682293956,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -39,8 +40,6 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -128,8 +127,6 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -226,8 +223,6 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -315,8 +310,6 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -467,8 +460,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -616,7 +608,7 @@
     }
   ],
   "refresh": "10s",
-  "schemaVersion": 37,
+  "schemaVersion": 36,
   "style": "dark",
   "tags": [
     "protocols"
@@ -626,8 +618,8 @@
       {
         "current": {
           "selected": true,
-          "text": "private-localstorev2",
-          "value": "private-localstorev2"
+          "text": "bee-storage",
+          "value": "bee-storage"
         },
         "datasource": {
           "type": "prometheus",
@@ -694,6 +686,6 @@
   "timezone": "",
   "title": "PullSync",
   "uid": "Yccsbadnz",
-  "version": 4,
+  "version": 2,
   "weekStart": ""
 }
