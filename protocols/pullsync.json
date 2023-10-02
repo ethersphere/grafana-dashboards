@@ -25,7 +25,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 38,
-  "iteration": 1695853541146,
+  "iteration": 1696273368351,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -439,8 +439,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -480,7 +479,7 @@
           "refId": "A"
         }
       ],
-      "title": "LiveSync Iterations",
+      "title": "Iterations",
       "type": "timeseries"
     },
     {
@@ -527,8 +526,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -624,8 +622,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -736,8 +733,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -793,7 +789,7 @@
     "list": [
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "dev-bee-storage",
           "value": "dev-bee-storage"
         },
@@ -862,6 +858,6 @@
   "timezone": "",
   "title": "PullSync",
   "uid": "Yccsbadnz",
-  "version": 12,
+  "version": 14,
   "weekStart": ""
 }

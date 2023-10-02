@@ -25,7 +25,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
   "id": 16,
-  "iteration": 1695858096634,
+  "iteration": 1696273295416,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -668,7 +668,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "(\r\n    rate(beekeeper_check_smoke_download_mismatch{job=\"$job\"}[5m])\r\n    +\r\n    rate(beekeeper_check_smoke_download_errors_count{job=\"$job\"}[5m])\r\n)\r\n/\r\nrate(beekeeper_check_smoke_download_attempts{job=\"$job\"}[5m])",
+          "expr": "rate(beekeeper_check_smoke_download_errors_count{job=\"$job\"}[5m])\r\n/\r\nrate(beekeeper_check_smoke_download_attempts{job=\"$job\"}[5m])",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -936,8 +936,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1029,8 +1028,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1089,9 +1087,9 @@
     "list": [
       {
         "current": {
-          "selected": true,
-          "text": "bee-gateway",
-          "value": "bee-gateway"
+          "selected": false,
+          "text": "dev-bee-gateway",
+          "value": "dev-bee-gateway"
         },
         "datasource": {
           "type": "prometheus",
@@ -1139,6 +1137,6 @@
   "timezone": "",
   "title": "Milestone Smoke Test",
   "uid": "R6nXBFH7k",
-  "version": 11,
+  "version": 12,
   "weekStart": ""
 }
