@@ -24,8 +24,8 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
-  "id": 16,
-  "iteration": 1696273295416,
+  "id": 14,
+  "iteration": 1697223692311,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -258,78 +258,14 @@
               }
             ]
           },
-          "unit": "binBps"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 5,
-        "w": 3,
-        "x": 12,
-        "y": 1
-      },
-      "id": 74,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "9.0.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "5e6 /\r\n(\r\n    increase(beekeeper_check_smoke_data_upload_duration_sum{job=\"$job\"}[1d])\r\n    /\r\n    increase(beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"}[1d])\r\n)",
-          "format": "time_series",
-          "interval": "",
-          "legendFormat": "{{job}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Average Upload Speed",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          },
           "unit": "none"
         },
         "overrides": []
       },
       "gridPos": {
         "h": 5,
-        "w": 3,
-        "x": 15,
+        "w": 4,
+        "x": 12,
         "y": 1
       },
       "id": 78,
@@ -423,8 +359,8 @@
       },
       "gridPos": {
         "h": 5,
-        "w": 6,
-        "x": 18,
+        "w": 8,
+        "x": 16,
         "y": 1
       },
       "id": 60,
@@ -447,7 +383,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "rate(beekeeper_check_smoke_upload_errors_count{job=\"$job\"}[5m])\r\n/\r\nrate(beekeeper_check_smoke_upload_attempts{job=\"$job\"}[5m])",
+          "expr": "rate(beekeeper_check_smoke_upload_errors_count{job=\"$job\"}[1h])\r\n/\r\nrate(beekeeper_check_smoke_upload_attempts{job=\"$job\"}[1h])",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -477,79 +413,14 @@
               }
             ]
           },
-          "unit": "binBps"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 5,
-        "w": 3,
-        "x": 12,
-        "y": 6
-      },
-      "id": 70,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "9.0.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PEB8F6B0BE743FB7E"
-          },
-          "exemplar": true,
-          "expr": "5e6 /\r\n(\r\n    increase(beekeeper_check_smoke_data_download_duration_sum{job=\"$job\"}[1d])\r\n    /\r\n    increase(beekeeper_check_smoke_data_download_duration_count{job=\"$job\"}[1d])\r\n)",
-          "format": "time_series",
-          "interval": "",
-          "legendFormat": "{{job}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Average Download Speed",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PEB8F6B0BE743FB7E"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          },
           "unit": "none"
         },
         "overrides": []
       },
       "gridPos": {
         "h": 5,
-        "w": 3,
-        "x": 15,
+        "w": 4,
+        "x": 12,
         "y": 6
       },
       "id": 79,
@@ -644,8 +515,8 @@
       },
       "gridPos": {
         "h": 5,
-        "w": 6,
-        "x": 18,
+        "w": 8,
+        "x": 16,
         "y": 6
       },
       "id": 84,
@@ -668,7 +539,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "rate(beekeeper_check_smoke_download_errors_count{job=\"$job\"}[5m])\r\n/\r\nrate(beekeeper_check_smoke_download_attempts{job=\"$job\"}[5m])",
+          "expr": "rate(beekeeper_check_smoke_download_errors_count{job=\"$job\"}[1h])\r\n/\r\nrate(beekeeper_check_smoke_download_attempts{job=\"$job\"}[1h])",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -788,7 +659,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "5e6/(increase(beekeeper_check_smoke_data_upload_duration_sum{job=\"$job\"}[1h])/increase(beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"}[1h]))",
+          "expr": "beekeeper_check_smoke_upload_size /(increase(beekeeper_check_smoke_data_upload_duration_sum{job=\"$job\"}[1h])/increase(beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"}[1h]))",
           "format": "time_series",
           "interval": "",
           "legendFormat": "{{job}}",
@@ -881,7 +752,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "5e6 / (beekeeper_check_smoke_data_upload_duration_sum{job=\"$job\"} / beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"} )",
+          "expr": "beekeeper_check_smoke_upload_size / (beekeeper_check_smoke_data_upload_duration_sum{job=\"$job\"} / beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"} )",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -936,7 +807,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -974,7 +846,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "5e6/(increase(beekeeper_check_smoke_data_download_duration_sum{job=\"$job\"}[1h])/increase(beekeeper_check_smoke_data_download_duration_count{job=\"$job\"}[1h]))",
+          "expr": "beekeeper_check_smoke_upload_size / (increase(beekeeper_check_smoke_data_download_duration_sum{job=\"$job\"}[1h])/increase(beekeeper_check_smoke_data_download_duration_count{job=\"$job\"}[1h]))",
           "format": "time_series",
           "interval": "",
           "legendFormat": "{{job}}",
@@ -1028,7 +900,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1066,7 +939,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "5e6 / (beekeeper_check_smoke_data_download_duration_sum{job=\"$job\"} / beekeeper_check_smoke_data_download_duration_count{job=\"$job\"} )",
+          "expr": "beekeeper_check_smoke_upload_size / (beekeeper_check_smoke_data_download_duration_sum{job=\"$job\"} / beekeeper_check_smoke_data_download_duration_count{job=\"$job\"} )",
           "format": "time_series",
           "interval": "",
           "legendFormat": "{{job}}",
@@ -1077,7 +950,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": false,
+  "refresh": "30s",
   "schemaVersion": 36,
   "style": "dark",
   "tags": [
@@ -1087,7 +960,7 @@
     "list": [
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "dev-bee-gateway",
           "value": "dev-bee-gateway"
         },
@@ -1118,7 +991,7 @@
     ]
   },
   "time": {
-    "from": "now-12h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
@@ -1137,6 +1010,6 @@
   "timezone": "",
   "title": "Milestone Smoke Test",
   "uid": "R6nXBFH7k",
-  "version": 12,
+  "version": 11,
   "weekStart": ""
 }
