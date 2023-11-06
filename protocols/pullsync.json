@@ -25,7 +25,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 41,
-  "iteration": 1698961707583,
+  "iteration": 1699280033905,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -639,7 +639,7 @@
               "options": {
                 "mode": "exclude",
                 "names": [
-                  "bin 10"
+                  "bin 5"
                 ],
                 "prefix": "All except:",
                 "readOnly": true
@@ -685,7 +685,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "editorMode": "code",
-          "expr": "rate(bee_pullsync_last_received{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
+          "expr": "sum(rate(bee_pullsync_last_received{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])) by (bin)",
           "legendFormat": "bin {{bin}}",
           "range": true,
           "refId": "A"
@@ -785,7 +785,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "30s",
+  "refresh": false,
   "schemaVersion": 36,
   "style": "dark",
   "tags": [
@@ -826,7 +826,7 @@
       {
         "allValue": ".+",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "All",
           "value": "$__all"
         },
@@ -864,6 +864,6 @@
   "timezone": "",
   "title": "PullSync",
   "uid": "Yccsbadnz",
-  "version": 5,
+  "version": 7,
   "weekStart": ""
 }
