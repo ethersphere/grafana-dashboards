@@ -25,7 +25,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
   "id": 73,
-  "iteration": 1699281578791,
+  "iteration": 1699445205024,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -624,7 +624,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "exemplar": true,
-          "expr": "rate(beekeeper_check_longavailability_download_errors_count{job=\"$job\", ref=\"$ref\"}[1h])\r\n/\r\nrate(beekeeper_check_longavailability_download_attempts{job=\"$job\", ref=\"$ref\"}[1h])",
+          "expr": "rate(beekeeper_check_longavailability_download_errors_count{job=\"$job\"}[$__range])\r\n/\r\nrate(beekeeper_check_longavailability_download_attempts{job=\"$job\"}[$__range])",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -711,6 +711,7 @@
             "mode": "thresholds"
           },
           "mappings": [],
+          "noValue": "0",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -761,7 +762,6 @@
         }
       ],
       "title": "Download errors",
-      "transparent": true,
       "type": "stat"
     }
   ],
@@ -806,7 +806,7 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-12h",
     "to": "now"
   },
   "timepicker": {
@@ -825,6 +825,6 @@
   "timezone": "",
   "title": "Long availability test",
   "uid": "S6nXBFH7j",
-  "version": 35,
+  "version": 37,
   "weekStart": ""
 }
