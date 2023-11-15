@@ -24,7 +24,8 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 39,
+  "id": 41,
+  "iteration": 1700073373543,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -39,8 +40,6 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -132,8 +131,6 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -221,8 +218,6 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -318,8 +313,6 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -364,7 +357,32 @@
           },
           "unit": "short"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "__systemRef": "hideSeriesFrom",
+            "matcher": {
+              "id": "byNames",
+              "options": {
+                "mode": "exclude",
+                "names": [
+                  "bee-0-0-live"
+                ],
+                "prefix": "All except:",
+                "readOnly": true
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": true
+                }
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 11,
@@ -394,10 +412,10 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "rate(bee_pullsync_chunks_delivered{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
+          "expr": "rate(bee_puller_synced_chunks{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
           "instant": false,
           "interval": "",
-          "legendFormat": "{{instance}}",
+          "legendFormat": "{{instance}}-{{type}}",
           "refId": "A"
         }
       ],
@@ -415,8 +433,6 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -449,8 +465,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -504,8 +519,6 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -539,8 +552,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -601,8 +613,6 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -651,7 +661,7 @@
               "options": {
                 "mode": "exclude",
                 "names": [
-                  "bin 10"
+                  "bin 5"
                 ],
                 "prefix": "All except:",
                 "readOnly": true
@@ -697,7 +707,7 @@
             "uid": "PEB8F6B0BE743FB7E"
           },
           "editorMode": "code",
-          "expr": "rate(bee_pullsync_last_received{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])",
+          "expr": "sum(rate(bee_pullsync_last_received{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])) by (bin)",
           "legendFormat": "bin {{bin}}",
           "range": true,
           "refId": "A"
@@ -717,8 +727,6 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -798,8 +806,8 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "10s",
-  "schemaVersion": 37,
+  "refresh": false,
+  "schemaVersion": 36,
   "style": "dark",
   "tags": [
     "protocols"
@@ -809,8 +817,8 @@
       {
         "current": {
           "selected": false,
-          "text": "testnet-storage",
-          "value": "testnet-storage"
+          "text": "dev-bee-gateway",
+          "value": "dev-bee-gateway"
         },
         "datasource": {
           "type": "prometheus",
@@ -870,13 +878,13 @@
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "PullSync",
   "uid": "Yccsbadnz",
-  "version": 2,
+  "version": 7,
   "weekStart": ""
 }

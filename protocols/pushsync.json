@@ -41,8 +41,8 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 39,
-  "iteration": 1696273381704,
+  "id": 37,
+  "iteration": 1700073387777,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -160,7 +160,7 @@
           "refId": "A"
         }
       ],
-      "title": "P99 Push to Peer",
+      "title": "P95 Push to Peer",
       "type": "timeseries"
     },
     {
@@ -682,7 +682,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -737,7 +738,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "increase(bee_pusher_shallow_receipt{namespace=~\"$namespace\", instance=~\"$instance\"}[1h])\n/\n(\n    increase(bee_pushsync_total_outgoing{namespace=~\"$namespace\", instance=~\"$instance\"}[1h])\n    -\n    increase(bee_pushsync_total_outgoing_errors{namespace=~\"$namespace\", instance=~\"$instance\"}[5m])\n)",
+          "expr": "increase(bee_pusher_shallow_receipt{namespace=~\"$namespace\", instance=~\"$instance\"}[1h])\n/\n(\n    increase(bee_pushsync_total_outgoing{namespace=~\"$namespace\", instance=~\"$instance\"}[1h])\n    -\n    increase(bee_pushsync_total_outgoing_errors{namespace=~\"$namespace\", instance=~\"$instance\"}[1h])\n)",
           "interval": "",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -745,6 +746,96 @@
         }
       ],
       "title": "shallow receipt %",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 9,
+        "y": 18
+      },
+      "id": 96,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.0.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "sum(rate(bee_pusher_receipt_depth{instance=~\"$instance\", namespace=~\"$namespace\"}[1h])) by (depth)",
+          "legendFormat": "{{depth}} {{instance}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Receipt Depths",
       "type": "timeseries"
     },
     {
@@ -1533,6 +1624,6 @@
   "timezone": "",
   "title": "PushSync",
   "uid": "RzKb6ZNnz",
-  "version": 11,
+  "version": 5,
   "weekStart": ""
 }
