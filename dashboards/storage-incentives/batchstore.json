@@ -219,7 +219,7 @@
       "list": [
          {
             "current": {
-               "selected": false,
+               "selected": true,
                "text": [
                   "Prometheus-bee"
                ],
