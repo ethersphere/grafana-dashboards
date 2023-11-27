@@ -4,6 +4,8 @@
    "links": [
       {
          "asDropdown": true,
+         "includeVars": true,
+         "keepTime": true,
          "tags": [
             "storage-incentives"
          ],

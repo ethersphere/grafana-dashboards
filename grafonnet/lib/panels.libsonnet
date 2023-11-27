@@ -13,7 +13,9 @@ local variables = import 'variables.libsonnet';
       + dashboard.withTags(tags)
       + dashboard.withLinks([
         link.dashboards.new(tags[0] + ' dashboards', tags)
-        + link.dashboards.options.withAsDropdown(true),
+        + link.dashboards.options.withAsDropdown(true)
+        + link.dashboards.options.withIncludeVars(true)
+        + link.dashboards.options.withKeepTime(true),
       ])
       + dashboard.time.withFrom(value='now-1h')
       + dashboard.time.withTo(value='now')
