@@ -766,7 +766,7 @@
                   "type": "prometheus",
                   "uid": "$datasource"
                },
-               "expr": "inc(bee_pushsync_forwarder{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}/bee_pushsync_total_received{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "expr": "bee_pushsync_forwarder{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}/bee_pushsync_total_received{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
                "intervalFactor": 1,
                "legendFormat": ""
             }
@@ -820,7 +820,7 @@
                   "type": "prometheus",
                   "uid": "$datasource"
                },
-               "expr": "increae(bee_pushsync_storer{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}/bee_pushsync_total_received{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "expr": "bee_pushsync_storer{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}/bee_pushsync_total_received{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
                "intervalFactor": 1,
                "legendFormat": ""
             }
@@ -836,6 +836,16 @@
    "templating": {
       "list": [
          {
+            "current": {
+               "selected": false,
+               "text": [
+                  "Prometheus-bee"
+               ],
+               "value": [
+                  "Prometheus-bee"
+               ]
+            },
+            "multi": false,
             "name": "datasource",
             "query": "prometheus",
             "type": "datasource"

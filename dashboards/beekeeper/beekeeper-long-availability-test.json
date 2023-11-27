@@ -411,6 +411,16 @@
    "templating": {
       "list": [
          {
+            "current": {
+               "selected": false,
+               "text": [
+                  "Prometheus-bee"
+               ],
+               "value": [
+                  "Prometheus-bee"
+               ]
+            },
+            "multi": false,
             "name": "datasource",
             "query": "prometheus",
             "type": "datasource"
