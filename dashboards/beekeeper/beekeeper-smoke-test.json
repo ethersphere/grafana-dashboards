@@ -1,6 +1,15 @@
 {
    "description": "",
    "graphTooltip": 1,
+   "links": [
+      {
+         "tags": [
+            "beekeeper"
+         ],
+         "title": "beekeeper dashboards",
+         "type": "dashboards"
+      }
+   ],
    "panels": [
       {
          "gridPos": {
@@ -497,7 +506,7 @@
    ],
    "schemaVersion": 36,
    "tags": [
-      "beekeper"
+      "beekeeper"
    ],
    "templating": {
       "list": [

@@ -1,6 +1,15 @@
 {
    "description": "",
    "graphTooltip": 1,
+   "links": [
+      {
+         "tags": [
+            "components"
+         ],
+         "title": "components dashboards",
+         "type": "dashboards"
+      }
+   ],
    "panels": [
       {
          "datasource": {
@@ -636,7 +645,9 @@
       }
    ],
    "schemaVersion": 36,
-   "tags": [ ],
+   "tags": [
+      "components"
+   ],
    "templating": {
       "list": [
          {

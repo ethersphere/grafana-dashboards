@@ -1,7 +1,7 @@
 local panels = import '../../lib/panels.libsonnet';
 local query = import '../../lib/queries.libsonnet';
 local queries = import '../../lib/queries/beekeeper/beekeeper-long-availability-test.libsonnet';
-panels.dashboard.base(title='Long availability test', tags=['beekeper'], panels=[
+panels.dashboard.base(title='Long availability test', tags=['beekeeper'], panels=[
   panels.timeseries.binBps(title='Avg download speed', description='', targets=[query.base(queries.beekeeper_check_longavailability_d_download_size_bytes__increase_beekeeper_check_longavailability_d_download_duration_seconds_sum),]),
   panels.timeseries.bool(title='Download status', description='', targets=[query.base(queries.beekeeper_check_longavailability_d_download_status),]),
   panels.stat.decbytes(title='Download size', description='', targets=[query.base(queries.beekeeper_check_longavailability_d_download_size_bytes),]),

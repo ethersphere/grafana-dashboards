@@ -1,6 +1,15 @@
 {
    "description": "",
    "graphTooltip": 1,
+   "links": [
+      {
+         "tags": [
+            "protocols"
+         ],
+         "title": "protocols dashboards",
+         "type": "dashboards"
+      }
+   ],
    "panels": [
       {
          "datasource": {

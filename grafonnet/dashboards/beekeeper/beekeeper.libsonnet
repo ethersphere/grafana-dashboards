@@ -1,7 +1,7 @@
 local panels = import '../../lib/panels.libsonnet';
 local query = import '../../lib/queries.libsonnet';
 local queries = import '../../lib/queries/beekeeper/beekeeper.libsonnet';
-panels.dashboard.base(title='Beekeeper dashboard', tags=['beekeper'], panels=[
+panels.dashboard.base(title='Beekeeper dashboard', tags=['beekeeper'], panels=[
   panels.row.base(title='Ping Pong'),
   panels.bargauge.s(title='Ping RTT duration', description='Ping round-trip time duration Gauge.', targets=[query.base(queries.beekeeper_check_pingpong_rtt_duration_seconds),]),
   panels.heatmap.base(title='Ping RTT bucket', description='Ping round-trip time duration Histogram.', targets=[query.base(queries.increase_beekeeper_check_pingpong_rtt_seconds_bucket),]),

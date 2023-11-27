@@ -5,10 +5,15 @@ local variables = import 'variables.libsonnet';
 {
   dashboard: {
     local dashboard = g.dashboard,
+    local link = g.dashboard.link,
+
     base(title, description='', tags=[], panels):
       dashboard.new(title)
       + dashboard.withDescription(description)
       + dashboard.withTags(tags)
+      + dashboard.withLinks([
+        link.dashboards.new(tags[0] + ' dashboards', tags),
+      ])
       + dashboard.time.withFrom(value='now-1h')
       + dashboard.time.withTo(value='now')
       + dashboard.withTimezone(value='browser')

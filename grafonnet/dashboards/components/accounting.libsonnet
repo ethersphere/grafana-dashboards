@@ -1,7 +1,7 @@
 local panels = import '../../lib/panels.libsonnet';
 local query = import '../../lib/queries.libsonnet';
 local queries = import '../../lib/queries/components/accounting.libsonnet';
-panels.dashboard.base(title='Accounting', panels=[
+panels.dashboard.base(title='Accounting', tags=['components'], panels=[
   panels.timeseries.base(title='events', description='', targets=[query.base(queries.increase_bee_accounting_credit_events_count),query.base(queries.increase_bee_accounting_debit_events_count),]),
   panels.gauge.sci(title='totals', description='', targets=[query.base(queries.bee_accounting_total_credited_amount),query.base(queries.bee_accounting_total_debited_amount),]),
   panels.timeseries.base(title='available balance', description='', targets=[query.base(queries.bee_swap_available_balance),]),

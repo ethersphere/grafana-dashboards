@@ -1,7 +1,7 @@
 local panels = import '../../lib/panels.libsonnet';
 local query = import '../../lib/queries.libsonnet';
 local queries = import '../../lib/queries/beekeeper/beekeeper-simulation-retrieval.libsonnet';
-panels.dashboard.base(title='Beekeeper Simulation - Retrieval', tags=['beekeper'], panels=[
+panels.dashboard.base(title='Beekeeper Simulation - Retrieval', tags=['beekeeper'], panels=[
   panels.row.base(title='Total'),
   panels.stat.base(title='uploaded chunks', description='Total uploaded chunks', targets=[query.base(queries.sum_increase_beekeeper_simulation_retrieval_chunks_uploaded_count),]),
   panels.stat.base(title='not uploaded chunks', description='Total not uploaded chunks', targets=[query.base(queries.sum_increase_beekeeper_simulation_retrieval_chunks_not_uploaded_count),]),

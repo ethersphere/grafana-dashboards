@@ -1,7 +1,7 @@
 local panels = import '../../lib/panels.libsonnet';
 local query = import '../../lib/queries.libsonnet';
 local queries = import '../../lib/queries/beekeeper/beekeeper-smoke-test.libsonnet';
-panels.dashboard.base(title='Milestone Smoke Test', tags=['beekeper'], panels=[
+panels.dashboard.base(title='Milestone Smoke Test', tags=['beekeeper'], panels=[
   panels.row.base(title='Upload/Download Benchmark'),
   panels.timeseries.s(title='Average Upload Duration', description='', targets=[query.base(queries.rate_beekeeper_check_smoke_data_upload_duration_sum),]),
   panels.timeseries.s(title='Average Download Duration', description='', targets=[query.base(queries.rate_beekeeper_check_smoke_data_download_duration_sum),]),
