@@ -41,7 +41,7 @@
          },
          "gridPos": {
             "h": 8,
-            "w": 12,
+            "w": 24,
             "x": 0,
             "y": 0
          },
@@ -95,9 +95,9 @@
          },
          "gridPos": {
             "h": 8,
-            "w": 12,
-            "x": 12,
-            "y": 0
+            "w": 24,
+            "x": 0,
+            "y": 8
          },
          "id": 2,
          "options": {
@@ -149,9 +149,9 @@
          },
          "gridPos": {
             "h": 8,
-            "w": 12,
+            "w": 24,
             "x": 0,
-            "y": 8
+            "y": 16
          },
          "id": 3,
          "options": {
@@ -170,7 +170,7 @@
                },
                "expr": "1-(bee_handshake_syn_rx{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}-bee_handshake_syn_rx_failed{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"})/bee_handshake_syn_rx{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
                "intervalFactor": 1,
-               "legendFormat": ""
+               "legendFormat": "{{instance}}"
             }
          ],
          "title": "SYN RX Fail Rate",
