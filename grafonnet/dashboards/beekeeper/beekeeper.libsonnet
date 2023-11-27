@@ -1,0 +1,31 @@
+local panels = import '../../lib/panels.libsonnet';
+local query = import '../../lib/queries.libsonnet';
+local queries = import '../../lib/queries/beekeeper/beekeeper.libsonnet';
+panels.dashboard.base(title='Beekeeper dashboard', tags=['beekeper'], panels=[
+  panels.row.base(title='Ping Pong'),
+  panels.bargauge.s(title='Ping RTT duration', description='Ping round-trip time duration Gauge.', targets=[query.base(queries.beekeeper_check_pingpong_rtt_duration_seconds),]),
+  panels.heatmap.base(title='Ping RTT bucket', description='Ping round-trip time duration Histogram.', targets=[query.base(queries.increase_beekeeper_check_pingpong_rtt_seconds_bucket),]),
+  panels.stat.base(title='Ping RTT count', description='Ping round-trip time duration Histogram.', targets=[query.base(queries.beekeeper_check_pingpong_rtt_seconds_count),]),
+  panels.stat.base(title='Ping RTT sum', description='Ping round-trip time duration Histogram.', targets=[query.base(queries.beekeeper_check_pingpong_rtt_seconds_sum),]),
+  panels.row.base(title='Push Sync'),
+  panels.stat.base(title='Uploaded chunks per node', description='Number of uploaded chunks.', targets=[query.base(queries.beekeeper_check_pushsync_chunks_uploaded_count),]),
+  panels.stat.base(title='Synced chunks per node', description='Number of chunks that has been synced with the closest node.', targets=[query.base(queries.beekeeper_check_pushsync_chunks_synced_count),]),
+  panels.stat.base(title='Not synced chunks per node', description='Number of chunks that has not been synced with the closest node.', targets=[query.base(queries.beekeeper_check_pushsync_chunks_not_synced_count),]),
+  panels.bargauge.s(title='Upload duration', description='Chunk upload duration Gauge.', targets=[query.base(queries.beekeeper_check_pushsync_chunk_upload_duration_seconds),]),
+  panels.heatmap.base(title='Upload bucket', description='Chunk upload duration Histogram.', targets=[query.base(queries.rate_beekeeper_check_pushsync_chunk_upload_seconds_bucket),]),
+  panels.stat.base(title='Upload count', description='Chunk upload duration Histogram.', targets=[query.base(queries.beekeeper_check_pushsync_chunk_upload_seconds_count),]),
+  panels.stat.base(title='Upload sum', description='Chunk upload duration Histogram.', targets=[query.base(queries.beekeeper_check_pushsync_chunk_upload_seconds_sum),]),
+  panels.row.base(title='Retrieval'),
+  panels.stat.base(title='Uploaded chunks per node', description='Number of uploaded chunks.', targets=[query.base(queries.beekeeper_check_retrieval_chunks_uploaded_count),]),
+  panels.stat.base(title='Downloaded chunks per node', description='Number of downloaded chunks.', targets=[query.base(queries.beekeeper_check_retrieval_chunks_downloaded_count),]),
+  panels.stat.base(title='Retrieved chunks per node', description='Number of chunks that has been retrieved.', targets=[query.base(queries.beekeeper_check_retrieval_chunks_retrieved_count),]),
+  panels.stat.base(title='Not retrieved chunks per node', description='Number of chunks that has not been retrieved.', targets=[query.base(queries.beekeeper_check_retrieval_chunks_not_retrieved_count),]),
+  panels.bargauge.s(title='Upload duration', description='Chunk upload duration Gauge.', targets=[query.base(queries.beekeeper_check_retrieval_chunk_upload_duration_seconds),]),
+  panels.heatmap.base(title='Upload bucket', description='Chunk upload duration Histogram.', targets=[query.base(queries.rate_beekeeper_check_retrieval_chunk_upload_seconds_bucket),]),
+  panels.stat.base(title='Upload count', description='Chunk upload duration Histogram.', targets=[query.base(queries.beekeeper_check_retrieval_chunk_upload_seconds_count),]),
+  panels.stat.base(title='Upload sum', description='Chunk upload duration Histogram.', targets=[query.base(queries.beekeeper_check_retrieval_chunk_upload_seconds_sum),]),
+  panels.bargauge.s(title='Download duration', description='Chunk download duration Gauge.', targets=[query.base(queries.beekeeper_check_retrieval_chunk_download_duration_seconds),]),
+  panels.heatmap.base(title='Bucket', description='Chunk download duration Histogram.', targets=[query.base(queries.rate_beekeeper_check_retrieval_chunk_download_seconds_bucket),]),
+  panels.stat.base(title='Download count', description='Chunk download duration Histogram.', targets=[query.base(queries.beekeeper_check_retrieval_chunk_download_seconds_count),]),
+  panels.stat.base(title='Download sum', description='Chunk download duration Histogram.', targets=[query.base(queries.beekeeper_check_retrieval_chunk_download_seconds_sum),]),
+])

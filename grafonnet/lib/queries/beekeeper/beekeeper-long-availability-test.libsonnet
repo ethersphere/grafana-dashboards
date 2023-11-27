@@ -1,0 +1,10 @@
+{
+beekeeper_check_longavailability_d_download_size_bytes:{query:"beekeeper_check_longavailability_d_download_size_bytes{job=\"$job\"}",legend:"__auto"},
+beekeeper_check_longavailability_d_download_size_bytes__increase_beekeeper_check_longavailability_d_download_duration_seconds_sum:{query:"beekeeper_check_longavailability_d_download_size_bytes/(increase(beekeeper_check_longavailability_d_download_duration_seconds_sum{job=\"$job\"}[$__range])/increase(beekeeper_check_longavailability_d_download_duration_seconds_count{job=\"$job\"}[$__range]))",legend:"{{ref}}"},
+beekeeper_check_longavailability_d_download_size_bytes_beekeeper_check_longavailability_d_download_duration_seconds_sum:{query:"beekeeper_check_longavailability_d_download_size_bytes/beekeeper_check_longavailability_d_download_duration_seconds_sum{job=\"$job\"}/beekeeper_check_longavailability_d_download_duration_seconds_count{job=\"$job\"}",legend:"{{ref}}"},
+beekeeper_check_longavailability_d_download_status:{query:"beekeeper_check_longavailability_d_download_status{job=\"$job\"}",legend:"{{ref}}"},
+rate_beekeeper_check_longavailability_d_download_duration_seconds_sum:{query:"rate(beekeeper_check_longavailability_d_download_duration_seconds_sum{job=\"$job\"}[$__range])/rate(beekeeper_check_longavailability_d_download_duration_seconds_count{job=\"$job\"}[$__range])",legend:"{{ref}}"},
+rate_beekeeper_check_longavailability_download_errors_count:{query:"rate(beekeeper_check_longavailability_download_errors_count{job=\"$job\"}[$__range])/rate(beekeeper_check_longavailability_download_attempts{job=\"$job\"}[$__range])",legend:"{{job}}"},
+round_sum_increase_beekeeper_check_longavailability_download_attempts:{query:"round(sum(increase(beekeeper_check_longavailability_download_attempts{job=\"$job\"}[$__range])))",legend:"{{ref}}"},
+round_sum_increase_beekeeper_check_longavailability_download_errors_count:{query:"round(sum(increase(beekeeper_check_longavailability_download_errors_count{job=\"$job\"}[$__range])))",legend:"{{ref}}"},
+}

@@ -1,0 +1,816 @@
+{
+   "description": "",
+   "graphTooltip": 1,
+   "panels": [
+      {
+         "gridPos": {
+            "h": 1,
+            "w": 0,
+            "x": 0,
+            "y": 0
+         },
+         "id": 1,
+         "title": "Upload/Download Benchmark",
+         "type": "row"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "scaleDistribution": {
+                     "log": 10,
+                     "type": "log"
+                  },
+                  "showPoints": "never"
+               },
+               "unit": "s"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 1
+         },
+         "id": 2,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_load_data_upload_duration_sum{job=\"$job\"}/beekeeper_check_load_data_upload_duration_count{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Average Upload Duration",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "scaleDistribution": {
+                     "log": 10,
+                     "type": "log"
+                  },
+                  "showPoints": "never"
+               },
+               "unit": "s"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 1
+         },
+         "id": 3,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_load_data_download_duration_sum{job=\"$job\"}/beekeeper_check_load_data_download_duration_count{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Average Download Duration",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "This will reset every time the load test respawns (12h)",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 80
+                     }
+                  ]
+               },
+               "unit": "bytes"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 9
+         },
+         "id": 4,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_load_data_upload_duration_count{job=\"$job\"}*5e6",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Uploaded data (this load test run only!)",
+         "type": "gauge"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               },
+               "unit": "binBps"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 9
+         },
+         "id": 5,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "5e6/(beekeeper_check_load_data_upload_duration_sum{job=\"$job\"}/beekeeper_check_load_data_upload_duration_count{job=\"$job\"})",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Average Upload Speed",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 17
+         },
+         "id": 6,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_load_upload_attempts{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Upload Attempts",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 17
+         },
+         "id": 7,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_load_upload_errors_count{job=\"$job\"}/beekeeper_check_load_upload_attempts{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Upload Errors %",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 25
+         },
+         "id": 8,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_load_download_mismatch{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Data Mismatch",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               },
+               "unit": "binBps"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 25
+         },
+         "id": 9,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "5e6/(beekeeper_check_load_data_download_duration_sum{job=\"$job\"}/beekeeper_check_load_data_download_duration_count{job=\"$job\"})",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Average Download Speed",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 33
+         },
+         "id": 10,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_load_download_attempts{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Download Attempts",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 33
+         },
+         "id": 11,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_load_download_errors_count{job=\"$job\"}/beekeeper_check_load_download_attempts{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Download Errors %",
+         "type": "stat"
+      },
+      {
+         "gridPos": {
+            "h": 1,
+            "w": 0,
+            "x": 24,
+            "y": 41
+         },
+         "id": 12,
+         "title": "Speed",
+         "type": "row"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               },
+               "unit": "binBps"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 42
+         },
+         "id": 13,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "5e6/(increase(beekeeper_check_load_data_upload_duration_sum{job=\"$job\"}[$interval])/increase(beekeeper_check_load_data_upload_duration_count{job=\"$job\"}[$interval]))",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Average Upload Speed",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               },
+               "unit": "binBps"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 42
+         },
+         "id": 14,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_load_data_upload_duration_sum{job=\"$job\"}/beekeeper_check_load_data_upload_duration_count{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Average Upload Speed (alltime average)",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               },
+               "unit": "binBps"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 50
+         },
+         "id": 15,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "5e6/(increase(beekeeper_check_load_data_download_duration_sum{job=\"$job\"}[$interval])/increase(beekeeper_check_load_data_download_duration_count{job=\"$job\"}[$interval]))",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Average Download Speed",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               },
+               "unit": "binBps"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 50
+         },
+         "id": 16,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_load_data_download_duration_sum{job=\"$job\"}/beekeeper_check_load_data_download_duration_count{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Average Download Speed (alltime average)",
+         "type": "timeseries"
+      }
+   ],
+   "schemaVersion": 36,
+   "tags": [
+      "beekeper"
+   ],
+   "templating": {
+      "list": [
+         {
+            "name": "datasource",
+            "query": "prometheus",
+            "type": "datasource"
+         },
+         {
+            "datasource": {
+               "type": "prometheus",
+               "uid": "${datasource}"
+            },
+            "includeAll": true,
+            "multi": true,
+            "name": "cluster",
+            "query": "label_values(bee_info, cluster)",
+            "refresh": 1,
+            "type": "query"
+         },
+         {
+            "datasource": {
+               "type": "prometheus",
+               "uid": "${datasource}"
+            },
+            "includeAll": true,
+            "multi": true,
+            "name": "namespace",
+            "query": "label_values(bee_info{cluster=~\"$cluster\"}, namespace)",
+            "refresh": 1,
+            "type": "query"
+         },
+         {
+            "datasource": {
+               "type": "prometheus",
+               "uid": "${datasource}"
+            },
+            "includeAll": true,
+            "multi": true,
+            "name": "instance",
+            "query": "label_values(bee_info{cluster=~\"$cluster\", namespace=~\"$namespace\"}, instance)",
+            "refresh": 1,
+            "type": "query"
+         },
+         {
+            "auto": true,
+            "auto_count": 30,
+            "auto_min": "1s",
+            "current": {
+               "selected": false,
+               "text": "auto",
+               "value": "$__auto_interval_interval"
+            },
+            "name": "interval",
+            "options": [
+               {
+                  "selected": true,
+                  "text": "auto",
+                  "value": "$__auto_interval_interval"
+               },
+               {
+                  "selected": false,
+                  "text": "1m",
+                  "value": "1m"
+               },
+               {
+                  "selected": false,
+                  "text": "5m",
+                  "value": "5m"
+               },
+               {
+                  "selected": false,
+                  "text": "30m",
+                  "value": "30m"
+               },
+               {
+                  "selected": false,
+                  "text": "1h",
+                  "value": "1h"
+               },
+               {
+                  "selected": false,
+                  "text": "6h",
+                  "value": "6h"
+               },
+               {
+                  "selected": false,
+                  "text": "12h",
+                  "value": "12h"
+               },
+               {
+                  "selected": false,
+                  "text": "1d",
+                  "value": "1d"
+               },
+               {
+                  "selected": false,
+                  "text": "7d",
+                  "value": "7d"
+               },
+               {
+                  "selected": false,
+                  "text": "14d",
+                  "value": "14d"
+               },
+               {
+                  "selected": false,
+                  "text": "30d",
+                  "value": "30d"
+               }
+            ],
+            "query": "1m,5m,30m,1h,6h,12h,1d,7d,14d,30d",
+            "type": "interval"
+         }
+      ]
+   },
+   "time": {
+      "from": "now-1h",
+      "to": "now"
+   },
+   "timezone": "browser",
+   "title": "Load Test"
+}

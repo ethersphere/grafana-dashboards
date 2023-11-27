@@ -1,0 +1,12 @@
+{
+beekeeper_check_smoke_download_attempts:{query:"beekeeper_check_smoke_download_attempts{job=\"$job\"}",legend:"{{job}}"},
+beekeeper_check_smoke_upload_attempts:{query:"beekeeper_check_smoke_upload_attempts{job=\"$job\"}",legend:"{{job}}"},
+beekeeper_check_smoke_upload_size__beekeeper_check_smoke_data_download_duration_sum:{query:"beekeeper_check_smoke_upload_size/(beekeeper_check_smoke_data_download_duration_sum{job=\"$job\"}/beekeeper_check_smoke_data_download_duration_count{job=\"$job\"})",legend:"{{job}}"},
+beekeeper_check_smoke_upload_size__beekeeper_check_smoke_data_upload_duration_sum:{query:"beekeeper_check_smoke_upload_size/(beekeeper_check_smoke_data_upload_duration_sum{job=\"$job\"}/beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"})",legend:"{{job}}"},
+beekeeper_check_smoke_upload_size__increase_beekeeper_check_smoke_data_download_duration_sum:{query:"beekeeper_check_smoke_upload_size/(increase(beekeeper_check_smoke_data_download_duration_sum{job=\"$job\"}[$interval])/increase(beekeeper_check_smoke_data_download_duration_count{job=\"$job\"}[$interval]))",legend:"{{job}}"},
+beekeeper_check_smoke_upload_size__increase_beekeeper_check_smoke_data_upload_duration_sum:{query:"beekeeper_check_smoke_upload_size/(increase(beekeeper_check_smoke_data_upload_duration_sum{job=\"$job\"}[$interval])/increase(beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"}[$interval]))",legend:"{{job}}"},
+rate_beekeeper_check_smoke_data_download_duration_sum:{query:"rate(beekeeper_check_smoke_data_download_duration_sum{job=\"$job\"}[$interval])/rate(beekeeper_check_smoke_data_download_duration_count{job=\"$job\"}[$interval])",legend:"{{job}}"},
+rate_beekeeper_check_smoke_data_upload_duration_sum:{query:"rate(beekeeper_check_smoke_data_upload_duration_sum{job=\"$job\"}[$interval])/rate(beekeeper_check_smoke_data_upload_duration_count{job=\"$job\"}[$interval])",legend:"{{job}}"},
+rate_beekeeper_check_smoke_download_errors_count:{query:"rate(beekeeper_check_smoke_download_errors_count{job=\"$job\"}[$interval])/rate(beekeeper_check_smoke_download_attempts{job=\"$job\"}[$interval])",legend:"{{job}}"},
+rate_beekeeper_check_smoke_upload_errors_count:{query:"rate(beekeeper_check_smoke_upload_errors_count{job=\"$job\"}[$interval])/rate(beekeeper_check_smoke_upload_attempts{job=\"$job\"}[$interval])",legend:"{{job}}"},
+}

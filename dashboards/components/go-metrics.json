@@ -1,0 +1,690 @@
+{
+   "description": "",
+   "graphTooltip": 1,
+   "panels": [
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 0
+         },
+         "id": 1,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "go_memstats_mspan_inuse_bytes{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "memstats_mspan_inuse_bytes"
+            },
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "go_memstats_mspan_sys_bytes{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "memstats_mspan_sys_bytes"
+            },
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "go_memstats_mcache_inuse_bytes{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "memstats_mcache_inuse_bytes"
+            },
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "go_memstats_mcache_sys_bytes{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "memstats_mcache_sys_bytes"
+            },
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "go_memstats_buck_hash_sys_bytes{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "memstats_buck_hash_sys_bytes"
+            },
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "go_memstats_gc_sys_bytes{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "memstats_gc_sys_bytes"
+            },
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "go_memstats_next_gc_bytes{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "memstats_next_gc_bytes"
+            }
+         ],
+         "title": "Memory in Off-Heap",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 0
+         },
+         "id": 2,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "go_memstats_heap_alloc_bytes{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "memstats_heap_alloc_bytes"
+            },
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "go_memstats_heap_sys_bytes{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "memstats_heap_sys_bytes"
+            },
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "go_memstats_heap_idle_bytes{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "memstats_heap_idle_bytes"
+            },
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "go_memstats_heap_inuse_bytes{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "memstats_heap_inuse_bytes"
+            },
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "go_memstats_heap_released_bytes{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "memstats_heap_released_bytes"
+            }
+         ],
+         "title": "Memory in Heap",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 8
+         },
+         "id": 3,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "go_memstats_stack_inuse_bytes{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "memstats_stack_inuse_bytes"
+            },
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "go_memstats_stack_sys_bytes{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "memstats_stack_sys_bytes"
+            }
+         ],
+         "title": "Memory in Stack",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 8
+         },
+         "id": 4,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "go_memstats_sys_bytes{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "memstats_sys_bytes"
+            }
+         ],
+         "title": "Total Used Memory",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 16
+         },
+         "id": 5,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "go_memstats_mallocs_total{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}-go_memstats_frees_total{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "memstats_inuse_total"
+            }
+         ],
+         "title": "Number of Bytes in Use",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 16
+         },
+         "id": 6,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "rate(go_memstats_mallocs_total{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}[$interval])",
+               "intervalFactor": 1,
+               "legendFormat": "rate_memstats_mallocs"
+            }
+         ],
+         "title": "Rate of Objects Allocated",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 24
+         },
+         "id": 7,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "go_threads{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "threads"
+            }
+         ],
+         "title": "Threads",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 24
+         },
+         "id": 8,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "go_goroutines{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "goroutines"
+            }
+         ],
+         "title": "Goroutines",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 32
+         },
+         "id": 9,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "rate(go_memstats_alloc_bytes_total{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}[$interval])",
+               "intervalFactor": 1,
+               "legendFormat": "rate_memstats_alloc_bytes"
+            }
+         ],
+         "title": "Rates of Allocation",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 32
+         },
+         "id": 10,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "go_gc_duration_seconds{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "gc_duration_s_q{{quantile}}"
+            }
+         ],
+         "title": "GC duration quantile",
+         "type": "timeseries"
+      }
+   ],
+   "schemaVersion": 36,
+   "tags": [
+      "components"
+   ],
+   "templating": {
+      "list": [
+         {
+            "name": "datasource",
+            "query": "prometheus",
+            "type": "datasource"
+         },
+         {
+            "datasource": {
+               "type": "prometheus",
+               "uid": "${datasource}"
+            },
+            "includeAll": true,
+            "multi": true,
+            "name": "cluster",
+            "query": "label_values(bee_info, cluster)",
+            "refresh": 1,
+            "type": "query"
+         },
+         {
+            "datasource": {
+               "type": "prometheus",
+               "uid": "${datasource}"
+            },
+            "includeAll": true,
+            "multi": true,
+            "name": "namespace",
+            "query": "label_values(bee_info{cluster=~\"$cluster\"}, namespace)",
+            "refresh": 1,
+            "type": "query"
+         },
+         {
+            "datasource": {
+               "type": "prometheus",
+               "uid": "${datasource}"
+            },
+            "includeAll": true,
+            "multi": true,
+            "name": "instance",
+            "query": "label_values(bee_info{cluster=~\"$cluster\", namespace=~\"$namespace\"}, instance)",
+            "refresh": 1,
+            "type": "query"
+         },
+         {
+            "auto": true,
+            "auto_count": 30,
+            "auto_min": "1s",
+            "current": {
+               "selected": false,
+               "text": "auto",
+               "value": "$__auto_interval_interval"
+            },
+            "name": "interval",
+            "options": [
+               {
+                  "selected": true,
+                  "text": "auto",
+                  "value": "$__auto_interval_interval"
+               },
+               {
+                  "selected": false,
+                  "text": "1m",
+                  "value": "1m"
+               },
+               {
+                  "selected": false,
+                  "text": "5m",
+                  "value": "5m"
+               },
+               {
+                  "selected": false,
+                  "text": "30m",
+                  "value": "30m"
+               },
+               {
+                  "selected": false,
+                  "text": "1h",
+                  "value": "1h"
+               },
+               {
+                  "selected": false,
+                  "text": "6h",
+                  "value": "6h"
+               },
+               {
+                  "selected": false,
+                  "text": "12h",
+                  "value": "12h"
+               },
+               {
+                  "selected": false,
+                  "text": "1d",
+                  "value": "1d"
+               },
+               {
+                  "selected": false,
+                  "text": "7d",
+                  "value": "7d"
+               },
+               {
+                  "selected": false,
+                  "text": "14d",
+                  "value": "14d"
+               },
+               {
+                  "selected": false,
+                  "text": "30d",
+                  "value": "30d"
+               }
+            ],
+            "query": "1m,5m,30m,1h,6h,12h,1d,7d,14d,30d",
+            "type": "interval"
+         }
+      ]
+   },
+   "time": {
+      "from": "now-1h",
+      "to": "now"
+   },
+   "timezone": "browser",
+   "title": "Runtime Metrics"
+}

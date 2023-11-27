@@ -1,0 +1,18 @@
+{
+bee_accounting_total_credited_amount:{query:"bee_accounting_total_credited_amount{%(selector)s}",legend:"credited ({{pod}})"},
+bee_accounting_total_debited_amount:{query:"bee_accounting_total_debited_amount{%(selector)s}",legend:"debited ({{pod}})"},
+bee_swap_available_balance:{query:"bee_swap_available_balance{%(selector)s}",legend:"{{pod}}"},
+increase_bee_accounting_accounting_blocks_count:{query:"increase(bee_accounting_accounting_blocks_count{%(selector)s}[$interval])",legend:"blocks ({{pod}})"},
+increase_bee_accounting_accounting_disconnects_count:{query:"increase(bee_accounting_accounting_disconnects_count{%(selector)s}[$interval])",legend:"disconnects ({{pod}})"},
+increase_bee_accounting_credit_events_count:{query:"increase(bee_accounting_credit_events_count{%(selector)s}[$interval])",legend:"credit ({{pod}})"},
+increase_bee_accounting_debit_events_count:{query:"increase(bee_accounting_debit_events_count{%(selector)s}[$interval])",legend:"debit ({{pod}})"},
+increase_bee_accounting_disconnects_enforce_refresh_count:{query:"increase(bee_accounting_disconnects_enforce_refresh_count{%(selector)s}[$interval])",legend:"credit ({{pod}})"},
+increase_bee_accounting_disconnects_ghost_overdraw_count:{query:"increase(bee_accounting_disconnects_ghost_overdraw_count{%(selector)s}[$interval])",legend:"debit ({{pod}})"},
+increase_bee_accounting_disconnects_overdraw_count:{query:"increase(bee_accounting_disconnects_overdraw_count{%(selector)s}[$interval])",legend:"debit ({{pod}})"},
+increase_bee_accounting_disconnects_reconnect_count:{query:"increase(bee_accounting_disconnects_reconnect_count{%(selector)s}[$interval])",legend:"debit ({{pod}})"},
+increase_bee_accounting_refreshment_above_expected:{query:"increase(bee_accounting_refreshment_above_expected{%(selector)s}[$interval])",legend:"debit ({{pod}})"},
+increase_bee_accounting_refreshment_below_expected:{query:"increase(bee_accounting_refreshment_below_expected{%(selector)s}[$interval])",legend:"debit ({{pod}})"},
+increase_bee_accounting_time_out_of_sync_alleged:{query:"increase(bee_accounting_time_out_of_sync_alleged{%(selector)s}[$interval])",legend:"debit ({{pod}})"},
+increase_bee_accounting_time_out_of_sync_interval:{query:"increase(bee_accounting_time_out_of_sync_interval{%(selector)s}[$interval])",legend:"debit ({{pod}})"},
+increase_bee_accounting_time_out_of_sync_recent:{query:"increase(bee_accounting_time_out_of_sync_recent{%(selector)s}[$interval])",legend:"debit ({{pod}})"},
+}

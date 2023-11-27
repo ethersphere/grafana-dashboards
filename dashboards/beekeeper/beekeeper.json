@@ -1,0 +1,1186 @@
+{
+   "description": "",
+   "graphTooltip": 1,
+   "panels": [
+      {
+         "gridPos": {
+            "h": 1,
+            "w": 0,
+            "x": 0,
+            "y": 0
+         },
+         "id": 1,
+         "title": "Ping Pong",
+         "type": "row"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Ping round-trip time duration Gauge.",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 15
+                     }
+                  ]
+               },
+               "unit": "s"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 1
+         },
+         "id": 2,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "mean"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_pingpong_rtt_duration_seconds{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{ node }} -> {{ peer }}"
+            }
+         ],
+         "title": "Ping RTT duration",
+         "type": "bargauge"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Ping round-trip time duration Histogram.",
+         "fieldConfig": {
+            "defaults": {
+               "unit": "short"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 1
+         },
+         "id": 3,
+         "interval": "1m",
+         "options": {
+            "cellGap": 2,
+            "color": {
+               "mode": "scheme",
+               "scheme": "Blues",
+               "steps": 128
+            },
+            "legend": {
+               "show": false
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(beekeeper_check_pingpong_rtt_seconds_bucket{job=\"$job\"}[$interval])",
+               "intervalFactor": 1,
+               "legendFormat": "{{ le }}"
+            }
+         ],
+         "title": "Ping RTT bucket",
+         "type": "heatmap"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Ping round-trip time duration Histogram.",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 9
+         },
+         "id": 4,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_pingpong_rtt_seconds_count{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "Ping RTT count",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Ping round-trip time duration Histogram.",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 9
+         },
+         "id": 5,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_pingpong_rtt_seconds_sum{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "Ping RTT sum",
+         "type": "stat"
+      },
+      {
+         "gridPos": {
+            "h": 1,
+            "w": 0,
+            "x": 24,
+            "y": 17
+         },
+         "id": 6,
+         "title": "Push Sync",
+         "type": "row"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Number of uploaded chunks.",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 18
+         },
+         "id": 7,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_pushsync_chunks_uploaded_count{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{ node }}"
+            }
+         ],
+         "title": "Uploaded chunks per node",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Number of chunks that has been synced with the closest node.",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 18
+         },
+         "id": 8,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_pushsync_chunks_synced_count{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{ node }}"
+            }
+         ],
+         "title": "Synced chunks per node",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Number of chunks that has not been synced with the closest node.",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 26
+         },
+         "id": 9,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_pushsync_chunks_not_synced_count{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{ node }}"
+            }
+         ],
+         "title": "Not synced chunks per node",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk upload duration Gauge.",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 15
+                     }
+                  ]
+               },
+               "unit": "s"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 26
+         },
+         "id": 10,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "mean"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_pushsync_chunk_upload_duration_seconds{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{ node }} ( {{ chunk }} )"
+            }
+         ],
+         "title": "Upload duration",
+         "type": "bargauge"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk upload duration Histogram.",
+         "fieldConfig": {
+            "defaults": {
+               "unit": "short"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 34
+         },
+         "id": 11,
+         "interval": "1m",
+         "options": {
+            "cellGap": 2,
+            "color": {
+               "mode": "scheme",
+               "scheme": "Blues",
+               "steps": 128
+            },
+            "legend": {
+               "show": false
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "rate(beekeeper_check_pushsync_chunk_upload_seconds_bucket{job=\"$job\"}[$interval])",
+               "intervalFactor": 1,
+               "legendFormat": "{{ le }}"
+            }
+         ],
+         "title": "Upload bucket",
+         "type": "heatmap"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk upload duration Histogram.",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 34
+         },
+         "id": 12,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_pushsync_chunk_upload_seconds_count{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "Upload count",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk upload duration Histogram.",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 42
+         },
+         "id": 13,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_pushsync_chunk_upload_seconds_sum{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "Upload sum",
+         "type": "stat"
+      },
+      {
+         "gridPos": {
+            "h": 1,
+            "w": 0,
+            "x": 12,
+            "y": 50
+         },
+         "id": 14,
+         "title": "Retrieval",
+         "type": "row"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Number of uploaded chunks.",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 51
+         },
+         "id": 15,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_retrieval_chunks_uploaded_count{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{ node }}"
+            }
+         ],
+         "title": "Uploaded chunks per node",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Number of downloaded chunks.",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 51
+         },
+         "id": 16,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_retrieval_chunks_downloaded_count{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{ node }}"
+            }
+         ],
+         "title": "Downloaded chunks per node",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Number of chunks that has been retrieved.",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 59
+         },
+         "id": 17,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_retrieval_chunks_retrieved_count{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{ node }}"
+            }
+         ],
+         "title": "Retrieved chunks per node",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Number of chunks that has not been retrieved.",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 59
+         },
+         "id": 18,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_retrieval_chunks_not_retrieved_count{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{ node }}"
+            }
+         ],
+         "title": "Not retrieved chunks per node",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk upload duration Gauge.",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 15
+                     }
+                  ]
+               },
+               "unit": "s"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 67
+         },
+         "id": 19,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "mean"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_retrieval_chunk_upload_duration_seconds{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{ node }} ( {{ chunk }} )"
+            }
+         ],
+         "title": "Upload duration",
+         "type": "bargauge"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk upload duration Histogram.",
+         "fieldConfig": {
+            "defaults": {
+               "unit": "short"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 67
+         },
+         "id": 20,
+         "interval": "1m",
+         "options": {
+            "cellGap": 2,
+            "color": {
+               "mode": "scheme",
+               "scheme": "Blues",
+               "steps": 128
+            },
+            "legend": {
+               "show": false
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "rate(beekeeper_check_retrieval_chunk_upload_seconds_bucket{job=\"$job\"}[$interval])",
+               "intervalFactor": 1,
+               "legendFormat": "{{ le }}"
+            }
+         ],
+         "title": "Upload bucket",
+         "type": "heatmap"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk upload duration Histogram.",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 75
+         },
+         "id": 21,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_retrieval_chunk_upload_seconds_count{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "Upload count",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk upload duration Histogram.",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 75
+         },
+         "id": 22,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_retrieval_chunk_upload_seconds_sum{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "Upload sum",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk download duration Gauge.",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 15
+                     }
+                  ]
+               },
+               "unit": "s"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 83
+         },
+         "id": 23,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "mean"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_retrieval_chunk_download_duration_seconds{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{ node }} ( {{ chunk }} )"
+            }
+         ],
+         "title": "Download duration",
+         "type": "bargauge"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk download duration Histogram.",
+         "fieldConfig": {
+            "defaults": {
+               "unit": "short"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 83
+         },
+         "id": 24,
+         "interval": "1m",
+         "options": {
+            "cellGap": 2,
+            "color": {
+               "mode": "scheme",
+               "scheme": "Blues",
+               "steps": 128
+            },
+            "legend": {
+               "show": false
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "rate(beekeeper_check_retrieval_chunk_download_seconds_bucket{job=\"$job\"}[$interval])",
+               "intervalFactor": 1,
+               "legendFormat": "{{ le }}"
+            }
+         ],
+         "title": "Bucket",
+         "type": "heatmap"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk download duration Histogram.",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 91
+         },
+         "id": 25,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_retrieval_chunk_download_seconds_count{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "Download count",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk download duration Histogram.",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 91
+         },
+         "id": 26,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_retrieval_chunk_download_seconds_sum{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "Download sum",
+         "type": "stat"
+      }
+   ],
+   "schemaVersion": 36,
+   "tags": [
+      "beekeper"
+   ],
+   "templating": {
+      "list": [
+         {
+            "name": "datasource",
+            "query": "prometheus",
+            "type": "datasource"
+         },
+         {
+            "datasource": {
+               "type": "prometheus",
+               "uid": "${datasource}"
+            },
+            "includeAll": true,
+            "multi": true,
+            "name": "cluster",
+            "query": "label_values(bee_info, cluster)",
+            "refresh": 1,
+            "type": "query"
+         },
+         {
+            "datasource": {
+               "type": "prometheus",
+               "uid": "${datasource}"
+            },
+            "includeAll": true,
+            "multi": true,
+            "name": "namespace",
+            "query": "label_values(bee_info{cluster=~\"$cluster\"}, namespace)",
+            "refresh": 1,
+            "type": "query"
+         },
+         {
+            "datasource": {
+               "type": "prometheus",
+               "uid": "${datasource}"
+            },
+            "includeAll": true,
+            "multi": true,
+            "name": "instance",
+            "query": "label_values(bee_info{cluster=~\"$cluster\", namespace=~\"$namespace\"}, instance)",
+            "refresh": 1,
+            "type": "query"
+         },
+         {
+            "auto": true,
+            "auto_count": 30,
+            "auto_min": "1s",
+            "current": {
+               "selected": false,
+               "text": "auto",
+               "value": "$__auto_interval_interval"
+            },
+            "name": "interval",
+            "options": [
+               {
+                  "selected": true,
+                  "text": "auto",
+                  "value": "$__auto_interval_interval"
+               },
+               {
+                  "selected": false,
+                  "text": "1m",
+                  "value": "1m"
+               },
+               {
+                  "selected": false,
+                  "text": "5m",
+                  "value": "5m"
+               },
+               {
+                  "selected": false,
+                  "text": "30m",
+                  "value": "30m"
+               },
+               {
+                  "selected": false,
+                  "text": "1h",
+                  "value": "1h"
+               },
+               {
+                  "selected": false,
+                  "text": "6h",
+                  "value": "6h"
+               },
+               {
+                  "selected": false,
+                  "text": "12h",
+                  "value": "12h"
+               },
+               {
+                  "selected": false,
+                  "text": "1d",
+                  "value": "1d"
+               },
+               {
+                  "selected": false,
+                  "text": "7d",
+                  "value": "7d"
+               },
+               {
+                  "selected": false,
+                  "text": "14d",
+                  "value": "14d"
+               },
+               {
+                  "selected": false,
+                  "text": "30d",
+                  "value": "30d"
+               }
+            ],
+            "query": "1m,5m,30m,1h,6h,12h,1d,7d,14d,30d",
+            "type": "interval"
+         }
+      ]
+   },
+   "time": {
+      "from": "now-1h",
+      "to": "now"
+   },
+   "timezone": "browser",
+   "title": "Beekeeper dashboard"
+}

@@ -1,0 +1,1696 @@
+{
+   "description": "",
+   "graphTooltip": 1,
+   "panels": [
+      {
+         "gridPos": {
+            "h": 1,
+            "w": 0,
+            "x": 0,
+            "y": 0
+         },
+         "id": 1,
+         "title": "Total",
+         "type": "row"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Total uploaded chunks",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 1
+         },
+         "id": 2,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_uploaded_count{run=~\"$run\",node=~\"$node\"}[$__range]))",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "uploaded chunks",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Total not uploaded chunks",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 1
+         },
+         "id": 3,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_not_uploaded_count{run=~\"$run\",node=~\"$node\"}[$__range]))",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "not uploaded chunks",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Total synced chunks",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 9
+         },
+         "id": 4,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_simulation_retrieval_tags_synced_count{run=~\"$run\",node=~\"$node\"}[$__range]))",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "synced chunks",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Total not synced chunks",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 9
+         },
+         "id": 5,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_simulation_retrieval_tags_not_synced_count{run=~\"$run\",node=~\"$node\"}[$__range]))",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "not synced chunks",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Total downloaded chunks",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 17
+         },
+         "id": 6,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_downloaded_count{run=~\"$run\",node=~\"$node\"}[$__range]))",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "downloaded chunks",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Total not downloaded chunks",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 17
+         },
+         "id": 7,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_not_downloaded_count{run=~\"$run\",node=~\"$node\"}[$__range]))",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "not downloaded chunks",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Total correctly downloaded chunks",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 25
+         },
+         "id": 8,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_retrieved_count{run=~\"$run\",node=~\"$node\"}[$__range]))",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "correctly downloaded chunks",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Total incorrectly downloaded chunks",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 25
+         },
+         "id": 9,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_not_retrieved_count{run=~\"$run\",node=~\"$node\"}[$__range]))",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "incorrectly downloaded chunks",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk upload rate per node",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 33
+         },
+         "id": 10,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(beekeeper_simulation_retrieval_chunks_uploaded_count{run=~\"$run\",node=~\"$node\"}[$resolution])",
+               "intervalFactor": 1,
+               "legendFormat": "{{node}}"
+            }
+         ],
+         "title": "upload rate",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk failed upload rate per node",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 33
+         },
+         "id": 11,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(beekeeper_simulation_retrieval_chunks_not_uploaded_count{run=~\"$run\",node=~\"$node\"}[$resolution])",
+               "intervalFactor": 1,
+               "legendFormat": "{{node}}"
+            }
+         ],
+         "title": "failed upload rate",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk sync rate per node",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 41
+         },
+         "id": 12,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(beekeeper_simulation_retrieval_tags_synced_count{run=~\"$run\",node=~\"$node\"}[$resolution])",
+               "intervalFactor": 1,
+               "legendFormat": "{{node}}"
+            }
+         ],
+         "title": "sync rate",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk failed sync rate per node",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 41
+         },
+         "id": 13,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(beekeeper_simulation_retrieval_tags_not_synced_count{run=~\"$run\",node=~\"$node\"}[$resolution])",
+               "intervalFactor": 1,
+               "legendFormat": "{{node}}"
+            }
+         ],
+         "title": "failed sync rate",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk download rate per node",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 49
+         },
+         "id": 14,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(beekeeper_simulation_retrieval_chunks_downloaded_count{run=~\"$run\",node=~\"$node\"}[$resolution])",
+               "intervalFactor": 1,
+               "legendFormat": "{{node}}"
+            }
+         ],
+         "title": "download rate",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk failed download rate per node",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 49
+         },
+         "id": 15,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(beekeeper_simulation_retrieval_chunks_not_downloaded_count{run=~\"$run\",node=~\"$node\"}[$resolution])",
+               "intervalFactor": 1,
+               "legendFormat": "{{node}}"
+            }
+         ],
+         "title": "failed download rate",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Correct chunk download rate per node",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 57
+         },
+         "id": 16,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(beekeeper_simulation_retrieval_chunks_retrieved_count{run=~\"$run\",node=~\"$node\"}[$resolution])",
+               "intervalFactor": 1,
+               "legendFormat": "{{node}}"
+            }
+         ],
+         "title": "correct download rate",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Incorrect chunk download rate per node",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 57
+         },
+         "id": 17,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(beekeeper_simulation_retrieval_chunks_not_retrieved_count{run=~\"$run\",node=~\"$node\"}[$resolution])",
+               "intervalFactor": 1,
+               "legendFormat": "{{node}}"
+            }
+         ],
+         "title": "incorrect download rate",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Upload speed",
+         "fieldConfig": {
+            "defaults": {
+               "unit": "short"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 65
+         },
+         "id": 18,
+         "interval": "1m",
+         "options": {
+            "cellGap": 2,
+            "color": {
+               "mode": "scheme",
+               "scheme": "Blues",
+               "steps": 128
+            },
+            "legend": {
+               "show": false
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(beekeeper_simulation_retrieval_chunk_upload_seconds_bucket{run=~\"$run\"}[$resolution])",
+               "intervalFactor": 1,
+               "legendFormat": "{{ le }}"
+            }
+         ],
+         "title": "upload speed",
+         "type": "heatmap"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Sync speed",
+         "fieldConfig": {
+            "defaults": {
+               "unit": "short"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 65
+         },
+         "id": 19,
+         "interval": "1m",
+         "options": {
+            "cellGap": 2,
+            "color": {
+               "mode": "scheme",
+               "scheme": "Blues",
+               "steps": 128
+            },
+            "legend": {
+               "show": false
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(beekeeper_simulation_retrieval_tags_sync_seconds_bucket{run=~\"$run\"}[$resolution])",
+               "intervalFactor": 1,
+               "legendFormat": "{{ le }}"
+            }
+         ],
+         "title": "sync speed",
+         "type": "heatmap"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download speed",
+         "fieldConfig": {
+            "defaults": {
+               "unit": "short"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 73
+         },
+         "id": 20,
+         "interval": "1m",
+         "options": {
+            "cellGap": 2,
+            "color": {
+               "mode": "scheme",
+               "scheme": "Blues",
+               "steps": 128
+            },
+            "legend": {
+               "show": false
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(beekeeper_simulation_retrieval_chunk_download_seconds_bucket{run=~\"$run\"}[$resolution])",
+               "intervalFactor": 1,
+               "legendFormat": "{{ le }}"
+            }
+         ],
+         "title": "download speed",
+         "type": "heatmap"
+      },
+      {
+         "gridPos": {
+            "h": 1,
+            "w": 0,
+            "x": 12,
+            "y": 81
+         },
+         "id": 21,
+         "title": "Node $node",
+         "type": "row"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Total uploaded chunks",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 82
+         },
+         "id": 22,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_uploaded_count{run=~\"$run\",node=~\"$node\"}[$__range]))",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "uploaded chunks",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Total not uploaded chunks",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 82
+         },
+         "id": 23,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_not_uploaded_count{run=~\"$run\",node=~\"$node\"}[$__range]))",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "not uploaded chunks",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Total synced chunks",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 90
+         },
+         "id": 24,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_simulation_retrieval_tags_synced_count{run=~\"$run\",node=~\"$node\"}[$__range]))",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "synced chunks",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Total not synced chunks",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 90
+         },
+         "id": 25,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_simulation_retrieval_tags_not_synced_count{run=~\"$run\",node=~\"$node\"}[$__range]))",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "not synced chunks",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Total downloaded chunks",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 98
+         },
+         "id": 26,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_downloaded_count{run=~\"$run\",node=~\"$node\"}[$__range]))",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "downloaded chunks",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Total not downloaded chunks",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 98
+         },
+         "id": 27,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_not_downloaded_count{run=~\"$run\",node=~\"$node\"}[$__range]))",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "not downloaded chunks",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Total correctly downloaded chunks",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 106
+         },
+         "id": 28,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_retrieved_count{run=~\"$run\",node=~\"$node\"}[$__range]))",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "correctly downloaded chunks",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Total incorrectly downloaded chunks",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 106
+         },
+         "id": 29,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_simulation_retrieval_chunks_not_retrieved_count{run=~\"$run\",node=~\"$node\"}[$__range]))",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "incorrectly downloaded chunks",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk upload rate",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 114
+         },
+         "id": 30,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(beekeeper_simulation_retrieval_chunks_uploaded_count{run=~\"$run\",node=~\"$node\"}[$resolution])",
+               "intervalFactor": 1,
+               "legendFormat": "{{node}}"
+            }
+         ],
+         "title": "upload rate",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk failed upload rate",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 114
+         },
+         "id": 31,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(beekeeper_simulation_retrieval_chunks_not_uploaded_count{run=~\"$run\",node=~\"$node\"}[$resolution])",
+               "intervalFactor": 1,
+               "legendFormat": "{{node}}"
+            }
+         ],
+         "title": "failed upload rate",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk sync rate",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 122
+         },
+         "id": 32,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(beekeeper_simulation_retrieval_tags_synced_count{run=~\"$run\",node=~\"$node\"}[$resolution])",
+               "intervalFactor": 1,
+               "legendFormat": "{{node}}"
+            }
+         ],
+         "title": "sync rate",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk failed sync rate",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 122
+         },
+         "id": 33,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(beekeeper_simulation_retrieval_tags_not_synced_count{run=~\"$run\",node=~\"$node\"}[$resolution])",
+               "intervalFactor": 1,
+               "legendFormat": "{{node}}"
+            }
+         ],
+         "title": "failed sync rate",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk download rate",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 130
+         },
+         "id": 34,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(beekeeper_simulation_retrieval_chunks_downloaded_count{run=~\"$run\",node=~\"$node\"}[$resolution])",
+               "intervalFactor": 1,
+               "legendFormat": "{{node}}"
+            }
+         ],
+         "title": "download rate",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Chunk failed download rate",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 130
+         },
+         "id": 35,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(beekeeper_simulation_retrieval_chunks_not_downloaded_count{run=~\"$run\",node=~\"$node\"}[$resolution])",
+               "intervalFactor": 1,
+               "legendFormat": "{{node}}"
+            }
+         ],
+         "title": "failed download rate",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Correct chunk download rate",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 138
+         },
+         "id": 36,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(beekeeper_simulation_retrieval_chunks_retrieved_count{run=~\"$run\",node=~\"$node\"}[$resolution])",
+               "intervalFactor": 1,
+               "legendFormat": "{{node}}"
+            }
+         ],
+         "title": "correct  download rate",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Incorrect chunk download rate",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 138
+         },
+         "id": 37,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(beekeeper_simulation_retrieval_chunks_not_retrieved_count{run=~\"$run\",node=~\"$node\"}[$resolution])",
+               "intervalFactor": 1,
+               "legendFormat": "{{node}}"
+            }
+         ],
+         "title": "incorrect download rate",
+         "type": "timeseries"
+      }
+   ],
+   "schemaVersion": 36,
+   "tags": [
+      "beekeper"
+   ],
+   "templating": {
+      "list": [
+         {
+            "name": "datasource",
+            "query": "prometheus",
+            "type": "datasource"
+         },
+         {
+            "datasource": {
+               "type": "prometheus",
+               "uid": "${datasource}"
+            },
+            "includeAll": true,
+            "multi": true,
+            "name": "cluster",
+            "query": "label_values(bee_info, cluster)",
+            "refresh": 1,
+            "type": "query"
+         },
+         {
+            "datasource": {
+               "type": "prometheus",
+               "uid": "${datasource}"
+            },
+            "includeAll": true,
+            "multi": true,
+            "name": "namespace",
+            "query": "label_values(bee_info{cluster=~\"$cluster\"}, namespace)",
+            "refresh": 1,
+            "type": "query"
+         },
+         {
+            "datasource": {
+               "type": "prometheus",
+               "uid": "${datasource}"
+            },
+            "includeAll": true,
+            "multi": true,
+            "name": "instance",
+            "query": "label_values(bee_info{cluster=~\"$cluster\", namespace=~\"$namespace\"}, instance)",
+            "refresh": 1,
+            "type": "query"
+         },
+         {
+            "auto": true,
+            "auto_count": 30,
+            "auto_min": "1s",
+            "current": {
+               "selected": false,
+               "text": "auto",
+               "value": "$__auto_interval_interval"
+            },
+            "name": "interval",
+            "options": [
+               {
+                  "selected": true,
+                  "text": "auto",
+                  "value": "$__auto_interval_interval"
+               },
+               {
+                  "selected": false,
+                  "text": "1m",
+                  "value": "1m"
+               },
+               {
+                  "selected": false,
+                  "text": "5m",
+                  "value": "5m"
+               },
+               {
+                  "selected": false,
+                  "text": "30m",
+                  "value": "30m"
+               },
+               {
+                  "selected": false,
+                  "text": "1h",
+                  "value": "1h"
+               },
+               {
+                  "selected": false,
+                  "text": "6h",
+                  "value": "6h"
+               },
+               {
+                  "selected": false,
+                  "text": "12h",
+                  "value": "12h"
+               },
+               {
+                  "selected": false,
+                  "text": "1d",
+                  "value": "1d"
+               },
+               {
+                  "selected": false,
+                  "text": "7d",
+                  "value": "7d"
+               },
+               {
+                  "selected": false,
+                  "text": "14d",
+                  "value": "14d"
+               },
+               {
+                  "selected": false,
+                  "text": "30d",
+                  "value": "30d"
+               }
+            ],
+            "query": "1m,5m,30m,1h,6h,12h,1d,7d,14d,30d",
+            "type": "interval"
+         }
+      ]
+   },
+   "time": {
+      "from": "now-1h",
+      "to": "now"
+   },
+   "timezone": "browser",
+   "title": "Beekeeper Simulation - Retrieval"
+}

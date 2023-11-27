@@ -1,0 +1,983 @@
+{
+   "description": "",
+   "graphTooltip": 1,
+   "panels": [
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 0
+         },
+         "id": 1,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "bee_kademlia_current_depth{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{instance}}"
+            }
+         ],
+         "title": "Depth",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 0
+         },
+         "id": 2,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "bee_kademlia_current_storage_depth{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{instance}}"
+            }
+         ],
+         "title": "Radius",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 8
+         },
+         "id": 3,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(bee_kademlia_flag{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}[$interval])",
+               "intervalFactor": 1,
+               "legendFormat": "{{instance}}"
+            }
+         ],
+         "title": "Flagged for blocking per minute",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               },
+               "decimals": 0,
+               "unit": "short"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 8
+         },
+         "id": 4,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "increase(bee_kademlia_blocklist{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}[$interval])",
+               "intervalFactor": 1,
+               "legendFormat": "{{instance}}"
+            }
+         ],
+         "title": "Blocklist due to flagging per minute",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               },
+               "decimals": 0,
+               "unit": "short"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 16
+         },
+         "id": 5,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "rate(bee_libp2p_blocklisted_peer_count{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}[$interval])",
+               "intervalFactor": 1,
+               "legendFormat": "({{instance}})"
+            }
+         ],
+         "title": "Libp2p blocklisting rate",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "showPoints": "never"
+               },
+               "decimals": 0,
+               "unit": "short"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 16
+         },
+         "id": 6,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "rate(bee_kademlia_total_inbound_disconnections{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}[$interval])",
+               "intervalFactor": 1,
+               "legendFormat": "({{instance}})"
+            }
+         ],
+         "title": "Disconnects rate",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "custom": {
+                  "fillOpacity": 0,
+                  "scaleDistribution": {
+                     "log": 10,
+                     "type": "log"
+                  },
+                  "showPoints": "never"
+               },
+               "unit": "s"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 24
+         },
+         "id": 7,
+         "interval": "1m",
+         "options": {
+            "legend": {
+               "calcs": [
+                  "lastNotNull",
+                  "max"
+               ],
+               "displayMode": "table"
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "histogram_quantile(0.99,sum(rate(bee_kademlia_peer_latency_ewma_bucket{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}[$interval]))by(instance,le))",
+               "intervalFactor": 1,
+               "legendFormat": "({{instance}})"
+            },
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "rate(bee_kademlia_peer_latency_ewma_sum{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}[$interval])/rate(bee_kademlia_peer_latency_ewma_count{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}[$interval])",
+               "intervalFactor": 1,
+               "legendFormat": ""
+            }
+         ],
+         "title": "P99 Ping Duration",
+         "type": "timeseries"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 24
+         },
+         "id": 8,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "bee_kademlia_total_before_expire_waits{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "before_expire_waits({{instance}})"
+            }
+         ],
+         "title": "Before Expire Waits",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 32
+         },
+         "id": 9,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "bee_kademlia_total_bootnodes_connection_attempts{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "bootnodes_connection_attempts({{instance}})"
+            }
+         ],
+         "title": "Connection To Bootnodes Attemps",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 80
+                     }
+                  ]
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 32
+         },
+         "id": 10,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "bee_lightnode_currently_connected_peers{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{instance}}"
+            }
+         ],
+         "title": "Light nodes",
+         "type": "gauge"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 80
+                     }
+                  ]
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 40
+         },
+         "id": 11,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "bee_kademlia_currently_connected_peers{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "connected({{instance}})"
+            },
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "bee_kademlia_currently_known_peers{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "known({{instance}})"
+            }
+         ],
+         "title": "Connect/Known",
+         "type": "gauge"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 40
+         },
+         "id": 12,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "bee_kademlia_internal_metrics_flush_total_errors{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "metrics_flush_total_errors({{instance}})"
+            }
+         ],
+         "title": "Metrics Flush Errors",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 48
+         },
+         "id": 13,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "bee_kademlia_pick_calls{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "pick_calls({{instance}})"
+            },
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "bee_kademlia_pick_calls_false{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "pick_calls_false({{instance}})"
+            }
+         ],
+         "title": "Pick Calls",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "unit": "short"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 48
+         },
+         "id": 14,
+         "interval": "1m",
+         "options": {
+            "cellGap": 2,
+            "color": {
+               "mode": "scheme",
+               "scheme": "Blues",
+               "steps": 128
+            },
+            "legend": {
+               "show": false
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(rate(bee_kademlia_internal_metrics_flush_time_bucket{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}[$interval]))by(le)",
+               "intervalFactor": 1,
+               "legendFormat": "{{le}}"
+            }
+         ],
+         "title": "Metrics Flush Time",
+         "type": "heatmap"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 56
+         },
+         "id": 15,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "bee_kademlia_total_inbound_connections{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "inbound({{instance}})"
+            },
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "bee_kademlia_total_inbound_disconnections{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "inbound_disconnections({{instance}})"
+            },
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "bee_kademlia_total_outbound_connections{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "outbound({{instance}})"
+            },
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "bee_kademlia_total_outbound_connection_attempts{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "outbound_attempts({{instance}})"
+            },
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "bee_kademlia_total_outbound_connection_failed_attempts{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "outbound_failed_attempts({{instance}})"
+            }
+         ],
+         "title": "Connections",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "unit": "short"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 56
+         },
+         "id": 16,
+         "interval": "1m",
+         "options": {
+            "cellGap": 2,
+            "color": {
+               "mode": "scheme",
+               "scheme": "Blues",
+               "steps": 128
+            },
+            "legend": {
+               "show": false
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(rate(bee_kademlia_start_add_addressbook_overlays_time_bucket{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}[$interval]))by(le)",
+               "intervalFactor": 1,
+               "legendFormat": "{{le}}"
+            }
+         ],
+         "title": "Add Addressbook Overlays Time",
+         "type": "heatmap"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 80
+                     }
+                  ]
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 64
+         },
+         "id": 17,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "bee_kademlia_peers_reachability_status{cluster=~\"$cluster\", namespace=~\"$namespace\", instance=~\"$instance\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{instance}}: {{peers_reachability_status}}"
+            }
+         ],
+         "title": "Connected Peers Reachability",
+         "type": "gauge"
+      }
+   ],
+   "schemaVersion": 36,
+   "tags": [
+      "components"
+   ],
+   "templating": {
+      "list": [
+         {
+            "name": "datasource",
+            "query": "prometheus",
+            "type": "datasource"
+         },
+         {
+            "datasource": {
+               "type": "prometheus",
+               "uid": "${datasource}"
+            },
+            "includeAll": true,
+            "multi": true,
+            "name": "cluster",
+            "query": "label_values(bee_info, cluster)",
+            "refresh": 1,
+            "type": "query"
+         },
+         {
+            "datasource": {
+               "type": "prometheus",
+               "uid": "${datasource}"
+            },
+            "includeAll": true,
+            "multi": true,
+            "name": "namespace",
+            "query": "label_values(bee_info{cluster=~\"$cluster\"}, namespace)",
+            "refresh": 1,
+            "type": "query"
+         },
+         {
+            "datasource": {
+               "type": "prometheus",
+               "uid": "${datasource}"
+            },
+            "includeAll": true,
+            "multi": true,
+            "name": "instance",
+            "query": "label_values(bee_info{cluster=~\"$cluster\", namespace=~\"$namespace\"}, instance)",
+            "refresh": 1,
+            "type": "query"
+         },
+         {
+            "auto": true,
+            "auto_count": 30,
+            "auto_min": "1s",
+            "current": {
+               "selected": false,
+               "text": "auto",
+               "value": "$__auto_interval_interval"
+            },
+            "name": "interval",
+            "options": [
+               {
+                  "selected": true,
+                  "text": "auto",
+                  "value": "$__auto_interval_interval"
+               },
+               {
+                  "selected": false,
+                  "text": "1m",
+                  "value": "1m"
+               },
+               {
+                  "selected": false,
+                  "text": "5m",
+                  "value": "5m"
+               },
+               {
+                  "selected": false,
+                  "text": "30m",
+                  "value": "30m"
+               },
+               {
+                  "selected": false,
+                  "text": "1h",
+                  "value": "1h"
+               },
+               {
+                  "selected": false,
+                  "text": "6h",
+                  "value": "6h"
+               },
+               {
+                  "selected": false,
+                  "text": "12h",
+                  "value": "12h"
+               },
+               {
+                  "selected": false,
+                  "text": "1d",
+                  "value": "1d"
+               },
+               {
+                  "selected": false,
+                  "text": "7d",
+                  "value": "7d"
+               },
+               {
+                  "selected": false,
+                  "text": "14d",
+                  "value": "14d"
+               },
+               {
+                  "selected": false,
+                  "text": "30d",
+                  "value": "30d"
+               }
+            ],
+            "query": "1m,5m,30m,1h,6h,12h,1d,7d,14d,30d",
+            "type": "interval"
+         }
+      ]
+   },
+   "time": {
+      "from": "now-1h",
+      "to": "now"
+   },
+   "timezone": "browser",
+   "title": "Kademlia"
+}
