@@ -1,7 +1,7 @@
 {
 histogram_quantile_0_95_sum_rate_bee_pushsync_push_peer_time_bucket:{query:"histogram_quantile(0.95,sum(rate(bee_pushsync_push_peer_time_bucket{%(selector)s}[$interval]))by(le,instance))",legend:"{{instance}}"},
-inc_bee_pushsync_forwarder:{query:"inc(bee_pushsync_forwarder{%(selector)s}/bee_pushsync_total_received{%(selector)s}",legend:""},
-increae_bee_pushsync_storer:{query:"increae(bee_pushsync_storer{%(selector)s}/bee_pushsync_total_received{%(selector)s}",legend:""},
+bee_pushsync_forwarder:{query:"bee_pushsync_forwarder{%(selector)s}/bee_pushsync_total_received{%(selector)s}",legend:""},
+bee_pushsync_storer:{query:"bee_pushsync_storer{%(selector)s}/bee_pushsync_total_received{%(selector)s}",legend:""},
 increase_bee_pusher_shallow_receipt:{query:"increase(bee_pusher_shallow_receipt{%(selector)s}[$interval])/(increase(bee_pushsync_total_outgoing{%(selector)s}[$interval])-increase(bee_pushsync_total_outgoing_errors{%(selector)s}[$interval]))",legend:"{{instance}}"},
 increase_bee_pushsync_invalid_stamps:{query:"increase(bee_pushsync_invalid_stamps{%(selector)s}[$interval])/increase(bee_pushsync_total_received{%(selector)s}[$interval])",legend:"{{instance}}"},
 increase_bee_pushsync_push_peer_time_sum_failure:{query:"increase(bee_pushsync_push_peer_time_sum{%(selector)s,status=\"failure\"}[$interval])/increase(bee_pushsync_push_peer_time_count{%(selector)s,status=\"failure\"}[$interval])",legend:"{{instance}}"},

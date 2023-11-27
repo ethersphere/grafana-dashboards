@@ -18,6 +18,6 @@ panels.dashboard.base(title='PushSync', tags=['protocols'], panels=[
   panels.timeseries.s(title='Handler Time  - success', description='', targets=[query.base(queries.increase_bee_pushsync_total_handler_time_sum_success),]),
   panels.timeseries.s(title='Stamp Validation (s)', description='', targets=[query.base(queries.sum_increase_bee_pushsync_stamp_validation_time_sum),]),
   panels.timeseries.percentunit(title='Invalid Stamps  %', description='', targets=[query.base(queries.increase_bee_pushsync_invalid_stamps),]),
-  panels.stat.percentunit(title='Forwarder %', description='', targets=[query.base(queries.inc_bee_pushsync_forwarder),]),
-  panels.stat.percentunit(title='Storer %', description='', targets=[query.base(queries.increae_bee_pushsync_storer),]),
+  panels.stat.percentunit(title='Forwarder %', description='', targets=[query.base(queries.bee_pushsync_forwarder),]),
+  panels.stat.percentunit(title='Storer %', description='', targets=[query.base(queries.bee_pushsync_storer),]),
 ])
