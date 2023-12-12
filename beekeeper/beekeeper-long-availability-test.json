@@ -25,7 +25,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
   "id": 73,
-  "iteration": 1699445205024,
+  "iteration": 1702375837544,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -526,7 +526,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "beekeeper_check_longavailability_d_download_size_bytes / beekeeper_check_longavailability_d_download_duration_seconds_sum{job=\"$job\"}/beekeeper_check_longavailability_d_download_duration_seconds_count{job=\"$job\"}",
+          "expr": "beekeeper_check_longavailability_d_download_size_bytes / (beekeeper_check_longavailability_d_download_duration_seconds_sum{job=\"$job\"}/beekeeper_check_longavailability_d_download_duration_seconds_count{job=\"$job\"})",
           "format": "time_series",
           "interval": "",
           "legendFormat": "{{ref}}",
@@ -542,55 +542,20 @@
         "type": "prometheus",
         "uid": "PEB8F6B0BE743FB7E"
       },
-      "description": "",
+      "description": "Ratio of download errors to total attempts",
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisGridShow": true,
-            "axisLabel": "",
-            "axisPlacement": "right",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineStyle": {
-              "fill": "solid"
-            },
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "area"
-            }
+            "mode": "thresholds"
           },
           "mappings": [],
+          "noValue": "0",
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 0.1
               }
             ]
           },
@@ -606,15 +571,18 @@
       },
       "id": 84,
       "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom"
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
         },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
+        "textMode": "auto"
       },
       "pluginVersion": "9.0.1",
       "targets": [
@@ -623,17 +591,19 @@
             "type": "prometheus",
             "uid": "PEB8F6B0BE743FB7E"
           },
+          "editorMode": "code",
           "exemplar": true,
           "expr": "rate(beekeeper_check_longavailability_download_errors_count{job=\"$job\"}[$__range])\r\n/\r\nrate(beekeeper_check_longavailability_download_attempts{job=\"$job\"}[$__range])",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{job}}",
+          "legendFormat": "{{ref}}",
+          "range": true,
           "refId": "A"
         }
       ],
       "title": "Download Err Rate",
-      "type": "timeseries"
+      "type": "stat"
     },
     {
       "datasource": {
@@ -763,6 +733,74 @@
       ],
       "title": "Download errors",
       "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PEB8F6B0BE743FB7E"
+      },
+      "description": "Ratio of download errors to successful retrieval",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 10,
+        "x": 14,
+        "y": 25
+      },
+      "id": 88,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.0.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PEB8F6B0BE743FB7E"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "rate(beekeeper_check_longavailability_download_errors_count{job=\"$job\"}[$__range])\n/\nrate(beekeeper_check_longavailability_retrieved{job=\"$job\"}[$__range])",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{ref}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Failed retrieved",
+      "type": "stat"
     }
   ],
   "refresh": "5m",
@@ -806,7 +844,7 @@
     ]
   },
   "time": {
-    "from": "now-12h",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {
@@ -825,6 +863,6 @@
   "timezone": "",
   "title": "Long availability test",
   "uid": "S6nXBFH7j",
-  "version": 37,
+  "version": 45,
   "weekStart": ""
 }
