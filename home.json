@@ -13,7 +13,8 @@
         "tags": [
           "protocols",
           "components",
-          "storage-incentives"
+          "storage-incentives",
+          "beekeeper"
         ],
         "type": "tags"
       }

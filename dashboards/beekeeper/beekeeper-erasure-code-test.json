@@ -1,0 +1,1583 @@
+{
+   "description": "",
+   "graphTooltip": 1,
+   "links": [
+      {
+         "asDropdown": true,
+         "includeVars": true,
+         "keepTime": true,
+         "tags": [
+            "beekeeper"
+         ],
+         "title": "beekeeper dashboards",
+         "type": "dashboards"
+      }
+   ],
+   "panels": [
+      {
+         "gridPos": {
+            "h": 1,
+            "w": 0,
+            "x": 0,
+            "y": 0
+         },
+         "id": 1,
+         "title": "Level 0",
+         "type": "row"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 1
+         },
+         "id": 2,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"0\",strategy=\"0\",fallback=\"false\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"0\",strategy=\"0\",fallback=\"false\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=0, strategy=0, fallback=false",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 1
+         },
+         "id": 3,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"0\",strategy=\"0\",fallback=\"true\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"0\",strategy=\"0\",fallback=\"true\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=0, strategy=0, fallback=true",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 9
+         },
+         "id": 4,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"0\",strategy=\"1\",fallback=\"true\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"0\",strategy=\"1\",fallback=\"true\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=0, strategy=1, fallback=true",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 9
+         },
+         "id": 5,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"0\",strategy=\"2\",fallback=\"true\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"0\",strategy=\"2\",fallback=\"true\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=0, strategy=2, fallback=true",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 17
+         },
+         "id": 6,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"0\",strategy=\"3\",fallback=\"true\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"0\",strategy=\"3\",fallback=\"true\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=0, strategy=3, fallback=true",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download attempts",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 17
+         },
+         "id": 7,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_check_erasure_code_download_attempts{job=\"$job\",level=\"0\"}[$__range]))/24",
+               "intervalFactor": 1,
+               "legendFormat": "{{timeout}}-{{strategy}}"
+            }
+         ],
+         "title": "Download Attempts",
+         "type": "stat"
+      },
+      {
+         "gridPos": {
+            "h": 1,
+            "w": 0,
+            "x": 24,
+            "y": 25
+         },
+         "id": 8,
+         "title": "Level 1",
+         "type": "row"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 26
+         },
+         "id": 9,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"1\",strategy=\"0\",fallback=\"false\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"1\",strategy=\"0\",fallback=\"false\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=1, strategy=0, fallback=false",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 26
+         },
+         "id": 10,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"1\",strategy=\"0\",fallback=\"true\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"1\",strategy=\"0\",fallback=\"true\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=1, strategy=0, fallback=true",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 34
+         },
+         "id": 11,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"1\",strategy=\"1\",fallback=\"true\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"1\",strategy=\"1\",fallback=\"true\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=1, strategy=1, fallback=true",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 34
+         },
+         "id": 12,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"1\",strategy=\"2\",fallback=\"true\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"1\",strategy=\"2\",fallback=\"true\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=1, strategy=2, fallback=true",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 42
+         },
+         "id": 13,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"1\",strategy=\"3\",fallback=\"true\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"1\",strategy=\"3\",fallback=\"true\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=1, strategy=3, fallback=true",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download attempts",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 42
+         },
+         "id": 14,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_check_erasure_code_download_attempts{job=\"$job\",level=\"1\"}[$__range]))/24",
+               "intervalFactor": 1,
+               "legendFormat": "{{timeout}}-{{strategy}}"
+            }
+         ],
+         "title": "Download Attempts",
+         "type": "stat"
+      },
+      {
+         "gridPos": {
+            "h": 1,
+            "w": 0,
+            "x": 24,
+            "y": 50
+         },
+         "id": 15,
+         "title": "Level 2",
+         "type": "row"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 51
+         },
+         "id": 16,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"2\",strategy=\"0\",fallback=\"false\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"2\",strategy=\"0\",fallback=\"false\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=2, strategy=0, fallback=false",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 51
+         },
+         "id": 17,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"2\",strategy=\"0\",fallback=\"true\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"2\",strategy=\"0\",fallback=\"true\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=2, strategy=0, fallback=true",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 59
+         },
+         "id": 18,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"2\",strategy=\"1\",fallback=\"true\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"2\",strategy=\"1\",fallback=\"true\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=2, strategy=1, fallback=true",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 59
+         },
+         "id": 19,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"2\",strategy=\"2\",fallback=\"true\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"2\",strategy=\"2\",fallback=\"true\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=2, strategy=2, fallback=true",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 67
+         },
+         "id": 20,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"2\",strategy=\"3\",fallback=\"true\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"2\",strategy=\"3\",fallback=\"true\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=2, strategy=3, fallback=true",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download attempts",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 67
+         },
+         "id": 21,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_check_erasure_code_download_attempts{job=\"$job\",level=\"2\"}[$__range]))/24",
+               "intervalFactor": 1,
+               "legendFormat": "{{timeout}}-{{strategy}}"
+            }
+         ],
+         "title": "Download Attempts",
+         "type": "stat"
+      },
+      {
+         "gridPos": {
+            "h": 1,
+            "w": 0,
+            "x": 24,
+            "y": 75
+         },
+         "id": 22,
+         "title": "Level 3",
+         "type": "row"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 76
+         },
+         "id": 23,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"3\",strategy=\"0\",fallback=\"false\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"3\",strategy=\"0\",fallback=\"false\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=3, strategy=0, fallback=false",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 76
+         },
+         "id": 24,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"3\",strategy=\"0\",fallback=\"true\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"3\",strategy=\"0\",fallback=\"true\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=3, strategy=0, fallback=true",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 84
+         },
+         "id": 25,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"3\",strategy=\"1\",fallback=\"true\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"3\",strategy=\"1\",fallback=\"true\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=3, strategy=1, fallback=true",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 84
+         },
+         "id": 26,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"3\",strategy=\"2\",fallback=\"true\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"3\",strategy=\"2\",fallback=\"true\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=3, strategy=2, fallback=true",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 92
+         },
+         "id": 27,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"3\",strategy=\"3\",fallback=\"true\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"3\",strategy=\"3\",fallback=\"true\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=3, strategy=3, fallback=true",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download attempts",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 92
+         },
+         "id": 28,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_check_erasure_code_download_attempts{job=\"$job\",level=\"3\"}[$__range]))/24",
+               "intervalFactor": 1,
+               "legendFormat": "{{timeout}}-{{strategy}}"
+            }
+         ],
+         "title": "Download Attempts",
+         "type": "stat"
+      },
+      {
+         "gridPos": {
+            "h": 1,
+            "w": 0,
+            "x": 24,
+            "y": 100
+         },
+         "id": 29,
+         "title": "Level 4",
+         "type": "row"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 101
+         },
+         "id": 30,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"4\",strategy=\"0\",fallback=\"false\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"4\",strategy=\"0\",fallback=\"false\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=4, strategy=0, fallback=false",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 101
+         },
+         "id": 31,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"4\",strategy=\"0\",fallback=\"true\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"4\",strategy=\"0\",fallback=\"true\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=4, strategy=0, fallback=true",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 109
+         },
+         "id": 32,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"4\",strategy=\"1\",fallback=\"true\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"4\",strategy=\"1\",fallback=\"true\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=4, strategy=1, fallback=true",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 109
+         },
+         "id": 33,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"4\",strategy=\"2\",fallback=\"true\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"4\",strategy=\"2\",fallback=\"true\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=4, strategy=2, fallback=true",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download success rate",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 117
+         },
+         "id": 34,
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "1-(sum(increase(beekeeper_check_erasure_code_download_errors{level=\"4\",strategy=\"3\",fallback=\"true\"}[$__range]))by(timeout)/sum(increase(beekeeper_check_erasure_code_download_attempts{level=\"4\",strategy=\"3\",fallback=\"true\"}[$__range]))by(timeout))",
+               "intervalFactor": 1,
+               "legendFormat": "__auto"
+            }
+         ],
+         "title": "level=4, strategy=3, fallback=true",
+         "type": "barchart"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Download attempts",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 117
+         },
+         "id": 35,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "sum(increase(beekeeper_check_erasure_code_download_attempts{job=\"$job\",level=\"4\"}[$__range]))/24",
+               "intervalFactor": 1,
+               "legendFormat": "{{timeout}}-{{strategy}}"
+            }
+         ],
+         "title": "Download Attempts",
+         "type": "stat"
+      }
+   ],
+   "schemaVersion": 36,
+   "tags": [
+      "beekeeper"
+   ],
+   "templating": {
+      "list": [
+         {
+            "name": "datasource",
+            "query": "prometheus",
+            "type": "datasource"
+         },
+         {
+            "datasource": {
+               "type": "prometheus",
+               "uid": "${datasource}"
+            },
+            "includeAll": true,
+            "multi": true,
+            "name": "cluster",
+            "query": "label_values(bee_info, cluster)",
+            "refresh": 1,
+            "type": "query"
+         },
+         {
+            "datasource": {
+               "type": "prometheus",
+               "uid": "${datasource}"
+            },
+            "includeAll": true,
+            "multi": true,
+            "name": "namespace",
+            "query": "label_values(bee_info{cluster=~\"$cluster\"}, namespace)",
+            "refresh": 1,
+            "type": "query"
+         },
+         {
+            "datasource": {
+               "type": "prometheus",
+               "uid": "${datasource}"
+            },
+            "includeAll": true,
+            "multi": true,
+            "name": "instance",
+            "query": "label_values(bee_info{cluster=~\"$cluster\", namespace=~\"$namespace\"}, instance)",
+            "refresh": 1,
+            "type": "query"
+         },
+         {
+            "auto": true,
+            "auto_count": 30,
+            "auto_min": "1s",
+            "current": {
+               "selected": false,
+               "text": "auto",
+               "value": "$__auto_interval_interval"
+            },
+            "name": "interval",
+            "options": [
+               {
+                  "selected": true,
+                  "text": "auto",
+                  "value": "$__auto_interval_interval"
+               },
+               {
+                  "selected": false,
+                  "text": "1m",
+                  "value": "1m"
+               },
+               {
+                  "selected": false,
+                  "text": "5m",
+                  "value": "5m"
+               },
+               {
+                  "selected": false,
+                  "text": "30m",
+                  "value": "30m"
+               },
+               {
+                  "selected": false,
+                  "text": "1h",
+                  "value": "1h"
+               },
+               {
+                  "selected": false,
+                  "text": "6h",
+                  "value": "6h"
+               },
+               {
+                  "selected": false,
+                  "text": "12h",
+                  "value": "12h"
+               },
+               {
+                  "selected": false,
+                  "text": "1d",
+                  "value": "1d"
+               },
+               {
+                  "selected": false,
+                  "text": "7d",
+                  "value": "7d"
+               },
+               {
+                  "selected": false,
+                  "text": "14d",
+                  "value": "14d"
+               },
+               {
+                  "selected": false,
+                  "text": "30d",
+                  "value": "30d"
+               }
+            ],
+            "query": "1m,5m,30m,1h,6h,12h,1d,7d,14d,30d",
+            "type": "interval"
+         }
+      ]
+   },
+   "time": {
+      "from": "now-1h",
+      "to": "now"
+   },
+   "timezone": "browser",
+   "title": "Erasure code test"
+}

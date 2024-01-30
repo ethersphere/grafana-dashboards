@@ -1,0 +1,9 @@
+{
+bee_libp2p_created_connection_count:{query:"bee_libp2p_created_connection_count{%(selector)s}",legend:""},
+increase_bee_libp2p_blocklisted_peer_count:{query:"increase(bee_libp2p_blocklisted_peer_count{%(selector)s}[$interval])",legend:"blocklisted_peers({{instance}})"},
+increase_bee_libp2p_blocklisted_peer_err_count:{query:"increase(bee_libp2p_blocklisted_peer_err_count{%(selector)s}[$interval])",legend:"blocklisted_peers_err({{instance}})"},
+increase_bee_libp2p_created_connection_count:{query:"increase(bee_libp2p_created_connection_count{%(selector)s}[$interval])",legend:"connects({{instance}})"},
+increase_bee_libp2p_disconnect_count:{query:"increase(bee_libp2p_disconnect_count{%(selector)s}[$interval])",legend:"disconnects({{instance}})"},
+increase_bee_libp2p_handled_connection_count:{query:"increase(bee_libp2p_handled_connection_count{%(selector)s}[$interval])",legend:""},
+increase_bee_libp2p_stream_handler_error_reset_count:{query:"increase(bee_libp2p_stream_handler_error_reset_count{%(selector)s}[$interval])",legend:""},
+}

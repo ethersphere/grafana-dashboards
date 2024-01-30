@@ -1,0 +1,14 @@
+{
+beekeeper_check_load_data_download_duration_sum_5e6:{query:"5e6/(beekeeper_check_load_data_download_duration_sum{job=\"$job\"}/beekeeper_check_load_data_download_duration_count{job=\"$job\"})",legend:"{{job}}"},
+beekeeper_check_load_data_download_duration_sum:{query:"beekeeper_check_load_data_download_duration_sum{job=\"$job\"}/beekeeper_check_load_data_download_duration_count{job=\"$job\"}",legend:"{{job}}"},
+beekeeper_check_load_data_upload_duration_count:{query:"beekeeper_check_load_data_upload_duration_count{job=\"$job\"}*5e6",legend:"{{job}}"},
+beekeeper_check_load_data_upload_duration_sum_5e6:{query:"5e6/(beekeeper_check_load_data_upload_duration_sum{job=\"$job\"}/beekeeper_check_load_data_upload_duration_count{job=\"$job\"})",legend:"{{job}}"},
+beekeeper_check_load_data_upload_duration_sum:{query:"beekeeper_check_load_data_upload_duration_sum{job=\"$job\"}/beekeeper_check_load_data_upload_duration_count{job=\"$job\"}",legend:"{{job}}"},
+beekeeper_check_load_download_attempts:{query:"beekeeper_check_load_download_attempts{job=\"$job\"}",legend:"{{job}}"},
+beekeeper_check_load_download_errors_count:{query:"beekeeper_check_load_download_errors_count{job=\"$job\"}/beekeeper_check_load_download_attempts{job=\"$job\"}",legend:"{{job}}"},
+beekeeper_check_load_download_mismatch:{query:"beekeeper_check_load_download_mismatch{job=\"$job\"}",legend:"{{job}}"},
+beekeeper_check_load_upload_attempts:{query:"beekeeper_check_load_upload_attempts{job=\"$job\"}",legend:"{{job}}"},
+beekeeper_check_load_upload_errors_count:{query:"beekeeper_check_load_upload_errors_count{job=\"$job\"}/beekeeper_check_load_upload_attempts{job=\"$job\"}",legend:"{{job}}"},
+increase_beekeeper_check_load_data_download_duration_sum:{query:"5e6/(increase(beekeeper_check_load_data_download_duration_sum{job=\"$job\"}[$interval])/increase(beekeeper_check_load_data_download_duration_count{job=\"$job\"}[$interval]))",legend:"{{job}}"},
+increase_beekeeper_check_load_data_upload_duration_sum:{query:"5e6/(increase(beekeeper_check_load_data_upload_duration_sum{job=\"$job\"}[$interval])/increase(beekeeper_check_load_data_upload_duration_count{job=\"$job\"}[$interval]))",legend:"{{job}}"},
+}
