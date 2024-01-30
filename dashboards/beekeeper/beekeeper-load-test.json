@@ -33,6 +33,326 @@
          "description": "",
          "fieldConfig": {
             "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               },
+               "unit": "binBps"
+            }
+         },
+         "gridPos": {
+            "h": 4,
+            "w": 3,
+            "x": 0,
+            "y": 1
+         },
+         "id": 2,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "5e6/(beekeeper_check_load_data_upload_duration_sum{job=\"$job\"}/beekeeper_check_load_data_upload_duration_count{job=\"$job\"})",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Average Upload Speed",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 4,
+            "w": 3,
+            "x": 3,
+            "y": 1
+         },
+         "id": 3,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_load_upload_attempts{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Upload Attempts",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 4,
+            "w": 3,
+            "x": 6,
+            "y": 1
+         },
+         "id": 4,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_load_upload_errors_count{job=\"$job\"}/beekeeper_check_load_upload_attempts{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Upload Errors %",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 4,
+            "w": 3,
+            "x": 9,
+            "y": 1
+         },
+         "id": 5,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_load_download_mismatch{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Data Mismatch",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               },
+               "unit": "binBps"
+            }
+         },
+         "gridPos": {
+            "h": 4,
+            "w": 3,
+            "x": 12,
+            "y": 1
+         },
+         "id": 6,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "5e6/(beekeeper_check_load_data_download_duration_sum{job=\"$job\"}/beekeeper_check_load_data_download_duration_count{job=\"$job\"})",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Average Download Speed",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 4,
+            "w": 3,
+            "x": 15,
+            "y": 1
+         },
+         "id": 7,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_load_download_attempts{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Download Attempts",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
+               },
+               "unit": "percentunit"
+            }
+         },
+         "gridPos": {
+            "h": 4,
+            "w": 3,
+            "x": 18,
+            "y": 1
+         },
+         "id": 8,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "beekeeper_check_load_download_errors_count{job=\"$job\"}/beekeeper_check_load_download_attempts{job=\"$job\"}",
+               "intervalFactor": 1,
+               "legendFormat": "{{job}}"
+            }
+         ],
+         "title": "Download Errors %",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "",
+         "fieldConfig": {
+            "defaults": {
                "custom": {
                   "fillOpacity": 0,
                   "scaleDistribution": {
@@ -46,11 +366,11 @@
          },
          "gridPos": {
             "h": 8,
-            "w": 12,
+            "w": 4,
             "x": 0,
-            "y": 1
+            "y": 9
          },
-         "id": 2,
+         "id": 9,
          "interval": "1m",
          "options": {
             "legend": {
@@ -97,11 +417,11 @@
          },
          "gridPos": {
             "h": 8,
-            "w": 12,
-            "x": 12,
-            "y": 1
+            "w": 4,
+            "x": 4,
+            "y": 9
          },
-         "id": 3,
+         "id": 10,
          "interval": "1m",
          "options": {
             "legend": {
@@ -153,11 +473,11 @@
          },
          "gridPos": {
             "h": 8,
-            "w": 12,
-            "x": 0,
+            "w": 4,
+            "x": 8,
             "y": 9
          },
-         "id": 4,
+         "id": 11,
          "options": {
             "reduceOptions": {
                "calcs": [
@@ -181,331 +501,11 @@
          "type": "gauge"
       },
       {
-         "datasource": {
-            "type": "datasource",
-            "uid": "-- Mixed --"
-         },
-         "description": "",
-         "fieldConfig": {
-            "defaults": {
-               "thresholds": {
-                  "mode": "absolute"
-               },
-               "unit": "binBps"
-            }
-         },
-         "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 12,
-            "y": 9
-         },
-         "id": 5,
-         "options": {
-            "reduceOptions": {
-               "calcs": [
-                  "lastNotNull"
-               ]
-            }
-         },
-         "pluginVersion": "v10.1.0",
-         "targets": [
-            {
-               "datasource": {
-                  "type": "prometheus",
-                  "uid": "$datasource"
-               },
-               "expr": "5e6/(beekeeper_check_load_data_upload_duration_sum{job=\"$job\"}/beekeeper_check_load_data_upload_duration_count{job=\"$job\"})",
-               "intervalFactor": 1,
-               "legendFormat": "{{job}}"
-            }
-         ],
-         "title": "Average Upload Speed",
-         "type": "stat"
-      },
-      {
-         "datasource": {
-            "type": "datasource",
-            "uid": "-- Mixed --"
-         },
-         "description": "",
-         "fieldConfig": {
-            "defaults": {
-               "thresholds": {
-                  "mode": "absolute"
-               }
-            }
-         },
-         "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 0,
-            "y": 17
-         },
-         "id": 6,
-         "options": {
-            "reduceOptions": {
-               "calcs": [
-                  "lastNotNull"
-               ]
-            }
-         },
-         "pluginVersion": "v10.1.0",
-         "targets": [
-            {
-               "datasource": {
-                  "type": "prometheus",
-                  "uid": "$datasource"
-               },
-               "expr": "beekeeper_check_load_upload_attempts{job=\"$job\"}",
-               "intervalFactor": 1,
-               "legendFormat": "{{job}}"
-            }
-         ],
-         "title": "Upload Attempts",
-         "type": "stat"
-      },
-      {
-         "datasource": {
-            "type": "datasource",
-            "uid": "-- Mixed --"
-         },
-         "description": "",
-         "fieldConfig": {
-            "defaults": {
-               "max": 1,
-               "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                     {
-                        "color": "green",
-                        "value": null
-                     },
-                     {
-                        "color": "red",
-                        "value": 0.10000000000000001
-                     }
-                  ]
-               },
-               "unit": "percentunit"
-            }
-         },
-         "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 12,
-            "y": 17
-         },
-         "id": 7,
-         "options": {
-            "reduceOptions": {
-               "calcs": [
-                  "lastNotNull"
-               ]
-            }
-         },
-         "pluginVersion": "v10.1.0",
-         "targets": [
-            {
-               "datasource": {
-                  "type": "prometheus",
-                  "uid": "$datasource"
-               },
-               "expr": "beekeeper_check_load_upload_errors_count{job=\"$job\"}/beekeeper_check_load_upload_attempts{job=\"$job\"}",
-               "intervalFactor": 1,
-               "legendFormat": "{{job}}"
-            }
-         ],
-         "title": "Upload Errors %",
-         "type": "stat"
-      },
-      {
-         "datasource": {
-            "type": "datasource",
-            "uid": "-- Mixed --"
-         },
-         "description": "",
-         "fieldConfig": {
-            "defaults": {
-               "thresholds": {
-                  "mode": "absolute"
-               }
-            }
-         },
-         "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 0,
-            "y": 25
-         },
-         "id": 8,
-         "options": {
-            "reduceOptions": {
-               "calcs": [
-                  "lastNotNull"
-               ]
-            }
-         },
-         "pluginVersion": "v10.1.0",
-         "targets": [
-            {
-               "datasource": {
-                  "type": "prometheus",
-                  "uid": "$datasource"
-               },
-               "expr": "beekeeper_check_load_download_mismatch{job=\"$job\"}",
-               "intervalFactor": 1,
-               "legendFormat": "{{job}}"
-            }
-         ],
-         "title": "Data Mismatch",
-         "type": "stat"
-      },
-      {
-         "datasource": {
-            "type": "datasource",
-            "uid": "-- Mixed --"
-         },
-         "description": "",
-         "fieldConfig": {
-            "defaults": {
-               "thresholds": {
-                  "mode": "absolute"
-               },
-               "unit": "binBps"
-            }
-         },
-         "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 12,
-            "y": 25
-         },
-         "id": 9,
-         "options": {
-            "reduceOptions": {
-               "calcs": [
-                  "lastNotNull"
-               ]
-            }
-         },
-         "pluginVersion": "v10.1.0",
-         "targets": [
-            {
-               "datasource": {
-                  "type": "prometheus",
-                  "uid": "$datasource"
-               },
-               "expr": "5e6/(beekeeper_check_load_data_download_duration_sum{job=\"$job\"}/beekeeper_check_load_data_download_duration_count{job=\"$job\"})",
-               "intervalFactor": 1,
-               "legendFormat": "{{job}}"
-            }
-         ],
-         "title": "Average Download Speed",
-         "type": "stat"
-      },
-      {
-         "datasource": {
-            "type": "datasource",
-            "uid": "-- Mixed --"
-         },
-         "description": "",
-         "fieldConfig": {
-            "defaults": {
-               "thresholds": {
-                  "mode": "absolute"
-               }
-            }
-         },
-         "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 0,
-            "y": 33
-         },
-         "id": 10,
-         "options": {
-            "reduceOptions": {
-               "calcs": [
-                  "lastNotNull"
-               ]
-            }
-         },
-         "pluginVersion": "v10.1.0",
-         "targets": [
-            {
-               "datasource": {
-                  "type": "prometheus",
-                  "uid": "$datasource"
-               },
-               "expr": "beekeeper_check_load_download_attempts{job=\"$job\"}",
-               "intervalFactor": 1,
-               "legendFormat": "{{job}}"
-            }
-         ],
-         "title": "Download Attempts",
-         "type": "stat"
-      },
-      {
-         "datasource": {
-            "type": "datasource",
-            "uid": "-- Mixed --"
-         },
-         "description": "",
-         "fieldConfig": {
-            "defaults": {
-               "max": 1,
-               "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                     {
-                        "color": "green",
-                        "value": null
-                     },
-                     {
-                        "color": "red",
-                        "value": 0.10000000000000001
-                     }
-                  ]
-               },
-               "unit": "percentunit"
-            }
-         },
-         "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 12,
-            "y": 33
-         },
-         "id": 11,
-         "options": {
-            "reduceOptions": {
-               "calcs": [
-                  "lastNotNull"
-               ]
-            }
-         },
-         "pluginVersion": "v10.1.0",
-         "targets": [
-            {
-               "datasource": {
-                  "type": "prometheus",
-                  "uid": "$datasource"
-               },
-               "expr": "beekeeper_check_load_download_errors_count{job=\"$job\"}/beekeeper_check_load_download_attempts{job=\"$job\"}",
-               "intervalFactor": 1,
-               "legendFormat": "{{job}}"
-            }
-         ],
-         "title": "Download Errors %",
-         "type": "stat"
-      },
-      {
          "gridPos": {
             "h": 1,
             "w": 0,
-            "x": 24,
-            "y": 41
+            "x": 12,
+            "y": 17
          },
          "id": 12,
          "title": "Speed",
@@ -530,7 +530,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 42
+            "y": 18
          },
          "id": 13,
          "interval": "1m",
@@ -577,7 +577,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 42
+            "y": 18
          },
          "id": 14,
          "interval": "1m",
@@ -624,7 +624,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 50
+            "y": 26
          },
          "id": 15,
          "interval": "1m",
@@ -671,7 +671,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 50
+            "y": 26
          },
          "id": 16,
          "interval": "1m",
@@ -707,16 +707,6 @@
    "templating": {
       "list": [
          {
-            "current": {
-               "selected": true,
-               "text": [
-                  "Prometheus-bee"
-               ],
-               "value": [
-                  "Prometheus-bee"
-               ]
-            },
-            "multi": false,
             "name": "datasource",
             "query": "prometheus",
             "type": "datasource"

@@ -3,9 +3,7 @@ local var = g.dashboard.variable;
 
 {
   datasource:
-    var.datasource.new('datasource', 'prometheus')
-    + var.datasource.selectionOptions.withMulti(false)
-    + var.datasource.generalOptions.withCurrent('Prometheus-bee'),
+    var.datasource.new('datasource', 'prometheus'),
 
   cluster:
     var.query.new('cluster')
