@@ -72,6 +72,12 @@ local variables = import 'variables.libsonnet';
       + custom.scaleDistribution.withType('log')
       + custom.scaleDistribution.withLog(10),
 
+    ns(title, targets, description='', width=12, heigth=8):
+      self.base(title, targets, description, width, heigth)
+      + standardOptions.withUnit('ns')
+      + custom.scaleDistribution.withType('log')
+      + custom.scaleDistribution.withLog(10),
+
     percentunit(title, targets, description='', width=12, heigth=8):
       self.base(title, targets, description, width, heigth)
       + standardOptions.withUnit('percentunit')
@@ -88,6 +94,37 @@ local variables = import 'variables.libsonnet';
     decbytes(title, targets, description='', width=12, heigth=8):
       self.base(title, targets, description, width, heigth)
       + standardOptions.withUnit('decbytes'),
+  },
+
+  barchart: {
+    local barChart = g.panel.barChart,
+    local standardOptions = barChart.standardOptions,
+    local panelOptions = barChart.panelOptions,
+
+    base(title, targets, description='', width=12, heigth=8):
+      barChart.new(title)
+      + barChart.queryOptions.withTargets(targets)
+      + panelOptions.withDescription(description)
+      + standardOptions.thresholds.withMode('absolute')
+      + standardOptions.thresholds.withSteps([
+        { color: 'green', value: null },
+        { color: 'red', value: 15 },
+      ])
+      + barChart.gridPos.withW(width)
+      + barChart.gridPos.withH(heigth),
+
+    s(title, targets, description='', width=12, heigth=8):
+      self.base(title, targets, description, width, heigth)
+      + standardOptions.withUnit('s'),
+
+    percentunit(title, targets, description='', width=12, heigth=8):
+      self.base(title, targets, description, width, heigth)
+      + standardOptions.withUnit('percentunit')
+      + standardOptions.withMax(1)
+      + standardOptions.thresholds.withSteps([
+        { color: 'green', value: null },
+        { color: 'red', value: 0.1 },
+      ]),
   },
 
   bargauge: {
@@ -215,6 +252,10 @@ local variables = import 'variables.libsonnet';
       self.base(title, targets, description, width, heigth)
       + standardOptions.withUnit('s'),
 
+    dtdurations(title, targets, description='', width=12, heigth=8):
+      self.base(title, targets, description, width, heigth)
+      + standardOptions.withUnit('dtdurations'),
+
     binBps(title, targets, description='', width=12, heigth=8):
       self.base(title, targets, description, width, heigth)
       + standardOptions.withUnit('binBps'),
@@ -230,6 +271,10 @@ local variables = import 'variables.libsonnet';
     string(title, targets, description='', width=12, heigth=8):
       self.base(title, targets, description, width, heigth)
       + standardOptions.withUnit('string'),
+
+    locale(title, targets, description='', width=12, heigth=8):
+      self.base(title, targets, description, width, heigth)
+      + standardOptions.withUnit('locale'),
   },
 
   table: {

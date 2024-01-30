@@ -263,7 +263,7 @@
                   "type": "prometheus",
                   "uid": "$datasource"
                },
-               "expr": "beekeeper_check_longavailability_d_download_size_bytes/beekeeper_check_longavailability_d_download_duration_seconds_sum{job=\"$job\"}/beekeeper_check_longavailability_d_download_duration_seconds_count{job=\"$job\"}",
+               "expr": "beekeeper_check_longavailability_d_download_size_bytes/(beekeeper_check_longavailability_d_download_duration_seconds_sum{job=\"$job\"}/beekeeper_check_longavailability_d_download_duration_seconds_count{job=\"$job\"})",
                "intervalFactor": 1,
                "legendFormat": "{{ref}}"
             }
@@ -276,14 +276,23 @@
             "type": "datasource",
             "uid": "-- Mixed --"
          },
-         "description": "",
+         "description": "Ratio of download errors to total attempts",
          "fieldConfig": {
             "defaults": {
-               "custom": {
-                  "fillOpacity": 0,
-                  "showPoints": "never"
+               "max": 1,
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 0.10000000000000001
+                     }
+                  ]
                },
-               "decimals": 0,
                "unit": "percentunit"
             }
          },
@@ -294,14 +303,11 @@
             "y": 26
          },
          "id": 8,
-         "interval": "1m",
          "options": {
-            "legend": {
+            "reduceOptions": {
                "calcs": [
-                  "lastNotNull",
-                  "max"
-               ],
-               "displayMode": "table"
+                  "lastNotNull"
+               ]
             }
          },
          "pluginVersion": "v10.1.0",
@@ -313,11 +319,11 @@
                },
                "expr": "rate(beekeeper_check_longavailability_download_errors_count{job=\"$job\"}[$__range])/rate(beekeeper_check_longavailability_download_attempts{job=\"$job\"}[$__range])",
                "intervalFactor": 1,
-               "legendFormat": "{{job}}"
+               "legendFormat": "{{ref}}"
             }
          ],
          "title": "Download Err Rate",
-         "type": "timeseries"
+         "type": "stat"
       },
       {
          "datasource": {
@@ -401,6 +407,48 @@
             }
          ],
          "title": "Download errors",
+         "type": "stat"
+      },
+      {
+         "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+         },
+         "description": "Ratio of download errors to successful retrieval",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute"
+               }
+            }
+         },
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 34
+         },
+         "id": 11,
+         "options": {
+            "reduceOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ]
+            }
+         },
+         "pluginVersion": "v10.1.0",
+         "targets": [
+            {
+               "datasource": {
+                  "type": "prometheus",
+                  "uid": "$datasource"
+               },
+               "expr": "rate(beekeeper_check_longavailability_download_errors_count{job=\"$job\"}[$__range])/rate(beekeeper_check_longavailability_retrieved{job=\"$job\"}[$__range])",
+               "intervalFactor": 1,
+               "legendFormat": "{{ref}}"
+            }
+         ],
+         "title": "Failed retrieved",
          "type": "stat"
       }
    ],
